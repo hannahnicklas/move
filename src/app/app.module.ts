@@ -24,6 +24,7 @@ import { UniversityCoursesComponent } from './study-abroad/university/university
 // tslint:disable-next-line:max-line-length
 import { UniversityExperienceDetailComponent } from './study-abroad/university/university-experience-detail/university-experience-detail.component';
 import { UniversityCourseDetailComponent } from './study-abroad/university/university-course-detail/university-course-detail.component';
+import { UniversityService } from './study-abroad/university/university.service';
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import { UniversityCourseDetailComponent } from './study-abroad/university/unive
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UniversityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

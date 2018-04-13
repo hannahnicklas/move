@@ -33,7 +33,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: '/studyAbroad/map', pathMatch: 'full' },
       { path: 'map', component: MapComponent },
-      { path: 'id', component: UniversityComponent,
+      { path: ':id', component: UniversityComponent,
         children: [
           { path: 'general', component: UniversityGeneralComponent},
           { path: 'consider', component: UniversityConsiderComponent},

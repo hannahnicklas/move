@@ -1,3 +1,10 @@
-<p>
-  university-general works!
-</p>
+<div *ngIf="university">
+
+  <h2>{{ university.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{university.id}}</div>
+  <div>
+    <label>name:
+    </label>
+  </div>
+
+</div>
