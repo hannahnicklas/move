@@ -14,6 +14,16 @@ import { ProfileUserComponent } from './profile/profile-user/profile-user.compon
 import { ProfileApplicationComponent } from './profile/profile-application/profile-application.component';
 import { ProfileContactComponent } from './profile/profile-contact/profile-contact.component';
 import { ProfileNavComponent } from './profile/profile-nav/profile-nav.component';
+import { MapComponent } from './study-abroad/map/map.component';
+import { UniversityComponent } from './study-abroad/university/university.component';
+import { UniversityNavComponent } from './study-abroad/university/university-nav/university-nav.component';
+import { UniversityGeneralComponent } from './study-abroad/university/university-general/university-general.component';
+import { UniversityConsiderComponent } from './study-abroad/university/university-consider/university-consider.component';
+import { UniversityExperiencesComponent } from './study-abroad/university/university-experiences/university-experiences.component';
+import { UniversityCoursesComponent } from './study-abroad/university/university-courses/university-courses.component';
+// tslint:disable-next-line:max-line-length
+import { UniversityExperienceDetailComponent } from './study-abroad/university/university-experience-detail/university-experience-detail.component';
+import { UniversityCourseDetailComponent } from './study-abroad/university/university-course-detail/university-course-detail.component';
 
 
 @NgModule({
@@ -28,7 +38,16 @@ import { ProfileNavComponent } from './profile/profile-nav/profile-nav.component
     ProfileUserComponent,
     ProfileApplicationComponent,
     ProfileContactComponent,
-    ProfileNavComponent
+    ProfileNavComponent,
+    MapComponent,
+    UniversityComponent,
+    UniversityNavComponent,
+    UniversityGeneralComponent,
+    UniversityConsiderComponent,
+    UniversityExperiencesComponent,
+    UniversityCoursesComponent,
+    UniversityExperienceDetailComponent,
+    UniversityCourseDetailComponent
   ],
   imports: [
     BrowserModule,
