@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('move App', () => {
+describe('move-angular App', () => {
   let page: AppPage;
 
   beforeEach(() => {
