@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { University } from '../University';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { UniversityService } from '../university.service';
 
@@ -16,7 +16,8 @@ export class UniversityGeneralComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private universityService: UniversityService,
-    private location: Location
+    private location: Location,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -24,9 +25,8 @@ export class UniversityGeneralComponent implements OnInit {
   }
 
   getUniversity(): void {
-    console.log(this.route.snapshot.paramMap.keys);
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.universityService.getUniversity(id)
+     const id = +this.route.parent.snapshot.paramMap.get('id');
+     this.universityService.getUniversity(id)
       .subscribe(university => this.university = university);
   }
 

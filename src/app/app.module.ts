@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { UniversityService } from './study-abroad/university/university.service';
 
 
 import { AppComponent } from './app.component';
@@ -24,7 +27,7 @@ import { UniversityCoursesComponent } from './study-abroad/university/university
 // tslint:disable-next-line:max-line-length
 import { UniversityExperienceDetailComponent } from './study-abroad/university/university-experience-detail/university-experience-detail.component';
 import { UniversityCourseDetailComponent } from './study-abroad/university/university-course-detail/university-course-detail.component';
-import { UniversityService } from './study-abroad/university/university.service';
+import { UniversityDataService } from '../assets/Data/university-data.service';
 
 
 @NgModule({
@@ -52,7 +55,11 @@ import { UniversityService } from './study-abroad/university/university.service'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      UniversityDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [UniversityService],
   bootstrap: [AppComponent]

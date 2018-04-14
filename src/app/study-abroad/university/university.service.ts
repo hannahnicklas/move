@@ -3,17 +3,23 @@ import { University } from './University';
 import { UNIS } from './unis-mock';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class UniversityService {
 
-  constructor() { }
+  constructor(private http: HttpClient
+    ) { }
+  private unisUrl = 'api/unis';
 
   getUnis(): Observable<University[]> {
-    return of(UNIS);
+    return this.http.get<University[]>(this.unisUrl);
   }
 
   getUniversity(id: number): Observable<University> {
-    return of(UNIS.find(university => university.id === id));
+    const url = `${this.unisUrl}/${id}`;
+    return this.http.get<University>(url);
   }
+
 }
