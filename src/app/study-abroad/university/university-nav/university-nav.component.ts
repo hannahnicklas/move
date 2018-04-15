@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { University } from '../University';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { UniversityService } from '../university.service';
+import { University } from '../../../../assets/Data/University';
 
 @Component({
   selector: 'app-university-nav',

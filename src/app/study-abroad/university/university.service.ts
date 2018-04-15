@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { University } from './University';
-import { UNIS } from './unis-mock';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { University } from '../../../assets/Data/University';
 
 @Injectable()
 export class UniversityService {

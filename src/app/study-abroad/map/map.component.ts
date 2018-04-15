@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { University } from '../university/University';
 import { UniversityService } from '../university/university.service';
+import { University } from '../../../assets/Data/University';
 
 @Component({
   selector: 'app-map',
