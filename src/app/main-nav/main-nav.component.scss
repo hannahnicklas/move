@@ -1,7 +1,23 @@
+@import '../../assets/GlobalScss/var.scss';
+
 nav{
+    position: fixed;
     display: flex;
+    width: 100vw;
+    z-index: 1000;
+    background-color: rgba($move-blue, 0.8);
 }
-nav *{
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: large;
     flex: 1;
     text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+a:hover {
+    background-color: rgba(#85aabc, 0.5);
 }

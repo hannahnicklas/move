@@ -1,7 +1,70 @@
-#homeImg{
+@import '../../assets/GlobalScss/var.scss';
+
+section {
     width: 100%;
     height: 100vh;
-    background-image: url("../../assets/images/app-component/main.jpg");
     background-size: cover;
-    background-attachment: fixed;
+    //background-attachment: fixed;
+}
+#homeWelcomeSection{
+    background-image: url("../../assets/images/app-component/main.jpg");
+
+    div {
+        position: absolute;
+        text-align: center;
+        color: $move-orange;
+        width: 100%;
+        bottom: 20vh;
+
+        h1{
+            font-size: 3em;
+            margin-bottom: 0;
+        }
+    
+        h2 {
+            font-size: 1.2em;
+            margin-top: 1vh;
+        }
+    }
+}
+
+#homeNahanSection{
+    background-image: url("../../assets/images/app-component/nahan.png");
+    position: relative;
+
+    .homeTextWrapper {
+        position: absolute;
+        top: 65vh;
+        right: 10vw;
+    }
+}
+
+#homeWomanSection {
+    background-image: url("../../assets/images/app-component/woman.png");
+    position: relative;
+
+    .homeTextWrapper {
+        position: absolute;
+        top: 25vh;
+        left: 10vw;
+    }
+}
+
+.homeTextWrapper{
+    background-color: $move-blue;
+    opacity: 0.7;
+    width: 30vw;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    
+}
+
+.homeText {
+    line-height: 1.1em;
+    font-style: italic;
+    font-size: 1.1em;
+    color: white;
+    opacity: 1.0;
 }
