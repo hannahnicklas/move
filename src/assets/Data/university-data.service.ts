@@ -19,6 +19,12 @@ export class UniversityDataService implements InMemoryDbService {
           {student: 'Dora Delighted', course: 'UXD (THI)', text: 'I loved it!'}
         ] }
     ];
-    return {unis};
+
+    const students = [
+      { id: 1, forename: 'Anna', name: 'Adventurous',
+      mobile: '0157512345', studyProgress: '3. Semester',
+      goingAbroad: '5. Semester', email: 'anna1234@thi.de', }];
+
+    return {unis, students};
   }
 }

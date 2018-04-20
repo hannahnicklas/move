@@ -28,6 +28,7 @@ import { UniversityCoursesComponent } from './study-abroad/university/university
 import { UniversityExperienceDetailComponent } from './study-abroad/university/university-experience-detail/university-experience-detail.component';
 import { UniversityCourseDetailComponent } from './study-abroad/university/university-course-detail/university-course-detail.component';
 import { UniversityDataService } from '../assets/Data/university-data.service';
+import { StudentService } from './profile/student.service';
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import { UniversityDataService } from '../assets/Data/university-data.service';
       UniversityDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [UniversityService],
+  providers: [UniversityService, StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
