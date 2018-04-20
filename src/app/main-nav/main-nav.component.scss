@@ -12,7 +12,10 @@ nav{
 #navPlaceholder {
     width: 100vw;
     position: sticky;
-    height: 7vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: white;
+    font-size: large;
 }
 
 a {
