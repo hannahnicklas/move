@@ -10,6 +10,10 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // this.fixNav();
   }
 
+  /*fixNav() {
+    document.getElementById('navPlaceholder').style.display = 'none';
+  }*/
 }

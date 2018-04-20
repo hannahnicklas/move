@@ -2,10 +2,17 @@
 
 nav{
     position: fixed;
+    
     display: flex;
     width: 100vw;
     z-index: 1000;
     background-color: rgba($move-blue, 0.8);
+}
+
+#navPlaceholder {
+    width: 100vw;
+    position: sticky;
+    height: 7vh;
 }
 
 a {
