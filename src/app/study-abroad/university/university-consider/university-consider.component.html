@@ -1,13 +1,52 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+  crossorigin="anonymous">
+
 <div class="considerCol">
   <div class="columns">
     <div class="considerCol">
       <h2>{{university.country}}</h2>
+
+      <!-- Faktenliste Country -->
+      <div *ngFor="let fact of university.facts" class="fact">
+        <div class="factIcon">
+          <i class="{{fact.icon}}"></i>
+        </div>
+        <div class="factText">
+          <b>{{fact.title}}</b>
+          <br> {{fact.description}}
+        </div>
+      </div>
     </div>
+
     <div class="considerCol">
       <h2>{{university.city}}</h2>
+
+      <!-- Faktenliste City -->
+      <div *ngFor="let fact of university.facts" class="fact">
+        <div class="factIcon">
+          <i class="{{fact.icon}}"></i>
+        </div>
+        <div class="factText">
+          <b>{{fact.title}}</b>
+          <br> {{fact.description}}
+        </div>
+      </div>
     </div>
+
     <div class="considerCol">
       <h2>{{university.name}}</h2>
+
+      <!-- Faktenliste University -->
+      <div *ngFor="let fact of university.facts" class="fact">
+        <div class="factIcon">
+          <i class="{{fact.icon}}"></i>
+        </div>
+        <div class="factText">
+          <b>{{fact.title}}</b>
+          <br> {{fact.description}}
+        </div>
+      </div>
     </div>
+
   </div>
 </div>

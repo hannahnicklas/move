@@ -1,6 +1,13 @@
 @import '../../../../assets/GlobalScss/var.scss';
 // @import '../../../home/home.component.scss';
 
+
+h2 {
+    margin: 5%;
+    color: $move-blue;
+    font-weigth: 500;
+}
+
 .columns {
     display: flex;
 }
@@ -9,4 +16,20 @@
     margin: 0px 0.5%;
     flex-basis: 0;
     flex-grow: 1;
+}
+
+.fact {
+    display: flex;
+    margin: 4%;
+}
+
+.factIcon {
+    flex-basis: 0;
+    flex-grow: 1;
+    font-size: 3rem;
+}
+
+.factText {
+    flex-basis: 0;
+    flex-grow: 5;
 }

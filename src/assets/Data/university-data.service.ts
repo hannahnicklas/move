@@ -9,14 +9,20 @@ export class UniversityDataService implements InMemoryDbService {
         ] , experiences: [
           {student: 'John Doe1', course: 'DB (THI)', text: 'I hated it!'},
           {student: 'Dora Delighted1', course: 'UXD (THI)', text: 'I loved it!'}
+        ] , facts: [
+          {icon: 'far fa-square', title: 'Visa', description: 'Student visa. Visa needed.'},
+          {icon: 'far fa-square', title: 'Left driving traffic', description: 'Like in Great Britain'}
         ] },
         { id: 2, name: 'Technische Hochschule Ingolstadt', country: 'Germany', city: 'Ingolstadt',
         descriptionText: 'Lorem Ipsum2', pictures: [
           {path: '../../sadsa2' },
           {path: '../../sadsad2' }
-        ] ,  experiences: [
+        ] , experiences: [
           {student: 'John Doe2', course: 'DB (THI)', text: 'I hated it!'},
           {student: 'Dora Delighted', course: 'UXD (THI)', text: 'I loved it!'}
+        ] , facts: [
+          {icon: 'far fa-square', title: 'No Visa', description: 'No Visa needed.'},
+          {icon: 'far fa-square', title: 'No Left driving traffic', description: 'Its Germany'}
         ] }
     ];
 
