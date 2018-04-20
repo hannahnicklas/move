@@ -1,0 +1,12 @@
+@import '../../../../assets/GlobalScss/var.scss';
+// @import '../../../home/home.component.scss';
+
+.columns {
+    display: flex;
+}
+
+.considerCol {
+    margin: 0px 0.5%;
+    flex-basis: 0;
+    flex-grow: 1;
+}
