@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { University } from '../University';
-import { UniversityGeneralComponent } from '../university-general/university-general.component';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { UniversityService } from '../university.service';
+import { University } from '../../../../assets/Data/University';
 
 @Component({
   selector: 'app-university-nav',
@@ -9,10 +10,21 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./university-nav.component.scss']
 })
 export class UniversityNavComponent implements OnInit {
-  constructor() { }
+  @Input() university: University;
+  constructor(
+    private route: ActivatedRoute,
+    private universityService: UniversityService,
+    private location: Location,
+    ) { }
 
   ngOnInit() {
+    this.getUniversity();
+  }
 
+  getUniversity(): void {
+     const id = +this.route.snapshot.paramMap.get('id');
+     this.universityService.getUniversity(id)
+      .subscribe(university => this.university = university);
   }
 
 }

@@ -1,3 +1,7 @@
-<p>
-  university-experiences works!
-</p>
+<div *ngIf="university">
+<ul class="unis">
+  <li *ngFor="let experience of university.experiences">
+    <span class="badge">{{experience.student}}</span> {{experience.text}}
+  </li>
+</ul>
+</div>
