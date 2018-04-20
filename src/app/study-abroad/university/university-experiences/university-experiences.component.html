@@ -1,7 +1,12 @@
 <div *ngIf="university">
-<ul class="unis">
-  <li *ngFor="let experience of university.experiences">
-    <span class="badge">{{experience.student}}</span> {{experience.text}}
-  </li>
-</ul>
+  <div class="margin">
+    <div class="exp">
+      <div *ngFor="let experience of university.experiences">
+        <div class="text-name">{{experience.student}} <br>{{experience.course}} </div>
+      </div>
+      <div class="sidenav">
+        <p>Hallo</p>
+      </div>
+    </div>
+  </div>
 </div>
