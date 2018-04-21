@@ -1,0 +1,33 @@
+@import '../../../../assets/GlobalScss/var.scss';
+
+nav{
+    position: fixed;
+    
+    display: flex;
+    width: 100vw;
+    z-index: 1000;
+    background-color: $move-light;
+}
+
+#navPlaceholder {
+    width: 100vw;
+    position: sticky;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: white;
+    font-size: large;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: large;
+    flex: 1;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+a:hover {
+    background-color: $move-lighter;
+}

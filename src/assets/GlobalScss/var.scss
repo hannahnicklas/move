@@ -1,7 +1,10 @@
 // colors
 $move-orange: #dc6413;
-$move-blue: #005075;
-$move-light: rgba( $move-blue, 0.6 );
+$move-blue: #0e5074;
+$move-light: #6e96ac;
+$move-lighter: #a3bcca;
+// $move-lightblue: rgba(#85aabc, 0.5);
+// $move-lightblue: #85aabc;
 
 //typo
 $font-size-small: 18pt; 
@@ -16,4 +19,8 @@ $text-color-blue: #005075;
 
 //layout
 $main-nav-height: 7vh;
-$margin-left-right: 2%;
+$main-margin: 5%;
+
+.margin {
+    margin: $main-margin;
+}

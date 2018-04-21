@@ -6,7 +6,7 @@ nav{
     display: flex;
     width: 100vw;
     z-index: 1000;
-    background-color: rgba($move-blue, 0.8);
+    background-color: $move-blue;
 }
 
 #navPlaceholder {
@@ -29,5 +29,5 @@ a {
 }
 
 a:hover {
-    background-color: rgba(#85aabc, 0.5);
+    background-color: $move-light;
 }
