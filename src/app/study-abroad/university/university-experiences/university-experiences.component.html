@@ -1,12 +1,5 @@
 <div *ngIf="university">
-  <div class="margin">
-    <div class="exp">
-      <div *ngFor="let experience of university.experiences">
-        <div class="text-name">{{experience.student}} <br>{{experience.course}} </div>
-      </div>
-      <div class="sidenav">
-        <p>Hallo</p>
-      </div>
-    </div>
+  <div class="margin">  
+   <app-experiences-boxes></app-experiences-boxes>
   </div>
 </div>

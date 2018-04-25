@@ -3,23 +3,25 @@ $move-orange: #dc6413;
 $move-blue: #0e5074;
 $move-light: #6e96ac;
 $move-lighter: #a3bcca;
+$move-grey: #f5f5f5;
 // $move-lightblue: rgba(#85aabc, 0.5);
 // $move-lightblue: #85aabc;
 
 //typo
-$font-size-small: 18pt; 
-$font-size-regular: 24pt; 
-$font-size-large: 30pt; 
-$font-size-x-large: 1px; 
+$font-size-small: 14px; 
+$font-size-regular: 16px; 
+$font-size-large: 24px; 
+$font-size-x-large: 28px; 
 $font-size-xx-large: 1px; 
 
 $text-color-bright: #ffffff; 
 $text-color-dark: #000000;
 $text-color-blue: #005075; 
+$text-color-grey: #333333;
 
 //layout
 $main-nav-height: 7vh;
-$main-margin: 5%;
+$main-margin: 4%;
 
 .margin {
     margin: $main-margin;

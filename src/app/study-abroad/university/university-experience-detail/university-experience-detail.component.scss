@@ -1,0 +1,30 @@
+@import '../../../../assets/GlobalScss/var.scss';
+
+.margin-detail{
+    margin: 3% 4% 1% 4%; 
+
+}
+
+.detail-name{
+    font-size: $font-size-large;
+    font-weight: bold;
+    color: $text-color-blue;
+}
+
+.detail-studycourse{
+    font-size: $font-size-regular;
+    color: $text-color-blue;
+}
+
+.detail-information{
+    background-color: $move-grey;
+    width: 100%;
+    height: 20px;
+    padding: 1% 4%;
+}
+
+.detail-information-heading{
+    color: $text-color-grey;
+    font-size: $font-size-small;
+    font-weight: bold;
+}

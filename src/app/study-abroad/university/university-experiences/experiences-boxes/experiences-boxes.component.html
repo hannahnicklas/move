@@ -1,0 +1,12 @@
+<div class="exp">
+    <div *ngFor="let experience of university.experiences">
+        <a routerLink="/studyAbroad/{{university.id}}/experiences-detail">
+            <div class="exp-name">{{experience.student}}</div>
+            <div class="exp-studycourse">{{experience.course}}</div>
+            <br>
+            <div class="exp-description">{{experience.text}}</div>
+        </a>
+    </div>
+
+
+</div>

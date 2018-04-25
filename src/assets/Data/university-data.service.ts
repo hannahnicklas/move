@@ -18,8 +18,14 @@ export class UniversityDataService implements InMemoryDbService {
           {path: '../../sadsa2' },
           {path: '../../sadsad2' }
         ] , experiences: [
-          {student: 'John Doe2', course: 'DB (THI)', text: 'I hated it!'},
-          {student: 'Dora Delighted', course: 'UXD (THI)', text: 'I loved it!'}
+          {student: 'Dora Delighted', course: 'User Experience Design (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016 Visual Communication (UTS)'},
+          {student: 'Felix Fortunate', course: 'Software Engineering (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016 Software Development (UTS)'},
+          {student: 'Tanja Bayer', course: 'User Experience Design (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016 Software Development (UTS)'},
+          {student: 'Hillarious Happy', course: 'Engineering (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016 Engineering (UTS)'}
         ] , facts: [
           {icon: 'far fa-square', title: 'No Visa', description: 'No Visa needed.'},
           {icon: 'far fa-square', title: 'No Left driving traffic', description: 'Its Germany'}

@@ -29,6 +29,7 @@ import { UniversityExperienceDetailComponent } from './study-abroad/university/u
 import { UniversityCourseDetailComponent } from './study-abroad/university/university-course-detail/university-course-detail.component';
 import { UniversityDataService } from '../assets/Data/university-data.service';
 import { StudentService } from './profile/student.service';
+import { ExperiencesBoxesComponent } from './study-abroad/university/university-experiences/experiences-boxes/experiences-boxes.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { StudentService } from './profile/student.service';
     UniversityExperiencesComponent,
     UniversityCoursesComponent,
     UniversityExperienceDetailComponent,
-    UniversityCourseDetailComponent
+    UniversityCourseDetailComponent,
+    ExperiencesBoxesComponent
   ],
   imports: [
     BrowserModule,

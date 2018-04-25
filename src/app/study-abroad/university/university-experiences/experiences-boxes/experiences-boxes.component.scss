@@ -1,0 +1,45 @@
+@import '../../../../../assets/GlobalScss/var.scss';
+
+
+.sidenav{
+    background-color:$move-blue;
+}
+
+.exp {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 70%;
+  }
+
+  .exp-name{
+      color: $text-color-bright; 
+      font-size: $font-size-large;      
+      line-height: 36px;
+      font-weight: bold;
+  }
+
+  .exp-studycourse{
+    color: $text-color-bright; 
+    font-size: $font-size-regular;       
+  }
+
+  .exp-description{
+    color: $text-color-dark; 
+    font-size: $font-size-regular;       
+  }
+
+  .exp > div {
+    background-color: $move-light;
+    width: 20%;
+    margin: 10px;
+    padding: 20px;
+    text-align: left;
+    min-width: 250px;
+    min-height: 150px;
+    
+    
+  }
+
+  a{
+    text-decoration: none;
+  }
