@@ -2,10 +2,20 @@
 
 nav{
     position: fixed;
+    
     display: flex;
     width: 100vw;
     z-index: 1000;
     background-color: rgba($move-blue, 0.8);
+}
+
+#navPlaceholder {
+    width: 100vw;
+    position: sticky;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: white;
+    font-size: large;
 }
 
 a {
