@@ -4,7 +4,7 @@ export class UniversityDataService implements InMemoryDbService {
   createDb() {
     const unis = [
         { id: 1, name: 'University of Technology', country: 'Australia', city: 'Sydney', descriptionText: 'Lorem Ipsum',
-        picturePath: '../images/app-component/university-general',
+        picturePath: '../../images/app-component/university-general',
           experiences: [
             {student: 'John Doe1', course: 'DB (THI)', text: 'I hated it!'},
             {student: 'Dora Delighted1', course: 'UXD (THI)', text: 'I loved it!'}
