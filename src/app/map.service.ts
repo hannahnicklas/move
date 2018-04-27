@@ -9,21 +9,21 @@ import * as mapboxgl from 'mapbox-gl';
 export class MapService {
 
   constructor(private db: AngularFireDatabase) {
-    mapboxgl.accessToken = environment.mapbox.accessToken
+    mapboxgl.accessToken = environment.mapbox.accessToken;
   }
 
 
   getMarkers(): FirebaseListObservable<any> {
-    return this.db.list('/markers')
+    return this.db.list('/markers');
   }
 
   createMarker(data: GeoJson) {
     return this.db.list('/markers')
-                  .push(data)
+                  .push(data);
   }
 
   removeMarker($key: string) {
-    return this.db.object('/markers/' + $key).remove()
+    return this.db.object('/markers/' + $key).remove();
   }
 
 }

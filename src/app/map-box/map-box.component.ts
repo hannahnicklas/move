@@ -5,11 +5,11 @@ import { GeoJson, FeatureCollection } from '../map';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'map-box',
+  selector: 'app-map-box',
   templateUrl: './map-box.component.html',
   styleUrls: ['./map-box.component.scss']
 })
-export class MapBoxComponent implements OnInit{
+export class MapBoxComponent implements OnInit {
 
   /// default settings
   map: mapboxgl.Map;
@@ -26,8 +26,8 @@ export class MapBoxComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.markers = this.mapService.getMarkers()
-    this.initializeMap()
+    this.markers = this.mapService.getMarkers();
+    this.initializeMap();
   }
 
   private initializeMap() {
@@ -38,11 +38,11 @@ export class MapBoxComponent implements OnInit{
         this.lng = position.coords.longitude;
         this.map.flyTo({
           center: [this.lng, this.lat]
-        })
+        });
       });
     }
 
-    this.buildMap()
+    this.buildMap();
 
   }
 
@@ -61,10 +61,10 @@ export class MapBoxComponent implements OnInit{
 
     //// Add Marker on Click
     this.map.on('click', (event) => {
-      const coordinates = [event.lngLat.lng, event.lngLat.lat]
-      const newMarker   = new GeoJson(coordinates, { message: this.message })
-      this.mapService.createMarker(newMarker)
-    })
+      const coordinates = [event.lngLat.lng, event.lngLat.lat];
+      const newMarker   = new GeoJson(coordinates, { message: this.message });
+      this.mapService.createMarker(newMarker);
+    });
 
 
     /// Add realtime firebase data on map load
@@ -80,13 +80,13 @@ export class MapBoxComponent implements OnInit{
       });
 
       /// get source
-      this.source = this.map.getSource('firebase')
+      this.source = this.map.getSource('firebase');
 
       /// subscribe to realtime database and set data source
       this.markers.subscribe(markers => {
-          let data = new FeatureCollection(markers)
-          this.source.setData(data)
-      })
+          const data = new FeatureCollection(markers);
+          this.source.setData(data);
+      });
 
       /// create map layers with realtime data
       this.map.addLayer({
@@ -105,9 +105,9 @@ export class MapBoxComponent implements OnInit{
           'text-halo-color': '#fff',
           'text-halo-width': 2
         }
-      })
+      });
 
-    })
+    });
 
   }
 
@@ -115,12 +115,12 @@ export class MapBoxComponent implements OnInit{
   /// Helpers
 
   removeMarker(marker) {
-    this.mapService.removeMarker(marker.$key)
+    this.mapService.removeMarker(marker.$key);
   }
 
   flyTo(data: GeoJson) {
     this.map.flyTo({
       center: data.geometry.coordinates
-    })
+    });
   }
 }

@@ -30,6 +30,9 @@ import { UniversityExperienceDetailComponent } from './study-abroad/university/u
 import { UniversityCourseDetailComponent } from './study-abroad/university/university-course-detail/university-course-detail.component';
 import { UniversityDataService } from '../assets/Data/university-data.service';
 import { MapBoxComponent } from './map-box/map-box.component';
+import { MapService } from './map.service';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
+import { FirebaseApp } from 'angularfire2';
 
 
 @NgModule({
@@ -57,6 +60,7 @@ import { MapBoxComponent } from './map-box/map-box.component';
     MapBoxComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -64,7 +68,7 @@ import { MapBoxComponent } from './map-box/map-box.component';
       UniversityDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [UniversityService],
+  providers: [UniversityService, MapService, AngularFireDatabase, FirebaseApp],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
