@@ -4,45 +4,45 @@
 <div class="margin">
   <div class="considerCol">
     <div class="columns">
-      <div class="considerCol">
-        <h2>{{university.country}}</h2>
+      <div class="considerCol bold-L blue">
+        <p>{{university.country}}</p>
 
         <!-- Faktenliste Country -->
         <div *ngFor="let fact of university.facts" class="fact">
           <div class="factIcon">
             <i class="{{fact.icon}}"></i>
           </div>
-          <div class="factText">
+          <div class="factText regular-S black">
             <b>{{fact.title}}</b>
             <br> {{fact.description}}
           </div>
         </div>
       </div>
 
-      <div class="considerCol">
-        <h2>{{university.city}}</h2>
+      <div class="considerCol bold-L blue">
+        <p>{{university.city}}</p>
 
         <!-- Faktenliste City -->
         <div *ngFor="let fact of university.facts" class="fact">
           <div class="factIcon">
             <i class="{{fact.icon}}"></i>
           </div>
-          <div class="factText">
+          <div class="factText regular-S black">
             <b>{{fact.title}}</b>
             <br> {{fact.description}}
           </div>
         </div>
       </div>
 
-      <div class="considerCol">
-        <h2>{{university.name}}</h2>
+      <div class="considerCol bold-L blue">
+        <p>University</p>
 
         <!-- Faktenliste University -->
         <div *ngFor="let fact of university.facts" class="fact">
           <div class="factIcon">
             <i class="{{fact.icon}}"></i>
           </div>
-          <div class="factText">
+          <div class="factText regular-S black">
             <b>{{fact.title}}</b>
             <br> {{fact.description}}
           </div>
