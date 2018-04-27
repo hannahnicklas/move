@@ -7,7 +7,7 @@ export class University {
     country: string;
     city: string;
     descriptionText: string;
-    pictures: string[];
+    picturePath: String;
     experiences: Experience[
     ];
     facts: Fact[];
