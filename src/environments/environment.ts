@@ -9,4 +9,4 @@ export const environment = {
   mapbox: {
     accessToken: 'pk.eyJ1IjoiZ3JhbmRtYWdhdXNzIiwiYSI6ImNqZ2dvdzJpazAwM3MzOHFubjJ2NDYyaDcifQ.8rLg5amk491arsu10b67uQ'
   }
-}
+};

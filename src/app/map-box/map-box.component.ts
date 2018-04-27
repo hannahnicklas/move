@@ -4,6 +4,9 @@ import { MapService } from '../map.service';
 import { GeoJson, FeatureCollection } from '../map';
 import { FormsModule } from '@angular/forms';
 
+import { environment } from '../../environments/environment';
+
+
 @Component({
   selector: 'app-map-box',
   templateUrl: './map-box.component.html',
@@ -23,10 +26,11 @@ export class MapBoxComponent implements OnInit {
   markers: any;
 
   constructor(private mapService: MapService) {
+    (mapboxgl as any).accessToken = environment.mapbox.accessToken;
   }
 
   ngOnInit() {
-    this.markers = this.mapService.getMarkers();
+    /*this.markers = this.mapService.getMarkers();*/
     this.initializeMap();
   }
 
@@ -63,10 +67,10 @@ export class MapBoxComponent implements OnInit {
     this.map.on('click', (event) => {
       const coordinates = [event.lngLat.lng, event.lngLat.lat];
       const newMarker   = new GeoJson(coordinates, { message: this.message });
-      this.mapService.createMarker(newMarker);
+      /*this.mapService.createMarker(newMarker);*/
     });
 
-
+    /*
     /// Add realtime firebase data on map load
     this.map.on('load', (event) => {
 
@@ -108,12 +112,12 @@ export class MapBoxComponent implements OnInit {
       });
 
     });
-
+    */
   }
 
 
   /// Helpers
-
+  /*
   removeMarker(marker) {
     this.mapService.removeMarker(marker.$key);
   }
@@ -123,4 +127,5 @@ export class MapBoxComponent implements OnInit {
       center: data.geometry.coordinates
     });
   }
+  */
 }

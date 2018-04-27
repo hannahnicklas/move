@@ -5,6 +5,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UniversityService } from './study-abroad/university/university.service';
 import { FormsModule } from '@angular/forms';
 
+import { Injectable } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
@@ -31,8 +32,20 @@ import { UniversityCourseDetailComponent } from './study-abroad/university/unive
 import { UniversityDataService } from '../assets/Data/university-data.service';
 import { MapBoxComponent } from './map-box/map-box.component';
 import { MapService } from './map.service';
-import { AngularFireDatabase } from 'angularfire2/database-deprecated';
+
+/*
 import { FirebaseApp } from 'angularfire2';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
+
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+*/
+
+
+
 
 
 @NgModule({
@@ -68,7 +81,7 @@ import { FirebaseApp } from 'angularfire2';
       UniversityDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [UniversityService, MapService, AngularFireDatabase, FirebaseApp],
+  providers: [UniversityService, MapService, /*AngularFireDatabase, FirebaseApp, FirebaseListObservable, FirebaseObjectObservable*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
