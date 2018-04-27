@@ -5,6 +5,7 @@ export class Student {
     forename: string;
     mobile: string;
     email: string;
+    subject: string;
     studyProgress: string;
     goingAbroad: string;
     favoritesID: [number];

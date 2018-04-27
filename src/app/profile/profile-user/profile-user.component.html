@@ -1,7 +1,73 @@
-<div class="student">
-  <div class="profileImage">
-      <img src="../../assets/images/profile/02.png" alt="your_pic" width="100">
+<div class="detail-information">
+  <div class="content">
+    <img src="../../assets/images/profile/anna_adven.png" alt="your_pic" width="100">
+    <div class="studentData">
+      <div class="detail-name">{{student.forename}} {{student.name}}
+      </div>
+      <div class="detail-studycourse">{{student.subject}}
+      </div>
+      <div class="detail-studycourse">EDIT BUTTON
+      </div>
+    </div>
   </div>
-  <p>{{student|json}}</p>
 </div>
-
+<div class="detail-information2">
+  <div class="detail-information-section">
+    <div>
+      <div class="detail-information-heading">Personal Information</div>
+      <div class="detail-information-category">
+        <ul>
+          <li>birth-date:</li>
+          <li>e-mail</li>
+          <li>mobile</li>
+        </ul>
+      </div>
+      <div class="detail-information-content basicinfo">
+        <ul>
+          <li>17.09.1996</li>
+          <li>{{student.email}}</li>
+          <li>{{student.mobile}}</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="detail-information-heading">study information</div>
+      <div class="detail-information-category">
+        <ul>
+          <li>study course</li>
+          <li>study-progress</li>
+          <li>student id</li>
+          <li>going abroad</li>
+        </ul>
+      </div>
+      <div class="detail-information-content basicinfo">
+        <ul>
+          <li>{{student.subject}}</li>
+          <li>{{student.studyProgress}}</li>
+          <li>{{student.id}}</li>
+          <li>{{student.goingAbroad}}</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="detail-information-heading">emergency contact</div>
+      <div class="detail-information-category">
+        <ul>
+          <li>first name</li>
+          <li>last name</li>
+          <li>email</li>
+          <li>mobile</li>
+        </ul>
+      </div>
+      <div class="detail-information-content basicinfo">
+        <ul>
+          <li>emer</li>
+          <li>gency</li>
+          <li>emergency@thi.de</li>
+          <li>0815 666666</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--{{student|json}}-->

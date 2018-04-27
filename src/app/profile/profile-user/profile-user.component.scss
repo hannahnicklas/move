@@ -1,0 +1,76 @@
+@import '../../../assets/GlobalScss/var.scss';
+
+
+.content {
+    display: flex;
+    flex-flow: row wrap; 
+}
+img {
+    
+    height: 100%;
+    width: auto;
+}
+.detail-name{
+    font-size: $font-size-large;
+    font-weight: bold;
+    color: $text-color-blue;
+}
+.detail-information{
+    margin-top: 4%;
+    background-color: $move-grey;
+    width: 100%;   
+    padding: 1% 4%;
+    line-height: $line-height;
+    
+    
+}
+.studentData {
+    flex: 1;
+    margin-left: 3%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.detail-information2{
+    width: 100%;   
+    padding: 1% 4%;
+    line-height: $line-height;
+    overflow-x:hidden;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+.detail-information-heading{
+    color: $text-color-grey;
+    font-size: $font-size-regular;
+    font-weight: bold;
+}
+
+.detail-information-category{
+    color: $text-color-blue;
+    font-size: $font-size-regular;
+    font-weight: bold;
+    margin-left: 6%;
+    float: left;
+    text-align: right;
+}
+.detail-information-section > div {     
+    text-align: left;
+    width: 33%;   
+    min-width: 300px;
+  }
+.detail-information-section {
+    display: flex;
+    flex-flow: row wrap;   
+}
+
+  .detail-information-content{
+    color: $text-color-dark;
+    font-size: $font-size-regular;   
+    font-weight: lighter;
+  }
+  .basicinfo{
+    margin-left: 30%; 
+}
