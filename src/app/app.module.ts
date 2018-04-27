@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UniversityService } from './study-abroad/university/university.service';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import { UniversityCoursesComponent } from './study-abroad/university/university
 import { UniversityExperienceDetailComponent } from './study-abroad/university/university-experience-detail/university-experience-detail.component';
 import { UniversityCourseDetailComponent } from './study-abroad/university/university-course-detail/university-course-detail.component';
 import { UniversityDataService } from '../assets/Data/university-data.service';
+import { MapBoxComponent } from './map-box/map-box.component';
 
 
 @NgModule({
@@ -51,7 +53,8 @@ import { UniversityDataService } from '../assets/Data/university-data.service';
     UniversityExperiencesComponent,
     UniversityCoursesComponent,
     UniversityExperienceDetailComponent,
-    UniversityCourseDetailComponent
+    UniversityCourseDetailComponent,
+    MapBoxComponent
   ],
   imports: [
     BrowserModule,
