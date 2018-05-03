@@ -1,11 +1,5 @@
 @import '../../../../assets/GlobalScss/var.scss';
 
-h2 {
-    margin: 0% 5% 10% 5%;
-    color: $move-blue;
-    font-weight: 500;
-}
-
 .columns {
     display: flex;
 }
@@ -14,6 +8,10 @@ h2 {
     margin: 0px 0.5%;
     flex-basis: 0;
     flex-grow: 1;
+}
+
+.considerCol p{
+    margin-bottom: 10%;
 }
 
 .fact {
