@@ -39,54 +39,60 @@ $main-margin: 4%;
 //Schriften 
 
 .white {
-    color: $text-color-bright; 
+    color: $text-color-bright !important; 
 }
 
 .black {
-    color: $text-color-dark; 
+    color: $text-color-dark !important; 
 }
 
 .blue {
-    color: $text-color-blue; 
+    color: $text-color-blue !important; 
 }
 
 .orange {
-    color: $text-color-orange; 
+    color: $text-color-orange !important; 
 }
 
 //Obernav
 .light-L{
     font-size: $font-size-large;
     font-weight: lighter;
+    text-decoration: none;
 }
 
 //Unternav 
 .regular-M{
     font-size: $font-size-medium;
+    text-decoration: none;
 }
 
 // mittlere Überschriften 
 .bold-L{
     font-size: $font-size-large;
     font-weight: bold;
+    text-decoration: none;
 }
 
 //mittlere Unterüberschriften 
 .light-M{
     font-size: $font-size-medium;
     font-weight: lighter;
+    text-decoration: none;
 }
 
 //kleine Überschriften in Listen
 .bold-M{
     font-size: $font-size-medium;
     font-weight: bold;
+    text-decoration: none;
 }
 
 //ganz kleine Überschriften in Texten, Buttons, Links, kleine Kategorien
 .bold-S{
     font-size: $font-size-small;
     font-weight: bold;
+    text-decoration: none;
 }
 
 //Zitate
@@ -94,10 +100,12 @@ $main-margin: 4%;
     font-size: $font-size-large;
     font-style: italic;
     font-weight: lighter;
+    text-decoration: none;
 }
 
 //Fließtext, Filteroptionen, Breadcrumb, Unterkategorien
 .regular-S{
     font-size: $font-size-small;
     font-weight: lighter;
+    text-decoration: none;
 }
