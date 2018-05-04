@@ -1,0 +1,44 @@
+.courses {
+    width: 71vw;
+    margin-right: 2%;
+}
+
+.course {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.course>div {
+    margin: 2%;
+}
+
+.courseText {
+    flex-basis: 0;
+    flex-grow: 5;
+}
+
+.courseRanking {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.courseMembers {
+    flex-basis: 0;
+    flex-grow: 1;
+    height: 50px;
+    display: flex;
+}
+
+.courseMembers img {
+    width: 50px;
+}
+
+.are{
+    align-self: flex-end;
+    margin-right: 3px;
+}
+
+.been{
+    align-self: flex-start;
+    margin-left: 3px;
+}

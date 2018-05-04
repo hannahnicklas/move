@@ -1,15 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { UniversityService } from '../university.service';
-import { University } from '../../../../assets/Data/University';
+import { UniversityService } from '../../university.service';
+import { University } from '../../../../../assets/Data/University';
 
 @Component({
-  selector: 'app-university-courses',
-  templateUrl: './university-courses.component.html',
-  styleUrls: ['./university-courses.component.scss']
+  selector: 'app-course',
+  templateUrl: './course.component.html',
+  styleUrls: ['./course.component.scss']
 })
-export class UniversityCoursesComponent implements OnInit {
+export class CourseComponent implements OnInit {
   @Input() university: University;
 
   constructor(
@@ -17,17 +17,17 @@ export class UniversityCoursesComponent implements OnInit {
     private universityService: UniversityService,
     private location: Location,
     private router: Router
-    ) { }
-
+  ) { }
 
   ngOnInit() {
     this.getUniversity();
   }
 
+
   getUniversity(): void {
     const id = +this.route.parent.snapshot.paramMap.get('id');
     this.universityService.getUniversity(id)
-     .subscribe(university => this.university = university);
- }
+      .subscribe(university => this.university = university);
+  }
 
 }

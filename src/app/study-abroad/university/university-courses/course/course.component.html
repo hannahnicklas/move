@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+  crossorigin="anonymous">
+
+<div class="courses">
+  <div *ngFor="let course of university.courses" class="course flex-container">
+    <a routerLink="/studyAbroad/{{university.id}}/course-detail">
+      <div class="courseText">
+        <div class="bold-M blue">
+          {{course.title}}
+        </div>
+        <div class="regular-S black">
+          {{course.description}}
+        </div>
+      </div>
+      <div class="courseRanking blue">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+      <div class="courseMembers blue">
+        <div class="are bold-S">{{course.are}}</div>
+        <img src="../../../../assets/images/icons/personenWarenHier.svg">
+        <div class="been regular-S">{{course.been}}</div>
+      </div>
+    </a>
+
+  </div>
+</div>
