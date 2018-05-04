@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UniversityService } from './study-abroad/university/university.service';
+import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 
 
 import { AppComponent } from './app.component';
@@ -67,7 +68,8 @@ import { AuthModule } from './auth/auth.module';
     HttpClientInMemoryWebApiModule.forRoot(
       UniversityDataService, { dataEncapsulation: false }
     ),
-    AuthModule
+    AuthModule,
+    McBreadcrumbsModule.forRoot()
   ],
   providers: [UniversityService, StudentService],
   bootstrap: [AppComponent]

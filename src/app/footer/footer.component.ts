@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable, Input } from '@angular/core';
+import { McBreadcrumbsModule, McBreadcrumbsService, IBreadcrumb } from 'ngx-breadcrumbs';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+@Input() breadcrumbs: IBreadcrumb[];
 
-  constructor() { }
+  constructor(private breadcrumbService: McBreadcrumbsService) { }
 
   ngOnInit() {
+    this.subscribeBreadcrumbs();
   }
 
+  public subscribeBreadcrumbs() {
+    this.breadcrumbService.crumbs$.subscribe(breadcrumbs => this.breadcrumbs = breadcrumbs);
+
+    window.addEventListener('DOMContentLoaded', function(event) {
+      console.log('Test');
+      document.getElementsByTagName('a')[(document.getElementsByTagName('a').length - 1)].setAttribute('style', 'color: #DC6413');
+
+    });
+  }
 }

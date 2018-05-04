@@ -12,16 +12,9 @@ ul {
 
 }
 
-.detail-name{
-    font-size: $font-size-large;
-    font-weight: bold;
-    color: $text-color-blue;
-}
 
-.detail-studycourse{
-    font-size: $font-size-regular;
-    color: $text-color-blue;
-}
+
+
 
 .detail-information{
     background-color: $move-grey;
@@ -30,25 +23,18 @@ ul {
     line-height: $line-height;
 }
 
-.detail-information-heading{
-    color: $text-color-grey;
-    font-size: $font-size-small;
-    font-weight: bold;
-}
 
-.detail-information-category{
-    color: $text-color-blue;
-    font-size: $font-size-small;
-    font-weight: bold;
+
+.detail-information-category{    
     margin-left: 6%;
     float: left;
     text-align: right;
 }
 
-.detail-information-subcategory
-{
-    font-weight: lighter;
-}
+// .detail-information-subcategory
+// {
+//     font-weight: lighter;
+// }
 
 .detail-information-section {
     display: flex;
@@ -61,12 +47,7 @@ ul {
     min-width: 300px;
   }
 
-  .detail-information-content{
-    color: $text-color-dark;
-    font-size: $font-size-small;   
-    font-weight: lighter;
-  }
-   
+  
 .basicinfo{
     margin-left: 40%; 
 }
@@ -82,12 +63,12 @@ ul {
       line-height: $line-height;
   }
 
-  .detail-report-heading{
-      font-size: $font-size-large;
-      font-style: italic; 
-      color: $text-color-blue; 
-  }
+//   .detail-report-heading{
+//       font-size: $font-size-large;
+//       font-style: italic; 
+//       color: $text-color-blue; 
+//   }
 
-  .detail-report > p {
-      font-size: $font-size-small;
-  }
+//   .detail-report > p {
+//       font-size: $font-size-small;
+//   }

@@ -27,29 +27,65 @@ import { ProfileContactComponent } from './profile/profile-contact/profile-conta
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'internship', component: InternshipComponent },
+  { path: 'home', component: HomeComponent,
+  data: {
+    breadcrumbs: 'Home'
+  } },
+  { path: 'internship', component: InternshipComponent,
+  data: {
+    breadcrumbs: 'Internship'
+   } },
   { path: 'studyAbroad', component: StudyAbroadComponent,
+  data: {
+    breadcrumbs: 'Study Abroad'
+  },
     children: [
       { path: '', redirectTo: '/studyAbroad/map', pathMatch: 'full' },
       { path: 'map', component: MapComponent },
       { path: ':id', component: UniversityComponent,
         children: [
-          { path: 'general', component: UniversityGeneralComponent},
-          { path: 'consider', component: UniversityConsiderComponent},
-          { path: 'experiences', component: UniversityExperiencesComponent},
-          { path: 'experiences-detail', component: UniversityExperienceDetailComponent},
-          { path: 'courses', component: UniversityCoursesComponent}
+          { path: 'general', component: UniversityGeneralComponent,
+          data: {
+            breadcrumbs: 'General'
+          } },
+          { path: 'consider', component: UniversityConsiderComponent,
+          data: {
+            breadcrumbs: 'Consider'
+          } },
+          { path: 'experiences', component: UniversityExperiencesComponent,
+          data: {
+            breadcrumbs: 'Experiences'
+          } },
+          { path: 'experiences-detail', component: UniversityExperienceDetailComponent,
+          data: {
+            breadcrumbs: 'Experiences Detail'
+          } },
+          { path: 'courses', component: UniversityCoursesComponent,
+          data: {
+            breadcrumbs: 'Courses'
+          } }
         ]
       }
     ]
   },
   { path: 'profile', component: ProfileComponent,
+  data: {
+    breadcrumbs: 'Profile'
+  },
   children: [
       { path: '', redirectTo: '/profile/user', pathMatch: 'full' },
-      { path: 'user', component: ProfileUserComponent },
-      { path: 'application', component: ProfileApplicationComponent },
-      { path: 'contact', component: ProfileContactComponent }
+      { path: 'user', component: ProfileUserComponent,
+      data: {
+        breadcrumbs: 'User'
+       } },
+      { path: 'application', component: ProfileApplicationComponent,
+      data: {
+        breadcrumbs: 'Application'
+       } },
+      { path: 'contact', component: ProfileContactComponent,
+      data: {
+        breadcrumbs: 'Contact'
+       }}
   ]
 
 
