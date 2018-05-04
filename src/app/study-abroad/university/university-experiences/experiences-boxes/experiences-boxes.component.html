@@ -1,4 +1,4 @@
-<div class="exp">
+<div class="exp" *ngIf="university">
     <div *ngFor="let experience of university.experiences">
         <a routerLink="/studyAbroad/{{university.id}}/experiences-detail">
             <div class="bold-L white">{{experience.student}}</div>

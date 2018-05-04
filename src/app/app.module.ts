@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UniversityService } from './study-abroad/university/university.service';
+import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 
 
 import { AppComponent } from './app.component';
@@ -62,7 +63,7 @@ import { ExperiencesBoxesComponent } from './study-abroad/university/university-
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       UniversityDataService, { dataEncapsulation: false }
-    )
+    ), McBreadcrumbsModule.forRoot()
   ],
   providers: [UniversityService, StudentService],
   bootstrap: [AppComponent]

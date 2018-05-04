@@ -1,5 +1,7 @@
 <footer>
-  <div>
-    footer works!
-  </div>
+  <ul class="breadcrumbs" id="activeStateSelector">
+    <li *ngFor="let breadcrumb of breadcrumbs" >
+      <a routerLink="{{breadcrumb.path}}">{{breadcrumb.text}}</a>
+    </li>
+  </ul>
 </footer>
