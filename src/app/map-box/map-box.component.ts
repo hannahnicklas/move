@@ -16,7 +16,7 @@ export class MapBoxComponent implements OnInit {
 
   /// default settings
   map: mapboxgl.Map;
-  style = 'mapbox://styles/mapbox/outdoors-v9';
+  style = 'mapbox://styles/grandmagauss/cjggub0jm00242so9u41xd01o';
   lat = 37.75;
   lng = -122.41;
   message = 'Hello World!';

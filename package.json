@@ -25,7 +25,7 @@
     "angular-in-memory-web-api": "^0.5.4",
     "angularfire2": "^5.0.0-rc.6.0",
     "core-js": "^2.4.1",
-    "firebase": "^4.6.1",
+    "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^0.44.2",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
