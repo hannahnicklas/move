@@ -10,4 +10,6 @@ export class Student {
     goingAbroad: string;
     favoritesID: [number];
     selectedUnisID: [number];
+    password: string;
+    username: string;
   }

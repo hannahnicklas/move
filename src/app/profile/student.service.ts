@@ -22,5 +22,11 @@ export class StudentService {
     const url = `${this.studentsUrl}/${id}`;
     return this.http.get<Student>(url);
   }
+  getStudentByCredentials(username: string, password: string) {
+    // gib Student zurück mit username
+    const url = `${this.studentsUrl}?username=${username}`;
+    console.log(url);
+    return this.http.get<Student[]>(url);
+  }
 
 }

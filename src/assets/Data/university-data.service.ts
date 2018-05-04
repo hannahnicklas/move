@@ -1,4 +1,5 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { Student } from './Student';
 
 export class UniversityDataService implements InMemoryDbService {
   createDb() {
@@ -35,7 +36,10 @@ export class UniversityDataService implements InMemoryDbService {
     const students = [
       { id: 1, forename: 'Anna', name: 'Adventurous', subject: 'User Experience Design',
       mobile: '0157512345', studyProgress: '3. Semester',
-      goingAbroad: '5. Semester', email: 'anna1234@thi.de', }];
+      goingAbroad: '5. Semester', email: 'anna1234@thi.de', password: '1234', username: 'anna1234'},
+      { id: 2, forename: 'Susi', name: 'Sorglos', subject: 'User Experience Design',
+      mobile: '0157512545', studyProgress: '4. Semester',
+      goingAbroad: '6. Semester', email: 'susi1234@thi.de', password: '1234', username: 'susi1234'}];
 
     return {unis, students};
   }
