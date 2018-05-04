@@ -36,7 +36,18 @@ $main-margin: 4%;
     display: flex;
 }
 
+.halb {
+    width: 48%;
+    border: 1px solid black;
+    background-color: rgba($color: red, $alpha: 0.5);
+}
+
 //Schriften 
+
+a {
+    color: $move-blue;
+    text-decoration: none;
+}
 
 .white {
     color: $text-color-bright !important; 

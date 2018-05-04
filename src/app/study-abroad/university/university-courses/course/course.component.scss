@@ -26,23 +26,23 @@
     flex-grow: 1;
 }
 
-.courseMembers {
+.courseMovers {
     flex-basis: 0;
     flex-grow: 1;
     height: 50px;
     display: flex;
 }
 
-.courseMembers img {
+.courseMovers img {
     width: 50px;
 }
 
-.are{
+.now{
     align-self: flex-end;
     margin-right: 3px;
 }
 
-.been{
+.yet{
     align-self: flex-start;
     margin-left: 3px;
 }

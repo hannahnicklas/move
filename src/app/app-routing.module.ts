@@ -39,7 +39,8 @@ const routes: Routes = [
           { path: 'consider', component: UniversityConsiderComponent},
           { path: 'experiences', component: UniversityExperiencesComponent},
           { path: 'experiences-detail', component: UniversityExperienceDetailComponent},
-          { path: 'courses', component: UniversityCoursesComponent}
+          { path: 'courses', component: UniversityCoursesComponent},
+          { path: 'course-detail', component: UniversityCourseDetailComponent}
         ]
       }
     ]
