@@ -1,3 +1,9 @@
+@import '../../../../assets/GlobalScss/var.scss';
+
+.margin {
+    flex-wrap: wrap;
+}
+
 .title {
     width: 100%;
     margin-bottom: 5%;
@@ -10,19 +16,55 @@
 
 .rating {
     margin-left: 2%;
+    flex-wrap: wrap;
+}
+
+.academicQuality {
+    align-items: flex-end;
+    align-self: flex-start;
+    justify-content: space-between;
+}
+
+.academicQuality>div {
+    height: 100%;
 }
 
 tr td:first-child {
     text-align: right;
-    padding-right: 5px; 
+    padding-right: 10px;
+    color: $move-blue;
+}
+
+.movers {
+    width: 30%;
+    height: auto;
 }
 
 .now{
     align-self: flex-end;
     margin-right: 3px;
+    font-weight: bold;
+    font-size: 0.7rem;
+    text-align: right;
 }
 
 .yet{
     align-self: flex-start;
     margin-left: 3px;
+    font-size: 0.7rem;
+}
+
+.zitat {
+    align-self: flex-end;
+}
+
+.experiences-boxes[_ngcontent-c0] {
+    width: 100%;
+    background-color: $move-grey;
+    color: black;
+}
+
+.exp /deep/ div{
+    max-width: 100%;
+    width: 100%;
 }
