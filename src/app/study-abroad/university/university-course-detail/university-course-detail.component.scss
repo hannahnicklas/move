@@ -64,7 +64,48 @@ tr td:first-child {
     color: black;
 }
 
+.exp {
+    width: 100vw;
+    margin: 4rem 0px;
+    margin-left: calc(-50vw + 50%);
+    padding: 2rem;
+    background-color: $move-grey;
+}
+
 .exp /deep/ div{
     max-width: 100%;
     width: 100%;
+}
+
+.left {
+    width: 50%;
+    float: left;
+}
+
+.right {
+    width: 40%;
+    float: right;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    .smallImages {
+        margin-top: 3%;
+        
+        img {
+            width: 30%;
+            float: left;
+        }
+    }
+    .marginRight {
+        margin-right: 5%;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.flex-container {
+    justify-content: space-between;
 }

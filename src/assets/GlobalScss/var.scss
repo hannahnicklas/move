@@ -48,6 +48,10 @@ $main-margin: 4%;
     // height: 100%;
 }
 
+.par {
+    margin-bottom: 3%;
+}
+
 //Schriften 
 
 a {
@@ -143,3 +147,13 @@ a {
     text-decoration: none;
 }
 
+
+// buttons
+
+.button {
+    background-color: $move-blue;
+    margin-top: 4%;
+    padding: 1.3rem 1.1rem;
+    width: fit-content;
+    min-width: 100px;
+}
