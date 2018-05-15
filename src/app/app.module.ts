@@ -61,7 +61,6 @@ import { CourseComponent } from './study-abroad/university/university-courses/co
     UniversityCourseDetailComponent,
     ExperiencesBoxesComponent,
     CourseComponent,
-    FilterComponent
   ],
   imports: [
     BrowserModule,
