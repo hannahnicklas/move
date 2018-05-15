@@ -1,19 +1,12 @@
 @import '../../../../assets/GlobalScss/var.scss';
 
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
 
+// Margin der Überschrift 
 .margin-detail{
     margin: 3% 4% 1% 4%; 
 
 }
-
-
-
 
 
 .detail-information{
@@ -22,19 +15,6 @@ ul {
     padding: 1% 4%;
     line-height: $line-height;
 }
-
-
-
-.detail-information-category{    
-    margin-left: 6%;
-    float: left;
-    text-align: right;
-}
-
-// .detail-information-subcategory
-// {
-//     font-weight: lighter;
-// }
 
 .detail-information-section {
     display: flex;
@@ -45,17 +25,7 @@ ul {
     text-align: left;
     width: 33%;   
     min-width: 300px;
-  }
-
-  
-.basicinfo{
-    margin-left: 40%; 
-}
-
-.rating{
-    margin-left: 60%
-}  
- 
+  } 
 
 
  .detail-report{
@@ -63,12 +33,14 @@ ul {
       line-height: $line-height;
   }
 
-//   .detail-report-heading{
-//       font-size: $font-size-large;
-//       font-style: italic; 
-//       color: $text-color-blue; 
-//   }
+  tr td:first-child {
+    text-align: right;
+    padding-right: 18px;
+    color: $move-blue;
+    font-size: $font-size-small;
+    font-weight: bold;    
+}
 
-//   .detail-report > p {
-//       font-size: $font-size-small;
-//   }
+.subcategory td:first-child  {
+   font-weight: lighter; 
+}
