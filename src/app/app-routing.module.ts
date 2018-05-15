@@ -44,7 +44,6 @@ const routes: Routes = [
       { path: 'map', component: MapComponent },
       { path: ':id', component: UniversityComponent,
         children: [
-<<<<<<< HEAD
           { path: 'general', component: UniversityGeneralComponent,
           data: {
             breadcrumbs: 'General'
@@ -65,14 +64,6 @@ const routes: Routes = [
           data: {
             breadcrumbs: 'Courses'
           } }
-=======
-          { path: 'general', component: UniversityGeneralComponent},
-          { path: 'consider', component: UniversityConsiderComponent},
-          { path: 'experiences', component: UniversityExperiencesComponent},
-          { path: 'experiences-detail', component: UniversityExperienceDetailComponent},
-          { path: 'courses', component: UniversityCoursesComponent},
-          { path: 'course-detail', component: UniversityCourseDetailComponent}
->>>>>>> vanessa
         ]
       }
     ]
