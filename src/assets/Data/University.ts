@@ -1,5 +1,6 @@
 import { Experience } from './Experience';
 import { Fact } from './Fact';
+import { Course } from './Course';
 
 export class University {
     id: number;
@@ -8,7 +9,7 @@ export class University {
     city: string;
     descriptionText: string;
     picturePath: String;
-    experiences: Experience[
-    ];
+    experiences: Experience[];
     facts: Fact[];
+    courses: Course[];
   }

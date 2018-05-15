@@ -34,6 +34,7 @@ import { UniversityDataService } from '../assets/Data/university-data.service';
 import { StudentService } from './profile/student.service';
 import { ExperiencesBoxesComponent } from './study-abroad/university/university-experiences/experiences-boxes/experiences-boxes.component';
 import { AuthModule } from './auth/auth.module';
+import { CourseComponent } from './study-abroad/university/university-courses/course/course.component';
 
 
 @NgModule({
@@ -58,7 +59,9 @@ import { AuthModule } from './auth/auth.module';
     UniversityCoursesComponent,
     UniversityExperienceDetailComponent,
     UniversityCourseDetailComponent,
-    ExperiencesBoxesComponent
+    ExperiencesBoxesComponent,
+    CourseComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
