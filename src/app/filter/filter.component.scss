@@ -1,0 +1,29 @@
+@import '../../assets/GlobalScss/var.scss';
+
+.filter {
+    width: 20%;       
+    height: 500px;
+    margin-left: 2%; 
+}
+
+.filter-points{
+    margin-left: 40px;    
+}
+
+.filter-points a:last-child{
+    margin-bottom: 20px; 
+}
+
+a {
+    color: $text-color-dark;
+    display: block;   
+    cursor: pointer; 
+}
+
+a:hover{
+    color: $move-blue !important;
+}
+
+a:active{
+    color: $move-orange;
+}

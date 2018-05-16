@@ -35,6 +35,8 @@ import { StudentService } from './profile/student.service';
 import { ExperiencesBoxesComponent } from './study-abroad/university/university-experiences/experiences-boxes/experiences-boxes.component';
 import { AuthModule } from './auth/auth.module';
 import { CourseComponent } from './study-abroad/university/university-courses/course/course.component';
+import { FilterComponent } from './filter/filter.component';
+import { SearchbarComponent } from './filter/searchbar/searchbar.component';
 
 
 @NgModule({
@@ -60,7 +62,9 @@ import { CourseComponent } from './study-abroad/university/university-courses/co
     UniversityExperienceDetailComponent,
     UniversityCourseDetailComponent,
     ExperiencesBoxesComponent,
-    CourseComponent
+    CourseComponent,
+    FilterComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,

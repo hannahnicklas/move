@@ -1,8 +1,41 @@
 <div *ngIf="university">
   <div class="margin flex-container space-between">
     <app-course></app-course>
-    <div class="filter">
-      Filterstuff
+    <div class="filter regular-S">
+      <app-searchbar></app-searchbar>
+     
+      <div>
+        <div class="filter-category bold-S ">
+          Sorting
+        </div>
+        <div class="filter-points">
+          <a>Alphabetical</a>
+          <a>Movers</a>
+          <a>Rating</a>          
+        </div>
+
+        <div class="filter-category bold-S ">
+          Language
+        </div>
+        <div class="filter-points">
+          <a>English</a>
+          <a>France</a>
+          <a>German</a>
+          <a>More ...</a>
+        </div>
+        <div class="filter-category bold-S ">
+          Main focus
+        </div>
+        <div class="filter-points">
+          <a>Information Technology</a>
+          <a>Design &amp; Architecture</a>
+          <a>Business</a>
+          <a>Communication</a>
+          <a>Engineering</a>
+          <a>More ...</a>
+        </div>
+      </div>
+    
     </div>
   </div>
 </div>
