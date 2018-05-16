@@ -1,10 +1,40 @@
 <div *ngIf="university">
   <div class="margin flex-container">
-  <div class="experiences">
-    <app-experiences-boxes></app-experiences-boxes>
+    <div class="experiences">
+      <app-experiences-boxes></app-experiences-boxes>
+    </div>
+    <div class="filter regular-S">
+      <div class="search">
+        <form action="">
+          <i class="fas fa-search"></i>
+          <input id="search" name="search" type="text" placeholder="What are you looking for?">
+        </form>
+      </div>
+      <div class="filters">
+        <div class="filter-category bold-S ">
+          Sorting
+        </div>
+        <div class="filter-points">
+          <a>Alphabetical</a>
+          <a>Faculty</a>
+          <a>Helpful</a>
+          <a>Latest</a>
+          <a>Rating</a>
+          <a>Study Course</a>
+        </div>
+
+        <div class="filter-category bold-S ">
+          Language
+        </div>
+        <div class="filter-points">
+          <a>English</a>
+          <a>France</a>
+          <a>German</a>
+          <a>More ...</a>
+        </div>
+      </div>
+
+
+    </div>
   </div>
-  <div class="filter">
-    Filterstuff
-  </div>
-  </div>
-</div> 
+</div>
