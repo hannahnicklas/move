@@ -9,31 +9,21 @@
           Sorting
         </div>
         <div class="filter-points">
-          <a>Alphabetical</a>
-          <a>Movers</a>
-          <a>Rating</a>          
+          <li [class.active]="ssclicked === sortingsmall" (click)="ssclicked = (ssclicked === sortingsmall ? null :sortingsmall)" *ngFor="let sortingsmall of sortingssmall">{{sortingsmall}}</li>
         </div>
 
         <div class="filter-category bold-S ">
           Language
         </div>
         <div class="filter-points">
-          <a>English</a>
-          <a>France</a>
-          <a>German</a>
-          <a>More ...</a>
-        </div>
+          <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages">{{language}}</li>
+        </div>     
         <div class="filter-category bold-S ">
           Main focus
         </div>
         <div class="filter-points">
-          <a>Information Technology</a>
-          <a>Design &amp; Architecture</a>
-          <a>Business</a>
-          <a>Communication</a>
-          <a>Engineering</a>
-          <a>More ...</a>
-        </div>
+          <li [class.active]="fclicked === focus" (click)="fclicked = (fclicked === focus ? null :focus)" *ngFor="let focus of focuses">{{focus}}</li>
+        </div> 
       </div>
     
     </div>

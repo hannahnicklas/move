@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { UniversityService } from '../university.service';
@@ -12,6 +12,9 @@ import { University } from '../../../../assets/Data/University';
 
 export class UniversityExperiencesComponent implements OnInit {
   @Input() university: University;
+
+  sortings = ['Alphabetical', 'Helpful', 'Faculity', 'Latest', 'Rating', 'Study course'];
+  languages = ['English', 'France', 'German', 'More ...'];
 
   constructor(
     private route: ActivatedRoute,

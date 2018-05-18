@@ -12,6 +12,10 @@ import { University } from '../../../../assets/Data/University';
 export class UniversityCoursesComponent implements OnInit {
   @Input() university: University;
 
+  languages = ['English', 'France', 'German', 'More ...'];
+  sortingssmall = ['Alphabetical', 'Movers', 'Rating'];
+  focuses = ['Information Technology', 'Design & Architecture', 'Business', 'Communication', 'Engineering', 'More ...'];
+
   constructor(
     private route: ActivatedRoute,
     private universityService: UniversityService,

@@ -2,6 +2,7 @@ import { Experience } from './Experience';
 import { Fact } from './Fact';
 import { Course } from './Course';
 
+
 export class University {
     id: number;
     name: string;
@@ -12,4 +13,4 @@ export class University {
     experiences: Experience[];
     facts: Fact[];
     courses: Course[];
-  }
+    }

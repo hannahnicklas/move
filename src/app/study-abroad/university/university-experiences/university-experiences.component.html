@@ -11,23 +11,14 @@
           Sorting
         </div>
         <div class="filter-points">
-          <a>Alphabetical</a>
-          <a>Faculty</a>
-          <a>Helpful</a>
-          <a>Latest</a>
-          <a>Rating</a>
-          <a>Study Course</a>
+          <li [class.active]="sclicked === sorting" (click)="sclicked = (sclicked === sorting ? null :sorting)" *ngFor="let sorting of sortings">{{sorting}}</li>
         </div>
-
         <div class="filter-category bold-S ">
           Language
         </div>
         <div class="filter-points">
-          <a>English</a>
-          <a>France</a>
-          <a>German</a>
-          <a>More ...</a>
-        </div>
+          <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages">{{language}}</li>
+        </div>     
       </div>
     </div>
 

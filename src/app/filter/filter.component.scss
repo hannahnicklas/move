@@ -10,20 +10,26 @@
     margin-left: 40px;    
 }
 
-.filter-points a:last-child{
+.filter-points li:last-child{
     margin-bottom: 20px; 
 }
 
-a {
-    color: $text-color-dark;
-    display: block;   
+// a {
+//     color: $text-color-dark;
+//     display: block;   
+//     cursor: pointer; 
+// }
+
+li {
+    list-style: none; 
     cursor: pointer; 
 }
 
-a:hover{
-    color: $move-blue !important;
+li:hover{
+   font-weight: bold;
+}
+.active {
+    color: $move-orange; 
 }
 
-a:active{
-    color: $move-orange;
-}
+
