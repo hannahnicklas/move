@@ -18,9 +18,18 @@
         </div>
         <div class="filter-points">
           <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages">{{language}}</li>
-        </div>     
+          <li (click)="toggle($event.target, 'Less...')" id="more"> More ... </li>
+          <ng-container *ngIf="show">
+            <li [class.active]="lclicked === morelanguage" (click)="lclicked = (lclicked === morelanguage ? null :morelanguage)" *ngFor="let morelanguage of morelanguages">{{morelanguage}}</li>
+          </ng-container>          
+        </div>
       </div>
     </div>
+
+
+
+
+
 
   </div>
 </div>

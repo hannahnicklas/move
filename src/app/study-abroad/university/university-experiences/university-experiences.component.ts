@@ -3,18 +3,27 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { UniversityService } from '../university.service';
 import { University } from '../../../../assets/Data/University';
+import { FilterComponent } from '../../../filter/filter.component';
+
 
 @Component({
   selector: 'app-university-experiences',
   templateUrl: './university-experiences.component.html',
   styleUrls: ['./university-experiences.component.scss']
+
 })
 
 export class UniversityExperiencesComponent implements OnInit {
   @Input() university: University;
 
+
   sortings = ['Alphabetical', 'Helpful', 'Faculity', 'Latest', 'Rating', 'Study course'];
-  languages = ['English', 'France', 'German', 'More ...'];
+  languages = ['English', 'France', 'German'];
+  morelanguages = ['Italian', 'Chinese', 'Spanish'];
+
+  public show = false;
+  public showMore = 'Show';
+
 
   constructor(
     private route: ActivatedRoute,
@@ -32,5 +41,16 @@ export class UniversityExperiencesComponent implements OnInit {
      this.universityService.getUniversity(id)
       .subscribe(university => this.university = university);
   }
-
+  toggle(element, text) {
+    element.textContent = text;
+    this.show = !this.show;
+    if (this.show) {
+      this.showMore = 'Hide';
+    } else {
+      this.showMore = 'Show';
+    }
+    if ( !this.show) {
+      element.textContent = 'More ...';
+    }
+  }
 }
