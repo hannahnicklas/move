@@ -3,7 +3,7 @@
     <app-course></app-course>
     <div class="filter regular-S">
       <app-searchbar></app-searchbar>
-     
+
       <div>
         <div class="filter-category bold-S ">
           Sorting
@@ -16,16 +16,26 @@
           Language
         </div>
         <div class="filter-points">
-          <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages">{{language}}</li>
-        </div>     
+          <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages  | slice:0:3">{{language}}</li>
+          <li (click)="toggle($event.target, 'Less...')" id="more"> More ... </li>
+          <ng-container *ngIf="show">
+            <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages  | slice:3">{{language}}</li>
+          </ng-container>
+
+        </div>
+
         <div class="filter-category bold-S ">
           Main focus
         </div>
         <div class="filter-points">
-          <li [class.active]="fclicked === focus" (click)="fclicked = (fclicked === focus ? null :focus)" *ngFor="let focus of focuses">{{focus}}</li>
-        </div> 
+          <li [class.active]="fclicked === focus" (click)="fclicked = (fclicked === focus ? null :focus)" *ngFor="let focus of focuses  | slice:0:3">{{focus}}</li>
+          <li (click)="togglefocus($event.target, 'Less...')" id="morefocus"> More ... </li>
+          <ng-container *ngIf="fshow">
+            <li [class.active]="fclicked === focus" (click)="fclicked = (fclicked === focus ? null :focus)" *ngFor="let focus of focuses  | slice:3">{{focus}}</li>
+          </ng-container>
+        </div>
       </div>
-    
+
     </div>
   </div>
 </div>

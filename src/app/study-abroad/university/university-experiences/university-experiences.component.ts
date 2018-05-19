@@ -18,8 +18,7 @@ export class UniversityExperiencesComponent implements OnInit {
 
 
   sortings = ['Alphabetical', 'Helpful', 'Faculity', 'Latest', 'Rating', 'Study course'];
-  languages = ['English', 'France', 'German'];
-  morelanguages = ['Italian', 'Chinese', 'Spanish'];
+  languages = ['English', 'France', 'German', 'Italian', 'Chinese', 'Spanish'];
 
   public show = false;
   public showMore = 'Show';
