@@ -50,9 +50,6 @@ ul {
 }
 
 .detail-information-category{
-    color: $text-color-blue;
-    font-size: $font-size-regular;
-    font-weight: bold;
     margin-left: 6%;
     float: left;
     text-align: right;
@@ -67,11 +64,6 @@ ul {
     flex-flow: row wrap;   
 }
 
-  .detail-information-content{
-    color: $text-color-dark;
-    font-size: $font-size-regular;   
-    font-weight: lighter;
-  }
   .basicinfo{
     margin-left: 30%; 
 }
