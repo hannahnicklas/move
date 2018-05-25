@@ -8,7 +8,6 @@ export class University {
     city: string;
     descriptionText: string;
     picturePath: String;
-    experiences: Experience[
-    ];
+    experiences: Experience[];
     facts: Fact[];
   }
