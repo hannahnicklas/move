@@ -21,6 +21,7 @@ export class UniversityService {
     return this.http.get<University>(url);
   }
 
+  // hier noch die richtige ID bekommen Implementieren
   getUniversitiesForStudent(ids: number[]) {
     console.log(ids);
     return this.http.get<University[]>(this.unisUrl);
