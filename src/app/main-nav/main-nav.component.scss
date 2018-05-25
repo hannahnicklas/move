@@ -2,11 +2,9 @@
 
 nav{
     position: fixed;
-    
     display: flex;
     width: 100vw;
     z-index: 1000;
-    background-color: $move-blue;
 }
 
 #navPlaceholder {
@@ -29,5 +27,5 @@ a {
 }
 
 a:hover {
-    background-color: $move-light;
+    color: $move-orange;
 }

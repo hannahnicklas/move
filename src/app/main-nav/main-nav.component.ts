@@ -9,5 +9,9 @@ export class MainNavComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {  }
+  ngOnInit() {
+    window.addEventListener(('scroll'), function () {
+        document.getElementById('mainNav').style.backgroundColor = 'rgba(0,80,117, ' + (document.body.scrollTop / window.innerHeight) + ')';
+    });
+  }
 }

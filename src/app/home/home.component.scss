@@ -1,15 +1,15 @@
 @import '../../assets/GlobalScss/var.scss';
 
 section {
+    top: 0px;
     width: 100%;
     height: 100vh;
     background-size: cover;
-    //background-attachment: fixed;
 }
 
 #homeWelcomeSection{
     background-image: url("../../assets/images/app-component/main.jpg");
-
+    background-attachment: fixed;
     div {
         position: absolute;
         text-align: center;
@@ -36,7 +36,7 @@ section {
     .homeTextWrapper {
         position: absolute;
         top: 65vh;
-        right: 10vw;
+        right: -50vw;
     }
 }
 
