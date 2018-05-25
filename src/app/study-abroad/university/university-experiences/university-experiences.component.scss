@@ -1,1 +1,12 @@
 @import '../../../../assets/GlobalScss/var.scss';
+@import '../../../filter/filter.component.scss';
+
+.filter {
+    width: 20%;       
+    height: 500px;
+}
+
+.experiences {
+    width: 75%;    
+}
+

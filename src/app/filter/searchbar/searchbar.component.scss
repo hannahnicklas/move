@@ -1,0 +1,11 @@
+@import '../../../assets/GlobalScss/var.scss';
+
+.search input{
+    width: 90%;
+    border: 0;    
+    outline: none;  
+}
+.search{
+    border-bottom: 1px solid black;
+    margin: 5px 5px 30px 5px;
+}
