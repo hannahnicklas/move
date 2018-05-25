@@ -14,3 +14,9 @@ html, body{
     overflow-x:hidden;
     letter-spacing: 1px;
 }
+.placeholder {
+    top: 0px;
+    height: 72px;
+    width: 100%;
+    z-index: -1000;
+}
