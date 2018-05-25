@@ -39,6 +39,7 @@ export class MainNavComponent implements OnInit {
       } else {
         console.log("kjnafkjandfkljanewdkjlanwdkljnaskdln" + document.getElementsByClassName('placeholder')[0]);
         document.getElementsByClassName('placeholder')[0].setAttribute('style', 'display: inline');
+        document.getElementsByClassName('placeholder')[0].setAttribute('style', 'display: block;');
       }
     }
 
