@@ -38,6 +38,7 @@ export class MainNavComponent implements OnInit {
         document.getElementsByClassName('placeholder')[0].setAttribute('style', 'display: none');
       } else {
         document.getElementsByClassName('placeholder')[0].setAttribute('style', 'display: inline');
+        document.getElementsByClassName('placeholder')[0].setAttribute('style', 'display: block;');
       }
     }
 
