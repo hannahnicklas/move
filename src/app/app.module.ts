@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UniversityService } from './study-abroad/university/university.service';
-import { FormsModule } from '@angular/forms';
 import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 
 import { Injectable } from '@angular/core';
@@ -79,7 +78,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     UniversityCoursesComponent,
     UniversityExperienceDetailComponent,
     UniversityCourseDetailComponent,
-    MapBoxComponent
+    MapBoxComponent,
     UniversityCourseDetailComponent,
     ExperiencesBoxesComponent,
     CourseComponent,
@@ -98,8 +97,11 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AuthModule,
     McBreadcrumbsModule.forRoot()
   ],
-  providers: [UniversityService, MapService, /*AngularFireDatabase, FirebaseApp, FirebaseListObservable, FirebaseObjectObservable*/],
-  providers: [UniversityService, StudentService],
+  providers: [
+    UniversityService,
+    MapService,
+    StudentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,15 +13,18 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this.subscribeBreadcrumbs();
+
+    document.addEventListener( 'DOMContentLoaded', this.setActiveColorBreadcrumb );
+    document.addEventListener( 'click', this.setActiveColorBreadcrumb );
   }
 
   public subscribeBreadcrumbs() {
     this.breadcrumbService.crumbs$.subscribe(breadcrumbs => this.breadcrumbs = breadcrumbs);
+  }
 
-    window.addEventListener('DOMContentLoaded', function(event) {
-      console.log('Test');
-      document.getElementsByTagName('a')[(document.getElementsByTagName('a').length - 1)].setAttribute('style', 'color: #DC6413');
-
-    });
+  setActiveColorBreadcrumb() {
+    console.log(document.getElementsByClassName('breadcrumbLinks').length);
+    document.getElementsByClassName('breadcrumbLinks')[(document.getElementsByClassName('breadcrumbLinks').length - 1)].
+    setAttribute('style', 'color: #DC6413');
   }
 }
