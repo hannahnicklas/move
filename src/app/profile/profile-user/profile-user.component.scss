@@ -24,13 +24,13 @@ img {
     height: 100%;
 }
 
-.detail-information{
+.detailedData{
     width: 100%;
-    padding-left: 25vw;
 }
 
-.detail-information>div {
+.detailedData>div {
     display: flex;
+    margin-left: 25vw;
 }
 
 
@@ -39,7 +39,7 @@ img {
 /**********************/
 
 table {
-    margin: 0px 20px;
+    margin-right: 30px;
 }
 
 tr td:first-child {
