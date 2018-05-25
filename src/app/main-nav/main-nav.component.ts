@@ -37,7 +37,6 @@ export class MainNavComponent implements OnInit {
       if ( document.getElementsByClassName('breadcrumbLinks')[0].innerHTML === 'Home' ) {
         document.getElementsByClassName('placeholder')[0].setAttribute('style', 'display: none');
       } else {
-        console.log("kjnafkjandfkljanewdkjlanwdkljnaskdln" + document.getElementsByClassName('placeholder')[0]);
         document.getElementsByClassName('placeholder')[0].setAttribute('style', 'display: inline');
         document.getElementsByClassName('placeholder')[0].setAttribute('style', 'display: block;');
       }
