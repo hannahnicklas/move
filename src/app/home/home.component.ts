@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   doLogin() {
     this.studentService.getStudentByCredentials(this.model.username, this.model.password)
-    .subscribe(users => this.authService.setAuthenticatedObject(users.pop()));
+    .subscribe(users => this.authService.setAuthenticatedObject(users));
  // .subscribe(function (user) {this.authService.setAuthenticatedObject(user)}
 
   }

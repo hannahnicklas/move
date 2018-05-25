@@ -1,3 +1,4 @@
+import { University } from './University';
 
 export class Student {
     id: number;
@@ -8,8 +9,9 @@ export class Student {
     subject: string;
     studyProgress: string;
     goingAbroad: string;
-    favoritesID: [number];
-    selectedUnisID: [number];
+    // favoritesID: [number];
+    // selectedUnisID: [number];
     password: string;
     username: string;
+    universities: University[];
   }
