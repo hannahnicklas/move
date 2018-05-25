@@ -63,6 +63,10 @@ const routes: Routes = [
           { path: 'courses', component: UniversityCoursesComponent,
           data: {
             breadcrumbs: 'Courses'
+          } },
+          { path: 'course-detail', component: UniversityCourseDetailComponent,
+          data: {
+            breadcrumbs: 'Course Detail'
           } }
         ]
       }

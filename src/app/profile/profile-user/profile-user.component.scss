@@ -31,10 +31,11 @@ img {
     margin-bottom: auto;
 }
 .detail-information2{
-    width: 100%;   
+    width: auto;   
     padding: 1% 4%;
+    padding-left: 30%;
     line-height: $line-height;
-    overflow-x:hidden;
+    
 }
 ul {
     list-style-type: none;

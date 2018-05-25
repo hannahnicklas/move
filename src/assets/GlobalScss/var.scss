@@ -30,59 +30,106 @@ $main-margin: 4%;
 
 .margin {
     margin: $main-margin;
+    // background-color: rgba($color: $move-orange, $alpha: 0.5)
+}
+
+.flex-container {
+    display: flex;
+}
+
+.ganz {
+    width: 100%;
+}
+
+.halb {
+    width: 48%;
+    // border: 1px solid black;
+    // background-color: rgba($color: red, $alpha: 0.5);
+    // height: 100%;
+}
+
+.par {
+    margin-bottom: 3%;
 }
 
 //Schriften 
 
+a {
+    color: $move-blue;
+    text-decoration: none;
+}
+
+.Laufweite0 {
+    letter-spacing: 0px !important;
+}
+
+.alignleft {
+    text-align: left;
+}
+
+.alignright {
+    text-align: right;
+}
+
+.aligncenter {
+    text-align: center;
+}
+
 .white {
-    color: $text-color-bright; 
+    color: $text-color-bright !important; 
 }
 
 .black {
-    color: $text-color-dark; 
+    color: $text-color-dark !important; 
 }
 
 .blue {
-    color: $text-color-blue; 
+    color: $text-color-blue !important; 
 }
 
 .orange {
-    color: $text-color-orange; 
+    color: $text-color-orange !important; 
 }
 
 //Obernav
 .light-L{
     font-size: $font-size-large;
     font-weight: lighter;
+    text-decoration: none;
 }
 
 //Unternav 
 .regular-M{
     font-size: $font-size-medium;
+    text-decoration: none;
 }
 
 // mittlere Überschriften 
 .bold-L{
     font-size: $font-size-large;
     font-weight: bold;
+    text-decoration: none;
 }
 
 //mittlere Unterüberschriften 
 .light-M{
     font-size: $font-size-medium;
     font-weight: lighter;
+    text-decoration: none;
 }
 
 //kleine Überschriften in Listen
 .bold-M{
     font-size: $font-size-medium;
     font-weight: bold;
+    text-decoration: none;
 }
 
 //ganz kleine Überschriften in Texten, Buttons, Links, kleine Kategorien
 .bold-S{
     font-size: $font-size-small;
     font-weight: bold;
+    text-decoration: none;
 }
 
 //Zitate
@@ -90,10 +137,23 @@ $main-margin: 4%;
     font-size: $font-size-large;
     font-style: italic;
     font-weight: lighter;
+    text-decoration: none;
 }
 
 //Fließtext, Filteroptionen, Breadcrumb, Unterkategorien
 .regular-S{
     font-size: $font-size-small;
     font-weight: lighter;
+    text-decoration: none;
+}
+
+
+// buttons
+
+.button {
+    background-color: $move-blue;
+    margin-top: 4%;
+    padding: 1.3rem 1.1rem;
+    width: fit-content;
+    min-width: 100px;
 }

@@ -2,9 +2,9 @@
 @import url('http://fonts.googleapis.com/css?family=Raleway');
 @import 'assets/GlobalScss/var.scss';
 
+
 * {
     font-family: Raleway;
-    letter-spacing: 1px;
     line-height: $line-height;
 }
 
@@ -12,4 +12,5 @@ html, body{
     margin: 0px;
     padding: 0px;
     overflow-x:hidden;
+    letter-spacing: 1px;
 }

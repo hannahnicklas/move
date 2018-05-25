@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from '../profile/student.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -6,32 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  model: any = {username: '', password: ''};
+  constructor(private studentService: StudentService, public authService: AuthService) { }
 
   ngOnInit() {
     // this.fixNav();
-    window.addEventListener(('scroll'), function () {
-      if ( document.body.scrollTop > window.innerHeight) {
-        document.getElementById('homeNahanSection').style.backgroundAttachment = 'fixed';
-      } else {
-        document.getElementById('homeNahanSection').style.backgroundAttachment = 'scroll';
-      }
-
-      if ( document.body.scrollTop > (0.8 * window.innerHeight)) {
-        document.getElementsByClassName('homeTextWrapper')[0].
-        setAttribute('style', 'transform: translate3d(-60vw, 0, 0); transition-duration: 2s;');
-      } else {
-
-      }
-
-
-    });
-
+    console.log(this.authService);
   }
 
   /*fixNav() {
     document.getElementById('navPlaceholder').style.display = 'none';
      + (window.innerWidth - document.body.scrollTop);
   }*/
+
+  doLogin() {
+    this.studentService.getStudentByCredentials(this.model.username, this.model.password)
+    .subscribe(users => this.authService.setAuthenticatedObject(users.pop()));
+ // .subscribe(function (user) {this.authService.setAuthenticatedObject(user)}
+
+  }
+
+  doLogout() {
+    this.authService.clear();
+  }
+
 }
