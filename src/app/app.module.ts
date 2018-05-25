@@ -7,6 +7,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UniversityService } from './study-abroad/university/university.service';
 import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 
+import { Injectable } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
@@ -31,12 +32,28 @@ import { UniversityCoursesComponent } from './study-abroad/university/university
 import { UniversityExperienceDetailComponent } from './study-abroad/university/university-experience-detail/university-experience-detail.component';
 import { UniversityCourseDetailComponent } from './study-abroad/university/university-course-detail/university-course-detail.component';
 import { UniversityDataService } from '../assets/Data/university-data.service';
+import { MapBoxComponent } from './map-box/map-box.component';
+import { MapService } from './map.service';
 import { StudentService } from './profile/student.service';
 import { ExperiencesBoxesComponent } from './study-abroad/university/university-experiences/experiences-boxes/experiences-boxes.component';
 import { AuthModule } from './auth/auth.module';
 import { CourseComponent } from './study-abroad/university/university-courses/course/course.component';
 import { FilterComponent } from './filter/filter.component';
 import { SearchbarComponent } from './filter/searchbar/searchbar.component';
+
+/*
+import { FirebaseApp } from 'angularfire2';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
+
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+*/
+
+
+
 
 
 @NgModule({
@@ -61,12 +78,15 @@ import { SearchbarComponent } from './filter/searchbar/searchbar.component';
     UniversityCoursesComponent,
     UniversityExperienceDetailComponent,
     UniversityCourseDetailComponent,
+    MapBoxComponent,
+    UniversityCourseDetailComponent,
     ExperiencesBoxesComponent,
     CourseComponent,
     FilterComponent,
     SearchbarComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
@@ -77,7 +97,11 @@ import { SearchbarComponent } from './filter/searchbar/searchbar.component';
     AuthModule,
     McBreadcrumbsModule.forRoot()
   ],
-  providers: [UniversityService, StudentService],
+  providers: [
+    UniversityService,
+    MapService,
+    StudentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
