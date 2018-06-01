@@ -26,12 +26,12 @@ import { ProfileContactComponent } from './profile/profile-contact/profile-conta
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  //{ path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'internship', component: InternshipComponent },
   { path: 'studyAbroad', component: StudyAbroadComponent,
     children: [
-      { path: '', redirectTo: '/studyAbroad/map', pathMatch: 'full' },
+     // { path: '', redirectTo: '/studyAbroad/map', pathMatch: 'full' },
       { path: 'map', component: MapComponent },
       { path: ':id', component: UniversityComponent,
         children: [
