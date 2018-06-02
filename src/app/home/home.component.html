@@ -1,17 +1,19 @@
 <div class="login" *ngIf="!authService.hasAuthenticatedObject()">
     <form name="form">
-        <h2>Login</h2>
-        <div class="user">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
-  
+        <div id="formWrapper">
+            <h2>Move</h2>
+            <div id="user" class="formInput">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+    
+            </div>
+            <div id="pw" class="formInput">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                
+            </div>
+            <button type="button" (click)="doLogin()">login</button>
         </div>
-        <div class="pw">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-            
-        </div>
-        <button type="button" (click)="doLogin()">login</button>
     </form>
 </div>
 <section id="homeWelcomeSection">
@@ -31,6 +33,9 @@
             on of the most important things in my live.“
         </div>
     </div>
+</section>
+<section>
+    <!--Leere section, damit die CSS-Eigenschaft position: sticky funktioniert.-->
 </section>
 <section id="homeWomanSection">
     <div class="homeTextWrapper">
