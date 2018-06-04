@@ -40,6 +40,8 @@ import { AuthModule } from './auth/auth.module';
 import { CourseComponent } from './study-abroad/university/university-courses/course/course.component';
 import { FilterComponent } from './filter/filter.component';
 import { SearchbarComponent } from './filter/searchbar/searchbar.component';
+import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+import { MapboxComponent } from './study-abroad/map/mapbox/mapbox.component';
 
 /*
 import { FirebaseApp } from 'angularfire2';
@@ -83,7 +85,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     ExperiencesBoxesComponent,
     CourseComponent,
     FilterComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    MapboxComponent,
   ],
   imports: [
     FormsModule,
@@ -95,7 +98,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
       UniversityDataService, { dataEncapsulation: false }
     ),
     AuthModule,
-    McBreadcrumbsModule.forRoot()
+    McBreadcrumbsModule.forRoot(),
+    NgxMapboxGLModule.forRoot({
+      accessToken: 'pk.eyJ1IjoiZ3JhbmRtYWdhdXNzIiwiYSI6ImNqZ2dvdzJpazAwM3MzOHFubjJ2NDYyaDcifQ.8rLg5amk491arsu10b67uQ'
+    })
   ],
   providers: [
     UniversityService,
