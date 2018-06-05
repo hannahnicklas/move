@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { StudentService } from '../profile/student.service';
 import { AuthService } from '../auth/auth.service';
 
@@ -13,14 +13,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     // this.fixNav();
-    console.log(this.authService);
     document.getElementById('mainNav').style.backgroundColor = ('rgba(0,0,0,0)');
+    console.log(this.authService);
   }
 
-  /*fixNav() {
-    document.getElementById('navPlaceholder').style.display = 'none';
-     + (window.innerWidth - document.body.scrollTop);
-  }*/
 
   doLogin() {
     this.studentService.getStudentByCredentials(this.model.username, this.model.password)
@@ -32,5 +28,4 @@ export class HomeComponent implements OnInit {
   doLogout() {
     this.authService.clear();
   }
-
 }
