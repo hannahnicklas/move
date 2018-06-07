@@ -32,7 +32,6 @@ import { UniversityCoursesComponent } from './study-abroad/university/university
 import { UniversityExperienceDetailComponent } from './study-abroad/university/university-experience-detail/university-experience-detail.component';
 import { UniversityCourseDetailComponent } from './study-abroad/university/university-course-detail/university-course-detail.component';
 import { UniversityDataService } from '../assets/Data/university-data.service';
-import { MapBoxComponent } from './map-box/map-box.component';
 import { MapService } from './map.service';
 import { StudentService } from './profile/student.service';
 import { ExperiencesBoxesComponent } from './study-abroad/university/university-experiences/experiences-boxes/experiences-boxes.component';
@@ -42,6 +41,8 @@ import { FilterComponent } from './filter/filter.component';
 import { SearchbarComponent } from './filter/searchbar/searchbar.component';
 import {DndModule} from 'ng2-dnd';
 
+// import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+import { MapboxComponent } from './study-abroad/map/mapbox/mapbox.component';
 
 /*
 import { FirebaseApp } from 'angularfire2';
@@ -80,12 +81,12 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     UniversityCoursesComponent,
     UniversityExperienceDetailComponent,
     UniversityCourseDetailComponent,
-    MapBoxComponent,
     UniversityCourseDetailComponent,
     ExperiencesBoxesComponent,
     CourseComponent,
     FilterComponent,
     SearchbarComponent,
+    MapboxComponent,
   ],
   imports: [
     FormsModule,
@@ -98,7 +99,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     ),
     AuthModule,
     McBreadcrumbsModule.forRoot(),
-    DndModule.forRoot()
+    DndModule.forRoot(),
+    /*NgxMapboxGLModule.forRoot({
+      accessToken: 'pk.eyJ1IjoiZ3JhbmRtYWdhdXNzIiwiYSI6ImNqZ2dvdzJpazAwM3MzOHFubjJ2NDYyaDcifQ.8rLg5amk491arsu10b67uQ'
+    })*/
   ],
   providers: [
     UniversityService,

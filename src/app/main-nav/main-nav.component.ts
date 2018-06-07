@@ -23,8 +23,10 @@ export class MainNavComponent implements OnInit {
 
 
     function scroll() {
+      
 
       if ( document.getElementsByClassName('breadcrumbLinks')[0].innerHTML === 'Home' ) {
+        console.log(document.body.scrollTop / window.innerHeight);
         document.getElementById('mainNav').style.backgroundColor = 'rgba(0,80,117, ' + (document.body.scrollTop / window.innerHeight) + ')';
       }
 
@@ -38,6 +40,7 @@ export class MainNavComponent implements OnInit {
         document.getElementsByClassName('placeholder')[0].setAttribute('style', 'display: none');
       } else {
         document.getElementsByClassName('placeholder')[0].setAttribute('style', 'display: inline');
+        document.getElementsByClassName('placeholder')[0].setAttribute('style', 'display: block;');
       }
     }
 
