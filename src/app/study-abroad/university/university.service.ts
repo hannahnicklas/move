@@ -4,6 +4,7 @@ import { of } from 'rxjs/observable/of';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { University } from '../../../assets/Data/University';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class UniversityService {
@@ -15,6 +16,11 @@ export class UniversityService {
   getUnis(): Observable<University[]> {
     return this.http.get<University[]>(this.unisUrl);
   }
+
+  async getUnisAsync() {
+    const response = await this.http.get(this.unisUrl).toPromise();
+    return response;
+ }
 
   getUniversity(id: number): Observable<University> {
     const url = `${this.unisUrl}/${id}`;

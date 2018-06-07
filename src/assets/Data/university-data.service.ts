@@ -31,7 +31,9 @@ export class UniversityDataService implements InMemoryDbService {
             id: '4', title: 'Bachelor of Information Technology',
             description: 'This is the description of the course', are: '0', been: '6'
           }
-        ]
+        ],
+        lat: '-33.883225',
+        lang: '151.200478'
       },
       {
         id: 2, name: 'Technische Hochschule Ingolstadt', country: 'Germany', city: 'Ingolstadt',
@@ -75,7 +77,9 @@ export class UniversityDataService implements InMemoryDbService {
             id: '8', title: 'Bachelor of Science in Aircraft and Vehicle Informatics',
             description: 'This is the description of the course', are: '1', been: '5'
           }
-        ]
+        ],
+        lat: '48.767210',
+        lang: '11.432368'
       }
     ];
 
