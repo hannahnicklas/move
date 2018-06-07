@@ -13,4 +13,6 @@ export class University {
     experiences: Experience[];
     facts: Fact[];
     courses: Course[];
+    lat: number;
+    lang: number;
     }

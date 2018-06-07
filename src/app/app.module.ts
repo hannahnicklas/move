@@ -32,7 +32,6 @@ import { UniversityCoursesComponent } from './study-abroad/university/university
 import { UniversityExperienceDetailComponent } from './study-abroad/university/university-experience-detail/university-experience-detail.component';
 import { UniversityCourseDetailComponent } from './study-abroad/university/university-course-detail/university-course-detail.component';
 import { UniversityDataService } from '../assets/Data/university-data.service';
-import { MapBoxComponent } from './map-box/map-box.component';
 import { MapService } from './map.service';
 import { StudentService } from './profile/student.service';
 import { ExperiencesBoxesComponent } from './study-abroad/university/university-experiences/experiences-boxes/experiences-boxes.component';
@@ -80,7 +79,6 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     UniversityCoursesComponent,
     UniversityExperienceDetailComponent,
     UniversityCourseDetailComponent,
-    MapBoxComponent,
     UniversityCourseDetailComponent,
     ExperiencesBoxesComponent,
     CourseComponent,
