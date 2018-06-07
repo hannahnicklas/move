@@ -40,6 +40,8 @@ import { AuthModule } from './auth/auth.module';
 import { CourseComponent } from './study-abroad/university/university-courses/course/course.component';
 import { FilterComponent } from './filter/filter.component';
 import { SearchbarComponent } from './filter/searchbar/searchbar.component';
+import {DndModule} from 'ng2-dnd';
+
 
 /*
 import { FirebaseApp } from 'angularfire2';
@@ -83,7 +85,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     ExperiencesBoxesComponent,
     CourseComponent,
     FilterComponent,
-    SearchbarComponent
+    SearchbarComponent,
   ],
   imports: [
     FormsModule,
@@ -95,7 +97,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
       UniversityDataService, { dataEncapsulation: false }
     ),
     AuthModule,
-    McBreadcrumbsModule.forRoot()
+    McBreadcrumbsModule.forRoot(),
+    DndModule.forRoot()
   ],
   providers: [
     UniversityService,
