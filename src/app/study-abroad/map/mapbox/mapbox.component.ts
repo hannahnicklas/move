@@ -39,7 +39,9 @@ export class MapboxComponent implements OnInit {
     this.buildMap();
   }
 
-
+  routeMe(id) {
+    console.log(id);
+  }
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
 
@@ -50,10 +52,9 @@ export class MapboxComponent implements OnInit {
       toAdd[i] = {
         type: 'Feature',
         properties: {
-          // tslint:disable-next-line:max-line-length
-          description: ('<a href="/studyAbroad/'
-            .concat(String(this.unis[i].id)
-            .concat('/general"><strong>'
+          description: ('<a onclick ="routeMe('
+           .concat(String(this.unis[i].id)
+            .concat(')"><strong>'
             .concat(this.unis[i].name
             .concat('</strong><br><img style="width: 100px; height: auto" src="../../assets/images/app-component/university-general/'
             .concat(String(this.unis[i].id)
@@ -76,10 +77,11 @@ export class MapboxComponent implements OnInit {
       container: 'map',
       style: this.style,
       zoom: 1.4,
-      center: [-84.5, 38.05]
+      center: [0, 45]
     });
 
     /// Add map controls
+    this.map.setMaxZoom(5);
     this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('load', () => {
