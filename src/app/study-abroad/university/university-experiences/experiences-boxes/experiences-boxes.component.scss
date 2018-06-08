@@ -1,16 +1,12 @@
 @import '../../../../../assets/GlobalScss/var.scss';
 
 
-.sidenav{
-    background-color:$move-blue;
-}
-
-.exp {
+.experiences {
     display: flex;
     flex-flow: row wrap;   
 }
 
-.exp > div {
+.experiences > div {
     background-color: $move-light;
     width: 20%;
     margin: 10px;
@@ -20,7 +16,7 @@
     min-height: 150px;
 }
 
-.rating {
+.experience-rating {
     float: right; 
     padding-top: 15px; 
     color: $text-color-bright;
