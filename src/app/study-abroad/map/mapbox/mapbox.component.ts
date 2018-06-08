@@ -16,8 +16,8 @@ export class MapboxComponent implements OnInit {
 
   unis: University[];
   data;
-  showPopup: boolean;
   uni: University;
+  showPopup: boolean;
 
 
   /// default settings
@@ -41,7 +41,9 @@ export class MapboxComponent implements OnInit {
     // console.log(this.data);
   }
 
-
+  routeMe(id) {
+    console.log(id);
+  }
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
 
@@ -52,16 +54,7 @@ export class MapboxComponent implements OnInit {
       toAdd[i] = {
         type: 'Feature',
         properties: {
-          // tslint:disable-next-line:max-line-length
           description: (String(i)),
-            /*
-            <a href="/studyAbroad/'
-            .concat(String(this.unis[i].id)
-            .concat('/general"><strong>'
-            .concat(this.unis[i].name
-            .concat('</strong><br><img style="width: 100px; height: auto" src="../../assets/images/app-component/university-general/'
-            .concat(String(this.unis[i].id)
-            .concat('/1.JPG"></a>'))))))),*/
         },
         geometry: {
           type: 'Point',
@@ -80,10 +73,11 @@ export class MapboxComponent implements OnInit {
       container: 'map',
       style: this.style,
       zoom: 1.4,
-      center: [-84.5, 38.05]
+      center: [0, 45]
     });
 
     /// Add map controls
+    this.map.setMaxZoom(5);
     this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('load', () => {
@@ -111,14 +105,9 @@ export class MapboxComponent implements OnInit {
       while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
           coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
       }
-      /*console.log();*/
+
       this.uni = this.unis[e.features[0].properties.description];
       this.showPopup = true;
-      /*
-      new mapboxgl.Popup()
-          .setLngLat(coordinates)
-          .setHTML(description)
-          .addTo(this.map);*/
   });
 
   this.map.on('mouseenter', 'unis',  () => {
