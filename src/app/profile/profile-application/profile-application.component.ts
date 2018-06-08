@@ -22,8 +22,10 @@ export class ProfileApplicationComponent implements OnInit {
     receivedData: Array<any> = [];
 
     transferDataSuccess($event: any) {
+      if (this.receivedData.length < 5 ) {
         this.receivedData.push($event);
         console.log($event.dragData.msg);
+      }
     }
     // {{data | json}} to show everything
     logThatShit(data: any) {
