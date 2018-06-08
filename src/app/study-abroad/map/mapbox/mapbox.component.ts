@@ -16,7 +16,8 @@ export class MapboxComponent implements OnInit {
 
   unis: University[];
   data;
-
+  uni: University;
+  showPopup: boolean;
 
 
   /// default settings
@@ -52,13 +53,7 @@ export class MapboxComponent implements OnInit {
       toAdd[i] = {
         type: 'Feature',
         properties: {
-          description: ('<a onclick ="routeMe('
-           .concat(String(this.unis[i].id)
-            .concat(')"><strong>'
-            .concat(this.unis[i].name
-            .concat('</strong><br><img style="width: 100px; height: auto" src="../../assets/images/app-component/university-general/'
-            .concat(String(this.unis[i].id)
-            .concat('/1.JPG"></a>'))))))),
+          description: (String(i)),
         },
         geometry: {
           type: 'Point',
@@ -110,10 +105,8 @@ export class MapboxComponent implements OnInit {
           coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
       }
 
-      new mapboxgl.Popup()
-          .setLngLat(coordinates)
-          .setHTML(description)
-          .addTo(this.map);
+      this.uni = this.unis[e.features[0].properties.description];
+      this.showPopup = true;
   });
 
   this.map.on('mouseenter', 'unis',  () => {
