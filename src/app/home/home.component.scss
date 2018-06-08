@@ -1,5 +1,10 @@
 @import '../../assets/GlobalScss/var.scss';
 
+
+/***************************/
+/* LOGIN */
+/***************************/
+
 .login {
     position: fixed;
     right: 0px;
@@ -8,6 +13,7 @@
     height: 100%;
     z-index: 10010;
 }
+
 .login form {
     display: inline-block;
     padding: 50px;
@@ -15,16 +21,18 @@
     height: 100%;
     background-color: rgba($move-blue, 0.7);
 }
-#formWrapper {
+
+#login-wrapper {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50vh;
     color: white;
-    
 }
+
 input:hover {
     border-color: rgba($move-orange, 0.5);
 }
+
 button[type=button] {
     margin-top: 100px;
     background-color: $move-orange;
@@ -35,18 +43,25 @@ button[type=button] {
     margin: 4px 2px;
     cursor: pointer;
     float: left;
-}
-button {
+
     font-size: 1em;
 }
-.form-control {
+
+.login-input-row {
+    margin-bottom: 2em;
+}
+
+.login-input {
     width: 500px;
     position: absolute;
     left: 20em;
 }
-.formInput {
-    margin-bottom: 2em;
-}
+
+
+/***************************/
+/* HOME */
+/***************************/
+
 section {
     top: 0px;
     width: 100%;
@@ -54,56 +69,47 @@ section {
     background-size: cover;
 }
 
-
-#homeWelcomeSection{
+#home-welcome{
     background-image: url("../../assets/images/app-component/main.jpg");
     background-attachment: fixed;
+
     div {
         position: absolute;
         text-align: center;
         color: $move-orange;
         width: 100%;
         bottom: 20vh;
-
-        h1{
-            font-size: 3em;
-            margin-bottom: 0;
-        }
-    
-        h2 {
-            font-size: 1.2em;
-            margin-top: 1vh;
-        }
     }
 }
 
-#homeNahanSection{
+#home-first-quote {
     background-image: url("../../assets/images/app-component/nahan.png");
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
     display: block;
     height: 100vh;
-    .homeTextWrapper {
+
+    .home-quote-wrapper {
         position: absolute;
         top: 65vh;
         right: 10vw;
     }
 }
 
-#homeWomanSection {
+#home-second-quote {
     background-image: url("../../assets/images/app-component/woman.png");
     position: absolute;
     top: 200vh;
 
-    .homeTextWrapper {
+    .home-quote-wrapper {
         position: absolute;
         top: 25vh;
         left: 10vw;
     }
 }
 
-.homeTextWrapper{
+.home-quote-wrapper{
     background-color: $move-blue;
     opacity: 0.7;
     width: 30vw;
@@ -111,10 +117,9 @@ section {
     padding-bottom: 4vh;
     padding-left: 2vw;
     padding-right: 2vw;
-    
 }
 
-.homeText {
+.home-quote-text {
     line-height: 1.1em;
     font-style: italic;
     font-size: 1.1em;
