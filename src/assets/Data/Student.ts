@@ -11,6 +11,7 @@ export class Student {
     goingAbroad: string;
     // favoritesID: [number];
     // selectedUnisID: [number];
+    favorites: string[];
     password: string;
     username: string;
     universities: University[];

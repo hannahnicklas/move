@@ -1,0 +1,39 @@
+.margin {
+    flex-wrap: wrap;
+}
+h1 {
+    
+}
+
+.button {
+    background-color: #0e5074;
+    margin-top: 4%;
+    padding: 1.3rem 1.1rem;
+    width: fit-content;
+    min-width: 400px;
+    position:relative;
+}
+.delbutton {
+    background-color: #6e96ac;
+    right: 0px;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0px;
+    position:absolute;
+}
+.panel-body {
+    min-width: 500px;
+}
+.panel.panel-default {
+    min-width: 500px;
+}
+
+.panel-heading {
+    min-width: 500px;
+}
+
+.float {
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+}

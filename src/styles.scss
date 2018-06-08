@@ -3,6 +3,7 @@
 @import 'assets/GlobalScss/var.scss';
 
 
+
 * {
     font-family: Raleway;
     line-height: $line-height;
@@ -11,6 +12,10 @@
 html, body{
     margin: 0px;
     padding: 0px;
-    overflow-x:hidden;
     letter-spacing: 1px;
+}
+.placeholder {
+    top: 0px;
+    height: 72px;
+    width: 100%;
 }

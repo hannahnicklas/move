@@ -1,15 +1,63 @@
 @import '../../assets/GlobalScss/var.scss';
 
+.login {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100%;
+    z-index: 10010;
+}
+.login form {
+    display: inline-block;
+    padding: 50px;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba($move-blue, 0.7);
+}
+#formWrapper {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50vh;
+    color: white;
+    
+}
+input:hover {
+    border-color: rgba($move-orange, 0.5);
+}
+button[type=button] {
+    margin-top: 100px;
+    background-color: $move-orange;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: left;
+}
+button {
+    font-size: 1em;
+}
+.form-control {
+    width: 500px;
+    position: absolute;
+    left: 20em;
+}
+.formInput {
+    margin-bottom: 2em;
+}
 section {
+    top: 0px;
     width: 100%;
     height: 100vh;
     background-size: cover;
-    //background-attachment: fixed;
 }
+
 
 #homeWelcomeSection{
     background-image: url("../../assets/images/app-component/main.jpg");
-
+    background-attachment: fixed;
     div {
         position: absolute;
         text-align: center;
@@ -31,8 +79,11 @@ section {
 
 #homeNahanSection{
     background-image: url("../../assets/images/app-component/nahan.png");
-    position: relative;
-
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    display: block;
+    height: 100vh;
     .homeTextWrapper {
         position: absolute;
         top: 65vh;
@@ -42,7 +93,8 @@ section {
 
 #homeWomanSection {
     background-image: url("../../assets/images/app-component/woman.png");
-    position: relative;
+    position: absolute;
+    top: 200vh;
 
     .homeTextWrapper {
         position: absolute;

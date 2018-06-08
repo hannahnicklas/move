@@ -2,20 +2,12 @@
 
 nav{
     position: fixed;
-    
     display: flex;
     width: 100vw;
     z-index: 1000;
     background-color: $move-light;
-}
-
-#navPlaceholder {
-    width: 100vw;
-    position: sticky;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    color: white;
-    font-size: large;
+    top: 72px;    
+    height: 72px;
 }
 
 a {
@@ -24,17 +16,9 @@ a {
     font-size: large;
     flex: 1;
     text-align: center;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    padding: 22px 0px;
 }
 
 a:hover {
     background-color: $move-lighter;
-}
-nav{
-    display: flex;
-}
-nav *{
-    flex: 1;
-    text-align: center;
 }
