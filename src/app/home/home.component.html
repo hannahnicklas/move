@@ -1,47 +1,56 @@
+<!-- Login _______________________________________________________ -->
+
 <div class="login" *ngIf="!authService.hasAuthenticatedObject()">
     <form name="form">
-        <div id="formWrapper">
+        <div id="login-wrapper">
             <h2>Move</h2>
-            <div id="user" class="formInput">
+            <div id="user" class="login-input-row">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+                <input type="text" class="login-input" name="username" [(ngModel)]="model.username" #username="ngModel" required />
     
             </div>
-            <div id="pw" class="formInput">
+            <div id="pw" class="login-input-row">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                <input type="password" class="login-input" name="password" [(ngModel)]="model.password" #password="ngModel" required />
                 
             </div>
             <button type="button" (click)="doLogin()">login</button>
         </div>
     </form>
 </div>
-<section id="homeWelcomeSection">
+
+<!-- /Login _______________________________________________________ -->
+
+
+<!-- Home _______________________________________________________ -->
+
+<section id="home-welcome">
     <div>
-        <h1>
-            Welcome
-        </h1>
-        <h2>
-            scroll to explore
-        </h2>
+        <h1 class="light-XL orange">Welcome</h1>
+        <h2 class="light-L orange">scroll to explore</h2>
     </div>
 </section>
-<section id="homeNahanSection">
-    <div class="homeTextWrapper">
-        <div class="homeText">
+
+<section id="home-first-quote">
+    <div class="home-quote-wrapper">
+        <div class="home-quote-text">
             „I wanted to go abroad, because I love to see the world with all its natural wonders and cultures. Making experiences is
             on of the most important things in my live.“
         </div>
     </div>
 </section>
+
 <section>
     <!--Leere section, damit die CSS-Eigenschaft position: sticky funktioniert.-->
 </section>
-<section id="homeWomanSection">
-    <div class="homeTextWrapper">
-        <div class="homeText">
+
+<section id="home-second-quote">
+    <div class="home-quote-wrapper">
+        <div class="home-quote-text">
             „Improving my language skills and discovering new angles of the world increases the value of my curriculum vita a lot. Finding
             a fullfilling job after studying is much easier.“
         </div>
     </div>
 </section>
+
+<!-- /Home _______________________________________________________ -->

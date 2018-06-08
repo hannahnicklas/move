@@ -11,9 +11,8 @@ $move-grey: #f5f5f5;
 $font-size-small: 14px; 
 $font-size-medium: 16px; 
 $font-size-regular: 16px; 
-$font-size-large: 24px; 
-$font-size-x-large: 28px; 
-$font-size-xx-large: 1px; 
+$font-size-large: 24px;
+$font-size-x-large: 60px; 
 
 $text-color-bright: #ffffff; 
 $text-color-dark: #000000;
@@ -92,6 +91,13 @@ a {
 
 .orange {
     color: $text-color-orange !important; 
+}
+
+// 
+.light-XL {
+    font-size: $font-size-x-large;
+    font-weight: lighter;
+    text-decoration: none;
 }
 
 //Obernav

@@ -1,61 +1,39 @@
-/**
- * The dnd-list should always have a min-height,
- * otherwise you can't drop to it once it's empty
- */
- .simpleDemo ul[dnd-list] {
-    min-height: 42px;
-    padding-left: 0px;
+.margin {
+    flex-wrap: wrap;
+}
+h1 {
+    
 }
 
-/**
- * The dndDraggingSource class will be applied to
- * the source element of a drag operation. It makes
- * sense to hide it to give the user the feeling
- * that he's actually moving it.
- */
-.simpleDemo ul[dnd-list] .dndDraggingSource {
-    display: none;
+.button {
+    background-color: #0e5074;
+    margin-top: 4%;
+    padding: 1.3rem 1.1rem;
+    width: fit-content;
+    min-width: 400px;
+    position:relative;
+}
+.delbutton {
+    background-color: #6e96ac;
+    right: 0px;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0px;
+    position:absolute;
+}
+.panel-body {
+    min-width: 500px;
+}
+.panel.panel-default {
+    min-width: 500px;
 }
 
-/**
- * An element with .dndPlaceholder class will be
- * added to the dnd-list while the user is dragging
- * over it.
- */
-.simpleDemo ul[dnd-list] .dndPlaceholder {
-    background-color: #ddd;
-    display: block;
-    min-height: 42px;
+.panel-heading {
+    min-width: 500px;
 }
 
-.simpleDemo ul[dnd-list] li {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
-}
-
-/**
- * Show selected elements in green
- */
-.simpleDemo ul[dnd-list] li.selected {
-    background-color: #dff0d8;
-    color: #3c763d;
-}
-
-.box {
-    background : #BADA55;
-    border: 1px solid black;
-    padding: 10px 20px;
-    display: inline-block;
-}
-.draggable {
-    cursor: move;
-    user-select: none;
-}
-.dragging {
-    background: coral;
+.float {
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
 }
