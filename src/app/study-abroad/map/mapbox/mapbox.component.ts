@@ -16,7 +16,8 @@ export class MapboxComponent implements OnInit {
 
   unis: University[];
   data;
-
+  uni: University;
+  showPopup: boolean;
 
 
   /// default settings
@@ -30,16 +31,19 @@ export class MapboxComponent implements OnInit {
     (mapboxgl as any).accessToken = 'pk.eyJ1IjoiZ3JhbmRtYWdhdXNzIiwiYSI6ImNqZ2dvdzJpazAwM3MzOHFubjJ2NDYyaDcifQ.8rLg5amk491arsu10b67uQ';
   }
 
+
   ngOnInit() {
+    this.showPopup = false;
+    this.buildData();
+    this.buildMap();
     // console.log(this.data);
     // this.buildData();
     // console.log(this.data);
-
-    this.buildData();
-    this.buildMap();
   }
 
-
+  routeMe(id) {
+    console.log(id);
+  }
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
 
@@ -50,14 +54,7 @@ export class MapboxComponent implements OnInit {
       toAdd[i] = {
         type: 'Feature',
         properties: {
-          // tslint:disable-next-line:max-line-length
-          description: ('<a href="/studyAbroad/'
-            .concat(String(this.unis[i].id)
-            .concat('/general"><strong>'
-            .concat(this.unis[i].name
-            .concat('</strong><br><img style="width: 100px; height: auto" src="../../assets/images/app-component/university-general/'
-            .concat(String(this.unis[i].id)
-            .concat('/1.JPG"></a>'))))))),
+          description: (String(i)),
         },
         geometry: {
           type: 'Point',
@@ -76,10 +73,11 @@ export class MapboxComponent implements OnInit {
       container: 'map',
       style: this.style,
       zoom: 1.4,
-      center: [-84.5, 38.05]
+      center: [0, 45]
     });
 
     /// Add map controls
+    this.map.setMaxZoom(5);
     this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('load', () => {
@@ -108,10 +106,8 @@ export class MapboxComponent implements OnInit {
           coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
       }
 
-      new mapboxgl.Popup()
-          .setLngLat(coordinates)
-          .setHTML(description)
-          .addTo(this.map);
+      this.uni = this.unis[e.features[0].properties.description];
+      this.showPopup = true;
   });
 
   this.map.on('mouseenter', 'unis',  () => {

@@ -4,28 +4,28 @@
     flex-wrap: wrap;
 }
 
-.title {
+.course-title {
     width: 100%;
     margin-bottom: 5%;
 }
 
-.text {
+.course-description-text {
     margin-right: 2%;
     text-align: justify;
 }
 
-.rating {
+.course-infos {
     margin-left: 2%;
     flex-wrap: wrap;
 }
 
-.academicQuality {
+.course-rating {
     align-items: flex-end;
     align-self: flex-start;
     justify-content: space-between;
 }
 
-.academicQuality>div {
+.course-rating>div {
     height: 100%;
 }
 
@@ -35,36 +35,30 @@ tr td:first-child {
     color: $move-blue;
 }
 
-.movers {
+.course-movers {
     width: 30%;
     height: auto;
 }
 
-.now{
+.course-movers-now{
     align-self: flex-end;
     margin-right: 3px;
     font-weight: bold;
-    font-size: 0.7rem;
+    font-size: 15px;
     text-align: right;
 }
 
-.yet{
+.course-movers-yet{
     align-self: flex-start;
     margin-left: 3px;
-    font-size: 0.7rem;
+    font-size: 15px;
 }
 
-.zitat {
+.course-quote {
     align-self: flex-end;
 }
 
-.experiences-boxes[_ngcontent-c0] {
-    width: 100%;
-    background-color: $move-grey;
-    color: black;
-}
-
-.exp {
+.course-experience-wrapper {
     width: 100vw;
     margin: 4rem 0px;
     margin-left: calc(-50vw + 50%);
@@ -72,32 +66,29 @@ tr td:first-child {
     background-color: $move-grey;
 }
 
-.exp /deep/ div{
+.course-experience-wrapper /deep/ div{
     max-width: 100%;
     width: 100%;
 }
 
-.left {
-    width: 50%;
-    float: left;
-}
-
-.right {
+.course-pictures {
     width: 40%;
     float: right;
     margin-left: 5%;
     margin-right: 5%;
 
-    .smallImages {
+    .small-images {
         margin-top: 3%;
         
         img {
             width: 30%;
             float: left;
+            margin-right: 5%;
         }
-    }
-    .marginRight {
-        margin-right: 5%;
+
+        img:last-child {
+            margin-right: 0%;
+        }
     }
 }
 

@@ -12,37 +12,37 @@
     margin: 2%;
 }
 
-.courseText {
+.course-text {
     flex-basis: 0;
     flex-grow: 5;
 }
 
-.courseText a {
+.course-text a {
     text-decoration: none;
 }
 
-.courseRanking {
+.course-ranking {
     flex-basis: 0;
     flex-grow: 1;
 }
 
-.courseMovers {
+.course-movers {
     flex-basis: 0;
     flex-grow: 1;
     height: 50px;
     display: flex;
 }
 
-.courseMovers img {
+.course-movers img {
     width: 50px;
 }
 
-.now{
+.course-movers-now{
     align-self: flex-end;
     margin-right: 3px;
 }
 
-.yet{
+.course-movers-yet{
     align-self: flex-start;
     margin-left: 3px;
 }

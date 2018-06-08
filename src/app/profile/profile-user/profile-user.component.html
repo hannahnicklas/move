@@ -1,9 +1,9 @@
 <div class="margin">
   <div *ngIf='student'>
 
-  <div class="studentData">
+  <div class="profile-user-data">
     <div>
-      <img src="../../assets/images/profile/anna_adven.png" alt="profilepic">
+      <img id = "profilepic" src="../../assets/images/profile/anna_adven.png" alt="profilepic">
       <div class="blue">
         <div class="bold-L">{{student.forename}} {{student.name}}</div>
         <div>{{student.subject}}</div>
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div *ngIf="!edit" class="detailedData Laufweite0">
+  <div *ngIf="!edit" class="profile-detailed-user-data laufweite0">
     <div  class="regular-S">
       <table>
         <tr>

@@ -1,31 +1,28 @@
 @import '../../../../assets/GlobalScss/var.scss';
 
-.columns {
-    display: flex;
-}
 
-.considerCol {
+.consider-column {
     margin: 0px 0.5%;
     flex-basis: 0;
     flex-grow: 1;
 }
 
-.considerCol p{
+.consider-column p{
     margin-bottom: 10%;
 }
 
-.fact {
+.consider-fact {
     display: flex;
     margin: 4%;
 }
 
-.factIcon {
+.consider-fact-icon {
     flex-basis: 0;
     flex-grow: 1;
     font-size: 3rem;
 }
 
-.factText {
+.consider-fact-text {
     flex-basis: 0;
     flex-grow: 5;
 }

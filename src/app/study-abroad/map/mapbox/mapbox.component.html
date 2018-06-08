@@ -1,1 +1,5 @@
 <div id='map'></div>
+<section id="popupSection" *ngIf="showPopup">
+    {{uni.name}}
+    <a routerLink="/studyAbroad/{{uni.id}}/general">Link zur uni</a>
+</section>

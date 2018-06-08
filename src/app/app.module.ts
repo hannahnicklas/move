@@ -39,7 +39,7 @@ import { AuthModule } from './auth/auth.module';
 import { CourseComponent } from './study-abroad/university/university-courses/course/course.component';
 import { FilterComponent } from './filter/filter.component';
 import { SearchbarComponent } from './filter/searchbar/searchbar.component';
-import {DndModule} from 'ng2-dnd';
+import { DndModule } from 'ng2-dnd';
 
 // import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { MapboxComponent } from './study-abroad/map/mapbox/mapbox.component';

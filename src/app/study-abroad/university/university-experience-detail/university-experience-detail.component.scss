@@ -3,37 +3,30 @@
 
 
 // Margin der Überschrift 
-.margin-detail{
+.experience-title{
     margin: 3% 4% 1% 4%; 
 
 }
 
-
-.detail-information{
+.experience-information-wrapper{
     background-color: $move-grey;
     max-width: 100%;   
     padding: 1% 4%;
     line-height: $line-height;
 }
 
-.detail-information-section {
-    display: flex;
-    flex-flow: row wrap;   
-}
-
-.detail-information-section > div {     
+.flex-container > div {     
     text-align: left;
     width: 33%;   
     min-width: 300px;
-  } 
+} 
 
+.experience-report{
+    margin: 2% 20%;
+    line-height: $line-height;
+}
 
- .detail-report{
-      margin: 2% 20%;
-      line-height: $line-height;
-  }
-
-  tr td:first-child {
+tr td:first-child {
     text-align: right;
     padding-right: 18px;
     color: $move-blue;
@@ -41,6 +34,6 @@
     font-weight: bold;    
 }
 
-.subcategory td:first-child  {
-   font-weight: lighter; 
+.experience-subcategory td:first-child  {
+    font-weight: lighter; 
 }

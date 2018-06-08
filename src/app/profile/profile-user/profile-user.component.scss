@@ -1,7 +1,7 @@
 @import '../../../assets/GlobalScss/var.scss';
 
 
-.studentData {
+.profile-user-data {
     width: 100vw;
     margin: 4rem 0px;
     margin-left: calc(-50vw + 50%);
@@ -9,26 +9,26 @@
     padding: 0px $main-margin;
 }
 
-.studentData>div {
+.profile-user-data>div {
     display: flex;
     align-items: flex-end;
     flex-flow: row wrap;
 }
 
-.studentData>div>div {
+.profile-user-data>div>div {
     margin: 3vw;
 }
 
-img {
+#profilepic {
     width: 25vw;
     height: 100%;
 }
 
-.detailedData{
+.profile-detailed-user-data{
     width: 100%;
 }
 
-.detailedData>div {
+.profile-detailed-user-data>div {
     display: flex;
     margin-left: 25vw;
 }

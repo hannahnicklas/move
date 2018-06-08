@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { StudentService } from '../student.service';
 import { Student } from '../../../assets/Data/Student';
 import { AuthService } from '../../auth/auth.service';
@@ -8,7 +8,7 @@ import { AuthService } from '../../auth/auth.service';
   templateUrl: './profile-user.component.html',
   styleUrls: ['./profile-user.component.scss']
 })
-export class ProfileUserComponent implements OnInit {
+export class ProfileUserComponent implements OnInit, AfterViewChecked {
 
   edit = false;
 
@@ -20,7 +20,10 @@ export class ProfileUserComponent implements OnInit {
 
     // this.studentservice.getStudent(1).subscribe(student => this.student = student);
      this.student = this.authService.getAuthenticatedObject();
+  }
 
+  ngAfterViewChecked() {
+    document.getElementById('profilepic').setAttribute('style', 'height: 200px; width: auto;');
   }
   save(): void {
     this.edit = !this.edit;
