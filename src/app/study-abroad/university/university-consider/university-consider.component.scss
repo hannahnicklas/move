@@ -2,27 +2,41 @@
 
 
 .consider-column {
-    margin: 0px 0.5%;
     flex-basis: 0;
     flex-grow: 1;
 }
 
-.consider-column p{
-    margin-bottom: 10%;
-}
-
 .consider-fact {
     display: flex;
-    margin: 4%;
+    height: 100px;
+
+    margin: 1em 0;
 }
 
 .consider-fact-icon {
     flex-basis: 0;
     flex-grow: 1;
     font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
 }
 
 .consider-fact-text {
     flex-basis: 0;
     flex-grow: 5;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
+
+    p {
+        margin: 0;
+    }
+}
+
+.factsRegionIcon, .factsCityIcon, .factsUniIcon {
+    max-width: 50px;
+    max-height: 50px;
 }

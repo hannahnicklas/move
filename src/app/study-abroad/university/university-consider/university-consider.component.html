@@ -8,13 +8,15 @@
         <p>{{university.country}}</p>
 
         <!-- Faktenliste Country -->
-        <div *ngFor="let fact of university.facts" class="consider-fact">
+        <div *ngFor="let fact of university.factsRegion" class="consider-fact">
           <div class="consider-fact-icon">
-            <i class="{{fact.icon}}"></i>
+            <img class="factsRegionIcon" src="../../../../assets/images/app-component/university-consider/{{fact.icon}}">
           </div>
           <div class="consider-fact-text regular-S black">
-            <b>{{fact.title}}</b>
-            <br> {{fact.description}}
+            <p>
+              <b>{{fact.title}}</b>
+              <br> {{fact.description}}
+            </p>
           </div>
         </div>
       </div>
@@ -23,13 +25,15 @@
         <p>{{university.city}}</p>
 
         <!-- Faktenliste City -->
-        <div *ngFor="let fact of university.facts" class="consider-fact">
+        <div *ngFor="let fact of university.factsCity" class="consider-fact">
           <div class="consider-fact-icon">
-            <i class="{{fact.icon}}"></i>
+            <img class="factsCityIcon" src="../../../../assets/images/app-component/university-consider/{{fact.icon}}">
           </div>
           <div class="consider-fact-text regular-S black">
-            <b>{{fact.title}}</b>
-            <br> {{fact.description}}
+            <p>
+                <b>{{fact.title}}</b>
+                <br> {{fact.description}}
+            </p> 
           </div>
         </div>
       </div>
@@ -38,13 +42,15 @@
         <p>University</p>
 
         <!-- Faktenliste University -->
-        <div *ngFor="let fact of university.facts" class="consider-fact">
+        <div *ngFor="let fact of university.factsUni" class="consider-fact">
           <div class="consider-fact-icon">
-            <i class="{{fact.icon}}"></i>
+            <img class="factsUniIcon" src="../../../../assets/images/app-component/university-consider/{{fact.icon}}">
           </div>
           <div class="consider-fact-text regular-S black">
-            <b>{{fact.title}}</b>
-            <br> {{fact.description}}
+            <p>
+              <b>{{fact.title}}</b>
+              <br> {{fact.description}}
+            </p>
           </div>
         </div>
       </div>
