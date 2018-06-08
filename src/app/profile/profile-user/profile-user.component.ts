@@ -10,6 +10,8 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class ProfileUserComponent implements OnInit {
 
+  edit = false;
+
  student: Student;
 
   constructor(private studentservice: StudentService, private authService: AuthService) { }
@@ -20,5 +22,8 @@ export class ProfileUserComponent implements OnInit {
      this.student = this.authService.getAuthenticatedObject();
 
   }
-
+  save(): void {
+    this.edit = !this.edit;
+    this.studentservice.updateStudent(this.student);
+  }
 }

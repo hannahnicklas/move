@@ -7,6 +7,10 @@ import { Student } from '../../assets/Data/Student';
 import { University } from '../../assets/Data/University';
 import { UniversityService } from '../study-abroad/university/university.service';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable()
 export class StudentService {
 
@@ -36,6 +40,9 @@ export class StudentService {
       student.universities = universities;
       return student;
     }));
+  }
+  updateStudent (student: Student): Observable<any> {
+    return this.http.put(this.studentsUrl, student, httpOptions);
   }
 
 }

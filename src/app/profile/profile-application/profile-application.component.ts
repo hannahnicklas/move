@@ -21,14 +21,15 @@ export class ProfileApplicationComponent implements OnInit {
   transferData: Object = {id: 1, msg: 'Hello'};
     receivedData: Array<any> = [];
 
+  // this method gets the dragged data as an event and pushes it to the dropped array (receivedData)
     transferDataSuccess($event: any) {
-      if (this.receivedData.length < 5 ) {
+      if (this.receivedData.length < 5 && $event.dragData !== undefined ) {
         this.receivedData.push($event);
-        console.log($event.dragData.msg);
+        console.log($event);
       }
     }
     // {{data | json}} to show everything
-    logThatShit(data: any) {
+    logThis(data: any) {
       console.log(data);
     }
 

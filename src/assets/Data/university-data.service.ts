@@ -87,7 +87,8 @@ export class UniversityDataService implements InMemoryDbService {
       { id: 1, forename: 'Anna', name: 'Adventurous', subject: 'User Experience Design',
       mobile: '0157512345', studyProgress: '3. Semester', bday: '17.09.1996',
       goingAbroad: '5. Semester', email: 'anna1234@thi.de', password: '1234', username: 'anna1234',
-      favoritesID: [1, 2, 3], universityIDs: [1] },
+      favoritesID: [1, 2, 3], universityIDs: [1],
+      emergFirstName: 'My', emergLastName: 'daddy', emergEmail: 'daddy@dad.de', emergMobile: '01234567' },
       { id: 2, forename: 'Susi', name: 'Sorglos', subject: 'User Experience Design',
       mobile: '0157512545', studyProgress: '4. Semester', bday: '11.07.1995',
       goingAbroad: '6. Semester', email: 'susi1234@thi.de', password: '1234', username: 'susi1234'}];
