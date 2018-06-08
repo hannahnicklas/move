@@ -1,11 +1,15 @@
-// variables for background color
+/**********************************/
+/* VARIABLEN */
+/**********************************/
+
+// variables for colors
 $move-orange: #dc6413;
 $move-blue: #0e5074;
 $move-light: #6e96ac;
 $move-lighter: #a3bcca;
 $move-grey: #f5f5f5;
 
-//variables for typo color and fontsizes 
+// variables for typo color and fontsizes 
 $font-size-small: 14px; 
 $font-size-medium: 16px; 
 $font-size-regular: 16px; 
@@ -18,12 +22,16 @@ $text-color-blue: #005075;
 $text-color-grey: #333333;
 $text-color-orange: #dc6413;
 
+$line-height: 28px;
 
-$line-height: 28px; 
-
-//layout
+// variables for layout
 $main-nav-height: 7vh;
 $main-margin: 4%;
+
+
+/**********************************/
+/* LAYOUT*/
+/**********************************/
 
 .margin {
     margin: $main-margin;
@@ -46,14 +54,17 @@ $main-margin: 4%;
     margin-bottom: 3%;
 }
 
-//Schriften 
+
+/**********************************/
+/* SCHRIFTEN */
+/**********************************/
 
 a {
     color: $move-blue;
     text-decoration: none;
 }
 
-.Laufweite0 {
+.laufweite0 {
     letter-spacing: 0px !important;
 }
 
@@ -69,8 +80,8 @@ a {
     text-align: center;
 }
 
-//color classes 
 
+//color classes 
 .white {
     color: $text-color-bright !important; 
 }
@@ -87,21 +98,28 @@ a {
     color: $text-color-orange !important; 
 }
 
-// 
+.orange-bg {
+    background-color: $move-orange !important;
+}
+
+
+// text styles
+
+// Welcome
 .light-XL {
     font-size: $font-size-x-large;
     font-weight: lighter;
     text-decoration: none;
 }
 
-//Obernav
+// Obernav
 .light-L{
     font-size: $font-size-large;
     font-weight: lighter;
     text-decoration: none;
 }
 
-//Unternav 
+// Unternav 
 .regular-M{
     font-size: $font-size-medium;
     text-decoration: none;
@@ -114,28 +132,28 @@ a {
     text-decoration: none;
 }
 
-//mittlere Unterüberschriften 
+// mittlere Unterüberschriften 
 .light-M{
     font-size: $font-size-medium;
     font-weight: lighter;
     text-decoration: none;
 }
 
-//kleine Überschriften in Listen
+// kleine Überschriften in Listen
 .bold-M{
     font-size: $font-size-medium;
     font-weight: bold;
     text-decoration: none;
 }
 
-//ganz kleine Überschriften in Texten, Buttons, Links, kleine Kategorien
+// ganz kleine Überschriften in Texten, Buttons, Links, kleine Kategorien
 .bold-S{
     font-size: $font-size-small;
     font-weight: bold;
     text-decoration: none;
 }
 
-//Zitate
+// Zitate
 .italic-L{
     font-size: $font-size-large;
     font-style: italic;
@@ -143,7 +161,7 @@ a {
     text-decoration: none;
 }
 
-//Fließtext, Filteroptionen, Breadcrumb, Unterkategorien
+// Fließtext, Filteroptionen, Breadcrumb, Unterkategorien
 .regular-S{
     font-size: $font-size-small;
     font-weight: lighter;
@@ -152,6 +170,7 @@ a {
 
 // buttons
 .button {
+    border: none;
     background-color: $move-blue;
     margin-top: 4%;
     padding: 1.3rem 1.1rem;
