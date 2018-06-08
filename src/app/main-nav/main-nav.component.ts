@@ -23,15 +23,14 @@ export class MainNavComponent implements OnInit {
 
 
     function scroll() {
-      
-
       if ( document.getElementsByClassName('breadcrumbLinks')[0].innerHTML === 'Home' ) {
         console.log(document.body.scrollTop / window.innerHeight);
-        document.getElementById('mainNav').style.backgroundColor = 'rgba(0,80,117, ' + (document.body.scrollTop / window.innerHeight) + ')';
+        // tslint:disable-next-line:max-line-length
+        document.getElementById('main-nav').style.backgroundColor = 'rgba(0,80,117, ' + (document.body.scrollTop / window.innerHeight) + ')';
       }
 
       if ( document.getElementsByClassName('breadcrumbLinks')[0].innerHTML !== 'Home' ) {
-        document.getElementById('mainNav').style.backgroundColor = ('rgb(0,80,117)');
+        document.getElementById('main-nav').style.backgroundColor = ('rgb(0,80,117)');
       }
     }
 

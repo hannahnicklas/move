@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     // this.fixNav();
-    document.getElementById('mainNav').style.backgroundColor = ('rgba(0,0,0,0)');
+    document.getElementById('main-nav').style.backgroundColor = ('rgba(0,0,0,0)');
     console.log(this.authService);
   }
 
