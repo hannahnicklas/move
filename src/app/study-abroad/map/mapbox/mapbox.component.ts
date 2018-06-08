@@ -16,7 +16,8 @@ export class MapboxComponent implements OnInit {
 
   unis: University[];
   data;
-
+  showPopup: boolean;
+  uni: University;
 
 
   /// default settings
@@ -30,13 +31,14 @@ export class MapboxComponent implements OnInit {
     (mapboxgl as any).accessToken = 'pk.eyJ1IjoiZ3JhbmRtYWdhdXNzIiwiYSI6ImNqZ2dvdzJpazAwM3MzOHFubjJ2NDYyaDcifQ.8rLg5amk491arsu10b67uQ';
   }
 
+
   ngOnInit() {
+    this.showPopup = false;
+    this.buildData();
+    this.buildMap();
     // console.log(this.data);
     // this.buildData();
     // console.log(this.data);
-
-    this.buildData();
-    this.buildMap();
   }
 
 
@@ -51,13 +53,15 @@ export class MapboxComponent implements OnInit {
         type: 'Feature',
         properties: {
           // tslint:disable-next-line:max-line-length
-          description: ('<a href="/studyAbroad/'
+          description: (String(i)),
+            /*
+            <a href="/studyAbroad/'
             .concat(String(this.unis[i].id)
             .concat('/general"><strong>'
             .concat(this.unis[i].name
             .concat('</strong><br><img style="width: 100px; height: auto" src="../../assets/images/app-component/university-general/'
             .concat(String(this.unis[i].id)
-            .concat('/1.JPG"></a>'))))))),
+            .concat('/1.JPG"></a>'))))))),*/
         },
         geometry: {
           type: 'Point',
@@ -107,11 +111,14 @@ export class MapboxComponent implements OnInit {
       while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
           coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
       }
-
+      /*console.log();*/
+      this.uni = this.unis[e.features[0].properties.description];
+      this.showPopup = true;
+      /*
       new mapboxgl.Popup()
           .setLngLat(coordinates)
           .setHTML(description)
-          .addTo(this.map);
+          .addTo(this.map);*/
   });
 
   this.map.on('mouseenter', 'unis',  () => {
