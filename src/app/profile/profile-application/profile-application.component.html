@@ -1,7 +1,13 @@
 <div>
+  <h1>Draggable</h1>
+  <h1>List of your favorite Universities</h1>
+
+</div>
+<div>
+  <h1>Moveable</h1>
   <h1>List of your favorite Universities</h1>
   <ul>
-    <li *ngFor="let uni of student.universities">
+    <li class="box" appDragabble appMoveable *ngFor="let uni of student.universities">
       {{uni.name}}
     </li>
   </ul>
@@ -14,3 +20,38 @@
     </li>
   </ul>
 </div>
+<h4>Transfer custom data in Drag-and-Drop</h4>
+<div class="row">
+  <div class="col-sm-3">
+    <div class="panel panel-success">
+      <div class="panel-heading">Available to drag</div>
+      <ul class="panel-body">
+
+        <li *ngFor="let uni of student.universities; let i = index" class="panel panel-default" dnd-draggable [dragEnabled]="true"
+          [dragData]="uni.name">
+          {{ i + 1}} {{uni.name}}
+        </li>
+
+      </ul>
+      <div class="col-sm-3">
+        <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess($event)">
+          <div class="panel-heading">Place to drop (Items:{{receivedData.length}})</div>
+
+          <!-- <div class="panel-body">
+            <div [hidden]="!receivedData.length > 0" *ngFor="let data of receivedData; let i = index">
+              {{ i + 1}} {{ data.dragData }}
+              <button (click)="onDeleteUni(i)">x</button>
+            </div>
+            <button (click)="logThatShit(receivedData)">TEST</button>
+          </div> -->
+          <div class="panel-body">
+            <ul [hidden]="!receivedData.length > 0" dnd-sortable-container [sortableData]="receivedData">
+              <li *ngFor="let data of receivedData; let i = index" dnd-sortable [sortableIndex]="i">
+                {{ data.dragData }}
+                <button (click)="onDeleteUni(i)">x</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
