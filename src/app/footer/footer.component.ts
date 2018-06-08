@@ -13,18 +13,9 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this.subscribeBreadcrumbs();
-
-    document.addEventListener( 'DOMContentLoaded', this.setActiveColorBreadcrumb );
-    document.addEventListener( 'click', this.setActiveColorBreadcrumb );
   }
 
   public subscribeBreadcrumbs() {
     this.breadcrumbService.crumbs$.subscribe(breadcrumbs => this.breadcrumbs = breadcrumbs);
-  }
-
-  setActiveColorBreadcrumb() {
-    console.log(document.getElementsByClassName('breadcrumbLinks').length);
-    document.getElementsByClassName('breadcrumbLinks')[(document.getElementsByClassName('breadcrumbLinks').length - 1)].
-    setAttribute('style', 'color: #DC6413');
   }
 }

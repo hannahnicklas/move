@@ -13,6 +13,6 @@ export class ProfileContactComponent implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked() {
-    document.getElementById('thipic').setAttribute('style', 'height: 200px; width: auto');
+   document.getElementById('thipic').setAttribute('style', 'height: 200px; width: auto');
   }
 }
