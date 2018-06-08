@@ -24,8 +24,4 @@ export class ProfileUserComponent implements OnInit, AfterViewChecked {
     document.getElementById('profilepic').setAttribute('style', 'height: 200px; width: auto;');
   }
 
-  ngAfterViewChecked() {
-    document.getElementById('profilepic').setAttribute('style', 'height: 200px; width: auto');
-  }
-
 }
