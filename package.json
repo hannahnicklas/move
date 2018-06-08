@@ -30,8 +30,8 @@
     "ng2-dnd": "^5.0.2",
     "ng5-breadcrumb": "0.0.6",
     "ngx-breadcrumbs": "0.0.3",
-    "pepjs": "^0.4.3",
     "ngx-mapbox-gl": "^1.2.0",
+    "pepjs": "^0.4.3",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
