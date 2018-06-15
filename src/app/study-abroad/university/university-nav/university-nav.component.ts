@@ -62,5 +62,12 @@ export class UniversityNavComponent implements OnInit {
   log(id: string) {
     console.log('klicked' + id);
   }
+  isFav(): boolean {
+    if (this.favorite === undefined) {
+      return false;
+    } else {
+      return this.favorite.isFav;
+    }
+  }
 
 }

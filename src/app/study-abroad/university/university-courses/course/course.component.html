@@ -1,4 +1,4 @@
-<div class="courses">
+<div *ngIf="university" class="courses">
   <div *ngFor="let course of university.courses" class="course flex-container">
 
       <div class="course-text">
