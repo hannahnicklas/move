@@ -120,4 +120,8 @@ export class MapboxComponent implements OnInit {
 });
 }
 
+  closeWindow() {
+    this.showPopup = false;
+  }
+
 }

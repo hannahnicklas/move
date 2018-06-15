@@ -28,6 +28,7 @@ export class UniversityGeneralComponent implements OnInit {
      const id = +this.route.parent.snapshot.paramMap.get('id');
      this.universityService.getUniversity(id)
       .subscribe(university => this.university = university);
+      console.log(this.university);
   }
 
 }
