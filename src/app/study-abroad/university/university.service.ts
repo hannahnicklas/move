@@ -6,11 +6,15 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { University } from '../../../assets/Data/University';
 import 'rxjs/add/operator/toPromise';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable()
 export class UniversityService {
 
   constructor(private http: HttpClient
-    ) { }
+  ) { }
   private unisUrl = 'api/unis';
 
   getUnis(): Observable<University[]> {
@@ -20,7 +24,7 @@ export class UniversityService {
   async getUnisAsync() {
     const response = await this.http.get(this.unisUrl).toPromise();
     return response;
- }
+  }
 
   getUniversity(id: number): Observable<University> {
     const url = `${this.unisUrl}/${id}`;
@@ -32,5 +36,7 @@ export class UniversityService {
     console.log(ids);
     return this.http.get<University[]>(this.unisUrl);
   }
-
+  /* updateUniversity(university: University): Observable<any> {
+    return this.http.put(this.unisUrl, university, httpOptions);
+  } */
 }
