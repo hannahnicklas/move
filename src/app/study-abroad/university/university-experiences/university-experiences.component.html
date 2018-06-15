@@ -1,7 +1,9 @@
 <div *ngIf="university">
   <div class="margin flex-container">
     <div class="experiences">
-      <app-experiences-boxes></app-experiences-boxes>
+      <!-- <div *ngFor="let experience of university.experiences"> -->
+        <app-experiences-boxes></app-experiences-boxes>
+      <!-- </div> -->
     </div>
 
     <!-- Filter ______________________________________________ -->
@@ -23,10 +25,10 @@
           <li (click)="toggle($event.target, 'Less...')" id="more"> More ... </li>
           <ng-container *ngIf="show">
             <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages  | slice:3">{{language}}</li>
-          </ng-container>      
+          </ng-container>
         </div>
       </div>
-    </div> 
+    </div>
 
     <!-- /Filter ______________________________________________ -->
 

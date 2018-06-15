@@ -10,8 +10,16 @@ export class UniversityDataService implements InMemoryDbService {
         id: 1, name: 'University of Technology', country: 'Australia', city: 'Sydney', descriptionText: 'Lorem Ipsum',
         picturePath: '../../images/app-component/university-general',
         experiences: [
-          { student: 'John Doe1', course: 'DB (THI)', text: 'I hated it!' },
-          { student: 'Dora Delighted1', course: 'UXD (THI)', text: 'I loved it!' }
+          { student: 'Luke Lucky', course: 'User Experience Design (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016 Visual Communication (UTS)' },
+          { student: 'Thomas Thrilled', course: 'Engineering (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016 Engineering (UTS)' },
+          { student: 'Lea Ditrich', course: 'Engineering (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016  Engineering (UTS)' },
+          { student: 'Thomas Gottlieb', course: 'User Experience Design (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016 Online Economics (UTS)' },
+          { student: 'Simone Fuchs', course: 'User Experience Design (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016 Visual Communication (UTS)' }
         ], facts: [
           { icon: 'far fa-square', title: 'Visa', description: 'Student visa. Visa needed.' },
           { icon: 'far fa-square', title: 'Left driving traffic', description: 'Like in Great Britain' }
