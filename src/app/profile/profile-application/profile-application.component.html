@@ -11,7 +11,7 @@
               {{ i + 1}} {{uni.name}}
             </li> -->
             <li class="button bold-S white" *ngIf="uni.isFav" dnd-draggable [dragEnabled]="true"
-              [dragData]="uni.name">
+              [dragData]="uni">
               {{ i + 1}} {{uni.name}}
               <button class="delbutton" (click)="setAsNotFav(uni)">x</button>
             </li>
@@ -35,8 +35,8 @@
           <div class="panel-heading">Place to drop - Items: {{receivedData.length}}</div>
           <div class="panel-body">
             <ul [hidden]="!receivedData.length > 0" dnd-sortable-container [sortableData]="receivedData">
-              <li class="button bold-S white" *ngFor="let data of receivedData; let i = index" dnd-sortable [sortableIndex]="i">
-                {{ i + 1}} {{ data.dragData }}
+              <li class="button bold-S white" *ngFor="let uni of receivedData; let i = index" dnd-sortable [sortableIndex]="i">
+                {{ i + 1}} {{ uni.name }}
                 <button class="delbutton" (click)="onDeleteUni(i)">x</button>
               </li>
             </ul>
