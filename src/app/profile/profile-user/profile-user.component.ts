@@ -10,6 +10,8 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class ProfileUserComponent implements OnInit, AfterViewChecked {
 
+  edit = false;
+
  student: Student;
 
   constructor(private studentservice: StudentService, private authService: AuthService) { }
@@ -23,5 +25,8 @@ export class ProfileUserComponent implements OnInit, AfterViewChecked {
   ngAfterViewChecked() {
     document.getElementById('profilepic').setAttribute('style', 'height: 200px; width: auto;');
   }
-
+  save(): void {
+    this.edit = !this.edit;
+    this.studentservice.updateStudent(this.student);
+  }
 }

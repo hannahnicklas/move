@@ -1,6 +1,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Student } from './Student';
 import { University } from './University';
+import { Favorite } from './Favorite';
 
 export class UniversityDataService implements InMemoryDbService {
   createDb() {
@@ -9,8 +10,16 @@ export class UniversityDataService implements InMemoryDbService {
         id: 1, name: 'University of Technology', country: 'Australia', city: 'Sydney', descriptionText: 'Lorem Ipsum',
         picturePath: '../../images/app-component/university-general',
         experiences: [
-          { student: 'John Doe1', course: 'DB (THI)', text: 'I hated it!' },
-          { student: 'Dora Delighted1', course: 'UXD (THI)', text: 'I loved it!' }
+          { student: 'Luke Lucky', course: 'User Experience Design (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016 Visual Communication (UTS)' },
+          { student: 'Thomas Thrilled', course: 'Engineering (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016 Engineering (UTS)' },
+          { student: 'Lea Ditrich', course: 'Engineering (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016  Engineering (UTS)' },
+          { student: 'Thomas Gottlieb', course: 'User Experience Design (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016 Online Economics (UTS)' },
+          { student: 'Simone Fuchs', course: 'User Experience Design (THI)',
+          text: 'WiSe, 24.07.2016 – 18.12.2016 Visual Communication (UTS)' }
         ], factsRegion: [
           { icon: 'VISA.svg', title: 'Visa', description: 'Student visa. For your application you need a visa 6 months before the semester starts.' },
           { icon: 'Traffic.svg', title: 'Left driving traffic', description: 'Like in Great Britain cars drive on the left side of the street.' },
@@ -113,13 +122,29 @@ export class UniversityDataService implements InMemoryDbService {
       { id: 1, forename: 'Anna', name: 'Adventurous', subject: 'User Experience Design',
       mobile: '0157512345', studyProgress: '3. Semester', bday: '17.09.1996',
       goingAbroad: '5. Semester', email: 'anna1234@thi.de', password: '1234', username: 'anna1234',
-      favoritesID: [1, 2, 3], universityIDs: [1] },
+      favoritesID: [1, 2], universityIDs: [1], universities: [],
+      emergFirstName: 'My', emergLastName: 'daddy', emergEmail: 'daddy@dad.de', emergMobile: '01234567' },
       { id: 2, forename: 'Susi', name: 'Sorglos', subject: 'User Experience Design',
       mobile: '0157512545', studyProgress: '4. Semester', bday: '11.07.1995',
       goingAbroad: '6. Semester', email: 'susi1234@thi.de', password: '1234', username: 'susi1234'}];
 
+      const favorites = [
+        {id: 1, name: 'University of Technology', isFav: false},
+        {id: 2, name: 'Technische Hochschule Ingolstadt', isFav: false},
+        {id: 3, name: 'University of Nevada', isFav: false},
+        {id: 4, name: 'University of Sydney', isFav: false},
+        {id: 5, name: 'University of Cambridge', isFav: false},
+        {id: 6, name: 'University of Dakota', isFav: false},
+        {id: 7, name: 'University of Test', isFav: false},
+      ];
 
-    return { unis, students };
+      const favoritesOfStudent = [
+        {id: 1, name: 'University of Technology'},
+        {id: 2, name: 'Technische Hochschule Ingolstadt'},
+      ];
+
+
+    return { favorites, unis, students, favoritesOfStudent  };
   }
   getDBUnis() {
     const uni = this.createDb();

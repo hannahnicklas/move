@@ -1,5 +1,15 @@
 <div id='map'></div>
 <section id="popupSection" *ngIf="showPopup">
-    {{uni.name}}
-    <a routerLink="/studyAbroad/{{uni.id}}/general">Link zur uni</a>
+    <div id="wrapper">
+        <div id="closeButton" (click)="closeWindow()">
+            x
+        </div>
+
+        {{uni.name}}
+        <a routerLink="/studyAbroad/{{uni.id}}/general">Link zur uni</a>
+
+    </div>
 </section>
+<div id="backgroundOpacity" *ngIf="showPopup" (click)="closeWindow()">
+        
+</div>

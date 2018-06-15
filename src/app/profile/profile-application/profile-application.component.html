@@ -5,12 +5,24 @@
       <div class="col-sm-3">
         <div class="panel panel-default">
           <div class="panel-heading">Drag your favorite universities from here</div>
-          <ul class="panel-body">
-            <li class="button bold-S white" *ngFor="let uni of student.universities; let i = index" dnd-draggable [dragEnabled]="true"
+          <ul class="panel-body"  *ngFor="let uni of favorites; let i = index">
+            <!-- <li class="button bold-S white" *ngFor="let uni of student.universities; let i = index" dnd-draggable [dragEnabled]="true"
               [dragData]="uni.name">
               {{ i + 1}} {{uni.name}}
+            </li> -->
+            <li class="button bold-S white" *ngIf="uni.isFav" dnd-draggable [dragEnabled]="true"
+              [dragData]="uni.name">
+              {{ i + 1}} {{uni.name}}
+              <button class="delbutton" (click)="setAsNotFav(uni)">x</button>
             </li>
           </ul>
+          <!-- <div class="panel-body" *ngFor="let uni of favorites; let i = index">
+            <div class="button bold-S white" *ngIf="uni.isFav" dnd-draggable [dragEnabled]="true"
+            [dragData]="uni.name">
+            {{ i + 1}} {{uni.name}}
+            <button class="delbutton" (click)="setAsNotFav(uni)">x</button>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -41,5 +53,8 @@
       <li>Scholarships</li>
       <li>Tell your experiences</li>
     </ul>
+  </div>
+  <div>
+    <button (click)="loggy()">CLick mich</button>
   </div>
 </div>
