@@ -2,47 +2,47 @@
   crossorigin="anonymous">
 
 <div class="margin" *ngIf="university">
-  <div class="considerCol">
-    <div class="columns">
-      <div class="considerCol bold-L blue">
+  <div class="consider-column">
+    <div class="flex-container">
+      <div class="consider-column bold-L blue">
         <p>{{university.country}}</p>
 
         <!-- Faktenliste Country -->
-        <div *ngFor="let fact of university.facts" class="fact">
-          <div class="factIcon">
+        <div *ngFor="let fact of university.facts" class="consider-fact">
+          <div class="consider-fact-icon">
             <i class="{{fact.icon}}"></i>
           </div>
-          <div class="factText regular-S black">
+          <div class="consider-fact-text regular-S black">
             <b>{{fact.title}}</b>
             <br> {{fact.description}}
           </div>
         </div>
       </div>
 
-      <div class="considerCol bold-L blue">
+      <div class="consider-column bold-L blue">
         <p>{{university.city}}</p>
 
         <!-- Faktenliste City -->
-        <div *ngFor="let fact of university.facts" class="fact">
-          <div class="factIcon">
+        <div *ngFor="let fact of university.facts" class="consider-fact">
+          <div class="consider-fact-icon">
             <i class="{{fact.icon}}"></i>
           </div>
-          <div class="factText regular-S black">
+          <div class="consider-fact-text regular-S black">
             <b>{{fact.title}}</b>
             <br> {{fact.description}}
           </div>
         </div>
       </div>
 
-      <div class="considerCol bold-L blue">
+      <div class="consider-column bold-L blue">
         <p>University</p>
 
         <!-- Faktenliste University -->
-        <div *ngFor="let fact of university.facts" class="fact">
-          <div class="factIcon">
+        <div *ngFor="let fact of university.facts" class="consider-fact">
+          <div class="consider-fact-icon">
             <i class="{{fact.icon}}"></i>
           </div>
-          <div class="factText regular-S black">
+          <div class="consider-fact-text regular-S black">
             <b>{{fact.title}}</b>
             <br> {{fact.description}}
           </div>

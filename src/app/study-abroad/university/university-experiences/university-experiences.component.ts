@@ -16,9 +16,12 @@ import { FilterComponent } from '../../../filter/filter.component';
 export class UniversityExperiencesComponent implements OnInit {
   @Input() university: University;
 
+// Filterbegriffe _________________________________________
 
   sortings = ['Alphabetical', 'Helpful', 'Faculity', 'Latest', 'Rating', 'Study course'];
   languages = ['English', 'France', 'German', 'Italian', 'Chinese', 'Spanish'];
+
+// /Filterbegriffe _________________________________________
 
   public show = false;
   public showMore = 'Show';
@@ -40,6 +43,9 @@ export class UniversityExperiencesComponent implements OnInit {
      this.universityService.getUniversity(id)
       .subscribe(university => this.university = university);
   }
+
+  // Show More & Less Button _____________________________________
+
   toggle(element, text) {
     element.textContent = text;
     this.show = !this.show;
@@ -52,4 +58,6 @@ export class UniversityExperiencesComponent implements OnInit {
       element.textContent = 'More ...';
     }
   }
+
+    // /Show More & Less Button _____________________________________
 }

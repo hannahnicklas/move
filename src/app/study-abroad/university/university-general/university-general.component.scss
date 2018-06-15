@@ -1,26 +1,28 @@
 @import '../../../../assets/GlobalScss/var.scss';
 
-.left {
+.university-description {
     width: 50%;
     float: left;
 }
 
-.right {
+.university-pictures {
     width: 40%;
     float: right;
     margin-left: 5%;
     margin-right: 5%;
 
-    .smallImages {
+    .small-images {
         margin-top: 3%;
         
         img {
             width: 30%;
             float: left;
+            margin-right: 5%;
         }
-    }
-    .marginRight {
-        margin-right: 5%;
+
+        img:last-child {
+            margin-right: 0%;
+        }
     }
 }
 

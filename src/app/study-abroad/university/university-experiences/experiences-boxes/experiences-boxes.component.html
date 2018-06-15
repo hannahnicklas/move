@@ -1,11 +1,11 @@
-<div class="exp" *ngIf="university">
+<div class="experiences" *ngIf="university">
     <div *ngFor="let experience of university.experiences">
         <a routerLink="/studyAbroad/{{university.id}}/experiences-detail">
             <div class="bold-L white">{{experience.student}}</div>
             <div class="large-M white">{{experience.course}}</div>
             <br>
             <div class="large-M black">{{experience.text}}</div>
-            <div class="rating"> 
+            <div class="experience-rating"> 
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>

@@ -1,18 +1,20 @@
 <div *ngIf="university" class="margin">
-  <div class="left">
-      <h2>{{university.name}}</h2>
-      <div class="description">
-        {{university.descriptionText}}
-      </div>
-  </div>
-  <div class="right">
-    <div class="bigImage">
-      <img src="../../assets/images/app-component/university-general/{{university.id}}/1.JPG">
-    </div>
-    <div class="smallImages">
-        <img class="marginRight" src="../../assets/images/app-component/university-general/{{university.id}}/2.JPG">
-        <img class="marginRight" src="../../assets/images/app-component/university-general/{{university.id}}/3.JPG">
-        <img src="../../assets/images/app-component/university-general/{{university.id}}/4.JPG">
+  <div class="university-description">
+    <h2>{{university.name}}</h2>
+    <div class="university-text">
+      {{university.descriptionText}}
     </div>
   </div>
+
+  <div class="university-pictures">
+    <div>
+      <img src="../../assets/images/app-component/university-general/1/1.JPG">
+    </div>
+    <div class="small-images">
+      <img src="../../assets/images/app-component/university-general/1/2.JPG">
+      <img src="../../assets/images/app-component/university-general/1/3.JPG">
+      <img src="../../assets/images/app-component/university-general/1/4.JPG">
+    </div>
+  </div>
+
 </div>

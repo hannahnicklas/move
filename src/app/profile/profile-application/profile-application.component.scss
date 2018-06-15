@@ -1,9 +1,6 @@
 .margin {
     flex-wrap: wrap;
 }
-h1 {
-    
-}
 
 .button {
     background-color: #0e5074;
@@ -13,6 +10,7 @@ h1 {
     min-width: 400px;
     position:relative;
 }
+
 .delbutton {
     background-color: #6e96ac;
     right: 0px;
@@ -21,9 +19,11 @@ h1 {
     border-radius: 0px;
     position:absolute;
 }
+
 .panel-body {
     min-width: 500px;
 }
+
 .panel.panel-default {
     min-width: 500px;
 }

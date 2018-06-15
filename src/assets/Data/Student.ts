@@ -15,4 +15,8 @@ export class Student {
     password: string;
     username: string;
     universities: University[];
+    emergFirstName: string;
+    emergLastName: string;
+    emergEmail: string;
+    emergMobile: string;
   }

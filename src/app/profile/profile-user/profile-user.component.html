@@ -1,18 +1,20 @@
 <div class="margin">
   <div *ngIf='student'>
 
-  <div class="studentData">
+  <div class="profile-user-data">
     <div>
-      <img src="../../assets/images/profile/anna_adven.png" alt="profilepic">
+      <img id = "profilepic" src="../../assets/images/profile/anna_adven.png" alt="profilepic">
       <div class="blue">
         <div class="bold-L">{{student.forename}} {{student.name}}</div>
         <div>{{student.subject}}</div>
-        <div>EDIT BUTTON</div>
+        <div>
+          <button *ngIf="!edit" (click)="edit = !edit" >Edit</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="detailedData Laufweite0">
+  <div *ngIf="!edit" class="profile-detailed-user-data laufweite0">
     <div  class="regular-S">
       <table>
         <tr>
@@ -65,25 +67,107 @@
         </tr>
         <tr>
           <td>first name</td>
-          <td>Emer</td>
+          <td>{{student.emergFirstName}}</td>
         </tr>
 
         <tr>
           <td>last name</td>
-          <td>Gency</td>
+          <td>{{student.emergLastName}}</td>
         </tr>
 
         <tr>
           <td>e-mail</td>
-          <td>emergency@thi.de</td>
+          <td>{{student.emergEmail}}</td>
         </tr>
 
         <tr>
           <td>mobile</td>
-          <td>0815 666666</td>
+          <td>{{student.emergMobile}}</td>
         </tr>
       </table>
     </div>
+
+  </div>
+  <div *ngIf="edit" class="detailedData Laufweite0">
+    <div  class="regular-S">
+      <table>
+        <tr>
+          <td class="bold-S blue">personal information</td>
+        </tr>
+        <tr>
+          <td>birth date</td>
+          <td>{{student.bday}}</td>
+        </tr>
+
+        <tr>
+          <td>e-mail</td>
+          <td><!-- <input type="text" value="{{student.email}}"/> -->
+            <input [(ngModel)]="student.email" placeholder="student.email"/></td>
+        </tr>
+
+        <tr>
+          <td>mobile</td>
+          <td><!-- <input type="text" value="{{student.mobile}}"/> -->
+            <input [(ngModel)]="student.mobile" placeholder="student.mobile"/></td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="bold-S blue">study information</td>
+        </tr>
+        <tr>
+          <td>study-course</td>
+          <td>{{student.subject}}</td>
+        </tr>
+
+        <tr>
+          <td>study-progress</td>
+          <td>{{student.studyProgress}}</td>
+        </tr>
+
+        <tr>
+          <td>student id</td>
+          <td>{{student.id}}</td>
+        </tr>
+
+        <tr>
+          <td>going abroad</td>
+          <td><!-- <input type="text" value="{{student.goingAbroad}}"/> -->
+            <input [(ngModel)]="student.goingAbroad" placeholder="student.goingAbroad"/></td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="bold-S blue">emergency contact</td>
+        </tr>
+        <tr>
+          <td>first name</td>
+          <td><!-- <input type="text" value="{{student.emergFirstName}}"/> -->
+            <input [(ngModel)]="student.emergFirstName" placeholder="student.emergFirstName"/></td>
+        </tr>
+
+        <tr>
+          <td>last name</td>
+          <td><!-- <input type="text" value="{{student.emergLastName}}"/> -->
+            <input [(ngModel)]="student.emergLastName" placeholder="student.emergLastName"/></td>
+        </tr>
+
+        <tr>
+          <td>e-mail</td>
+          <td><!-- <input type="text" value="{{student.emergEmail}}"/> -->
+            <input [(ngModel)]="student.emergEmail" placeholder="student.emergEmail"/></td>
+        </tr>
+
+        <tr>
+          <td>mobile</td>
+          <td><!-- <input type="text" value="{{student.emergMobile}}"/> -->
+            <input [(ngModel)]="student.emergMobile" placeholder="student.emergMobile"/></td>
+        </tr>
+      </table>
+    </div>
+    <button class="button bold-S white" (click)="save()">save</button>
 
   </div>
 
