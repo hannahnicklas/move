@@ -20,9 +20,22 @@ export class UniversityDataService implements InMemoryDbService {
           text: 'WiSe, 24.07.2016 – 18.12.2016 Online Economics (UTS)' },
           { student: 'Simone Fuchs', course: 'User Experience Design (THI)',
           text: 'WiSe, 24.07.2016 – 18.12.2016 Visual Communication (UTS)' }
-        ], facts: [
-          { icon: 'far fa-square', title: 'Visa', description: 'Student visa. Visa needed.' },
-          { icon: 'far fa-square', title: 'Left driving traffic', description: 'Like in Great Britain' }
+        ], factsRegion: [
+          { icon: 'VISA.svg', title: 'Visa', description: 'Student visa. For your application you need a visa 6 months before the semester starts.' },
+          { icon: 'Traffic.svg', title: 'Left driving traffic', description: 'Like in Great Britain cars drive on the left side of the street.' },
+          { icon: 'Climate.svg', title: 'Regional temperature differences', description: 'Very cold winters in the south of Australia. Warm climate in the north througout the year.' },
+          { icon: 'Rainfall.svg', title: 'Rainfall', description: 'Australian is one of the dryest countries of the earth.' },
+          { icon: 'OppositeSeasons.svg', title: 'Opposite seasons', description: 'Since Australia is on the southern hemisphere the seasons are reversed to the German seasons.' },
+          { icon: 'FlightCosts.svg', title: 'Flight cost', description: 'Flights to Australia are usually very expensive. So make sure to look for cheaper deals.' }
+        ], factsCity: [
+          { icon: 'LivingCosts.svg', title: 'Living costs', description: 'The livings costs in Australia and exspecially around Sydney are very high.' },
+          { icon: 'Power.svg', title: 'Power adapter', description: 'Voltage is 220, so a outlet adapter and a voltage converter are needed.' },
+          { icon: 'PublicTransport.svg', title: 'Public transport', description: 'Transport for NSW public transport services use the Opal ticketing system.' }
+        ], factsUni: [
+          { icon: 'LanguageProficiency.svg', title: 'Entry requirements', description: 'A year of study at a recognized institution at the time of application and the UTS requirements.' },
+          { icon: 'LanguageProficiency.svg', title: 'Language proficency', description: 'English level in accordance with the UTS English language requirements.' },
+          { icon: 'Fees.svg', title: 'Study fees', description: 'The study fees differ from course to course and will cost about 5000-7000€ (2017).' },
+          { icon: 'Deadlines.svg', title: 'Application deadlines', description: 'Commencement January - March 2018: 20.08.2017. Commencement July - August 2018: 15.02.2018.' }
         ], courses: [
           {
             id: '1', title: 'Bachelor of Design in User Centered Design',
@@ -66,9 +79,22 @@ export class UniversityDataService implements InMemoryDbService {
             student: 'Hillarious Happy', course: 'Engineering (THI)',
             text: 'WiSe, 24.07.2016 – 18.12.2016 Engineering (UTS)'
           }
-        ], facts: [
-          { icon: 'far fa-square', title: 'No Visa', description: 'No Visa needed.' },
-          { icon: 'far fa-square', title: 'No Left driving traffic', description: 'Its Germany' }
+        ], factsRegion: [
+          { icon: 'VISA.svg', title: 'Visa', description: 'If you are not from Europe you will need a Visum.' },
+          { icon: 'Traffic.svg', title: 'Right driving traffic', description: 'Not like Great Britain.' },
+          { icon: 'Climate.svg', title: 'Humid climate', description: 'Mixed weather, but mostly moderate.' },
+          { icon: 'Rainfall.svg', title: 'Rainfall', description: 'Average rainfall.' },
+          { icon: 'OppositeSeasons.svg', title: 'Opposite seasons', description: 'Winter is from November to March, summer from June to August.' },
+          { icon: 'FlightCosts.svg', title: 'Flight cost', description: 'Depends from where you want to start. So make sure to look for cheaper deals.' }
+        ], factsCity: [
+          { icon: 'LivingCosts.svg', title: 'Living costs', description: 'The living costs in Ingolstadt are more expensive than in the suburban region.' },
+          { icon: 'Power.svg', title: 'Power adapter', description: 'Voltage is 230.' },
+          { icon: 'PublicTransport.svg', title: 'Public transport', description: 'There are buses and trains, but no subway.' }
+        ], factsUni: [
+          { icon: 'LanguageProficiency.svg', title: 'Entry requirements', description: 'A year of study at a recognized institution at the time of application and the UTS requirements.' },
+          { icon: 'LanguageProficiency.svg', title: 'Language proficency', description: 'English or German level in accordance with the UTS English and German language requirements.' },
+          { icon: 'Fees.svg', title: 'Study fees', description: 'If you are from Europe you do not need to pay study fees.' },
+          { icon: 'Deadlines.svg', title: 'Application deadlines', description: 'Commencement January - March 2018: 20.08.2017. Commencement July - August 2018: 15.02.2018.' }
         ], courses: [
           {
             id: '5', title: 'Bachelor of Science in User Experience Design',
