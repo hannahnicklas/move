@@ -1,60 +1,81 @@
-<div class="margin">
-  <div class="float">
-    <div class="row">
-      <h1 class="bold-L blue">List of your favorite Universities</h1>
-      <div class="col-sm-3">
-        <div class="panel panel-default">
-          <div class="panel-heading">Drag your favorite universities from here</div>
-          <ul class="panel-body"  *ngFor="let uni of favorites; let i = index">
-            <!-- <li class="button bold-S white" *ngFor="let uni of student.universities; let i = index" dnd-draggable [dragEnabled]="true"
+<div class="application margin bold-M black">
+  <div class="flex-container">
+   
+    <!-- Application listing favorits -->
+    <div class="application-listing">
+      <h1 class="bold-M blue">List of your favorite universities</h1>
+      <div class="application-listing">
+        <div class="application-listing-heading">Drag your favorite universities from here</div>
+        <ul *ngFor="let uni of favorites; let i = index">
+          <!-- <li class="button bold-S white" *ngFor="let uni of student.universities; let i = index" dnd-draggable [dragEnabled]="true"
               [dragData]="uni.name">
               {{ i + 1}} {{uni.name}}
             </li> -->
-            <li class="button bold-S white" *ngIf="uni.isFav" dnd-draggable [dragEnabled]="true"
-              [dragData]="uni">
-              {{ i + 1}} {{uni.name}}
-              <button class="delbutton" (click)="setAsNotFav(uni)">x</button>
-            </li>
-          </ul>
-          <!-- <div class="panel-body" *ngFor="let uni of favorites; let i = index">
+          <li class="application-button list bold-S white" *ngIf="uni.isFav" dnd-draggable [dragEnabled]="true" [dragData]="uni">
+            {{ i + 1}} {{uni.name}}
+            <button class="application-button-delete" (click)="setAsNotFav(uni)">
+              <i class="fas fa-times"></i>
+            </button>
+          </li>
+        </ul>
+        <!-- <div class="panel-body" *ngFor="let uni of favorites; let i = index">
             <div class="button bold-S white" *ngIf="uni.isFav" dnd-draggable [dragEnabled]="true"
             [dragData]="uni.name">
             {{ i + 1}} {{uni.name}}
-            <button class="delbutton" (click)="setAsNotFav(uni)">x</button>
+            <button class="application-button-delete" (click)="setAsNotFav(uni)">x</button>
             </div>
           </div> -->
-        </div>
       </div>
     </div>
-  </div>
-  <div class="float">
-    <div class="row">
-      <h1 class="bold-L blue">Rank your favorite Universities</h1>
-      <div class="col-sm-3">
-        <div class="panel panel-default" dnd-droppable (onDropSuccess)="transferDataSuccess($event)">
-          <div class="panel-heading">Place to drop - Items: {{receivedData.length}}</div>
-          <div class="panel-body">
+
+    <!-- Application ranking favorits  -->
+    <div class="application-ranking">
+      <h1 class="bold-M blue">Ranking of your favorite universities</h1>
+      <div>
+        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)">
+          <div class="application-ranking-heading">Drop 5 of your favorits here to apply
+            <br> Items: {{receivedData.length}}</div>
+          <div class="application-ranking-area">
             <ul [hidden]="!receivedData.length > 0" dnd-sortable-container [sortableData]="receivedData">
-              <li class="button bold-S white" *ngFor="let uni of receivedData; let i = index" dnd-sortable [sortableIndex]="i">
+              <li class="application-button rank bold-S white" *ngFor="let uni of receivedData; let i = index" dnd-sortable [sortableIndex]="i">
                 {{ i + 1}} {{ uni.name }}
-                <button class="delbutton" (click)="onDeleteUni(i)">x</button>
+                <button class="application-button-delete" (click)="onDeleteUni(i)">
+                  <i class="fas fa-times"></i>
+                </button>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
+
+
+    <!-- Progress of application  -->
+    <div class="application-progress">
+      <h1 class="bold-M blue">Your progress</h1>
+      <ul class="regular-S">
+        <li>
+          <i class="fas fa-check"></i>
+          <span>Finish profile</span>
+        </li>
+        <li>
+          <i>&nbsp;&nbsp;&nbsp;</i>
+          <span>Rank your universities</span>
+        </li>
+        <li>
+          <i>&nbsp;&nbsp;&nbsp;</i>
+          <span>Scholarships</span>
+        </li>
+        <li>
+          <i>&nbsp;&nbsp;&nbsp;</i>
+          <span>Tell your experiences</span>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="float">
-    <h1 class="bold-L blue">Your progress</h1>
-    <ul>
-      <li>Your profile</li>
-      <li>Rank your universities</li>
-      <li>Scholarships</li>
-      <li>Tell your experiences</li>
-    </ul>
-  </div>
-  <div>
-    <button (click)="loggy()">CLick mich</button>
-  </div>
+
+    <div class="application-finish">
+      <button class="button bold-S white" (click)="loggy()">Finish application</button>
+    </div>
+  
 </div>

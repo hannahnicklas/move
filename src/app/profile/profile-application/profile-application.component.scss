@@ -1,39 +1,77 @@
+@import '../../../assets/GlobalScss/var.scss';
 .margin {
     flex-wrap: wrap;
 }
 
-.button {
-    background-color: #0e5074;
+
+.flex-container > div {
+    width: 250px; 
+    text-align: left;    
+    margin: 1%;     
+}
+
+.application-button{
     margin-top: 4%;
-    padding: 1.3rem 1.1rem;
-    width: fit-content;
-    min-width: 400px;
+    padding: 1.3rem 1.1rem;   
     position:relative;
 }
 
-.delbutton {
-    background-color: #6e96ac;
-    right: 0px;
+.application-button.list {
+    background-color: $move-light;    
+}
+
+.application-button.rank{
+    background-color: $move-blue;
+}
+
+.application-button-delete {
+    background-color: transparent; 
+    right: 10px;
     border: 0;
     box-shadow: none;
     border-radius: 0px;
     position:absolute;
+    font-size: 30px;
+    color: $text-color-bright;
+    cursor: pointer; 
 }
 
-.panel-body {
-    min-width: 500px;
+.application ul{
+  list-style-type: none; 
+  padding-left: 0px; 
 }
 
-.panel.panel-default {
-    min-width: 500px;
+.application span {
+    padding-left: 15px;
 }
 
-.panel-heading {
-    min-width: 500px;
+.application-ranking {
+    flex-grow: 4; 
 }
 
-.float {
-    float: left;
-    margin-left: 1%;
-    margin-right: 1%;
+.application-ranking-area {
+    background-color: $move-grey;  
+    padding-bottom: 200px;
+     
 }
+.application-listing{
+    flex-grow: 4; 
+}
+
+.application-listing-heading{
+    margin-bottom: 50px; 
+}
+
+.application-ranking-heading{
+    margin-bottom: 20px; 
+}
+
+.application-progress{
+      margin-left: 8%!important; 
+      flex-grow: 1;
+}
+
+.application-finish{
+    float: right; 
+}
+
