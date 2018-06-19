@@ -2,7 +2,9 @@
   <a routerLink="/studyAbroad/{{university.id}}/general">General</a>
   <a routerLink="/studyAbroad/{{university.id}}/consider">Consider</a>
   <a routerLink="/studyAbroad/{{university.id}}/experiences">Experiences</a>
-  <a routerLink="/studyAbroad/{{university.id}}/courses">Courses</a>
-  <a routerLink="/profile/application">Add</a>
+  <a (click)="log(university.id)" routerLink="/studyAbroad/{{university.id}}/courses">Courses</a>
+  <!-- <a routerLink="/profile/application" >add</a> -->
+  <!-- <a *ngIf="!isFav()"(click)="setAsFav()" [routerLink]="['/profile/application', {data: university.id}]"></a>add </a> -->
+  <a *ngIf="!isFav()"(click)="setAsFav()">add to favorite</a>
 </nav>
 <div id="navPlaceholder">ddd</div>

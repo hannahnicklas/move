@@ -4,13 +4,13 @@ nav{
     position: fixed;
     
     display: flex;
-    width: 100vw;
+    width: 100%;
     z-index: 1000;
     background-color: $move-light;
 }
 
 #navPlaceholder {
-    width: 100vw;
+    width: 100%;
     position: sticky;
     padding-top: 2vh;
     padding-bottom: 2vh;
