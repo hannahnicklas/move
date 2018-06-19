@@ -81,13 +81,13 @@ export class MapboxComponent implements OnInit {
     this.map = new mapboxgl.Map({
       container: 'map',
       style: this.style,
-      zoom: 1.4,
+      zoom: 1.6,
       center: [0, 45]
     });
 
     /// Add map controls
     this.map.setMaxZoom(5);
-    this.map.setMinZoom(1.4);
+    this.map.setMinZoom(1.6);
     this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('load', () => {

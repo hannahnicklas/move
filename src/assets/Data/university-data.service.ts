@@ -115,7 +115,243 @@ export class UniversityDataService implements InMemoryDbService {
         ],
         lat: '48.767210',
         lang: '11.432368'
-      }
+      },
+      {
+        id: 3, name: 'University of Nevada', country: 'USA', city: 'Nevada',
+        descriptionText: 'Lorem Ipsum3', pictures: [
+          { path: '../../sadsa3' },
+          { path: '../../sadsad3' }
+        ], experiences: [
+          {
+            student: 'Dora Delighted', course: 'User Experience Design (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Visual Communication (UTS)'
+          },
+          {
+            student: 'Felix Fortunate', course: 'Software Engineering (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Software Development (UTS)'
+          },
+          {
+            student: 'Tanja Bayer', course: 'User Experience Design (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Software Development (UTS)'
+          },
+          {
+            student: 'Hillarious Happy', course: 'Engineering (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Engineering (UTS)'
+          }
+        ], factsRegion: [
+          { icon: 'VISA.svg', title: 'Visa', description: 'If you are not from Europe you will need a Visum.' },
+          { icon: 'Traffic.svg', title: 'Right driving traffic', description: 'Not like Great Britain.' },
+          { icon: 'Climate.svg', title: 'Humid climate', description: 'Mixed weather, but mostly moderate.' },
+          { icon: 'Rainfall.svg', title: 'Rainfall', description: 'Average rainfall.' },
+          { icon: 'OppositeSeasons.svg', title: 'Opposite seasons', description: 'Winter is from November to March, summer from June to August.' },
+          { icon: 'FlightCosts.svg', title: 'Flight cost', description: 'Depends from where you want to start. So make sure to look for cheaper deals.' }
+        ], factsCity: [
+          { icon: 'LivingCosts.svg', title: 'Living costs', description: 'The living costs in Ingolstadt are more expensive than in the suburban region.' },
+          { icon: 'Power.svg', title: 'Power adapter', description: 'Voltage is 230.' },
+          { icon: 'PublicTransport.svg', title: 'Public transport', description: 'There are buses and trains, but no subway.' }
+        ], factsUni: [
+          { icon: 'LanguageProficiency.svg', title: 'Entry requirements', description: 'A year of study at a recognized institution at the time of application and the UTS requirements.' },
+          { icon: 'LanguageProficiency.svg', title: 'Language proficency', description: 'English or German level in accordance with the UTS English and German language requirements.' },
+          { icon: 'Fees.svg', title: 'Study fees', description: 'If you are from Europe you do not need to pay study fees.' },
+          { icon: 'Deadlines.svg', title: 'Application deadlines', description: 'Commencement January - March 2018: 20.08.2017. Commencement July - August 2018: 15.02.2018.' }
+        ], courses: [
+          {
+            id: '5', title: 'Bachelor of Science in User Experience Design',
+            description: 'This is the description of the course', are: '3', been: '6'
+          },
+          {
+            id: '6', title: 'Bachelor of Science in Computer Science',
+            description: 'This is the description of the course', are: '6', been: '7'
+          },
+          {
+            id: '7', title: 'Bachelor of Engineering in Mechatronics',
+            description: 'This is the description of the course', are: '2', been: '9'
+          },
+          {
+            id: '8', title: 'Bachelor of Science in Aircraft and Vehicle Informatics',
+            description: 'This is the description of the course', are: '1', been: '5'
+          }
+        ],
+        lat: '39.544192',
+        lang: '-119.816397'
+      },
+      {
+        id: 4, name: 'University of Mailand', country: 'Italy', city: 'Mailand',
+        descriptionText: 'Lorem Ipsum4', pictures: [
+          { path: '../../sadsa3' },
+          { path: '../../sadsad3' }
+        ], experiences: [
+          {
+            student: 'Dora Delighted', course: 'User Experience Design (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Visual Communication (UTS)'
+          },
+          {
+            student: 'Felix Fortunate', course: 'Software Engineering (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Software Development (UTS)'
+          },
+          {
+            student: 'Tanja Bayer', course: 'User Experience Design (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Software Development (UTS)'
+          },
+          {
+            student: 'Hillarious Happy', course: 'Engineering (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Engineering (UTS)'
+          }
+        ], factsRegion: [
+          { icon: 'VISA.svg', title: 'Visa', description: 'If you are not from Europe you will need a Visum.' },
+          { icon: 'Traffic.svg', title: 'Right driving traffic', description: 'Not like Great Britain.' },
+          { icon: 'Climate.svg', title: 'Humid climate', description: 'Mixed weather, but mostly moderate.' },
+          { icon: 'Rainfall.svg', title: 'Rainfall', description: 'Average rainfall.' },
+          { icon: 'OppositeSeasons.svg', title: 'Opposite seasons', description: 'Winter is from November to March, summer from June to August.' },
+          { icon: 'FlightCosts.svg', title: 'Flight cost', description: 'Depends from where you want to start. So make sure to look for cheaper deals.' }
+        ], factsCity: [
+          { icon: 'LivingCosts.svg', title: 'Living costs', description: 'The living costs in Ingolstadt are more expensive than in the suburban region.' },
+          { icon: 'Power.svg', title: 'Power adapter', description: 'Voltage is 230.' },
+          { icon: 'PublicTransport.svg', title: 'Public transport', description: 'There are buses and trains, but no subway.' }
+        ], factsUni: [
+          { icon: 'LanguageProficiency.svg', title: 'Entry requirements', description: 'A year of study at a recognized institution at the time of application and the UTS requirements.' },
+          { icon: 'LanguageProficiency.svg', title: 'Language proficency', description: 'English or German level in accordance with the UTS English and German language requirements.' },
+          { icon: 'Fees.svg', title: 'Study fees', description: 'If you are from Europe you do not need to pay study fees.' },
+          { icon: 'Deadlines.svg', title: 'Application deadlines', description: 'Commencement January - March 2018: 20.08.2017. Commencement July - August 2018: 15.02.2018.' }
+        ], courses: [
+          {
+            id: '5', title: 'Bachelor of Science in User Experience Design',
+            description: 'This is the description of the course', are: '3', been: '6'
+          },
+          {
+            id: '6', title: 'Bachelor of Science in Computer Science',
+            description: 'This is the description of the course', are: '6', been: '7'
+          },
+          {
+            id: '7', title: 'Bachelor of Engineering in Mechatronics',
+            description: 'This is the description of the course', are: '2', been: '9'
+          },
+          {
+            id: '8', title: 'Bachelor of Science in Aircraft and Vehicle Informatics',
+            description: 'This is the description of the course', are: '1', been: '5'
+          }
+        ],
+        lat: '45.460144',
+        lang: '9.194584'
+      },
+      {
+        id: 5, name: 'University of Cambridge', country: 'England', city: 'Cambridge',
+        descriptionText: 'Lorem Ipsum4', pictures: [
+          { path: '../../sadsa3' },
+          { path: '../../sadsad3' }
+        ], experiences: [
+          {
+            student: 'Dora Delighted', course: 'User Experience Design (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Visual Communication (UTS)'
+          },
+          {
+            student: 'Felix Fortunate', course: 'Software Engineering (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Software Development (UTS)'
+          },
+          {
+            student: 'Tanja Bayer', course: 'User Experience Design (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Software Development (UTS)'
+          },
+          {
+            student: 'Hillarious Happy', course: 'Engineering (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Engineering (UTS)'
+          }
+        ], factsRegion: [
+          { icon: 'VISA.svg', title: 'Visa', description: 'If you are not from Europe you will need a Visum.' },
+          { icon: 'Traffic.svg', title: 'Right driving traffic', description: 'Not like Great Britain.' },
+          { icon: 'Climate.svg', title: 'Humid climate', description: 'Mixed weather, but mostly moderate.' },
+          { icon: 'Rainfall.svg', title: 'Rainfall', description: 'Average rainfall.' },
+          { icon: 'OppositeSeasons.svg', title: 'Opposite seasons', description: 'Winter is from November to March, summer from June to August.' },
+          { icon: 'FlightCosts.svg', title: 'Flight cost', description: 'Depends from where you want to start. So make sure to look for cheaper deals.' }
+        ], factsCity: [
+          { icon: 'LivingCosts.svg', title: 'Living costs', description: 'The living costs in Ingolstadt are more expensive than in the suburban region.' },
+          { icon: 'Power.svg', title: 'Power adapter', description: 'Voltage is 230.' },
+          { icon: 'PublicTransport.svg', title: 'Public transport', description: 'There are buses and trains, but no subway.' }
+        ], factsUni: [
+          { icon: 'LanguageProficiency.svg', title: 'Entry requirements', description: 'A year of study at a recognized institution at the time of application and the UTS requirements.' },
+          { icon: 'LanguageProficiency.svg', title: 'Language proficency', description: 'English or German level in accordance with the UTS English and German language requirements.' },
+          { icon: 'Fees.svg', title: 'Study fees', description: 'If you are from Europe you do not need to pay study fees.' },
+          { icon: 'Deadlines.svg', title: 'Application deadlines', description: 'Commencement January - March 2018: 20.08.2017. Commencement July - August 2018: 15.02.2018.' }
+        ], courses: [
+          {
+            id: '5', title: 'Bachelor of Science in User Experience Design',
+            description: 'This is the description of the course', are: '3', been: '6'
+          },
+          {
+            id: '6', title: 'Bachelor of Science in Computer Science',
+            description: 'This is the description of the course', are: '6', been: '7'
+          },
+          {
+            id: '7', title: 'Bachelor of Engineering in Mechatronics',
+            description: 'This is the description of the course', are: '2', been: '9'
+          },
+          {
+            id: '8', title: 'Bachelor of Science in Aircraft and Vehicle Informatics',
+            description: 'This is the description of the course', are: '1', been: '5'
+          }
+        ],
+        lat: '52.204267',
+        lang: '0.114908'
+      },
+      {
+        id: 6, name: 'University of Dakota', country: 'USA', city: 'Grand Forks',
+        descriptionText: 'Lorem Ipsum4', pictures: [
+          { path: '../../sadsa3' },
+          { path: '../../sadsad3' }
+        ], experiences: [
+          {
+            student: 'Dora Delighted', course: 'User Experience Design (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Visual Communication (UTS)'
+          },
+          {
+            student: 'Felix Fortunate', course: 'Software Engineering (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Software Development (UTS)'
+          },
+          {
+            student: 'Tanja Bayer', course: 'User Experience Design (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Software Development (UTS)'
+          },
+          {
+            student: 'Hillarious Happy', course: 'Engineering (THI)',
+            text: 'WiSe, 24.07.2016 – 18.12.2016 Engineering (UTS)'
+          }
+        ], factsRegion: [
+          { icon: 'VISA.svg', title: 'Visa', description: 'If you are not from Europe you will need a Visum.' },
+          { icon: 'Traffic.svg', title: 'Right driving traffic', description: 'Not like Great Britain.' },
+          { icon: 'Climate.svg', title: 'Humid climate', description: 'Mixed weather, but mostly moderate.' },
+          { icon: 'Rainfall.svg', title: 'Rainfall', description: 'Average rainfall.' },
+          { icon: 'OppositeSeasons.svg', title: 'Opposite seasons', description: 'Winter is from November to March, summer from June to August.' },
+          { icon: 'FlightCosts.svg', title: 'Flight cost', description: 'Depends from where you want to start. So make sure to look for cheaper deals.' }
+        ], factsCity: [
+          { icon: 'LivingCosts.svg', title: 'Living costs', description: 'The living costs in Ingolstadt are more expensive than in the suburban region.' },
+          { icon: 'Power.svg', title: 'Power adapter', description: 'Voltage is 230.' },
+          { icon: 'PublicTransport.svg', title: 'Public transport', description: 'There are buses and trains, but no subway.' }
+        ], factsUni: [
+          { icon: 'LanguageProficiency.svg', title: 'Entry requirements', description: 'A year of study at a recognized institution at the time of application and the UTS requirements.' },
+          { icon: 'LanguageProficiency.svg', title: 'Language proficency', description: 'English or German level in accordance with the UTS English and German language requirements.' },
+          { icon: 'Fees.svg', title: 'Study fees', description: 'If you are from Europe you do not need to pay study fees.' },
+          { icon: 'Deadlines.svg', title: 'Application deadlines', description: 'Commencement January - March 2018: 20.08.2017. Commencement July - August 2018: 15.02.2018.' }
+        ], courses: [
+          {
+            id: '5', title: 'Bachelor of Science in User Experience Design',
+            description: 'This is the description of the course', are: '3', been: '6'
+          },
+          {
+            id: '6', title: 'Bachelor of Science in Computer Science',
+            description: 'This is the description of the course', are: '6', been: '7'
+          },
+          {
+            id: '7', title: 'Bachelor of Engineering in Mechatronics',
+            description: 'This is the description of the course', are: '2', been: '9'
+          },
+          {
+            id: '8', title: 'Bachelor of Science in Aircraft and Vehicle Informatics',
+            description: 'This is the description of the course', are: '1', been: '5'
+          }
+        ],
+        lat: '47.922891',
+        lang: '-97.076801'
+      },
     ];
 
     const students = [
@@ -132,10 +368,10 @@ export class UniversityDataService implements InMemoryDbService {
         {id: 1, name: 'University of Technology', isFav: false},
         {id: 2, name: 'Technische Hochschule Ingolstadt', isFav: false},
         {id: 3, name: 'University of Nevada', isFav: false},
-        {id: 4, name: 'University of Sydney', isFav: false},
+        {id: 4, name: 'University of Mailand', isFav: false},
         {id: 5, name: 'University of Cambridge', isFav: false},
         {id: 6, name: 'University of Dakota', isFav: false},
-        {id: 7, name: 'University of Test', isFav: false},
+        // {id: 7, name: 'University of Test', isFav: false},
       ];
 
       const favoritesOfStudent = [

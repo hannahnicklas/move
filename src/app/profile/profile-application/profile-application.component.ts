@@ -24,6 +24,7 @@ export class ProfileApplicationComponent implements OnInit {
   // favorite: Favorite; // der einzelne Favorite den man sich holt
   favorite: Favorite; // der einzelne Favorite den man sich holt
   data: number;
+  applicationIsReady: boolean;
 
 
   // here should be uni DB
@@ -51,10 +52,6 @@ export class ProfileApplicationComponent implements OnInit {
 
   }
 
-  // {{data | json}} to show everything
-  logThis(data: any) {
-    console.log(data);
-  }
 
 
   constructor(
@@ -64,7 +61,7 @@ export class ProfileApplicationComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-
+    this.applicationIsReady = false;
     // this.studentservice.getStudent(1).subscribe(student => this.student = student);
     this.student = this.authService.getAuthenticatedObject();
     this.getFavorites();
@@ -116,9 +113,21 @@ export class ProfileApplicationComponent implements OnInit {
     this.receivedData.splice(index, 1);
   }
   // console log über die favortie elemente
-  loggy() {
+  loggy(): boolean {
+    if (this.receivedData === undefined || this.favorites === undefined) {
+      return false;
+    }
+    let counter = 0;
     for (let i = 0; i < this.favorites.length; i++) {
-      console.log(this.favorites[i]);
+      if (this.receivedData[i] !== undefined) {
+        counter++;
+      }
+    }
+    if (counter >= 5) {
+      this.applicationIsReady = true;
+      return true;
+    } else {
+      return false;
     }
   }
 

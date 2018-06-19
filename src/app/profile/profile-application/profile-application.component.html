@@ -75,7 +75,7 @@
   </div>
 
     <div class="application-finish">
-      <button class="button bold-S white" (click)="loggy()">Finish application</button>
+      <button class="button bold-S white" *ngIf="loggy()" routerLink="/profile/finished">Finish Application</button>
     </div>
   
 </div>
