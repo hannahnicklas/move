@@ -28,17 +28,14 @@ export class MapboxComponent implements OnInit {
   zoom = 1;
 
   constructor(private mapService: MapService, private universityService: UniversityService, private http: HttpClient) {
-    (mapboxgl as any).accessToken = 'pk.eyJ1IjoiZ3JhbmRtYWdhdXNzIiwiYSI6ImNqZ2dvdzJpazAwM3MzOHFubjJ2NDYyaDcifQ.8rLg5amk491arsu10b67uQ';
+    (mapboxgl as any).accessToken = 'pk.eyJ1IjoiY2hzNTQyMSIsImEiOiJjamlmbnRxaW0wNXEwM3ByMm0yaGE5MnQ3In0.HK9VqcBSfLpSs6LfcWENRw';
   }
 
 
   ngOnInit() {
     this.showPopup = false;
-    this.buildData();
     this.buildMap();
-    // console.log(this.data);
-    // this.buildData();
-    // console.log(this.data);
+    this.buildData();
   }
 
   routeMe(id) {
@@ -65,6 +62,18 @@ export class MapboxComponent implements OnInit {
 
     this.data = { type: 'FeatureCollection', features: toAdd};
 
+    this.map.addLayer({
+      id: 'unis',
+      type: 'symbol',
+      source: {
+        type: 'geojson',
+        data:  this.data
+      },
+      layout: {
+        'icon-image': 'town-hall-15'
+      },
+      paint: { }
+    });
   }
 
 
@@ -78,47 +87,33 @@ export class MapboxComponent implements OnInit {
 
     /// Add map controls
     this.map.setMaxZoom(5);
+    this.map.setMinZoom(1.4);
     this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('load', () => {
-    // Add a layer showing the places.
-    // mapboxgl.GeoJSONSource.apply(this.earthquakes);
-
-    this.map.addLayer({
-      id: 'unis',
-      type: 'symbol',
-      source: {
-        type: 'geojson',
-        data:  this.data
-      },
-      layout: {
-        'icon-image': 'hospital-15'
-      },
-      paint: { }
-    });
 
 
-  this.map.on('click', 'unis', (e) => {
-      const coordinates = e.features[0].geometry.coordinates.slice();
-      const description = e.features[0].properties.description;
+      this.map.on('click', 'unis', (e) => {
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        const description = e.features[0].properties.description;
 
-      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
           coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-      }
+        }
 
-      this.uni = this.unis[e.features[0].properties.description];
-      this.showPopup = true;
-  });
+        this.uni = this.unis[e.features[0].properties.description];
+        this.showPopup = true;
+      });
 
-  this.map.on('mouseenter', 'unis',  () => {
-      this.map.getCanvas().style.cursor = 'pointer';
-  });
+      this.map.on('mouseenter', 'unis',  () => {
+        this.map.getCanvas().style.cursor = 'pointer';
+      });
 
-  this.map.on('mouseleave', 'unis', () => {
-      this.map.getCanvas().style.cursor = '';
-  });
-});
-}
+      this.map.on('mouseleave', 'unis', () => {
+        this.map.getCanvas().style.cursor = '';
+      });
+      });
+  }
 
   closeWindow() {
     this.showPopup = false;
