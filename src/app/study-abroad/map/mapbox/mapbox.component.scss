@@ -1,6 +1,5 @@
 @import '../../../../assets/GlobalScss/var.scss';
 @import '../../../filter/filter.component.scss';
-
 #map { 
       position:absolute; 
       top:0; 
@@ -37,12 +36,14 @@
         background-color: white;
     }
 #popupSection {
-    position: fixed;
-    top: 104px;
+    animation: roll 3s infinite;
 
-    height: 75%;
-    left: 25%;
-    width: 50%;
+    position: fixed;
+    top: calc(50% - 360px - 104px);
+
+    height: 720px;
+    left: calc(50vw - 400px);
+    width: 800px;
     z-index: 999999;
     background-color: white;
 
@@ -54,63 +55,76 @@
         height: 100%;
         width: 100%;
         position: relative;
-
+        display: block;
         header {
+            position: absolute;
+            top: 0px;
             width: 100%;
-            position: relative;
             height: 4rem;
-            
-            border-bottom: 1px solid grey;
+
+            h2 {
+                float: left;
+                margin-left: 1.5em;
+            }
+
+            button {
+                font-size: larger;
+                float: right;
+
+                height: 4rem;
+                width: 4rem;
+                border: none;
+                background-color: white;
+                cursor: pointer;
+            }
+            button:active, button:hover  {
+                background-color: $move-orange;
+                color: white;
+                
+            }
+            button:focus {
+                outline:0;
+            }
         }
         
-        h2 {
+        main {
             position: absolute;
-            top: 0px;
-            left: 0px;
-            margin-left: 1.5em;
-        }
-        
+            top: 4rem;
+            width: 100%;
+            height: 80%;
 
-
-
-
-
-        button {
-            font-size: larger;
-            position: absolute;
-            display: inline-block;
-            top: 0px;
-            right: 0px;
-            height: 4rem;
-            width: 4rem;
-            border: none;
-            background-color: white;
-            cursor: pointer;
-
-        }
-        button:active, button:hover  {
-            background-color: $move-orange;
-            color: white;
-            
-        }
-        button:focus {
-            outline:0;
+            #mainUniInfo {
+                color: black;
+                padding: 0px 1.5rem;
+            }
+            div {
+                img {
+                    width: 100%;
+                }
+            }
         }
 
-
-        #buttonToUni{
-            padding: 1em;
-            background-color: $move-orange;
+        #goToUniversity {
             position: absolute;
             bottom: 0px;
-            float: left;
+            width: 100%;
+            
+            text-align: center;
+            background-color: $move-lighter;
+            padding: 1rem 0rem;
+            color: white;
+
+        }
+        #goToUniversity:hover {
+            background-color: $move-orange;
         }
     }
     
 } 
 
+
 #backgroundOpacity {
-    background-color: rgba(255,255,255,0);
+    background-color: rgba($move-blue, 0.2);
     position: fixed;
     top: 0;
     left:0;

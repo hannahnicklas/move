@@ -7,6 +7,9 @@ import { University } from '../../../../assets/Data/University';
 import { UniversityService } from '../../university/university.service';
 import { MapService } from '../../../map.service';
 
+import { ActivatedRoute } from '@angular/router';
+import { StudentService } from '../../../profile/student.service';
+import { Favorite } from '../../../../assets/Data/Favorite';
 
 @Component({
   selector: 'app-mapbox',
@@ -21,6 +24,10 @@ export class MapboxComponent implements OnInit {
   showPopup: boolean;
   showHover: boolean;
 
+  favorite: Favorite;
+
+  uniDescription: String;
+
   /// default settings
   map: mapboxgl.Map;
   style = 'mapbox://styles/grandmagauss/cjggub0jm00242so9u41xd01o';
@@ -28,23 +35,34 @@ export class MapboxComponent implements OnInit {
   lng = 10;
   zoom = 2;
 
-  constructor(private mapService: MapService, private universityService: UniversityService, private http: HttpClient) {
+  constructor(
+    private mapService: MapService,
+    private universityService: UniversityService,
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private studentService: StudentService
+  ) {
     (mapboxgl as any).accessToken = 'pk.eyJ1IjoiY2hzNTQyMSIsImEiOiJjamlmbnRxaW0wNXEwM3ByMm0yaGE5MnQ3In0.HK9VqcBSfLpSs6LfcWENRw';
   }
 
 
   ngOnInit() {
+    // angular.module('app', ['ngAnimate']).controller('ctrl', function() { });
+
+
     this.showPopup = false;
     this.showHover = false;
     this.buildMap();
     this.buildData();
+
+    this.getFavById();
   }
 
   onClickMe(e) {
     this.map.flyTo({
       center: [
           e.target.getAttribute('lang'),
-          e.target.getAttribute('id')]//id=latitude
+          e.target.getAttribute('id')]// id=latitude
   });
   }
   async buildData() {
@@ -109,6 +127,9 @@ export class MapboxComponent implements OnInit {
         }
 
         this.uni = this.unis[e.features[0].properties.description];
+
+        this.uniDescription = this.uni.descriptionText.substring(0, 300).concat('...');
+
         this.showPopup = true;
       });
 
@@ -141,6 +162,25 @@ export class MapboxComponent implements OnInit {
 
   closeWindow() {
     this.showPopup = false;
+  }
+
+
+  // add to favorites button on university preview
+  isFav(): boolean {
+    if (this.favorite === undefined) {
+      return false;
+    } else {
+      return this.favorite.isFav;
+    }
+  }
+  getFavById(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.studentService.getFavById(id)
+      .subscribe(favorite => this.favorite = favorite);
+  }
+  setAsFav(): void {
+    this.favorite.isFav = true;
+    this.studentService.updateIsFav(this.favorite).subscribe();
   }
 
 }

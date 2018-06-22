@@ -31,12 +31,15 @@
 
             <a routerLink="/studyAbroad/{{uni.id}}/general"><h2>{{uni.name}}</h2></a>
         </header>
-
-
-
-
-        <a id="buttonToUni" routerLink="/studyAbroad/{{uni.id}}/general">Link zur uni</a>
-
+        
+        <main>
+            <div><img src="../../assets/images/app-component/university-general/{{uni.id}}/1.JPG"></div>
+            <div id="mainUniInfo">
+                <p class="regular-S">{{uniDescription}} </p>
+            </div> 
+        </main>
+        <a id="goToUniversity" routerLink="/studyAbroad/{{uni.id}}/general">Visit {{uni.name}} to apply</a>
+        
     </div>
 </section>
 <div id="backgroundOpacity" *ngIf="showPopup" (click)="closeWindow()">
