@@ -1,4 +1,29 @@
 <div id='map'></div>
+<div class="filter regular-S">
+  <app-searchbar></app-searchbar>
+  <div>
+    <div class="filter-category bold-S ">
+      Sorting
+    </div>
+    <div class="filter-points">
+      <li [class.active]="sclicked === sorting" (click)="sclicked = (sclicked === sorting ? null :sorting)" *ngFor="let sorting of sortings">{{sorting}}</li>
+    </div>
+    <div class="filter-category bold-S ">
+      Language
+    </div>
+    <div class="filter-points">
+      <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages | slice:0:3">{{language}}</li>
+      <li (click)="toggle($event.target, 'Less...')" id="more"> More ... </li>
+      <ng-container *ngIf="show">
+        <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages  | slice:3">{{language}}</li>
+      </ng-container>      
+    </div>
+  </div>
+  <ul class="unis">
+    <li *ngFor="let university of unis">
+      <a routerLink="/studyAbroad/{{university.id}}/general"><span class="badge">{{university.id}}</span> {{university.name}} </a><button class="coordBut" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="onClickMe($event)">Find</button>
+    </li>
+  </ul>
 <section id="popupSection" *ngIf="showPopup">
     <div id="wrapper">
         <div id="closeButton" (click)="closeWindow()">
