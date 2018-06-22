@@ -1,16 +1,10 @@
 <div id='map'></div>
 
-<!-- Filter _____________________________________________ -->
+<!-- Filter _____________________________________________
 
 <div class="filter regular-S">
-  <app-searchbar></app-searchbar>
   <div>
-    <div class="filter-category bold-S ">
-      Sorting
-    </div>
-    <div class="filter-points">
-      <li [class.active]="sclicked === sorting" (click)="sclicked = (sclicked === sorting ? null :sorting)" *ngFor="let sorting of sortings">{{sorting}}</li>
-    </div>
+    
     <div class="filter-category bold-S ">
       Language
     </div>
@@ -24,22 +18,34 @@
   </div> 
 </div>
 
-<!-- /Filter _____________________________________________ -->
+< /Filter _____________________________________________ -->
 
 <!-- Universities _____________________________________________ -->
-<div class="universities regular-S">
-<ul class="unis bold-S blue">
-  <li *ngFor="let university of unis">
-    <div class="map-universities">
-    <a routerLink="/studyAbroad/{{university.id}}/general"><span class="badge">{{university.id}}</span> {{university.name}} </a>
-    <!-- <a routerLink="/studyAbroad/{{university.id}}/general"><span class="badge">{{university.id}}</span> {{university.name}} </a> -->
-    <button class="map-zooming-button" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="onClickMe($event)">Find!</button>
-    <hr>
-  </div>
-  </li>
-</ul>
-</div>
+<aside>
+  <div class="universities regular-S">
+    <app-searchbar id="searchBar"></app-searchbar>
 
+    <div id="sorting">
+      <ul>
+          <li [class.active]="sclicked === sorting" (click)="sclicked = (sclicked === sorting ? null :sorting)" *ngFor="let sorting of sortings">{{sorting}}</li>
+      </ul>
+    </div>
+    
+
+    <ul class="listOfUniversities bold-S blue">
+      <li *ngFor="let university of unis">
+        <div class="map-universities">
+          <a id="linkToUni" routerLink="/studyAbroad/{{university.id}}/general">
+            <div id="uniName" class="bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onClickMe($event)">{{university.name}}</div>
+            <div id="uniLocation" class="regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onClickMe($event)">
+                {{university.country}}, {{university.city}}
+            </div>
+          </a>          
+      </div>
+      </li>
+    </ul>
+  </div>
+</aside>
 <!-- /Universities _____________________________________________ -->
 
 <section id="popupSection" *ngIf="showPopup">
