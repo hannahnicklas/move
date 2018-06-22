@@ -58,7 +58,7 @@
             cursor: pointer;
 
         }
-        button:active  {
+        button:active, button:hover  {
             background-color: $move-orange;
             color: white;
             
@@ -80,7 +80,7 @@
 } 
 
 #backgroundOpacity {
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0);
     position: fixed;
     top: 0;
     left:0;
