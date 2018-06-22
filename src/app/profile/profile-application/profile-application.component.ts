@@ -30,7 +30,7 @@ export class ProfileApplicationComponent implements OnInit {
 
   // here should be uni DB
   // uni: University;
-  transferData: Object = { id: 1, msg: 'Hello' };
+  // transferData: Object = { id: 1, msg: 'Hello' };
   receivedData: Array<any> = [];
 
   // this method gets the dragged data as an event and pushes it to the dropped array (receivedData)
