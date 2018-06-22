@@ -1,7 +1,7 @@
 <div class="margin">
   
   <div *ngIf='student'>
-
+    <a routerLink="/home" class="button bold-S white logOutButton" (click)="logOut()">Logout</a>
     <div class="profile-user-data">
       <div>
         <img id="profilepic" src="../../assets/images/profile/anna_adven.png" alt="profilepic">
@@ -92,9 +92,6 @@
     </div>
   </div>
   <!-- check if edit is true, if so then let user update the information -->
-
-
-  <!-- Bearbeitungsbereich der Profildaten (wenn Button edit gedrückt wurde) -->
   <div *ngIf="edit" class="profile-detailed-user-data laufweite0">
 
     <div class="regular-S">

@@ -31,16 +31,12 @@ a {
 a:hover, a.active-link {
     background-color: $move-lighter;
 }
-.addToFavButton:hover {
+.addToFavButton:hover, .addToFavButton {
     background-color: $move-orange;
     cursor: pointer;
 }
-.removeFromFav {
+.removeFromFav, .removeFromFav:hover {
     background-color: $move-orange;
-    cursor: pointer;
-}
-.removeFromFav:hover {
-    background-color: $move-blue;
     cursor: pointer;
 }
 .heartIcon {

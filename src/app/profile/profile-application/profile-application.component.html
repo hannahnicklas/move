@@ -38,12 +38,12 @@
       <h1 class="bold-M blue">Ranking of your favorite universities</h1>
       <div>
         <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)">
-          <div class="application-ranking-heading">Drop 5 of your favorits here to apply
-            <br> Amount of favorites: {{receivedData.length}}</div>
+          <div class="application-ranking-heading">Drop up to 5 of your favorits here, to apply for
+            <!-- <br> Amount of favorites: {{receivedData.length}} --></div>
           <div class="application-ranking-area">
             <ul [hidden]="!receivedData.length > 0" dnd-sortable-container [sortableData]="receivedData">
               <li class="application-button rank bold-S white" *ngFor="let uni of receivedData; let i = index" dnd-sortable [sortableIndex]="i">
-                {{ i + 1}} {{ uni.name }}
+                {{ i + 1}}. {{ uni.name }}
                 <button class="application-button-delete" (click)="onDeleteUni(i)">
                   <i class="fas fa-times"></i>
                 </button>
@@ -63,10 +63,14 @@
           <i class="fas fa-check"></i>
           <span>Finish profile</span>
         </li>
-        <li>
+        <li *ngIf="!showFinishButton()">
           <i>&nbsp;&nbsp;&nbsp;</i>
           <span>Rank your universities</span>
         </li>
+        <li *ngIf="showFinishButton()">
+            <i class="fas fa-check"></i>
+            <span>Rank your universities</span>
+          </li>
         <li>
           <i>&nbsp;&nbsp;&nbsp;</i>
           <span>Scholarships</span>
@@ -76,24 +80,28 @@
           <span>Tell your experiences</span>
         </li>
       </ul>
+      <div class="application-finish">
+        <button class="button bold-S white" *ngIf="showFinishButton()" (click)="finishApp()">Finish Application</button>
+      </div>
     </div>
   </div>
 
   <!-- <div class="application-finish">
       <button class="button bold-S white" *ngIf="loggy()" routerLink="/profile/finished">Finish Application</button>
     </div> -->
-  <div class="application-finish">
-    <button class="button bold-S white" *ngIf="loggy()" (click)="finishApp()">Finish Application</button>
-  </div>
+  
 
 </div>
 <div *ngIf="finishApplication" class="experience-report">
   <div class="italic-L blue paragraph">„Thank you for applying“</div>
-  <ul>You have applied for the following universities in the following order:
-    <li *ngFor="let uni of receivedData; let i = index">
+  <div class="application-ranking-heading">You have applied for the following universities in the following order:</div>
+  <ul class="regular-S">
+    
+    <li class="" *ngFor="let uni of receivedData; let i = index">
       {{ i + 1}} {{ uni.name }}
     </li>
   </ul>
   <p class="regular-S black paragraph">We wish you the best of luck and a pleasent stay!
     <br>Don't forget to tell us about your Experience when you are back!</p>
+    <a routerLink="/home" class="application-button list bold-S white">Back to Home</a>
 </div>
