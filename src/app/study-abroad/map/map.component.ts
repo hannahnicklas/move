@@ -17,11 +17,14 @@ export class MapComponent implements OnInit {
   public show = false;
   public showMore = 'Show';
 
-  constructor(private universityService: UniversityService) { }
+  constructor(
+    private universityService: UniversityService
+  ) { }
 
   ngOnInit() {
     this.getUnis();
   }
+
 
   getUnis(): void {
     this.universityService.getUnis().subscribe(unis => this.unis = unis);
@@ -38,6 +41,7 @@ export class MapComponent implements OnInit {
       element.textContent = 'More ...';
     }
   }
+
 
   
 }
