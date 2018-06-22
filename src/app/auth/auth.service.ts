@@ -5,20 +5,23 @@ export class AuthService {
 
  private authenticatedObject: any;
 
+  private authKey = 'auth';
+
  setAuthenticatedObject(authenticatedObject) {
-    this.authenticatedObject = authenticatedObject;
+   window.localStorage.setItem(this.authKey, JSON.stringify(authenticatedObject));
   }
 
   getAuthenticatedObject() {
-    return this.authenticatedObject;
+    const data = window.localStorage.getItem(this.authKey);
+    return JSON.parse(data);
   }
 
   hasAuthenticatedObject() {
-    return !!this.authenticatedObject;
+    return !!window.localStorage.getItem(this.authKey);
   }
 
   clear() {
-    this.authenticatedObject = null;
+    window.localStorage.removeItem(this.authKey);
   }
 
 }

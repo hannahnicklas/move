@@ -15,6 +15,10 @@ export class HomeComponent implements OnInit {
     // this.fixNav();
     document.getElementById('main-nav').style.backgroundColor = ('rgba(0,0,0,0)');
     console.log(this.authService);
+
+    window.addEventListener('DOMContentLoaded', function() {
+      document.body.setAttribute('style', 'overflow: hidden');
+    });
   }
 
 
@@ -22,7 +26,7 @@ export class HomeComponent implements OnInit {
     this.studentService.getStudentByCredentials(this.model.username, this.model.password)
     .subscribe(users => this.authService.setAuthenticatedObject(users));
  // .subscribe(function (user) {this.authService.setAuthenticatedObject(user)}
-
+    document.body.setAttribute('style', 'overflow: auto');
   }
 
   doLogout() {

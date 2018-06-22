@@ -24,6 +24,7 @@ export class ProfileApplicationComponent implements OnInit {
   // favorite: Favorite; // der einzelne Favorite den man sich holt
   favorite: Favorite; // der einzelne Favorite den man sich holt
   data: number;
+  applicationIsReady: boolean;
 
 
   // here should be uni DB
@@ -33,15 +34,24 @@ export class ProfileApplicationComponent implements OnInit {
 
   // this method gets the dragged data as an event and pushes it to the dropped array (receivedData)
   transferDataSuccess($event: any) {
-    if (this.receivedData.length < 5 && $event.dragData !== undefined) {
-      this.receivedData.push($event);
-      console.log($event);
+
+    if ($event.dragData === undefined) {
+      return;
     }
+    if (this.receivedData.length >= 5) {
+      alert('Sind zu viele');
+      return;
+
+    }
+    const university = $event.dragData;
+    if (this.receivedData.indexOf(university) !== -1) {
+      alert('Die Universität ist bereits enthalten');
+      return;
+    }
+    this.receivedData.push(university);
+
   }
-  // {{data | json}} to show everything
-  logThis(data: any) {
-    console.log(data);
-  }
+
 
 
   constructor(
@@ -51,19 +61,18 @@ export class ProfileApplicationComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-
+    this.applicationIsReady = false;
     // this.studentservice.getStudent(1).subscribe(student => this.student = student);
     this.student = this.authService.getAuthenticatedObject();
     this.getFavorites();
-    // routeparam
-    // console.log(this.fakeData[0].id);
+
 
 
     this.data = this.route.snapshot.params.data;
     // this.add(this.data);
     console.log(this.universityService.getUniversity(this.data));
     console.log(this.data);
-    console.log(JSON.stringify(this.student));
+    // console.log(JSON.stringify(this.student));
     // this.submit();
     if (this.data) {
       this.getFavById(this.data);
@@ -73,46 +82,12 @@ export class ProfileApplicationComponent implements OnInit {
 
   }
 
-  /* submit() {
-    this.studentservice.updateStudentUniversity(this.student, this.universityService.getUniversity(this.data));
-  } */
-  /* add(id: number): void {
-    console.log(this.universityService.getUniversity(id));
-
-    this.studentservice.updateStudentUniversity(this.student, this.universityService.getUniversity(id))
-      .subscribe(university => {
-        this.student.universities.push(university);
-        console.log(university);
-      });
-  } */
   // um die favs der Studenten zu bekommen
   getFavorites(): void {
     this.studentservice.getFavorites()
       .subscribe(favorites => this.favorites = favorites);
   }
-  // hier sollte der name der uni reinkommen um es anzeigen zu lassen
-  /* add(name: string): void {
-    // name = name.trim();
-    if (!name) { return; }
-    this.studentservice.addUniToFavOfStudents({ name } as Favorite)
-      .subscribe(favorite => {
-        this.favorites.push(favorite);
-      });
 
-  } */
-
-  // method to get the id and filter it from the fakedatabase and put it to add
-  /* getFavoriteByUrlId(urlId: number): string {
-    return this.fakeData[urlId - 1].name;
-  } */
-  // um den Favoriten von der Datenbank mit der Id zu bekommen als string
-
-  /* getFavById(urlId: number): string {
-    this.studentservice.getFavById(urlId)
-      .subscribe(favorite => this.favorite = favorite);
-      // has to be asynch else its undefined
-        return this.favorite.name;
-  } */
   async getFavById(urlId: number) {
     this.favorite = <Favorite>await this.studentservice.getFavByIdAsync(urlId);
     const name = this.favorite.name;
@@ -129,8 +104,6 @@ export class ProfileApplicationComponent implements OnInit {
     // this.ngOnInit();
   }
 
-
-
   delete(favorite: Favorite): void {
     this.favorites = this.favorites.filter(f => f !== favorite);
     this.studentservice.deleteFav(favorite).subscribe();
@@ -140,9 +113,21 @@ export class ProfileApplicationComponent implements OnInit {
     this.receivedData.splice(index, 1);
   }
   // console log über die favortie elemente
-  loggy() {
+  loggy(): boolean {
+    if (this.receivedData === undefined || this.favorites === undefined) {
+      return false;
+    }
+    let counter = 0;
     for (let i = 0; i < this.favorites.length; i++) {
-      console.log(this.favorites[i]);
+      if (this.receivedData[i] !== undefined) {
+        counter++;
+      }
+    }
+    if (counter >= 5) {
+      this.applicationIsReady = true;
+      return true;
+    } else {
+      return false;
     }
   }
 
