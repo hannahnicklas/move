@@ -1,16 +1,19 @@
-<div class="exp" *ngIf="university">
+<div class="experiences" *ngIf="university">
     <div *ngFor="let experience of university.experiences">
-        <a routerLink="/studyAbroad/{{university.id}}/experiences-detail">
+        <!-- <a routerLink="/studyAbroad/{{university.id}}/experiences-detail/"></a> -->
+        <a [routerLink]="['/studyAbroad/{university.id}/experiences-detail/', {data: experience.student}]">
+            <!-- <a [routerLink]="['/profile/application', {data: university.id}]"></a>add </a>    -->
             <div class="bold-L white">{{experience.student}}</div>
             <div class="large-M white">{{experience.course}}</div>
             <br>
             <div class="large-M black">{{experience.text}}</div>
-            <div class="rating"> 
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i></div>
+            <div class="experience-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
         </a>
     </div>
 </div>

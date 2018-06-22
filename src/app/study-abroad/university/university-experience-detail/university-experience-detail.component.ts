@@ -13,6 +13,8 @@ export class UniversityExperienceDetailComponent implements OnInit {
 
   @Input() university: University;
 
+  data: any;
+
   constructor(
     private route: ActivatedRoute,
     private universityService: UniversityService,
@@ -21,6 +23,7 @@ export class UniversityExperienceDetailComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.data = this.route.snapshot.params.data;
   }
 
 

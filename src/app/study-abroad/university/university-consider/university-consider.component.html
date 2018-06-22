@@ -2,49 +2,55 @@
   crossorigin="anonymous">
 
 <div class="margin" *ngIf="university">
-  <div class="considerCol">
-    <div class="columns">
-      <div class="considerCol bold-L blue">
+  <div class="consider-column">
+    <div class="flex-container">
+      <div class="consider-column bold-L blue">
         <p>{{university.country}}</p>
 
         <!-- Faktenliste Country -->
-        <div *ngFor="let fact of university.facts" class="fact">
-          <div class="factIcon">
-            <i class="{{fact.icon}}"></i>
+        <div *ngFor="let fact of university.factsRegion" class="consider-fact">
+          <div class="consider-fact-icon">
+            <img class="factsRegionIcon" src="../../../../assets/images/app-component/university-consider/{{fact.icon}}">
           </div>
-          <div class="factText regular-S black">
-            <b>{{fact.title}}</b>
-            <br> {{fact.description}}
+          <div class="consider-fact-text regular-S black">
+            <p>
+              <b class="consider-column bold-m blue">{{fact.title}}</b>
+              <br> {{fact.description}}
+            </p>
           </div>
         </div>
       </div>
 
-      <div class="considerCol bold-L blue">
+      <div class="consider-column bold-L blue">
         <p>{{university.city}}</p>
 
         <!-- Faktenliste City -->
-        <div *ngFor="let fact of university.facts" class="fact">
-          <div class="factIcon">
-            <i class="{{fact.icon}}"></i>
+        <div *ngFor="let fact of university.factsCity" class="consider-fact">
+          <div class="consider-fact-icon">
+            <img class="factsCityIcon" src="../../../../assets/images/app-component/university-consider/{{fact.icon}}">
           </div>
-          <div class="factText regular-S black">
-            <b>{{fact.title}}</b>
-            <br> {{fact.description}}
+          <div class="consider-fact-text regular-S black">
+            <p>
+                <b class="consider-column bold-m blue">{{fact.title}}</b>
+                <br> {{fact.description}}
+            </p> 
           </div>
         </div>
       </div>
 
-      <div class="considerCol bold-L blue">
+      <div class="consider-column bold-L blue">
         <p>University</p>
 
         <!-- Faktenliste University -->
-        <div *ngFor="let fact of university.facts" class="fact">
-          <div class="factIcon">
-            <i class="{{fact.icon}}"></i>
+        <div *ngFor="let fact of university.factsUni" class="consider-fact">
+          <div class="consider-fact-icon">
+            <img class="factsUniIcon" src="../../../../assets/images/app-component/university-consider/{{fact.icon}}">
           </div>
-          <div class="factText regular-S black">
-            <b>{{fact.title}}</b>
-            <br> {{fact.description}}
+          <div class="consider-fact-text regular-S black">
+            <p>
+              <b class="consider-column bold-m blue">{{fact.title}}</b>
+              <br> {{fact.description}}
+            </p>
           </div>
         </div>
       </div>

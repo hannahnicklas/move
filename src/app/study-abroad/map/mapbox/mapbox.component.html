@@ -24,3 +24,17 @@
       <a routerLink="/studyAbroad/{{university.id}}/general"><span class="badge">{{university.id}}</span> {{university.name}} </a><button class="coordBut" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="onClickMe($event)">Find</button>
     </li>
   </ul>
+<section id="popupSection" *ngIf="showPopup">
+    <div id="wrapper">
+        <div id="closeButton" (click)="closeWindow()">
+            x
+        </div>
+
+        {{uni.name}}
+        <a routerLink="/studyAbroad/{{uni.id}}/general">Link zur uni</a>
+
+    </div>
+</section>
+<div id="backgroundOpacity" *ngIf="showPopup" (click)="closeWindow()">
+        
+</div>

@@ -17,7 +17,8 @@ export class MapboxComponent implements OnInit {
 
   unis: University[];
   data;
-
+  uni: University;
+  showPopup: boolean;
 
   /// default settings
   map: mapboxgl.Map;
@@ -27,16 +28,14 @@ export class MapboxComponent implements OnInit {
   zoom = 2;
 
   constructor(private mapService: MapService, private universityService: UniversityService, private http: HttpClient) {
-    (mapboxgl as any).accessToken = 'pk.eyJ1IjoiZ3JhbmRtYWdhdXNzIiwiYSI6ImNqZ2dvdzJpazAwM3MzOHFubjJ2NDYyaDcifQ.8rLg5amk491arsu10b67uQ';
+    (mapboxgl as any).accessToken = 'pk.eyJ1IjoiY2hzNTQyMSIsImEiOiJjamlmbnRxaW0wNXEwM3ByMm0yaGE5MnQ3In0.HK9VqcBSfLpSs6LfcWENRw';
   }
 
-  ngOnInit() {
-    // console.log(this.data);
-    // this.buildData();
-    // console.log(this.data);
 
-    this.buildData();
+  ngOnInit() {
+    this.showPopup = false;
     this.buildMap();
+    this.buildData();
   }
 
   onClickMe(e) {
@@ -56,14 +55,7 @@ export class MapboxComponent implements OnInit {
       toAdd[i] = {
         type: 'Feature',
         properties: {
-          // tslint:disable-next-line:max-line-length
-          description: ('<a href="/studyAbroad/'
-            .concat(String(this.unis[i].id)
-            .concat('/general"><strong>'
-            .concat(this.unis[i].name
-            .concat('</strong><br><img style="width: 100px; height: auto" src="../../assets/images/app-component/university-general/'
-            .concat(String(this.unis[i].id)
-            .concat('/1.JPG"></a>'))))))),
+          description: (String(i)),
         },
         geometry: {
           type: 'Point',
@@ -74,6 +66,18 @@ export class MapboxComponent implements OnInit {
 
     this.data = { type: 'FeatureCollection', features: toAdd};
 
+    this.map.addLayer({
+      id: 'unis',
+      type: 'symbol',
+      source: {
+        type: 'geojson',
+        data:  this.data
+      },
+      layout: {
+        'icon-image': 'town-hall-15'
+      },
+      paint: { }
+    });
   }
 
 
@@ -86,48 +90,37 @@ export class MapboxComponent implements OnInit {
     });
 
     /// Add map controls
+    this.map.setMaxZoom(5);
+    this.map.setMinZoom(1.6);
     this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('load', () => {
-    // Add a layer showing the places.
-    // mapboxgl.GeoJSONSource.apply(this.earthquakes);
-
-    this.map.addLayer({
-      id: 'unis',
-      type: 'symbol',
-      source: {
-        type: 'geojson',
-        data:  this.data
-      },
-      layout: {
-        'icon-image': 'hospital-15'
-      },
-      paint: { }
-    });
 
 
-  this.map.on('click', 'unis', (e) => {
-      const coordinates = e.features[0].geometry.coordinates.slice();
-      const description = e.features[0].properties.description;
+      this.map.on('click', 'unis', (e) => {
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        const description = e.features[0].properties.description;
 
-      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
           coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-      }
+        }
 
-      new mapboxgl.Popup()
-          .setLngLat(coordinates)
-          .setHTML(description)
-          .addTo(this.map);
-  });
+        this.uni = this.unis[e.features[0].properties.description];
+        this.showPopup = true;
+      });
 
-  this.map.on('mouseenter', 'unis',  () => {
-      this.map.getCanvas().style.cursor = 'pointer';
-  });
+      this.map.on('mouseenter', 'unis',  () => {
+        this.map.getCanvas().style.cursor = 'pointer';
+      });
 
-  this.map.on('mouseleave', 'unis', () => {
-      this.map.getCanvas().style.cursor = '';
-  });
-});
-}
+      this.map.on('mouseleave', 'unis', () => {
+        this.map.getCanvas().style.cursor = '';
+      });
+      });
+  }
+
+  closeWindow() {
+    this.showPopup = false;
+  }
 
 }

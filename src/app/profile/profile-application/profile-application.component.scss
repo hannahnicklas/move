@@ -1,61 +1,77 @@
-/**
- * The dnd-list should always have a min-height,
- * otherwise you can't drop to it once it's empty
- */
- .simpleDemo ul[dnd-list] {
-    min-height: 42px;
-    padding-left: 0px;
+@import '../../../assets/GlobalScss/var.scss';
+.margin {
+    flex-wrap: wrap;
 }
 
-/**
- * The dndDraggingSource class will be applied to
- * the source element of a drag operation. It makes
- * sense to hide it to give the user the feeling
- * that he's actually moving it.
- */
-.simpleDemo ul[dnd-list] .dndDraggingSource {
-    display: none;
+
+.flex-container > div {
+    width: 250px; 
+    text-align: left;    
+    margin: 1%;     
 }
 
-/**
- * An element with .dndPlaceholder class will be
- * added to the dnd-list while the user is dragging
- * over it.
- */
-.simpleDemo ul[dnd-list] .dndPlaceholder {
-    background-color: #ddd;
-    display: block;
-    min-height: 42px;
+.application-button{
+    margin-top: 4%;
+    padding: 1.3rem 1.1rem;   
+    position:relative;
 }
 
-.simpleDemo ul[dnd-list] li {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
+.application-button.list {
+    background-color: $move-light;    
 }
 
-/**
- * Show selected elements in green
- */
-.simpleDemo ul[dnd-list] li.selected {
-    background-color: #dff0d8;
-    color: #3c763d;
+.application-button.rank{
+    background-color: $move-blue;
 }
 
-.box {
-    background : #BADA55;
-    border: 1px solid black;
-    padding: 10px 20px;
-    display: inline-block;
+.application-button-delete {
+    background-color: transparent; 
+    right: 10px;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0px;
+    position:absolute;
+    font-size: 30px;
+    color: $text-color-bright;
+    cursor: pointer; 
 }
-.draggable {
-    cursor: move;
-    user-select: none;
+
+.application ul{
+  list-style-type: none; 
+  padding-left: 0px; 
 }
-.dragging {
-    background: coral;
+
+.application span {
+    padding-left: 15px;
 }
+
+.application-ranking {
+    flex-grow: 4; 
+}
+
+.application-ranking-area {
+    background-color: $move-grey;  
+    padding-bottom: 200px;
+     
+}
+.application-listing{
+    flex-grow: 4; 
+}
+
+.application-listing-heading{
+    margin-bottom: 50px; 
+}
+
+.application-ranking-heading{
+    margin-bottom: 20px; 
+}
+
+.application-progress{
+      margin-left: 8%!important; 
+      flex-grow: 1;
+}
+
+.application-finish{
+    float: right; 
+}
+

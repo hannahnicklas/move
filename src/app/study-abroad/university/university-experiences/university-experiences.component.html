@@ -1,19 +1,23 @@
 <div *ngIf="university">
   <div class="margin flex-container">
     <div class="experiences">
-      <app-experiences-boxes></app-experiences-boxes>
+      <!-- <div *ngFor="let experience of university.experiences"> -->
+        <app-experiences-boxes></app-experiences-boxes>
+      <!-- </div> -->
     </div>
+
+    <!-- Filter ______________________________________________ -->
 
     <div class="filter regular-S">
       <app-searchbar></app-searchbar>
       <div>
-        <div class="filter-category bold-S ">
+        <div class="bold-S ">
           Sorting
         </div>
         <div class="filter-points">
           <li [class.active]="sclicked === sorting" (click)="sclicked = (sclicked === sorting ? null :sorting)" *ngFor="let sorting of sortings">{{sorting}}</li>
         </div>
-        <div class="filter-category bold-S ">
+        <div class="bold-S ">
           Language
         </div>
         <div class="filter-points">
@@ -21,15 +25,12 @@
           <li (click)="toggle($event.target, 'Less...')" id="more"> More ... </li>
           <ng-container *ngIf="show">
             <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages  | slice:3">{{language}}</li>
-          </ng-container>      
+          </ng-container>
         </div>
       </div>
     </div>
 
-
-
-
-
+    <!-- /Filter ______________________________________________ -->
 
   </div>
 </div>

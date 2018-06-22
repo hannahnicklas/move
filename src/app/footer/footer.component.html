@@ -1,6 +1,6 @@
 <footer>
   <ul class="breadcrumbs" id="activeStateSelector">
-    <li *ngFor="let breadcrumb of breadcrumbs" >
+    <li *ngFor="let breadcrumb of breadcrumbs; let last = last" [ngClass]="{ 'active': last }" >
       <a routerLink="{{breadcrumb.path}}" class="breadcrumbLinks">{{breadcrumb.text}}</a>
     </li>
   </ul>
