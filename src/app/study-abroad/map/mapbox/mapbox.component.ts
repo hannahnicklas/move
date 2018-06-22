@@ -24,7 +24,14 @@ export class MapboxComponent implements OnInit {
   showPopup: boolean;
   showHover: boolean;
 
-  favorite: Favorite;
+  // Filter
+  sortings = ['Alphabetical', 'Movers', 'Rating'];
+  languages = ['English', 'France', 'German', 'Italian', 'Chinese', 'Spanish'];
+
+  // show more less Variablen
+  public show = false;
+  public showMore = 'Show';
+
 
   uniDescription: String;
 
@@ -57,13 +64,27 @@ export class MapboxComponent implements OnInit {
 
     this.getFavById();
   }
+// show more Button
+  toggle(element, text) {
+    element.textContent = text;
+    this.show = !this.show;
+    if (this.show) {
+      this.showMore = 'Hide';
+    } else {
+      this.showMore = 'Show';
+    }
+    if (!this.show) {
+      element.textContent = 'More ...';
+    }
+  }
 
   onClickMe(e) {
     this.map.flyTo({
       center: [
           e.target.getAttribute('lang'),
-          e.target.getAttribute('id')]// id=latitude
-  });
+          e.target.getAttribute('id')] // id=latitude
+    });
+    // this.map.zoomIn();
   }
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
@@ -95,7 +116,8 @@ export class MapboxComponent implements OnInit {
         data:  this.data
       },
       layout: {
-        'icon-image': 'town-hall-15'
+        'icon-image': 'town-hall-15',
+        'icon-allow-overlap': true
       },
       paint: { }
     });
@@ -143,7 +165,7 @@ export class MapboxComponent implements OnInit {
 
         const hover = document.getElementById('uniHover');
         console.log(hover);
-        hover.style.display = 'inline';
+        hover.style.display = 'initial';
         hover.style.top = e.point.y + 'px';
         hover.style.left = e.point.x + 'px';
       });
