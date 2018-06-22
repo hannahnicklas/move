@@ -1,3 +1,4 @@
+@import '../../../../assets/GlobalScss/var.scss';
 
 body { 
     margin:0; 
@@ -8,6 +9,19 @@ body {
       top:0; 
       bottom:0; 
       width:100%; }
+
+#uniHover {
+    position: absolute;
+    z-index: 999999;
+    // background-color: white;
+    display: none;
+    font-size: $font-size-small;
+
+    img {
+        height: 14px;
+        width: auto;
+    }
+}
 
 #popupSection {
     position: fixed;

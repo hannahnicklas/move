@@ -18,6 +18,7 @@ export class MapboxComponent implements OnInit {
   data;
   uni: University;
   showPopup: boolean;
+  showHover: boolean;
 
 
   /// default settings
@@ -34,6 +35,7 @@ export class MapboxComponent implements OnInit {
 
   ngOnInit() {
     this.showPopup = false;
+    this.showHover = false;
     this.buildMap();
     this.buildData();
   }
@@ -43,6 +45,7 @@ export class MapboxComponent implements OnInit {
   }
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
+    this.uni = this.unis[0];
 
     const iterations = this.unis.length;
     // tslint:disable-next-line:max-line-length
@@ -105,14 +108,31 @@ export class MapboxComponent implements OnInit {
         this.showPopup = true;
       });
 
-      this.map.on('mouseenter', 'unis',  () => {
+      this.map.on('mouseenter', 'unis',  (e) => {
         this.map.getCanvas().style.cursor = 'pointer';
+        this.uni = this.unis[e.features[0].properties.description];
+
+        this.showHover = true;
+
+        console.log(e);
+
+        const hover = document.getElementById('uniHover');
+        console.log(hover);
+        hover.style.display = 'inline';
+        hover.style.top = e.point.y + 'px';
+        hover.style.left = e.point.x + 'px';
       });
 
       this.map.on('mouseleave', 'unis', () => {
         this.map.getCanvas().style.cursor = '';
+        this.showHover = false;
+        const hover = document.getElementById('uniHover');
+        hover.style.display = 'none';
       });
+
       });
+
+
   }
 
   closeWindow() {
