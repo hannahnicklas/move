@@ -35,21 +35,27 @@ aside {
     z-index: 3 !important;
      
     height: 100%;
-    width: 15%;
+    width: 20vw;
 
     border-right: 1px solid $move-lighter;
     background-color: white;
 
-    padding: 0em 3em;
+    padding: 0em 1.5em 0em 3em;
 
     .universities {
-        margin-top: 5em;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        height: calc(100% - 100px);
+        position: relative;
+
         #searchBar{
-            padding: 0em 5em;
-            width: 50px;
+            margin-top: 50px;
+            width: 100%;
         }
+        
         #sorting{
-            margin: 2em 0px 1em;
+            margin: 20px 0px 1em;
             padding: 0px;
             * {
                 margin: 0px;
@@ -63,25 +69,34 @@ aside {
                 display: flex;
                 justify-content: space-between;
                 margin: 0px;
-                li {
-                    display: inline;
-                }
             }
         }
         ul.listOfUniversities{
+            
             list-style-type: none;
-            margin: 0px;
+            margin: 16px 0px 0px 0px;
             padding: 0px;
+            
+            width: 100%;
+            height: calc(100vh - 72px - 50px - 32px - 20px - 28px - 20px - 32px - 32px);
+            overflow-y: scroll;
+
+            
+
+
+
             * {
                 margin: 0px;
                 padding: 0px;
             }
             li {
                 margin-top: 3em;
-                width: 100%;
+                
                 .map-universities {
-                    display: inline-block;
-                    width: 100%;
+                    display: inline;
+                    * {
+                        display: inline;
+                    }
                     #linkToUni:hover {
                         color: $move-orange;
                     }
@@ -94,8 +109,6 @@ aside {
 
 
 #popupSection {
-    animation: roll 3s infinite;
-
     position: fixed;
     top: calc(50% - 360px);
 
@@ -189,4 +202,15 @@ aside {
     width: 100%;
     height: 100vh;
     z-index: 4;
+}
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    width: 4px;
+    background-color: $move-blue;
+}
+::-webkit-scrollbar-thumb {
+    width: 4px;
+    background-color: $move-orange;
 }
