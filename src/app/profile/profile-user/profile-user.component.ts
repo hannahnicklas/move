@@ -35,4 +35,7 @@ export class ProfileUserComponent implements OnInit, AfterViewChecked {
     // calls the Method in studentservice to update the data
     this.studentservice.updateStudent(this.student);
   }
+  logOut() {
+    this.authService.clear();
+  }
 }

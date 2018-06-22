@@ -111,7 +111,7 @@ export class ProfileApplicationComponent implements OnInit {
     this.receivedData.splice(index, 1);
   }
   // console log über die favortie elemente
-  loggy(): boolean {
+  showFinishButton(): boolean {
     if (this.receivedData === undefined || this.favorites === undefined) {
       return false;
     }
@@ -121,7 +121,7 @@ export class ProfileApplicationComponent implements OnInit {
         counter++;
       }
     }
-    if (counter >= 5) {
+    if (counter >= 1) {
       this.applicationIsReady = true;
       return true;
     } else {
