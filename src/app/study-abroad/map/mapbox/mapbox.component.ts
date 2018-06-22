@@ -44,8 +44,9 @@ export class MapboxComponent implements OnInit {
     this.map.flyTo({
       center: [
           e.target.getAttribute('lang'),
-          e.target.getAttribute('id')]//id=latitude
-  });
+          e.target.getAttribute('id')] // id=latitude
+    });
+    // this.map.zoomIn();
   }
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
@@ -122,7 +123,7 @@ export class MapboxComponent implements OnInit {
 
         const hover = document.getElementById('uniHover');
         console.log(hover);
-        hover.style.display = 'inline';
+        hover.style.display = 'initial';
         hover.style.top = e.point.y + 'px';
         hover.style.left = e.point.x + 'px';
       });
