@@ -53,6 +53,10 @@ export class UniversityNavComponent implements OnInit {
     this.favorite.isFav = true;
     this.studentService.updateIsFav(this.favorite).subscribe();
   }
+  removeAsFav(): void {
+    this.favorite.isFav = false;
+    this.studentService.updateIsFav(this.favorite).subscribe();
+  }
 
   getUniversity(): void {
      const id = +this.route.snapshot.paramMap.get('id');

@@ -28,6 +28,6 @@ a {
     padding-bottom: 1vh;
 }
 
-a:hover {
+a:hover, a.active-link {
     background-color: $move-lighter;
 }
