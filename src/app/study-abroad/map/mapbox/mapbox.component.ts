@@ -7,9 +7,6 @@ import { University } from '../../../../assets/Data/University';
 import { UniversityService } from '../../university/university.service';
 import { MapService } from '../../../map.service';
 
-import { ActivatedRoute } from '@angular/router';
-import { StudentService } from '../../../profile/student.service';
-import { Favorite } from '../../../../assets/Data/Favorite';
 
 @Component({
   selector: 'app-mapbox',
@@ -45,9 +42,7 @@ export class MapboxComponent implements OnInit {
   constructor(
     private mapService: MapService,
     private universityService: UniversityService,
-    private http: HttpClient,
-    private route: ActivatedRoute,
-    private studentService: StudentService
+    private http: HttpClient
   ) {
     (mapboxgl as any).accessToken = 'pk.eyJ1IjoiY2hzNTQyMSIsImEiOiJjamlmbnRxaW0wNXEwM3ByMm0yaGE5MnQ3In0.HK9VqcBSfLpSs6LfcWENRw';
   }
@@ -61,8 +56,6 @@ export class MapboxComponent implements OnInit {
     this.showHover = false;
     this.buildMap();
     this.buildData();
-
-    this.getFavById();
   }
 // show more Button
   toggle(element, text) {
@@ -184,25 +177,6 @@ export class MapboxComponent implements OnInit {
 
   closeWindow() {
     this.showPopup = false;
-  }
-
-
-  // add to favorites button on university preview
-  isFav(): boolean {
-    if (this.favorite === undefined) {
-      return false;
-    } else {
-      return this.favorite.isFav;
-    }
-  }
-  getFavById(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.studentService.getFavById(id)
-      .subscribe(favorite => this.favorite = favorite);
-  }
-  setAsFav(): void {
-    this.favorite.isFav = true;
-    this.studentService.updateIsFav(this.favorite).subscribe();
   }
 
 }
