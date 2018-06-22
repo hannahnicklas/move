@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-
+<!-- check if edit is false, if so then show data from database of the current student -->
   <div *ngIf="!edit" class="profile-detailed-user-data laufweite0">
     <div  class="regular-S">
       <table>
@@ -88,6 +88,7 @@
     </div>
 
   </div>
+  <!-- check if edit is true, if so then let user update the information -->
   <div *ngIf="edit" class="detailedData laufweite0">
     <div  class="regular-S">
       <table>
@@ -101,13 +102,14 @@
 
         <tr>
           <td>e-mail</td>
-          <td><!-- <input type="text" value="{{student.email}}"/> -->
+          <td>
+            <!-- input model to update email of student -->
             <input [(ngModel)]="student.email" placeholder="student.email"/></td>
         </tr>
 
         <tr>
           <td>mobile</td>
-          <td><!-- <input type="text" value="{{student.mobile}}"/> -->
+          <td>
             <input [(ngModel)]="student.mobile" placeholder="student.mobile"/></td>
         </tr>
       </table>
@@ -133,7 +135,7 @@
 
         <tr>
           <td>going abroad</td>
-          <td><!-- <input type="text" value="{{student.goingAbroad}}"/> -->
+          <td>
             <input [(ngModel)]="student.goingAbroad" placeholder="student.goingAbroad"/></td>
         </tr>
       </table>
@@ -144,25 +146,25 @@
         </tr>
         <tr>
           <td>first name</td>
-          <td><!-- <input type="text" value="{{student.emergFirstName}}"/> -->
+          <td>
             <input [(ngModel)]="student.emergFirstName" placeholder="student.emergFirstName"/></td>
         </tr>
 
         <tr>
           <td>last name</td>
-          <td><!-- <input type="text" value="{{student.emergLastName}}"/> -->
+          <td>
             <input [(ngModel)]="student.emergLastName" placeholder="student.emergLastName"/></td>
         </tr>
 
         <tr>
           <td>e-mail</td>
-          <td><!-- <input type="text" value="{{student.emergEmail}}"/> -->
+          <td>
             <input [(ngModel)]="student.emergEmail" placeholder="student.emergEmail"/></td>
         </tr>
 
         <tr>
           <td>mobile</td>
-          <td><!-- <input type="text" value="{{student.emergMobile}}"/> -->
+          <td>
             <input [(ngModel)]="student.emergMobile" placeholder="student.emergMobile"/></td>
         </tr>
       </table>
