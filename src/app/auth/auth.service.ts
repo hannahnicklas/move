@@ -17,6 +17,7 @@ export class AuthService {
   }
 
   hasAuthenticatedObject() {
+    // was war der Vorteil von !!?
     return !!window.localStorage.getItem(this.authKey);
   }
 

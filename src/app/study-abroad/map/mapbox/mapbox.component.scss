@@ -1,4 +1,5 @@
 @import '../../../../assets/GlobalScss/var.scss';
+@import '../../../filter/filter.component.scss';
 
 #map { 
       position:absolute; 
@@ -6,6 +7,35 @@
       bottom:0; 
       width:100%; }
 
+#uniHover {
+    position: absolute;
+    z-index: 999999;
+    // background-color: white;
+    display: none;
+    font-size: $font-size-small;
+
+    img {
+        height: 14px;
+        width: auto;
+    }
+}
+
+    .coordBut {
+        padding: 10px;
+        border-radius: 3px;
+        font-size: 12px;
+        text-align: center;
+        color: black;
+        background: white;
+    }
+
+    .filter {
+        width: 20%;       
+        height: 100%;
+        z-index: 5000 !important;
+        position: absolute !important;
+        background-color: white;
+    }
 #popupSection {
     position: fixed;
     top: 104px;

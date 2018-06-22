@@ -7,7 +7,8 @@ export class UniversityDataService implements InMemoryDbService {
   createDb() {
     const unis = [
       {
-        id: 1, name: 'University of Technology', country: 'Australia', city: 'Sydney', descriptionText: 'Lorem Ipsum',
+        id: 1, name: 'University of Technology', country: 'Australia', city: 'Sydney', 
+        descriptionText: 'The University of Technology Sydney originates from the Sydney Mechanics School of Arts (the oldest continuously running Mechanics Institute in Australia), which was established in 1833.[5] In the 1870s, the School formed the Workingmans College, which was later taken over by the NSW government to form, in 1882, the Sydney Technical College.[1]In 1940 the NSW Parliament passes Act to establish an Institute of Technology, which in 1964 lead to the establishment of New South Wales Institute of Technology (NSWIT). In 1968, amalgamation of the NSW Institute of Business Studies and the NSW Institute of Technology took place. In 1976 NSWIT establishes the first law school in NSW outside the university sector. In 1985 the Haymarket Campus is officially opened. On 8 October 1987 university status is granted to NSWIT, which was followed by the passing of the University of Technology, Sydney, Act 1987. It was reconstituted as the University of Technology Sydney (UTS) in 1988, along with the incorporation of the School of Design of the former Sydney College of the Arts.',
         picturePath: '../../images/app-component/university-general',
         experiences: [
           { student: 'Luke Lucky', course: 'User Experience Design (THI)',
@@ -59,7 +60,8 @@ export class UniversityDataService implements InMemoryDbService {
       },
       {
         id: 2, name: 'Technische Hochschule Ingolstadt', country: 'Germany', city: 'Ingolstadt',
-        descriptionText: 'Lorem Ipsum2', pictures: [
+        descriptionText: '1994 wurde die Bildungseinrichtung am Standort Hohe Schule gegründet. Gründungspräsident war Hartmut Sax. Das Studienangebot bestand aus dem Diplom-Studiengang Betriebswirtschaft. Es folgte 1995 die Unterzeichnung des Vertrags zum Grundstückkauf für den Neubau zwischen dem Freistaat Bayern und der Stadt Ingolstadt. Der Planungsauftrag wurde an das Architekturbüro Keiner, Fürstenfeldbruck, vergeben. 1996 kam der Diplom-Studiengang Wirtschaftsingenieurwesen hinzu. Das Richtfest auf dem neuen Campus an der Esplanade fand 1997 statt und es wurden die Diplom-Studiengänge Maschinenbau und Verbundstudium Wirtschaftsingenieurwesen/ Kfz-Mechatronik eingeführt. Zweiter Präsident wurde 1998 Gunter Schweiger, das Studienangebot wurde um Elektro- und Informationstechnik erweitert und es fand die erste Firmenkontaktmesse Contact statt.', 
+        pictures: [
           { path: '../../sadsa2' },
           { path: '../../sadsad2' }
         ], experiences: [
@@ -118,7 +120,8 @@ export class UniversityDataService implements InMemoryDbService {
       },
       {
         id: 3, name: 'University of Nevada', country: 'USA', city: 'Nevada',
-        descriptionText: 'Lorem Ipsum3', pictures: [
+        descriptionText: 'The University of Nevada, Reno (also referred to as Nevada, the University of Nevada or UNR) is a public research university located in Reno, Nevada. Founded October 12, 1874, Nevada is the sole land grant institution for the state of Nevada. According to the Carnegie Classification of Institutions of Higher Education, the University of Nevada is a research university with high research activity (RU/H).[5] The campus is home to the large-scale structures laboratory in the College of Engineering, which has put Nevada researchers at the forefront nationally in a wide range of civil engineering, earthquake and large-scale structures testing and modeling.',
+        pictures: [
           { path: '../../sadsa3' },
           { path: '../../sadsad3' }
         ], experiences: [
@@ -132,13 +135,16 @@ export class UniversityDataService implements InMemoryDbService {
           },
           {
             student: 'Tanja Bayer', course: 'User Experience Design (THI)',
-            text: 'WiSe, 24.07.2016 – 18.12.2016 Software Development (UTS)'
           },
           {
-            student: 'Hillarious Happy', course: 'Engineering (THI)',
-            text: 'WiSe, 24.07.2016 – 18.12.2016 Engineering (UTS)'
+            id: '7', title: 'Bachelor of Engineering in Mechatronics',
+            description: 'This is the description of the course', are: '2', been: '9'
+          },
+          {
+            id: '8', title: 'Bachelor of Science in Aircraft and Vehicle Informatics',
+            description: 'This is the description of the course', are: '1', been: '5'
           }
-        ], factsRegion: [
+        ],  factsRegion: [
           { icon: 'VISA.svg', title: 'Visa', description: 'If you are not from Europe you will need a Visum.' },
           { icon: 'Traffic.svg', title: 'Right driving traffic', description: 'Not like Great Britain.' },
           { icon: 'Climate.svg', title: 'Humid climate', description: 'Mixed weather, but mostly moderate.' },
@@ -177,7 +183,8 @@ export class UniversityDataService implements InMemoryDbService {
       },
       {
         id: 4, name: 'University of Mailand', country: 'Italy', city: 'Mailand',
-        descriptionText: 'Lorem Ipsum4', pictures: [
+        descriptionText: 'The University of Milan (Italian: Università degli Studi di Milano, Latin: Universitas Studiorum Mediolanensis), known colloquially as UniMi or Statale, is a higher education institution in Milan, Italy. It is one of the largest universities in Europe, with about 60,000 students,[3] a permanent teaching and research staff of about 2,000.[4] The University of Milan has 9 schools and offers 134 undergraduate and graduate courses, 21 Doctoral Schools and 92 Specialization Schools. The Universitys research and teaching activities have developed over the years and have received important international recognitions. The University is the only Italian member of the League of European Research Universities (LERU), a group of twenty-one research-intensive European Universities. It consistently ranks one of the best universities of Italy, both overall and in specific subject areas.',
+        pictures: [
           { path: '../../sadsa3' },
           { path: '../../sadsad3' }
         ], experiences: [
@@ -236,7 +243,8 @@ export class UniversityDataService implements InMemoryDbService {
       },
       {
         id: 5, name: 'University of Cambridge', country: 'England', city: 'Cambridge',
-        descriptionText: 'Lorem Ipsum4', pictures: [
+        descriptionText: 'The University of Cambridge (informally Cambridge University)[note 1] is a collegiate public research university in Cambridge, England. Founded in 1209 and granted a Royal Charter by King Henry III in 1231, Cambridge is the second-oldest university in the English-speaking world and the worlds fourth-oldest surviving university.[8] The university grew out of an association of scholars who left the University of Oxford after a dispute with the townspeople.[9] The two medieval universities share many common features and are often referred to jointly as Oxbridge. The history and influence of the University of Cambridge has made it one of the most prestigious universities in the world.',
+        pictures: [
           { path: '../../sadsa3' },
           { path: '../../sadsad3' }
         ], experiences: [
@@ -295,7 +303,8 @@ export class UniversityDataService implements InMemoryDbService {
       },
       {
         id: 6, name: 'University of Dakota', country: 'USA', city: 'Grand Forks',
-        descriptionText: 'Lorem Ipsum4', pictures: [
+        descriptionText: 'The University of North Dakota (also known as UND or North Dakota) is a public research university in Grand Forks, North Dakota. Established by the Dakota Territorial Assembly in 1883, six years before the establishment of the state of North Dakota, it is the states oldest. UND was founded with a strong liberal arts foundation, but has grown into a prominent scientific research university. It is classified by the Carnegie Foundation as having high research activity, and is considered one of the top academic and research institutions in the northern Midwest.[3][non-primary source needed] The University offers a variety of professional and specialized programs, including the only schools of law and medicine in the state of North Dakota. Its best known college is perhaps its John D. Odegard School of Aerospace Sciences, which is the first in the country to offer a degree in unmanned aircraft systems operations,[3][7] and programs in aviation and aerospace.',
+        pictures: [
           { path: '../../sadsa3' },
           { path: '../../sadsad3' }
         ], experiences: [
