@@ -29,6 +29,9 @@ export class MapboxComponent implements OnInit {
   public show = false;
   public showMore = 'Show';
 
+
+  uniDescription: String;
+
   /// default settings
   map: mapboxgl.Map;
   style = 'mapbox://styles/grandmagauss/cjggub0jm00242so9u41xd01o';
@@ -36,12 +39,19 @@ export class MapboxComponent implements OnInit {
   lng = 10;
   zoom = 2;
 
-  constructor(private mapService: MapService, private universityService: UniversityService, private http: HttpClient) {
+  constructor(
+    private mapService: MapService,
+    private universityService: UniversityService,
+    private http: HttpClient
+  ) {
     (mapboxgl as any).accessToken = 'pk.eyJ1IjoiY2hzNTQyMSIsImEiOiJjamlmbnRxaW0wNXEwM3ByMm0yaGE5MnQ3In0.HK9VqcBSfLpSs6LfcWENRw';
   }
 
 
   ngOnInit() {
+    // angular.module('app', ['ngAnimate']).controller('ctrl', function() { });
+
+
     this.showPopup = false;
     this.showHover = false;
     this.buildMap();
@@ -65,9 +75,10 @@ export class MapboxComponent implements OnInit {
     this.map.flyTo({
       center: [
           e.target.getAttribute('lang'),
-          e.target.getAttribute('id')] // id=latitude
+          e.target.getAttribute('id')], // id=latitude
+      zoom: 4
     });
-    // this.map.zoomIn();
+    // this.map.setZoom(6);
   }
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
@@ -100,7 +111,8 @@ export class MapboxComponent implements OnInit {
       },
       layout: {
         'icon-image': 'town-hall-15',
-        'icon-allow-overlap': true
+        'icon-allow-overlap': true,
+        'icon-size': 1.5
       },
       paint: { }
     });
@@ -118,7 +130,7 @@ export class MapboxComponent implements OnInit {
     /// Add map controls
     this.map.setMaxZoom(5);
     this.map.setMinZoom(1.6);
-    this.map.addControl(new mapboxgl.NavigationControl());
+    // this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('load', () => {
 
@@ -132,6 +144,9 @@ export class MapboxComponent implements OnInit {
         }
 
         this.uni = this.unis[e.features[0].properties.description];
+
+        this.uniDescription = this.uni.descriptionText.substring(0, 300).concat('...');
+
         this.showPopup = true;
       });
 
@@ -147,7 +162,7 @@ export class MapboxComponent implements OnInit {
         console.log(hover);
         hover.style.display = 'initial';
         hover.style.top = e.point.y + 'px';
-        hover.style.left = e.point.x + 'px';
+        hover.style.left = e.point.x + 20 + 'px';
       });
 
       this.map.on('mouseleave', 'unis', () => {

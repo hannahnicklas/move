@@ -1,4 +1,5 @@
 <div class="margin">
+  
   <div *ngIf='student'>
     <a routerLink="/home" class="button bold-S white logOutButton" (click)="logOut()">Logout</a>
     <div class="profile-user-data">
@@ -14,6 +15,8 @@
       </div>
     </div>
   </div>
+
+
   <!-- check if edit is false, if so then show data from database of the current student -->
   <div *ngIf="!edit" class="profile-detailed-user-data laufweite0">
     <div class="regular-S">
@@ -186,5 +189,7 @@
     <button class="button bold-S white" (click)="save()">save</button>
 
   </div>
+ 
+  <!-- /Bearbeitungsbereich der Profildaten -->
 
 </div>

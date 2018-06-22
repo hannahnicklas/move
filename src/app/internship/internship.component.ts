@@ -71,6 +71,7 @@ export class InternshipComponent implements OnInit {
     this.map.on('click', 'places', (e) => {
         const coordinates = e.features[0].geometry.coordinates.slice();
         const description = e.features[0].properties.description;
+        console.log(coordinates);
 
         // Ensure that if the map is zoomed out such that multiple
         // copies of the feature are visible, the popup appears
