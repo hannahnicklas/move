@@ -44,9 +44,10 @@ export class MapboxComponent implements OnInit {
     this.map.flyTo({
       center: [
           e.target.getAttribute('lang'),
-          e.target.getAttribute('id')] // id=latitude
+          e.target.getAttribute('id')], // id=latitude
+      zoom: 3
     });
-    // this.map.zoomIn();
+    // this.map.setZoom(6);
   }
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
@@ -97,7 +98,7 @@ export class MapboxComponent implements OnInit {
     /// Add map controls
     this.map.setMaxZoom(5);
     this.map.setMinZoom(1.6);
-    this.map.addControl(new mapboxgl.NavigationControl());
+    // this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('load', () => {
 
@@ -126,7 +127,7 @@ export class MapboxComponent implements OnInit {
         console.log(hover);
         hover.style.display = 'initial';
         hover.style.top = e.point.y + 'px';
-        hover.style.left = e.point.x + 'px';
+        hover.style.left = e.point.x + 20 + 'px';
       });
 
       this.map.on('mouseleave', 'unis', () => {
