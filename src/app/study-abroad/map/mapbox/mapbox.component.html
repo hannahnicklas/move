@@ -1,5 +1,7 @@
 <div id='map'></div>
 
+<!-- Filter _____________________________________________ -->
+
 <div class="filter regular-S">
   <app-searchbar></app-searchbar>
   <div>
@@ -19,13 +21,26 @@
         <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages  | slice:3">{{language}}</li>
       </ng-container>      
     </div>
-  </div>
-  <ul class="unis">
-    <li *ngFor="let university of unis">
-      <a routerLink="/studyAbroad/{{university.id}}/general"><span class="badge">{{university.id}}</span> {{university.name}} </a><button class="coordBut" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="onClickMe($event)">Find</button>
-    </li>
-  </ul>
+  </div> 
 </div>
+
+<!-- /Filter _____________________________________________ -->
+
+<!-- Universities _____________________________________________ -->
+<div class="universities regular-S">
+<ul class="unis bold-S blue">
+  <li *ngFor="let university of unis">
+    <div class="map-universities">
+    <a routerLink="/studyAbroad/{{university.id}}/general"><span class="badge">{{university.id}}</span> {{university.name}} </a>
+    <!-- <a routerLink="/studyAbroad/{{university.id}}/general"><span class="badge">{{university.id}}</span> {{university.name}} </a> -->
+    <button class="map-zooming-button" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="onClickMe($event)">Find!</button>
+    <hr>
+  </div>
+  </li>
+</ul>
+</div>
+
+<!-- /Universities _____________________________________________ -->
 
 <section id="popupSection" *ngIf="showPopup">
     <div id="wrapper">

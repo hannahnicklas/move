@@ -17,7 +17,7 @@ export class StudentService {
 
   private studentsUrl = 'api/students';
   private favoritesUrl = 'api/favorites';
-  private favoritesOfStudentUrl = 'api/favoritesOfStudent';
+  // private favoritesOfStudentUrl = 'api/favoritesOfStudent';
 
   constructor(private http: HttpClient,
     private uniService: UniversityService
@@ -63,33 +63,33 @@ export class StudentService {
   getFavorites(): Observable<Favorite[]> {
     return this.http.get<Favorite[]>(this.favoritesUrl);
   }
-  getFavoritesOfStudent(): Observable<Favorite[]> {
+  /* getFavoritesOfStudent(): Observable<Favorite[]> {
     return this.http.get<Favorite[]>(this.favoritesOfStudentUrl);
-  }
+  } */
   addUni(favorite: Favorite): Observable<Favorite> {
     return this.http.post<Favorite>(this.favoritesUrl, favorite, httpOptions);
   }
-  addUniToFavOfStudents(favorite: Favorite): Observable<Favorite> {
+  /* addUniToFavOfStudents(favorite: Favorite): Observable<Favorite> {
     return this.http.post<Favorite>(this.favoritesOfStudentUrl, favorite, httpOptions);
-  }
+  } */
   getFavById(id: number): Observable<Favorite> {
     const url = `${this.favoritesUrl}/${id}`;
     return this.http.get<Favorite>(url).pipe(
       catchError(this.handleError<Favorite>(`getFavById id=${id}`)));
   }
-  async getFavByIdAsync(id: number) {
+ /*  async getFavByIdAsync(id: number) {
     const url = `${this.favoritesUrl}/${id}`;
     let response;
     try {
     response = this.http.get<Favorite>(url).toPromise();
     } catch (e) {}
     return response;
-  }
-  getFavOfStudById(id: number): Observable<Favorite> {
+  } */
+  /* getFavOfStudById(id: number): Observable<Favorite> {
     const url = `${this.favoritesOfStudentUrl}/${id}`;
     return this.http.get<Favorite>(url).pipe(
       catchError(this.handleError<Favorite>(`getFavOfStudById id=${id}`)));
-  }
+  } */
 
   // Observable<University>
   private handleError<T>(operation = 'operation', result?: T) {
@@ -105,11 +105,11 @@ export class StudentService {
     };
   }
   /** DELETE: delete the hero from the server */
-  deleteFav(favorite: Favorite | number): Observable<Favorite> {
+  /* deleteFav(favorite: Favorite | number): Observable<Favorite> {
     const id = typeof favorite === 'number' ? favorite : favorite.id;
     const url = `${this.favoritesOfStudentUrl}/${id}`;
 
     return this.http.delete<Favorite>(url, httpOptions);
-  }
+  } */
 }
 

@@ -21,6 +21,14 @@ export class MapboxComponent implements OnInit {
   showPopup: boolean;
   showHover: boolean;
 
+  // Filter
+  sortings = ['Alphabetical', 'Movers', 'Rating'];
+  languages = ['English', 'France', 'German', 'Italian', 'Chinese', 'Spanish'];
+
+  // show more less Variablen
+  public show = false;
+  public showMore = 'Show';
+
   /// default settings
   map: mapboxgl.Map;
   style = 'mapbox://styles/grandmagauss/cjggub0jm00242so9u41xd01o';
@@ -38,6 +46,19 @@ export class MapboxComponent implements OnInit {
     this.showHover = false;
     this.buildMap();
     this.buildData();
+  }
+// show more Button
+  toggle(element, text) {
+    element.textContent = text;
+    this.show = !this.show;
+    if (this.show) {
+      this.showMore = 'Hide';
+    } else {
+      this.showMore = 'Show';
+    }
+    if (!this.show) {
+      element.textContent = 'More ...';
+    }
   }
 
   onClickMe(e) {
