@@ -28,6 +28,24 @@ a {
     padding-bottom: 1vh;
 }
 
-a:hover {
+a:hover, a.active-link {
     background-color: $move-lighter;
+}
+.addToFavButton:hover {
+    background-color: $move-orange;
+    cursor: pointer;
+}
+.removeFromFav {
+    background-color: $move-orange;
+    cursor: pointer;
+}
+.removeFromFav:hover {
+    background-color: $move-blue;
+    cursor: pointer;
+}
+.heartIcon {
+    max-width: 18px;
+    max-height: 18px;
+    padding-right: 12px;
+    padding-top: 5px;
 }

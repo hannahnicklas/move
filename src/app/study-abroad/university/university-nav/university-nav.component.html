@@ -1,10 +1,11 @@
 <nav *ngIf="university">
-  <a routerLink="/studyAbroad/{{university.id}}/general">General</a>
-  <a routerLink="/studyAbroad/{{university.id}}/consider">Consider</a>
-  <a routerLink="/studyAbroad/{{university.id}}/experiences">Experiences</a>
-  <a (click)="log(university.id)" routerLink="/studyAbroad/{{university.id}}/courses">Courses</a>
+  <a routerLink="/studyAbroad/{{university.id}}/general" routerLinkActive="active-link">General</a>
+  <a routerLink="/studyAbroad/{{university.id}}/consider" routerLinkActive="active-link">Consider</a>
+  <a routerLink="/studyAbroad/{{university.id}}/experiences" routerLinkActive="active-link">Experiences</a>
+  <a (click)="log(university.id)" routerLink="/studyAbroad/{{university.id}}/courses" routerLinkActive="active-link">Courses</a>
   <!-- <a routerLink="/profile/application" >add</a> -->
   <!-- <a *ngIf="!isFav()"(click)="setAsFav()" [routerLink]="['/profile/application', {data: university.id}]"></a>add </a> -->
-  <a *ngIf="!isFav()" (click)="setAsFav()">add to favorite</a>
+  <a class="addToFavButton" *ngIf="!isFav()"(click)="setAsFav()"><img src="../../assets/images/profile/application/heart.svg" class="heartIcon">add to favorites</a>
+  <a class="removeFromFav" *ngIf="isFav()"(click)="removeAsFav()"><img src="../../assets/images/profile/application/heartRemove.svg" class="heartIcon">remove from favorites</a>
 </nav>
 <div id="navPlaceholder">ddd</div>
