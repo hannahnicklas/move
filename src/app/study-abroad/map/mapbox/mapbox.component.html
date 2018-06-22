@@ -1,4 +1,5 @@
 <div id='map'></div>
+
 <div class="filter regular-S">
   <app-searchbar></app-searchbar>
   <div>
@@ -24,6 +25,8 @@
       <a routerLink="/studyAbroad/{{university.id}}/general"><span class="badge">{{university.id}}</span> {{university.name}} </a><button class="coordBut" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="onClickMe($event)">Find</button>
     </li>
   </ul>
+</div>
+
 <section id="popupSection" *ngIf="showPopup">
     <div id="wrapper">
         <div id="closeButton" (click)="closeWindow()">
@@ -35,10 +38,8 @@
 
     </div>
 </section>
-<div id="backgroundOpacity" *ngIf="showPopup" (click)="closeWindow()">
-        
-</div>
+<div id="backgroundOpacity" *ngIf="showPopup" (click)="closeWindow()"></div>
+
 <div id="uniHover" *ngIf="uni">
-    <img src="../../assets/images/app-component/university-general/{{uni.id}}/1.JPG">
     {{uni.name}}
 </div>
