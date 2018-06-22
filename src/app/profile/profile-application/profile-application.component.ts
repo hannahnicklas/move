@@ -25,6 +25,7 @@ export class ProfileApplicationComponent implements OnInit {
   favorite: Favorite; // der einzelne Favorite den man sich holt
   data: number;
   applicationIsReady: boolean;
+  finishApplication = false;
 
 
   // here should be uni DB
@@ -51,9 +52,6 @@ export class ProfileApplicationComponent implements OnInit {
     this.receivedData.push(university);
 
   }
-
-
-
   constructor(
     private studentservice: StudentService,
     private authService: AuthService,
@@ -74,9 +72,9 @@ export class ProfileApplicationComponent implements OnInit {
     console.log(this.data);
     // console.log(JSON.stringify(this.student));
     // this.submit();
-    if (this.data) {
+    /* if (this.data) {
       this.getFavById(this.data);
-    }
+    } */
     // this.add(this.favorite.name);
 
 
@@ -88,7 +86,7 @@ export class ProfileApplicationComponent implements OnInit {
       .subscribe(favorites => this.favorites = favorites);
   }
 
-  async getFavById(urlId: number) {
+  /* async getFavById(urlId: number) {
     this.favorite = <Favorite>await this.studentservice.getFavByIdAsync(urlId);
     const name = this.favorite.name;
     if (!name) { return; }
@@ -96,7 +94,7 @@ export class ProfileApplicationComponent implements OnInit {
       .subscribe(favorite => {
         this.favorites.push(favorite);
       });
-  }
+  } */
   // method to set isFav to false
   setAsNotFav(favorite: Favorite): void {
     favorite.isFav = false;
@@ -104,10 +102,10 @@ export class ProfileApplicationComponent implements OnInit {
     // this.ngOnInit();
   }
 
-  delete(favorite: Favorite): void {
+  /* delete(favorite: Favorite): void {
     this.favorites = this.favorites.filter(f => f !== favorite);
     this.studentservice.deleteFav(favorite).subscribe();
-  }
+  } */
 
   onDeleteUni(index: number) {
     this.receivedData.splice(index, 1);
@@ -129,6 +127,9 @@ export class ProfileApplicationComponent implements OnInit {
     } else {
       return false;
     }
+  }
+  finishApp() {
+    this.finishApplication = true;
   }
 
 }

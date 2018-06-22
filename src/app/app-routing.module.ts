@@ -22,7 +22,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileUserComponent } from './profile/profile-user/profile-user.component';
 import { ProfileApplicationComponent } from './profile/profile-application/profile-application.component';
 import { ProfileContactComponent } from './profile/profile-contact/profile-contact.component';
-import { ApplicationFinishedComponent } from './profile/application-finished/application-finished.component';
 
 
 
@@ -90,11 +89,7 @@ const routes: Routes = [
       { path: 'contact', component: ProfileContactComponent,
       data: {
         breadcrumbs: 'Contact'
-       }},
-      {path: 'finished', component: ApplicationFinishedComponent,
-      data: {
-        breadcrumbs: 'Finished'
-      }}
+       }}
   ]
 
 

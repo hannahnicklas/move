@@ -18,6 +18,7 @@ a {
     padding: 22px 0px;
 }
 
-a:hover {
+a:hover, a.active-link {
     color: $move-orange;
 }
+
