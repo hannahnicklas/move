@@ -1,0 +1,36 @@
+@import '../../filter/filter.component.scss';
+
+body { 
+    margin:0; 
+    padding:0; 
+}
+
+#map { 
+    position:absolute; 
+    top:0; 
+    bottom:0; 
+    width:100%; }
+
+  #fly {
+      display: block;
+      position: relative;
+      margin: 0px auto;
+      width: 100px;
+      height: 40px;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      font-size: 12px;
+      text-align: center;
+      color: black;
+      background: white;
+      z-index: 1000;
+  }
+
+.filter {
+    width: 20%;       
+    height: 80%;
+    z-index: 5000 !important;
+    position: absolute !important;
+    background-color: white;
+}

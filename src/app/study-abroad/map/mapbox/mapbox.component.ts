@@ -7,6 +7,7 @@ import { University } from '../../../../assets/Data/University';
 import { UniversityService } from '../../university/university.service';
 import { MapService } from '../../../map.service';
 
+
 @Component({
   selector: 'app-mapbox',
   templateUrl: './mapbox.component.html',
@@ -18,13 +19,12 @@ export class MapboxComponent implements OnInit {
   data;
 
 
-
   /// default settings
   map: mapboxgl.Map;
   style = 'mapbox://styles/grandmagauss/cjggub0jm00242so9u41xd01o';
   lat = 20;
   lng = 10;
-  zoom = 1;
+  zoom = 2;
 
   constructor(private mapService: MapService, private universityService: UniversityService, private http: HttpClient) {
     (mapboxgl as any).accessToken = 'pk.eyJ1IjoiZ3JhbmRtYWdhdXNzIiwiYSI6ImNqZ2dvdzJpazAwM3MzOHFubjJ2NDYyaDcifQ.8rLg5amk491arsu10b67uQ';
@@ -39,7 +39,13 @@ export class MapboxComponent implements OnInit {
     this.buildMap();
   }
 
-
+  onClickMe(e) {
+    this.map.flyTo({
+      center: [
+          e.target.getAttribute('lang'),
+          e.target.getAttribute('id')]//id=latitude
+  });
+  }
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
 
@@ -75,8 +81,8 @@ export class MapboxComponent implements OnInit {
     this.map = new mapboxgl.Map({
       container: 'map',
       style: this.style,
-      zoom: 1.4,
-      center: [-84.5, 38.05]
+      zoom: 1.5,
+      center: [11.5, 38.05]
     });
 
     /// Add map controls
