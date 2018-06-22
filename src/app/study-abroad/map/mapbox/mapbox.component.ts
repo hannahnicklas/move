@@ -7,6 +7,7 @@ import { University } from '../../../../assets/Data/University';
 import { UniversityService } from '../../university/university.service';
 import { MapService } from '../../../map.service';
 
+
 @Component({
   selector: 'app-mapbox',
   templateUrl: './mapbox.component.html',
@@ -18,14 +19,22 @@ export class MapboxComponent implements OnInit {
   data;
   uni: University;
   showPopup: boolean;
+  showHover: boolean;
 
+  // Filter
+  sortings = ['Alphabetical', 'Movers', 'Rating'];
+  languages = ['English', 'France', 'German', 'Italian', 'Chinese', 'Spanish'];
+
+  // show more less Variablen
+  public show = false;
+  public showMore = 'Show';
 
   /// default settings
   map: mapboxgl.Map;
   style = 'mapbox://styles/grandmagauss/cjggub0jm00242so9u41xd01o';
   lat = 20;
   lng = 10;
-  zoom = 1;
+  zoom = 2;
 
   constructor(private mapService: MapService, private universityService: UniversityService, private http: HttpClient) {
     (mapboxgl as any).accessToken = 'pk.eyJ1IjoiY2hzNTQyMSIsImEiOiJjamlmbnRxaW0wNXEwM3ByMm0yaGE5MnQ3In0.HK9VqcBSfLpSs6LfcWENRw';
@@ -34,15 +43,35 @@ export class MapboxComponent implements OnInit {
 
   ngOnInit() {
     this.showPopup = false;
+    this.showHover = false;
     this.buildMap();
     this.buildData();
   }
+// show more Button
+  toggle(element, text) {
+    element.textContent = text;
+    this.show = !this.show;
+    if (this.show) {
+      this.showMore = 'Hide';
+    } else {
+      this.showMore = 'Show';
+    }
+    if (!this.show) {
+      element.textContent = 'More ...';
+    }
+  }
 
-  routeMe(id) {
-    console.log(id);
+  onClickMe(e) {
+    this.map.flyTo({
+      center: [
+          e.target.getAttribute('lang'),
+          e.target.getAttribute('id')] // id=latitude
+    });
+    // this.map.zoomIn();
   }
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
+    this.uni = this.unis[0];
 
     const iterations = this.unis.length;
     // tslint:disable-next-line:max-line-length
@@ -70,7 +99,8 @@ export class MapboxComponent implements OnInit {
         data:  this.data
       },
       layout: {
-        'icon-image': 'town-hall-15'
+        'icon-image': 'town-hall-15',
+        'icon-allow-overlap': true
       },
       paint: { }
     });
@@ -81,8 +111,8 @@ export class MapboxComponent implements OnInit {
     this.map = new mapboxgl.Map({
       container: 'map',
       style: this.style,
-      zoom: 1.6,
-      center: [0, 45]
+      zoom: 1.5,
+      center: [11.5, 38.05]
     });
 
     /// Add map controls
@@ -105,14 +135,31 @@ export class MapboxComponent implements OnInit {
         this.showPopup = true;
       });
 
-      this.map.on('mouseenter', 'unis',  () => {
+      this.map.on('mouseenter', 'unis',  (e) => {
         this.map.getCanvas().style.cursor = 'pointer';
+        this.uni = this.unis[e.features[0].properties.description];
+
+        this.showHover = true;
+
+        console.log(e);
+
+        const hover = document.getElementById('uniHover');
+        console.log(hover);
+        hover.style.display = 'initial';
+        hover.style.top = e.point.y + 'px';
+        hover.style.left = e.point.x + 'px';
       });
 
       this.map.on('mouseleave', 'unis', () => {
         this.map.getCanvas().style.cursor = '';
+        this.showHover = false;
+        const hover = document.getElementById('uniHover');
+        hover.style.display = 'none';
       });
+
       });
+
+
   }
 
   closeWindow() {
