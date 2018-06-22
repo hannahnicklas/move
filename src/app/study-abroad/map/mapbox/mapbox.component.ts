@@ -76,7 +76,7 @@ export class MapboxComponent implements OnInit {
       center: [
           e.target.getAttribute('lang'),
           e.target.getAttribute('id')], // id=latitude
-      zoom: 3
+      zoom: 4
     });
     // this.map.setZoom(6);
   }
@@ -111,7 +111,8 @@ export class MapboxComponent implements OnInit {
       },
       layout: {
         'icon-image': 'town-hall-15',
-        'icon-allow-overlap': true
+        'icon-allow-overlap': true,
+        'icon-size': 1.5
       },
       paint: { }
     });
