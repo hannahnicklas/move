@@ -27,7 +27,7 @@ $line-height: 28px;
 
 // variables for layout
 $main-nav-height: 7vh;
-$main-margin: 4%;
+$main-margin: 4vw;
 
 
 /**********************************/
@@ -36,6 +36,7 @@ $main-margin: 4%;
 
 .margin {
     margin: $main-margin;
+    padding-bottom: 120px;
 }
 
 .flex-container {
@@ -174,8 +175,9 @@ a {
     border: none;
     background-color: $move-blue;
     margin-top: 4%;
-    padding: 1.3rem 1.1rem;
+    padding: 0.5rem 1.1rem;
     width: fit-content;
     min-width: 100px;
-    cursor: pointer; 
+    cursor: pointer;
+    color: white;
 }

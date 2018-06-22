@@ -99,7 +99,8 @@ export class MapboxComponent implements OnInit {
         data:  this.data
       },
       layout: {
-        'icon-image': 'town-hall-15'
+        'icon-image': 'town-hall-15',
+        'icon-allow-overlap': true
       },
       paint: { }
     });
