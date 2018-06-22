@@ -1,8 +1,5 @@
+@import '../../../../assets/GlobalScss/var.scss';
 
-body { 
-    margin:0; 
-    padding:0; 
-}
 #map { 
       position:absolute; 
       top:0; 
@@ -12,23 +9,71 @@ body {
 #popupSection {
     position: fixed;
     top: 104px;
+
     height: 75%;
     left: 25%;
     width: 50%;
     z-index: 999999;
     background-color: white;
+
     display: block;
+    box-sizing: border-box;
+    
     
     #wrapper{
         height: 100%;
         width: 100%;
         position: relative;
 
-        #closeButton {
+        header {
+            width: 100%;
+            position: relative;
+            height: 4rem;
+            
+            border-bottom: 1px solid grey;
+        }
+        
+        h2 {
             position: absolute;
-            top: 0;
-            right: 0px;
+            top: 0px;
+            left: 0px;
+            margin-left: 1.5em;
+        }
+        
+
+
+
+
+
+        button {
             font-size: larger;
+            position: absolute;
+            display: inline-block;
+            top: 0px;
+            right: 0px;
+            height: 4rem;
+            width: 4rem;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+
+        }
+        button:active  {
+            background-color: $move-orange;
+            color: white;
+            
+        }
+        button:focus {
+            outline:0;
+        }
+
+
+        #buttonToUni{
+            padding: 1em;
+            background-color: $move-orange;
+            position: absolute;
+            bottom: 0px;
+            float: left;
         }
     }
     

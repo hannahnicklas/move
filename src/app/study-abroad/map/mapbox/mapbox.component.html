@@ -1,12 +1,16 @@
 <div id='map'></div>
 <section id="popupSection" *ngIf="showPopup">
     <div id="wrapper">
-        <div id="closeButton" (click)="closeWindow()">
-            x
-        </div>
+        <header>
+            <button (click)="closeWindow()">x</button>
 
-        {{uni.name}}
-        <a routerLink="/studyAbroad/{{uni.id}}/general">Link zur uni</a>
+            <a routerLink="/studyAbroad/{{uni.id}}/general"><h2>{{uni.name}}</h2></a>
+        </header>
+
+
+
+
+        <a id="buttonToUni" routerLink="/studyAbroad/{{uni.id}}/general">Link zur uni</a>
 
     </div>
 </section>
