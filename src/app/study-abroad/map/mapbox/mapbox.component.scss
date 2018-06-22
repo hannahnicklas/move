@@ -63,8 +63,8 @@ aside {
             }
             
             ul {
-                margin: 0px;
-                padding: 0px;
+                margin: 0;
+                padding: 0 3rem 0 0;
                 list-style-type: none;
                 display: flex;
                 justify-content: space-between;
@@ -90,19 +90,28 @@ aside {
                 padding: 0px;
             }
             li {
-                margin-top: 3em;
+                padding: 1.5em 0;
                 
                 .map-universities {
-                    display: inline;
                     * {
                         display: inline;
+                    }
+                    #linkToUni {
+                        display: inline-block;
                     }
                     #linkToUni:hover {
                         color: $move-orange;
                     }
                 }
+                .map-universities:hover {
+                    cursor: default;
+                }
+            }
+            li:hover {
+                cursor: default;
             }
         }
+
     }
     
 }
