@@ -1,7 +1,11 @@
 <div class="margin">
   
   <div *ngIf='student'>
-    <a routerLink="/home" class="logout button bold-S white" (click)="logOut()">Logout</a>
+    <a routerLink="/home" (click)="logOut()">
+      <div class="logout button bold-S white">
+        Logout
+      </div>
+    </a>
     <div class="profile-user-data">
       <div>
         <img id="profilepic" src="../../assets/images/profile/anna_adven.png" alt="profilepic">

@@ -176,13 +176,14 @@ a {
 
 // buttons
 .button {
-    border: none;
-    background-color: $move-blue;
-    margin-top: 4%;
-    padding: 0.5rem 1.1rem;
     width: fit-content;
     min-width: 100px;
-    min-height: 44px;
+    margin: auto;
+    margin-top: 4%;
+    padding: 0.5rem 1.1rem;
     cursor: pointer;
+    border: none;
+    background-color: $move-blue;
     color: white;
+    text-align: center;
 }
