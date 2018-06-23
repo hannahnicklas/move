@@ -16,7 +16,9 @@ body {
 #uniHover {
     position: absolute;
     z-index: 999999;
-    // background-color: white;
+    background-color: white;
+    padding-left: 1em;
+    padding-right: 1em;
     display: none;
     font-size: $font-size-small;
 
