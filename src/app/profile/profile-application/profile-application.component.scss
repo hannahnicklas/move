@@ -3,7 +3,6 @@
     flex-wrap: wrap;
 }
 
-
 .flex-container > div {
     width: 250px; 
     text-align: left;    
@@ -13,7 +12,7 @@
 .application-button{
     margin-top: 4%;
     padding: 1.3rem 1.1rem;   
-    position:relative;
+    position: relative;
 }
 
 .application-button.list {
@@ -50,8 +49,11 @@
 }
 
 .application-ranking-area {
+    min-height: 238px;
+    height: fit-content;
     background-color: $move-grey;  
-    padding-bottom: 200px;
+    padding-bottom: 10px;
+    max-height: 394px;
      
 }
 .application-listing{
@@ -71,20 +73,30 @@
       flex-grow: 1;
 }
 
-.application-finish{
-    float: right; 
-}
 a {
     padding-left: 30px;
 }
-.heartIcon {
-    max-width: 18px;
-    max-height: 18px;
-    padding-right: 10px;
-}
-.heartAddIcon {
+
+.application-heart {
     max-width: 18px;
     max-height: 18px;
     padding-right: 10px;
 }
 
+.application-add-heart {
+    max-width: 18px;
+    max-height: 18px;
+    padding-right: 10px;
+}
+
+.application-button-finish {
+    margin-left: 11%;
+}
+
+.application-report {
+    text-align: center;
+}
+
+.application-report li {
+    list-style-type: none;
+}
