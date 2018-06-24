@@ -57,7 +57,7 @@ export class MapboxComponent implements OnInit {
     this.buildMap();
     this.buildData();
   }
-// show more Button
+  // show more Button
   toggle(element, text) {
     element.textContent = text;
     this.show = !this.show;
@@ -74,8 +74,8 @@ export class MapboxComponent implements OnInit {
   onClickMe(e) {
     this.map.flyTo({
       center: [
-          e.target.getAttribute('lang'),
-          e.target.getAttribute('id')], // id=latitude
+        e.target.getAttribute('lang'),
+        e.target.getAttribute('id')], // id=latitude
       zoom: 4
     });
     // this.map.setZoom(6);
@@ -86,7 +86,7 @@ export class MapboxComponent implements OnInit {
 
     const iterations = this.unis.length;
     // tslint:disable-next-line:max-line-length
-    const toAdd = new Array<{ type: string; properties: { description: string; ADDRESS?: undefined; }; geometry: {type: string; coordinates: number[]; }; } | { type: string; properties: { Name: string; ADDRESS: string; Address?: undefined; }; geometry: { type: string; coordinates: number[]; }; }>(iterations);
+    const toAdd = new Array<{ type: string; properties: { description: string; ADDRESS?: undefined; }; geometry: { type: string; coordinates: number[]; }; } | { type: string; properties: { Name: string; ADDRESS: string; Address?: undefined; }; geometry: { type: string; coordinates: number[]; }; }>(iterations);
     for (let i = 0; i < iterations; i++) {
       toAdd[i] = {
         type: 'Feature',
@@ -100,21 +100,21 @@ export class MapboxComponent implements OnInit {
       };
     }
 
-    this.data = { type: 'FeatureCollection', features: toAdd};
+    this.data = { type: 'FeatureCollection', features: toAdd };
 
     this.map.addLayer({
       id: 'unis',
       type: 'symbol',
       source: {
         type: 'geojson',
-        data:  this.data
+        data: this.data
       },
       layout: {
         'icon-image': 'town-hall-15',
         'icon-allow-overlap': true,
         'icon-size': 1.5
       },
-      paint: { }
+      paint: {}
     });
   }
 
@@ -150,7 +150,9 @@ export class MapboxComponent implements OnInit {
         this.showPopup = true;
       });
 
-      this.map.on('mouseenter', 'unis',  (e) => {
+      // Universitätsname anzeigen wenn über Symbol gehovert wird
+
+      this.map.on('mouseenter', 'unis', (e) => {
         this.map.getCanvas().style.cursor = 'pointer';
         this.uni = this.unis[e.features[0].properties.description];
 
@@ -158,7 +160,7 @@ export class MapboxComponent implements OnInit {
 
         console.log(e);
 
-        const hover = document.getElementById('uniHover');
+        const hover = document.getElementById('map-hover-university');
         console.log(hover);
         hover.style.display = 'initial';
         hover.style.top = e.point.y + 'px';
@@ -168,11 +170,13 @@ export class MapboxComponent implements OnInit {
       this.map.on('mouseleave', 'unis', () => {
         this.map.getCanvas().style.cursor = '';
         this.showHover = false;
-        const hover = document.getElementById('uniHover');
+        const hover = document.getElementById('map-hover-university');
         hover.style.display = 'none';
       });
 
-      });
+    });
+
+    // /Universitätsname anzeigen wenn über Symbol gehovert wird
 
 
   }

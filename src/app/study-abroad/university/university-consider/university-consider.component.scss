@@ -8,8 +8,7 @@
 
 .consider-fact {
     display: flex;
-    height: 100px;
-
+    height: 80px;
     margin: 1em 0;
 }
 
@@ -36,7 +35,7 @@
     }
 }
 
-.factsRegionIcon, .factsCityIcon, .factsUniIcon {
+.consider-fact-icon-region, .consider-fact-icon-city, .consider-fact-icon-university {
     max-width: 50px;
     max-height: 50px;
 }
