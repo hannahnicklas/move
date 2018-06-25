@@ -5,7 +5,7 @@
   <a (click)="log(university.id)" routerLink="/studyAbroad/{{university.id}}/courses" routerLinkActive="active-link">Courses</a>
   <!-- <a routerLink="/profile/application" >add</a> -->
   <!-- <a *ngIf="!isFav()"(click)="setAsFav()" [routerLink]="['/profile/application', {data: university.id}]"></a>add </a> -->
-  <a class="addToFavButton" *ngIf="!isFav()"(click)="setAsFav()"><img src="../../assets/images/profile/application/heart.svg" class="heartIcon">add to favorites</a>
-  <a class="removeFromFav" *ngIf="isFav()"(click)="removeAsFav()"><img src="../../assets/images/profile/application/heartRemove.svg" class="heartIcon">remove from favorites</a>
+  <a class="button-addToFavorit" *ngIf="!isFav()"(click)="setAsFav()"><img src="../../assets/images/profile/application/heart.svg" class="icon-heart">add to favorites</a>
+  <a class="button-removeFromFavorit" *ngIf="isFav()"(click)="removeAsFav()"><img src="../../assets/images/profile/application/heartRemove.svg" class="icon-heart">remove from favorites</a>
 </nav>
 <div id="navPlaceholder">ddd</div>
