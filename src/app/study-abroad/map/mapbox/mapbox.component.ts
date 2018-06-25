@@ -71,22 +71,40 @@ export class MapboxComponent implements OnInit {
     }
   }
 
-  onClickMe(e) {
+  onHoverList(e) {
     this.map.flyTo({
       center: [
           e.target.getAttribute('lang'),
           e.target.getAttribute('id')], // id=latitude
       zoom: 4
     });
-    // this.map.setZoom(6);
   }
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
     this.uni = this.unis[0];
 
     const iterations = this.unis.length;
-    // tslint:disable-next-line:max-line-length
-    const toAdd = new Array<{ type: string; properties: { description: string; ADDRESS?: undefined; }; geometry: {type: string; coordinates: number[]; }; } | { type: string; properties: { Name: string; ADDRESS: string; Address?: undefined; }; geometry: { type: string; coordinates: number[]; }; }>(iterations);
+
+    const toAdd = new Array<{ type: string;
+                              properties: {
+                                description: string;
+                                ADDRESS?: undefined;
+                              };
+                              geometry: {
+                                type: string;
+                                coordinates: number[];
+                              };
+                            } | { type: string;
+                              properties: {
+                                Name: string;
+                                ADDRESS: string;
+                                Address?: undefined;
+                              }; geometry: {
+                                type: string;
+                                coordinates: number[];
+                              };
+                            }>(iterations);
+
     for (let i = 0; i < iterations; i++) {
       toAdd[i] = {
         type: 'Feature',

@@ -36,9 +36,9 @@
       <li *ngFor="let university of unis">
         <div class="map-universities">
           <a id="linkToUni" routerLink="/studyAbroad/{{university.id}}/general">
-            <div id="uniName" class="bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onClickMe($event)">{{university.name}}</div>
+            <div id="uniName" class="bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onHoverList($event)">{{university.name}}</div>
             <br>
-            <div id="uniLocation" class="regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onClickMe($event)">
+            <div id="uniLocation" class="regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onHoverList($event)">
                 {{university.country}}, {{university.city}}
             </div>
           </a>          
@@ -48,9 +48,9 @@
       <li *ngFor="let university of unis">
           <div class="map-universities">
             <a id="linkToUni" routerLink="/studyAbroad/{{university.id}}/general">
-              <div id="uniName" class="bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onClickMe($event)">{{university.name}}</div>
+              <div id="uniName" class="bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onHoverList($event)">{{university.name}}</div>
               <br>
-              <div id="uniLocation" class="regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onClickMe($event)">
+              <div id="uniLocation" class="regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onHoverList($event)">
                   {{university.country}}, {{university.city}}
               </div>
             </a>          
