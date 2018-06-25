@@ -1,11 +1,14 @@
 <div *ngIf="university" class="margin">
   <div class="university-description">
+    <!-- Name der Universität-->
     <h2>{{university.name}}</h2>
     <div class="university-text">
+      <!-- Beschreibungstext -->
       {{university.descriptionText}}
     </div>
   </div>
 
+  <!-- Bilder -->
   <div class="university-pictures">
     <div>
       <img src="../../assets/images/app-component/university-general/{{university.id}}/1.JPG">

@@ -24,6 +24,7 @@ export class UniversityGeneralComponent implements OnInit {
     this.getUniversity();
   }
 
+  // Liest aus der URL die richtige ID aus und läd die entsprechende Universität aus der Datenbank
   getUniversity(): void {
      const id = +this.route.parent.snapshot.paramMap.get('id');
      this.universityService.getUniversity(id)

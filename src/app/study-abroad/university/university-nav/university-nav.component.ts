@@ -13,7 +13,7 @@ import { Favorite } from '../../../../assets/Data/Favorite';
 })
 export class UniversityNavComponent implements OnInit {
   favorite: Favorite;
-  // isFavInDb: boolean;
+
   @Input() university: University;
   constructor(
     private route: ActivatedRoute,
@@ -25,47 +25,36 @@ export class UniversityNavComponent implements OnInit {
   ngOnInit() {
     this.getUniversity();
     this.getFavById();
-    // check if it is in database
-    /* setTimeout(() => {
-      if (!this.favorite) {
-        this.isFavInDb = true;
-        console.log(this.isFavInDb);
-        console.log(this.favorite);
-      } else {
-        this.isFavInDb = false;
-        console.log(this.isFavInDb);
-        console.log(this.favorite);
-      }
-    }, 1000); */
-    console.log(this.route.snapshot.paramMap.get('id'));
   }
-  /* getFavById(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.studentService.getFavOfStudById(id)
-      .subscribe(favorite => this.favorite = favorite);
-  } */
+
+  // Liest aus der URL die richtige ID aus und läd den entsprechenden Favoriten aus der Favoritenliste.
+  // Ergibt null wenn die Universität nicht favorisiert ist.
   getFavById(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.studentService.getFavById(id)
       .subscribe(favorite => this.favorite = favorite);
   }
+
+  // Setzt die Universität als Favorit
   setAsFav(): void {
     this.favorite.isFav = true;
     this.studentService.updateIsFav(this.favorite).subscribe();
   }
+
+  // Entfernt die Universität von der Favoritenliste
   removeAsFav(): void {
     this.favorite.isFav = false;
     this.studentService.updateIsFav(this.favorite).subscribe();
   }
 
+  // Liest aus der URL die richtige ID aus und läd die entsprechende Universität aus der Datenbank
   getUniversity(): void {
      const id = +this.route.snapshot.paramMap.get('id');
      this.universityService.getUniversity(id)
       .subscribe(university => this.university = university);
   }
-  log(id: string) {
-    console.log('klicked' + id);
-  }
+
+  // Überprüft ob die Uni favorisiert ist und zeigt über das ngIf den entsprechenden Button an.
   isFav(): boolean {
     if (this.favorite === undefined) {
       return false;

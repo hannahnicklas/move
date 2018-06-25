@@ -12,12 +12,13 @@ import { University } from '../../../../assets/Data/University';
 export class UniversityCoursesComponent implements OnInit {
   @Input() university: University;
 
+  // Variablen zum Steuern der aktiven Filter
   public show = false;
   public showMore = 'Show';
   public fshow = false;
   public showFocus = 'Show';
 
-
+  // Filterkategorien
   languages = ['English', 'France', 'German', 'Italian', 'Chinese', 'Spanish'];
   sortingssmall = ['Alphabetical', 'Movers', 'Rating'];
   focuses = ['Information Technology', 'Design & Architecture', 'Business', 'Communication', 'Engineering'];
@@ -34,12 +35,14 @@ export class UniversityCoursesComponent implements OnInit {
     this.getUniversity();
   }
 
+  // Liest aus der URL die richtige ID aus und läd die entsprechende Universität aus der Datenbank
   getUniversity(): void {
     const id = +this.route.parent.snapshot.paramMap.get('id');
     this.universityService.getUniversity(id)
       .subscribe(university => this.university = university);
   }
 
+  // Klappt die Filter unter show more bei Language aus oder ein
   toggle(element, text) {
     element.textContent = text;
     this.show = !this.show;
@@ -53,6 +56,7 @@ export class UniversityCoursesComponent implements OnInit {
     }
   }
 
+  // Klappt die Filter unter show more bei Main focus aus oder ein
   togglefocus(element, text) {
     element.textContent = text;
     this.fshow = !this.fshow;

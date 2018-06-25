@@ -1,3 +1,4 @@
+<!-- Die Karte für die Mapbox. Funktionalität ist rein im Typescript implementiert -->
 <div id='map'></div>
 
 <!-- Universities _____________________________________________ -->
@@ -27,7 +28,7 @@
           </a>
         </div>
       </li>
-      <!-- doppeltes Anzeigen der Liste  -->
+      <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
       <li *ngFor="let university of unis">
           <div class="map-universities">
             <a id="linkToUni" routerLink="/studyAbroad/{{university.id}}/general">
