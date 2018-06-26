@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { University } from '../../../../assets/Data/University';
 import { UniversityService } from '../../university/university.service';
+import { Identifiers } from '@angular/compiler';
 
 
 @Component({
@@ -72,9 +73,10 @@ export class MapboxComponent implements OnInit {
         e.target.getAttribute('id')], // id=latitude
       zoom: 4
     });
+    this.showCircle();
   }
 
-  // Lässt den Kreis in der Mitte wieder verschwinden
+  // hilft dem Nutzer, die Universität von der Liste an der Seite auf die Map zuzuordnen
   showCircle() {
     document.getElementById('focus_ring').setAttribute('style', 'opacity: 1; z-index: 1;');
   }
@@ -189,6 +191,15 @@ export class MapboxComponent implements OnInit {
 
   closeWindow() {
     this.showPopup = false;
+  }
+
+
+  // zeigt die Universitätsvorschau an, wenn eine der Universitäten in der Liste ausgewählt wird
+  showPopupFromList(uniID) {
+    uniID = uniID.target.getAttribute('class').substring(0, 1);
+    this.uni = this.unis[(uniID - 1)];
+    this.uniDescription = this.uni.descriptionText.substring(0, 300).concat('...');
+    this.showPopup = true;
   }
 
 }

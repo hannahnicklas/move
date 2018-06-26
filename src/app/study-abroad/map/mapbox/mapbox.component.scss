@@ -80,7 +80,7 @@ aside {
             padding: 0px;
             
             width: 100%;
-            height: calc(100vh - 72px - 50px - 32px - 20px - 28px - 20px - 32px - 32px);
+            height: calc(100vh - 286px);
             overflow-y: scroll;
 
             * {
@@ -96,10 +96,14 @@ aside {
                         display: inline;
                     }
                     #linkToUni {
-                        display: inline-block;
+                        display: inline;
+                        p {
+                            display: inline-block;
+                        }
                     }
                     #linkToUni:hover {
                         color: $move-orange;
+                        cursor: pointer;
                     }
                 }
                 .map-universities:hover {
@@ -121,13 +125,12 @@ aside {
     }
     ::-webkit-scrollbar-track {
         width: 4px;
-        background-color: $move-blue;
+        background-color: $move-lighter;
     }
     ::-webkit-scrollbar-thumb {
         width: 4px;
         background-color: $move-orange;
     }
-
     //  /Styling der Scrollbar der Universitätsliste
 
 // /University list 
@@ -231,11 +234,14 @@ aside {
 
 // /Anzeige einer kurzen Beschreibung der Universität bei Klick auf Icon 
 
+
+
+// zur User Unterstützung: Hilft dem Nutzer, die Universität, über die der Nutzer in der Liste hovert auf der Map zuzuordnen
 .focus_ring {
-    z-index: 99999999999999999999999999999999;
+    z-index: 5;
     position: absolute;
-    left: calc(50% - 40px);
-    top: calc(50% - 40px);
+    left: calc(50% - 30px);
+    top: calc(50% - 30px);
     stroke: $move-orange;
     opacity: 0;
     transition-duration: 0.2s;
