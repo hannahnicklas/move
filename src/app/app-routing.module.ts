@@ -24,7 +24,10 @@ import { ProfileApplicationComponent } from './profile/profile-application/profi
 import { ProfileContactComponent } from './profile/profile-contact/profile-contact.component';
 
 
-
+/**
+ * Das App Routing Module ist die Grundlage für sämtliches Routing in dieser Angular App (https://angular.io/tutorial/toh-pt5).
+ * Unter data sind jeweils nur die Daten für die Breadcrumbs gespeihert.
+ */
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent,

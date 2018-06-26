@@ -1,7 +1,11 @@
 <div class="margin">
   
   <div *ngIf='student'>
-    <a routerLink="/home" class="button bold-S white logOutButton" (click)="logOut()">Logout</a>
+    <a routerLink="/home" (click)="logOut()">
+      <div class="logout button bold-S white">
+        Logout
+      </div>
+    </a>
     <div class="profile-user-data">
       <div>
         <img id="profilepic" src="../../assets/images/profile/anna_adven.png" alt="profilepic">
@@ -9,7 +13,8 @@
           <div class="bold-L">{{student.forename}} {{student.name}}</div>
           <div>{{student.subject}}</div>
           <div>
-            <button *ngIf="!edit" (click)="edit = !edit">Edit</button>
+            <button *ngIf="!edit" class="button grey-bg" (click)="edit = !edit">Edit</button>
+            <button *ngIf="edit" class="button bold-S white" (click)="save()">save</button>
           </div>
         </div>
       </div>
@@ -186,10 +191,9 @@
         </tr>
       </table>
     </div>
-    <button class="button bold-S white" (click)="save()">save</button>
+    <!-- <button class="button bold-S white" (click)="save()">save</button> -->
 
   </div>
- 
   <!-- /Bearbeitungsbereich der Profildaten -->
 
 </div>

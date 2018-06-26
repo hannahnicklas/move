@@ -36,7 +36,8 @@ $main-margin: 4vw;
 
 .margin {
     margin: $main-margin;
-    padding-bottom: 120px;
+    margin-bottom: 0px;
+    padding-bottom: 45px;
 }
 
 .flex-container {
@@ -55,7 +56,6 @@ $main-margin: 4vw;
 .paragraph {
     margin-bottom: 3%;
 }
-
 
 /**********************************/
 /* SCHRIFTEN */
@@ -102,6 +102,10 @@ a {
 
 .orange-bg {
     background-color: $move-orange !important;
+}
+
+.grey-bg {
+    background-color: $text-color-grey !important;
 }
 
 // text styles
@@ -171,12 +175,32 @@ a {
 
 // buttons
 .button {
-    border: none;
-    background-color: $move-blue;
-    margin-top: 4%;
-    padding: 0.5rem 1.1rem;
     width: fit-content;
     min-width: 100px;
+    margin: auto;
+    margin-top: 4%;
+    padding: 0.5rem 1.1rem;
     cursor: pointer;
+    border: none;
+    background-color: $move-blue;
     color: white;
+    text-align: center;
 }
+
+
+
+/*
+::-webkit-scrollbar {
+    width: 8px;
+    height: calc(1200px - 72px - 44px -32px);
+    position: fixed;
+}
+::-webkit-scrollbar-track {
+    width: 8px;
+    background-color: $move-blue;
+}
+::-webkit-scrollbar-thumb {
+    width: 0px;
+    background-color: $move-orange;
+}
+*/

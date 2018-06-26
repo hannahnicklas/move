@@ -31,15 +31,15 @@ a {
 a:hover, a.active-link {
     background-color: $move-lighter;
 }
-.addToFavButton:hover, .addToFavButton {
+.button-addToFavorit:hover, .button-addToFavorit {
     background-color: $move-orange;
     cursor: pointer;
 }
-.removeFromFav, .removeFromFav:hover {
+.button-removeFromFavorit, .button-removeFromFavorit:hover {
     background-color: $move-orange;
     cursor: pointer;
 }
-.heartIcon {
+.icon-heart {
     max-width: 18px;
     max-height: 18px;
     padding-right: 12px;

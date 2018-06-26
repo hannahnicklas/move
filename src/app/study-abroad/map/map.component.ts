@@ -41,7 +41,4 @@ export class MapComponent implements OnInit {
       element.textContent = 'More ...';
     }
   }
-
-
-  
 }

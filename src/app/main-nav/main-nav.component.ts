@@ -21,10 +21,9 @@ export class MainNavComponent implements OnInit {
 
 
 
-
+    /*Regelt die Hintergrundfarbe der Navigation auf der Home Seite*/
     function scroll() {
       if ( document.getElementsByClassName('breadcrumbLinks')[0].innerHTML === 'Home' ) {
-        console.log(document.body.scrollTop / window.innerHeight);
         // tslint:disable-next-line:max-line-length
         document.getElementById('main-nav').style.backgroundColor = 'rgba(0,80,117, ' + (document.body.scrollTop / window.innerHeight) + ')';
       }
@@ -34,6 +33,7 @@ export class MainNavComponent implements OnInit {
       }
     }
 
+    /*Entfernt den Platzhalter auf der Home Seite, damit der Hintergrund unter die Navigationsleiste rutscht*/
     function showPlaceholder() {
       if ( document.getElementsByClassName('breadcrumbLinks')[0].innerHTML === 'Home' ) {
         document.getElementsByClassName('placeholder')[0].setAttribute('style', 'display: none');

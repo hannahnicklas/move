@@ -21,8 +21,6 @@ export class UniversityExperiencesComponent implements OnInit {
   sortings = ['Alphabetical', 'Helpful', 'Faculity', 'Latest', 'Rating', 'Study course'];
   languages = ['English', 'France', 'German', 'Italian', 'Chinese', 'Spanish'];
 
-// /Filterbegriffe _________________________________________
-
   public show = false;
   public showMore = 'Show';
 
@@ -38,6 +36,7 @@ export class UniversityExperiencesComponent implements OnInit {
     this.getUniversity();
   }
 
+  // Liest aus der URL die richtige ID aus und läd die entsprechende Universität aus der Datenbank
   getUniversity(): void {
      const id = +this.route.parent.snapshot.paramMap.get('id');
      this.universityService.getUniversity(id)
@@ -59,5 +58,4 @@ export class UniversityExperiencesComponent implements OnInit {
     }
   }
 
-    // /Show More & Less Button _____________________________________
 }

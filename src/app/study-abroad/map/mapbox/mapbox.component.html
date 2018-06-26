@@ -1,86 +1,85 @@
+<!-- Die Karte für die Mapbox. Funktionalität ist rein im Typescript implementiert -->
 <div id='map'></div>
-
-<!-- Filter _____________________________________________
-
-<div class="filter regular-S">
-  <div>
-    
-    <div class="filter-category bold-S ">
-      Language
-    </div>
-    <div class="filter-points">
-      <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages | slice:0:3">{{language}}</li>
-      <li (click)="toggle($event.target, 'Less...')" id="more"> More ... </li>
-      <ng-container *ngIf="show">
-        <li [class.active]="lclicked === language" (click)="lclicked = (lclicked === language ? null :language)" *ngFor="let language of languages  | slice:3">{{language}}</li>
-      </ng-container>      
-    </div>
-  </div> 
-</div>
-
-< /Filter _____________________________________________ -->
 
 <!-- Universities _____________________________________________ -->
 <aside>
-  <div class="universities regular-S">
-    <app-searchbar id="searchBar"></app-searchbar>
+  <div class="map-universities regular-S">
+    <app-searchbar id="map-searchbar"></app-searchbar>
 
-    <div id="sorting">
+    <!-- Filter  -->
+    <div id="map-sorting">
       <ul>
-          <li [class.active]="sclicked === sorting" (click)="sclicked = (sclicked === sorting ? null :sorting)" *ngFor="let sorting of sortings">{{sorting}}</li>
+        <li [class.active]="sclicked === sorting" (click)="sclicked = (sclicked === sorting ? null :sorting)" *ngFor="let sorting of sortings">{{sorting}}</li>
       </ul>
     </div>
-    
+    <!-- /Filter  -->
 
-    <ul class="listOfUniversities bold-S blue">
+    <!-- Liste der Universitäten -->
+    <ul class="map-universities-list bold-S blue">
+
       <li *ngFor="let university of unis">
         <div class="map-universities">
           <a id="linkToUni" routerLink="/studyAbroad/{{university.id}}/general">
-            <div id="uniName" class="bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onClickMe($event)">{{university.name}}</div>
+            <div id="uniName" class="bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onHoverList($event)">{{university.name}}</div>
             <br>
-            <div id="uniLocation" class="regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onClickMe($event)">
+            <div id="uniLocation" class="regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onHoverList($event)">
                 {{university.country}}, {{university.city}}
             </div>
-          </a>          
-      </div>
+          </a>
+        </div>
       </li>
-
+      <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
       <li *ngFor="let university of unis">
           <div class="map-universities">
             <a id="linkToUni" routerLink="/studyAbroad/{{university.id}}/general">
-              <div id="uniName" class="bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onClickMe($event)">{{university.name}}</div>
+              <div id="uniName" class="bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onHoverList($event)">{{university.name}}</div>
               <br>
-              <div id="uniLocation" class="regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onClickMe($event)">
+              <div id="uniLocation" class="regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onHoverList($event)">
                   {{university.country}}, {{university.city}}
               </div>
             </a>          
         </div>
-        </li>
+      </li>
+       <!-- /doppeltes Anzeigen der Liste  -->
+
     </ul>
+    <!-- /Liste der Universitäten -->
   </div>
 </aside>
 <!-- /Universities _____________________________________________ -->
 
-<section id="popupSection" *ngIf="showPopup">
-    <div id="wrapper">
-        <header>
-            <button (click)="closeWindow()">x</button>
+<!-- Popup bei Klick auf Universitätsicon -->
 
-            <a routerLink="/studyAbroad/{{uni.id}}/general"><h2>{{uni.name}}</h2></a>
-        </header>
-        
-        <main>
-            <div><img src="../../assets/images/app-component/university-general/{{uni.id}}/1.JPG"></div>
-            <div id="mainUniInfo">
-                <p class="regular-S">{{uniDescription}} </p>
-            </div> 
-        </main>
-        <a id="goToUniversity" routerLink="/studyAbroad/{{uni.id}}/general">Visit {{uni.name}} to apply</a>
-        
-    </div>
+<section id="map-unidescription" *ngIf="showPopup">
+  <div id="unidescription-wrapper">
+
+    <header>
+      <button (click)="closeWindow()">x</button>
+      <a routerLink="/studyAbroad/{{uni.id}}/general">
+        <h2>{{uni.name}}</h2>
+      </a>
+    </header>
+
+    <main>
+      <div>
+        <img src="../../assets/images/app-component/university-general/{{uni.id}}/1.JPG">
+      </div>
+      <div class="map-unidescription-text">
+        <p class="regular-S">{{uniDescription}} </p>
+      </div>
+    </main>
+
+    <a id="map-unidescription-linkto" routerLink="/studyAbroad/{{uni.id}}/general">Visit {{uni.name}} to apply</a>
+
+  </div>
 </section>
-<div id="backgroundOpacity" *ngIf="showPopup" (click)="closeWindow()"></div>
+<div id="map-background-disabled" *ngIf="showPopup" (click)="closeWindow()"></div>
+<!-- /Popup bei Klick auf Universitätsicon -->
 
-<div id="uniHover" *ngIf="uni">
-    {{uni.name}}
+
+
+<!-- Anzeigen des Universitätsnamen bei Hover  -->
+<div id="map-hover-university" *ngIf="uni">
+  {{uni.name}}
 </div>
+<!-- /Anzeigen des Universitätsnamen bei Hover  -->

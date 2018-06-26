@@ -1,5 +1,7 @@
 <footer>
   <ul class="breadcrumbs" id="activeStateSelector">
+    <!-- Das *ngFor erzeugt ein Listenelement für jedes Element im breadcrumbs Array aus dem Typescript.-->
+    <!-- [ngClass] setzt die Klasse des letzten breadcrumbs auf active, um es per CSS Onrage einfärben zu können-->
     <li *ngFor="let breadcrumb of breadcrumbs; let last = last" [ngClass]="{ 'active': last }" >
       <a routerLink="{{breadcrumb.path}}" class="breadcrumbLinks">{{breadcrumb.text}}</a>
     </li>

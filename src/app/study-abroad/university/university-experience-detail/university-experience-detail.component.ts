@@ -23,6 +23,7 @@ export class UniversityExperienceDetailComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    // Liest den mitgeschickten Namen des Studenten aus und bindet ihn in die Seite ein
     this.data = this.route.snapshot.params.data;
   }
 

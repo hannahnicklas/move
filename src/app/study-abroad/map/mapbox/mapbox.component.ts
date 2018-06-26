@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { University } from '../../../../assets/Data/University';
 import { UniversityService } from '../../university/university.service';
-import { MapService } from '../../../map.service';
 
 
 @Component({
@@ -15,11 +14,11 @@ import { MapService } from '../../../map.service';
 })
 export class MapboxComponent implements OnInit {
 
-  unis: University[];
+  unis: University[]; // Liste aller Universitäten
   data;
-  uni: University;
-  showPopup: boolean;
-  showHover: boolean;
+  uni: University; // Die ausgewählte Universität (Bei Hover oder Klick)
+  showPopup: boolean; // Boolean der die Popup Anzeige Regelt
+  showHover: boolean; // Boolean der die Hover Anzeige Regelt
 
   // Filter
   sortings = ['Alphabetical', 'Movers', 'Rating'];
@@ -29,18 +28,14 @@ export class MapboxComponent implements OnInit {
   public show = false;
   public showMore = 'Show';
 
-
+  // Die gekürzte Universitätsbeschreibung im Popup
   uniDescription: String;
 
-  /// default settings
+  // Standard Einstellungen der Karte
   map: mapboxgl.Map;
   style = 'mapbox://styles/grandmagauss/cjggub0jm00242so9u41xd01o';
-  lat = 20;
-  lng = 10;
-  zoom = 2;
 
   constructor(
-    private mapService: MapService,
     private universityService: UniversityService,
     private http: HttpClient
   ) {
@@ -49,15 +44,13 @@ export class MapboxComponent implements OnInit {
 
 
   ngOnInit() {
-    // angular.module('app', ['ngAnimate']).controller('ctrl', function() { });
-
-
     this.showPopup = false;
     this.showHover = false;
     this.buildMap();
     this.buildData();
   }
-// show more Button
+
+  // show more Button
   toggle(element, text) {
     element.textContent = text;
     this.show = !this.show;
@@ -71,22 +64,42 @@ export class MapboxComponent implements OnInit {
     }
   }
 
-  onClickMe(e) {
+  // Zentriert die Karte bei der Universität, über die in der Liste gehovert wurde
+  onHoverList(e) {
     this.map.flyTo({
       center: [
-          e.target.getAttribute('lang'),
-          e.target.getAttribute('id')], // id=latitude
+        e.target.getAttribute('lang'),
+        e.target.getAttribute('id')], // id=latitude
       zoom: 4
     });
-    // this.map.setZoom(6);
   }
+
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
     this.uni = this.unis[0];
 
     const iterations = this.unis.length;
-    // tslint:disable-next-line:max-line-length
-    const toAdd = new Array<{ type: string; properties: { description: string; ADDRESS?: undefined; }; geometry: {type: string; coordinates: number[]; }; } | { type: string; properties: { Name: string; ADDRESS: string; Address?: undefined; }; geometry: { type: string; coordinates: number[]; }; }>(iterations);
+
+    const toAdd = new Array<{ type: string;
+                              properties: {
+                                description: string;
+                                ADDRESS?: undefined;
+                              };
+                              geometry: {
+                                type: string;
+                                coordinates: number[];
+                              };
+                            } | { type: string;
+                              properties: {
+                                Name: string;
+                                ADDRESS: string;
+                                Address?: undefined;
+                              }; geometry: {
+                                type: string;
+                                coordinates: number[];
+                              };
+                            }>(iterations);
+
     for (let i = 0; i < iterations; i++) {
       toAdd[i] = {
         type: 'Feature',
@@ -100,21 +113,21 @@ export class MapboxComponent implements OnInit {
       };
     }
 
-    this.data = { type: 'FeatureCollection', features: toAdd};
+    this.data = { type: 'FeatureCollection', features: toAdd };
 
     this.map.addLayer({
       id: 'unis',
       type: 'symbol',
       source: {
         type: 'geojson',
-        data:  this.data
+        data: this.data
       },
       layout: {
         'icon-image': 'town-hall-15',
         'icon-allow-overlap': true,
         'icon-size': 1.5
       },
-      paint: { }
+      paint: {}
     });
   }
 
@@ -127,54 +140,43 @@ export class MapboxComponent implements OnInit {
       center: [11.5, 38.05]
     });
 
-    /// Add map controls
+    // Regeln für den minimalen und Maximalen Zoom
     this.map.setMaxZoom(5);
     this.map.setMinZoom(1.6);
-    // this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('load', () => {
-
-
+      // Das Verhalten für den Klick auf eine Universität auf der Karte
       this.map.on('click', 'unis', (e) => {
-        const coordinates = e.features[0].geometry.coordinates.slice();
-        const description = e.features[0].properties.description;
 
-        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-        }
-
+        // Die geklickte Univeristät wird identifiziert und abgespeichert
         this.uni = this.unis[e.features[0].properties.description];
 
         this.uniDescription = this.uni.descriptionText.substring(0, 300).concat('...');
-
+        // Der Boolean wird auf true gesetzt, um das Popup auf der Seite anzeigen zu lassen
         this.showPopup = true;
       });
 
-      this.map.on('mouseenter', 'unis',  (e) => {
+      // Universitätsname anzeigen wenn über ein Symbol gehovert wird
+      this.map.on('mouseenter', 'unis', (e) => {
         this.map.getCanvas().style.cursor = 'pointer';
+
+        // Die gehoverte Univeristät wird identifiziert und abgespeichert
         this.uni = this.unis[e.features[0].properties.description];
 
-        this.showHover = true;
-
-        console.log(e);
-
-        const hover = document.getElementById('uniHover');
-        console.log(hover);
-        hover.style.display = 'initial';
-        hover.style.top = e.point.y + 'px';
-        hover.style.left = e.point.x + 20 + 'px';
+        // Da ngIf asynchron arbeitet, kann hier nicht damit gearbeitet werden. Als workaround wird mit der Display Variable gearbeitet.
+        const hover = document.getElementById('map-hover-university');
+        hover.style.display = 'initial'; // Macht den Hovereffekt sichtbar
+        hover.style.top = e.point.y + 'px'; // Setzt die richtige y Position
+        hover.style.left = e.point.x + 20 + 'px'; // Setzt die richtige x Position
       });
 
       this.map.on('mouseleave', 'unis', () => {
         this.map.getCanvas().style.cursor = '';
-        this.showHover = false;
-        const hover = document.getElementById('uniHover');
-        hover.style.display = 'none';
+        const hover = document.getElementById('map-hover-university');
+        hover.style.display = 'none'; // Macht den Hovereffekt wieder unsichtbar
       });
 
-      });
-
-
+    });
   }
 
   closeWindow() {

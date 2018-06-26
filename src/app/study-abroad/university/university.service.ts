@@ -9,7 +9,9 @@ import 'rxjs/add/operator/toPromise';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-
+/**
+ * Service um Universitäten aus der Datenbank zu laden.
+ */
 @Injectable()
 export class UniversityService {
 
@@ -33,10 +35,6 @@ export class UniversityService {
 
   // hier noch die richtige ID bekommen Implementieren
   getUniversitiesForStudent(ids: number[]) {
-    console.log(ids);
     return this.http.get<University[]>(this.unisUrl);
   }
-  /* updateUniversity(university: University): Observable<any> {
-    return this.http.put(this.unisUrl, university, httpOptions);
-  } */
 }
