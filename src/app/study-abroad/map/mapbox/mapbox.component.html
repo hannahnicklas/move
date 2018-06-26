@@ -41,6 +41,98 @@
         </div>
       </li>
        <!-- /doppeltes Anzeigen der Liste  -->
+      <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
+      <li *ngFor="let university of unis">
+        <div class="map-universities">
+          <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+            <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
+            <br>
+            <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
+                {{university.country}}, {{university.city}}
+            </p>
+          </div>          
+        </div>
+      </li>
+     <!-- /doppeltes Anzeigen der Liste  -->
+     <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
+      <li *ngFor="let university of unis">
+        <div class="map-universities">
+          <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+            <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
+            <br>
+            <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
+                {{university.country}}, {{university.city}}
+            </p>
+          </div>          
+        </div>
+      </li>
+      <!-- /doppeltes Anzeigen der Liste  -->
+      <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
+      <li *ngFor="let university of unis">
+        <div class="map-universities">
+          <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+            <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
+            <br>
+            <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
+                {{university.country}}, {{university.city}}
+            </p>
+          </div>          
+        </div>
+      </li>
+      <!-- /doppeltes Anzeigen der Liste  -->
+      <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
+      <li *ngFor="let university of unis">
+        <div class="map-universities">
+          <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+            <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
+            <br>
+            <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
+                {{university.country}}, {{university.city}}
+            </p>
+          </div>          
+      </div>
+    </li>
+     <!-- /doppeltes Anzeigen der Liste  -->
+    <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
+    <li *ngFor="let university of unis">
+      <div class="map-universities">
+        <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+          <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
+          <br>
+          <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
+              {{university.country}}, {{university.city}}
+          </p>
+        </div>          
+      </div>
+    </li>
+   <!-- /doppeltes Anzeigen der Liste  -->
+   <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
+    <li *ngFor="let university of unis">
+      <div class="map-universities">
+        <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+          <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
+          <br>
+          <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
+              {{university.country}}, {{university.city}}
+          </p>
+        </div>          
+      </div>
+    </li>
+    <!-- /doppeltes Anzeigen der Liste  -->
+    <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
+    <li *ngFor="let university of unis">
+      <div class="map-universities">
+        <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+          <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
+          <br>
+          <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
+              {{university.country}}, {{university.city}}
+          </p>
+        </div>          
+      </div>
+    </li>
+    <!-- /doppeltes Anzeigen der Liste  -->
+
 
     </ul>
     <!-- /Liste der Universitäten -->
