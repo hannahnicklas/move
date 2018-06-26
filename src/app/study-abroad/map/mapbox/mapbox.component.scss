@@ -65,8 +65,8 @@ aside {
             }
             
             ul {
-                margin: 0px;
-                padding: 0px;
+                margin: 0;
+                padding: 0 3rem 0 0;
                 list-style-type: none;
                 display: flex;
                 justify-content: space-between;
@@ -88,19 +88,29 @@ aside {
                 padding: 0px;
             }
             li {
-                margin-top: 3em;
+                padding: 1.5em 0;
                 
-                .map-university {
+                .map-universities {
                     display: inline;
                     * {
                         display: inline;
                     }
-                    #map-university-linkto:hover {
+                    #linkToUni {
+                        display: inline-block;
+                    }
+                    #linkToUni:hover {
                         color: $move-orange;
                     }
                 }
+                .map-universities:hover {
+                    cursor: default;
+                }
+            }
+            li:hover {
+                cursor: default;
             }
         }
+
     }
     
 }
@@ -221,3 +231,12 @@ aside {
 
 // /Anzeige einer kurzen Beschreibung der Universität bei Klick auf Icon 
 
+.focus_ring {
+    z-index: 99999999999999999999999999999999;
+    position: absolute;
+    left: calc(50% - 40px);
+    top: calc(50% - 40px);
+    stroke: $move-orange;
+    opacity: 0;
+    transition-duration: 0.2s;
+}

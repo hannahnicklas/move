@@ -31,7 +31,14 @@
 input:hover {
     border-color: rgba($move-orange, 0.5);
 }
-
+#logInButton {
+    border: none;
+    background-color: $move-lighter;
+    color: white;
+}
+#logInButton:hover {
+    background-color: $move-orange;
+}
 // button[type=button] {
 //     margin-top: 100px;
 //     background-color: $move-orange;
