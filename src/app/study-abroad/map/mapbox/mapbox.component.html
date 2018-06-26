@@ -19,25 +19,25 @@
 
       <li *ngFor="let university of unis">
         <div class="map-universities">
-          <a id="linkToUni" routerLink="/studyAbroad/{{university.id}}/general" (mouseover)="showCircle()" (mouseleave)="hideCircle()">
-            <div id="uniName" class="bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onHoverList($event)">{{university.name}}</div>
+          <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+            <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
             <br>
-            <div id="uniLocation" class="regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
+            <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
                 {{university.country}}, {{university.city}}
-            </div>
-          </a>
-        </div>
-      </li>
+            </p>
+          </div>          
+      </div>
+    </li>
       <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
       <li *ngFor="let university of unis">
           <div class="map-universities">
-            <a id="linkToUni" routerLink="/studyAbroad/{{university.id}}/general">
-              <div id="uniName" class="bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseout)="onHoverList($event)">{{university.name}}</div>
+            <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+              <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
               <br>
-              <div id="uniLocation" class="regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseover)="onHoverList($event)">
+              <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
                   {{university.country}}, {{university.city}}
-              </div>
-            </a>          
+              </p>
+            </div>          
         </div>
       </li>
        <!-- /doppeltes Anzeigen der Liste  -->
@@ -90,9 +90,9 @@
    >
   <circle
     class="focus_circle"
-    stroke-width="8"
+    stroke-width="6"
     fill="none"
-    r="32"
-    cx="40"
-    cy="40"/>
+    r="24"
+    cx="30"
+    cy="30"/>
 </svg>
