@@ -91,6 +91,7 @@ aside {
                 padding: 1.5em 0;
                 
                 .map-universities {
+                    display: inline;
                     * {
                         display: inline;
                     }
@@ -230,3 +231,12 @@ aside {
 
 // /Anzeige einer kurzen Beschreibung der Universität bei Klick auf Icon 
 
+.focus_ring {
+    z-index: 99999999999999999999999999999999;
+    position: absolute;
+    left: calc(50% - 40px);
+    top: calc(50% - 40px);
+    stroke: $move-orange;
+    opacity: 0;
+    transition-duration: 0.2s;
+}

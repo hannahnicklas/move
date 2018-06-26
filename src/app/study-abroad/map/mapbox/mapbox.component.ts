@@ -74,6 +74,14 @@ export class MapboxComponent implements OnInit {
     });
   }
 
+  // Lässt den Kreis in der Mitte wieder verschwinden
+  showCircle() {
+    document.getElementById('focus_ring').setAttribute('style', 'opacity: 1; z-index: 1;');
+  }
+  hideCircle() {
+    document.getElementById('focus_ring').setAttribute('style', 'opacity: 0; z-index: -1');
+  }
+
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
     this.uni = this.unis[0];
