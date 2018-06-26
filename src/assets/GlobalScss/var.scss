@@ -57,7 +57,6 @@ $main-margin: 4vw;
     margin-bottom: 3%;
 }
 
-
 /**********************************/
 /* SCHRIFTEN */
 /**********************************/
@@ -187,3 +186,21 @@ a {
     color: white;
     text-align: center;
 }
+
+
+
+/*
+::-webkit-scrollbar {
+    width: 8px;
+    height: calc(1200px - 72px - 44px -32px);
+    position: fixed;
+}
+::-webkit-scrollbar-track {
+    width: 8px;
+    background-color: $move-blue;
+}
+::-webkit-scrollbar-thumb {
+    width: 0px;
+    background-color: $move-orange;
+}
+*/
