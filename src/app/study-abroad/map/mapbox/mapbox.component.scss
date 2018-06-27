@@ -44,7 +44,7 @@ aside {
 
     padding: 0em 1.5em 0em 3em;
 
-    .map-universities {
+    .aside-list-universities {
         display: flex;
         flex-flow: column;
         justify-content: flex-start;
@@ -73,8 +73,8 @@ aside {
                 margin: 0px;
             }
         }
-        ul.map-universities-list{
-            
+        
+        ul.map-universities-list {
             list-style-type: none;
             margin: 16px 0px 0px 0px;
             padding: 0px;
@@ -83,31 +83,18 @@ aside {
             height: calc(100vh - 286px);
             overflow-y: scroll;
 
-            * {
-                margin: 0px;
-                padding: 0px;
-            }
             li {
                 padding: 1.5em 0;
-                
-                .map-universities {
+                div {
                     display: inline;
-                    * {
-                        display: inline;
-                    }
-                    #linkToUni {
-                        display: inline;
-                        p {
-                            display: inline-block;
-                        }
-                    }
-                    #linkToUni:hover {
-                        color: $move-orange;
-                        cursor: pointer;
+                    p {
+                        display: inline-block;
+                        margin: 0px;
                     }
                 }
-                .map-universities:hover {
-                    cursor: default;
+                div:hover {
+                    color: $move-orange;
+                    cursor: pointer;
                 }
             }
             li:hover {

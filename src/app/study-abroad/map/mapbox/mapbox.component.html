@@ -3,7 +3,7 @@
 
 <!-- Universities _____________________________________________ -->
 <aside>
-  <div class="map-universities regular-S">
+  <div class="aside-list-universities regular-S">
     <app-searchbar id="map-searchbar"></app-searchbar>
 
     <!-- Filter  -->
@@ -18,118 +18,82 @@
     <ul class="map-universities-list bold-S blue">
 
       <li *ngFor="let university of unis">
-        <div class="map-universities">
-          <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
-            <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
+          <div class="university-{{university.id}}" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="showPopupFromList($event)"(mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+            <p class="bold-M">{{university.name}}</p>
             <br>
-            <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
-                {{university.country}}, {{university.city}}
-            </p>
-          </div>          
-      </div>
-    </li>
+            <p class="regular-S">{{university.country}}, {{university.city}}</p>  
+          </div>       
+      </li>
       <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
       <li *ngFor="let university of unis">
-          <div class="map-universities">
-            <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
-              <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
-              <br>
-              <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
-                  {{university.country}}, {{university.city}}
-              </p>
-            </div>          
-        </div>
+          <div class="university-{{university.id}}" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="showPopupFromList($event)"(mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+            <p class="bold-M">{{university.name}}</p>
+            <br>
+            <p class="regular-S">{{university.country}}, {{university.city}}</p>  
+          </div>       
       </li>
        <!-- /doppeltes Anzeigen der Liste  -->
       <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
       <li *ngFor="let university of unis">
-        <div class="map-universities">
-          <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
-            <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
+          <div class="university-{{university.id}}" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="showPopupFromList($event)"(mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+            <p class="bold-M">{{university.name}}</p>
             <br>
-            <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
-                {{university.country}}, {{university.city}}
-            </p>
-          </div>          
-        </div>
+            <p class="regular-S">{{university.country}}, {{university.city}}</p>  
+          </div>       
       </li>
      <!-- /doppeltes Anzeigen der Liste  -->
      <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
-      <li *ngFor="let university of unis">
-        <div class="map-universities">
-          <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
-            <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
-            <br>
-            <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
-                {{university.country}}, {{university.city}}
-            </p>
-          </div>          
-        </div>
-      </li>
-      <!-- /doppeltes Anzeigen der Liste  -->
-      <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
-      <li *ngFor="let university of unis">
-        <div class="map-universities">
-          <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
-            <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
-            <br>
-            <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
-                {{university.country}}, {{university.city}}
-            </p>
-          </div>          
-        </div>
-      </li>
-      <!-- /doppeltes Anzeigen der Liste  -->
-      <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
-      <li *ngFor="let university of unis">
-        <div class="map-universities">
-          <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
-            <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
-            <br>
-            <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
-                {{university.country}}, {{university.city}}
-            </p>
-          </div>          
-      </div>
+     <li *ngFor="let university of unis">
+        <div class="university-{{university.id}}" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="showPopupFromList($event)"(mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+          <p class="bold-M">{{university.name}}</p>
+          <br>
+          <p class="regular-S">{{university.country}}, {{university.city}}</p>  
+        </div>       
     </li>
+      <!-- /doppeltes Anzeigen der Liste  -->
+      <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
+      <li *ngFor="let university of unis">
+          <div class="university-{{university.id}}" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="showPopupFromList($event)"(mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+            <p class="bold-M">{{university.name}}</p>
+            <br>
+            <p class="regular-S">{{university.country}}, {{university.city}}</p>  
+          </div>       
+      </li>
+      <!-- /doppeltes Anzeigen der Liste  -->
+      <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
+      <li *ngFor="let university of unis">
+          <div class="university-{{university.id}}" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="showPopupFromList($event)"(mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+            <p class="bold-M">{{university.name}}</p>
+            <br>
+            <p class="regular-S">{{university.country}}, {{university.city}}</p>  
+          </div>       
+      </li>
      <!-- /doppeltes Anzeigen der Liste  -->
     <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
     <li *ngFor="let university of unis">
-      <div class="map-universities">
-        <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
-          <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
+        <div class="university-{{university.id}}" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="showPopupFromList($event)"(mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+          <p class="bold-M">{{university.name}}</p>
           <br>
-          <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
-              {{university.country}}, {{university.city}}
-          </p>
-        </div>          
-      </div>
+          <p class="regular-S">{{university.country}}, {{university.city}}</p>  
+        </div>       
     </li>
    <!-- /doppeltes Anzeigen der Liste  -->
    <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
-    <li *ngFor="let university of unis">
-      <div class="map-universities">
-        <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
-          <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
-          <br>
-          <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
-              {{university.country}}, {{university.city}}
-          </p>
-        </div>          
-      </div>
-    </li>
+   <li *ngFor="let university of unis">
+      <div class="university-{{university.id}}" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="showPopupFromList($event)"(mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+        <p class="bold-M">{{university.name}}</p>
+        <br>
+        <p class="regular-S">{{university.country}}, {{university.city}}</p>  
+      </div>       
+  </li>
     <!-- /doppeltes Anzeigen der Liste  -->
     <!-- doppeltes Anzeigen der Liste, um auf der Seite den Scrolleffekt demonstrieren zu können -->
     <li *ngFor="let university of unis">
-      <div class="map-universities">
-        <div id="linkToUni" (click)="showPopupFromList($event)" class="{{university.id}}" (mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
-          <p id="uniName" class="{{university.id}} bold-M" data-lang="{{university.lang}}" data-id="{{university.lat}}">{{university.name}}</p>
+        <div class="university-{{university.id}}" data-lang="{{university.lang}}" data-id="{{university.lat}}" (click)="showPopupFromList($event)"(mouseover)="onHoverList($event)" (mouseleave)="hideCircle()">
+          <p class="bold-M">{{university.name}}</p>
           <br>
-          <p id="uniLocation" class="{{university.id}} regular-S hoverOrange" data-lang="{{university.lang}}" data-id="{{university.lat}}" (mouseenter)="onHoverList($event)">
-              {{university.country}}, {{university.city}}
-          </p>
-        </div>          
-      </div>
+          <p class="regular-S">{{university.country}}, {{university.city}}</p>  
+        </div>       
     </li>
     <!-- /doppeltes Anzeigen der Liste  -->
 
