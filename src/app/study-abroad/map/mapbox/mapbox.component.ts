@@ -69,8 +69,8 @@ export class MapboxComponent implements OnInit {
   onHoverList(e) {
     this.map.flyTo({
       center: [
-        e.target.getAttribute('lang'),
-        e.target.getAttribute('id')], // id=latitude
+        e.target.parentElement.getAttribute('lang'),
+        e.target.parentElement.getAttribute('id')], // id=latitude
       zoom: 4
     });
     this.showCircle();
@@ -196,8 +196,11 @@ export class MapboxComponent implements OnInit {
 
   // zeigt die Universitätsvorschau an, wenn eine der Universitäten in der Liste ausgewählt wird
   showPopupFromList(uniID) {
-    uniID = uniID.target.getAttribute('class').substring(0, 1);
-    this.uni = this.unis[(uniID - 1)];
+    const parentElement = uniID.target.parentElement;
+    let classStringOfParentElement = parentElement.getAttribute('class');
+    classStringOfParentElement = classStringOfParentElement.substring(11, classStringOfParentElement.length);
+
+    this.uni = this.unis[(classStringOfParentElement - 1)];
     this.uniDescription = this.uni.descriptionText.substring(0, 300).concat('...');
     this.showPopup = true;
   }
