@@ -22,7 +22,7 @@
   </div>
 
 
-  <!-- check if edit is false, if so then show data from database of the current student -->
+  <!-- edit = false -> show data from database of current student -->
   <div *ngIf="!edit" class="profile-detailed-user-data laufweite0">
     <div class="regular-S">
       <table>
@@ -96,7 +96,8 @@
       </table>
     </div>
   </div>
-  <!-- check if edit is true, if so then let user update the information -->
+
+  <!-- edit = true -> update information -->
   <div *ngIf="edit" class="profile-detailed-user-data laufweite0">
 
     <div class="regular-S">
@@ -112,7 +113,6 @@
         <tr>
           <td>e-mail</td>
           <td>
-            <!-- <input type="text" value="{{student.email}}"/> -->
             <input [(ngModel)]="student.email" placeholder="student.email" />
           </td>
         </tr>
@@ -120,7 +120,6 @@
         <tr>
           <td>mobile</td>
           <td>
-            <!-- <input type="text" value="{{student.mobile}}"/> -->
             <input [(ngModel)]="student.mobile" placeholder="student.mobile" />
           </td>
         </tr>
@@ -148,7 +147,6 @@
         <tr>
           <td>going abroad</td>
           <td>
-            <!-- <input type="text" value="{{student.goingAbroad}}"/> -->
             <input [(ngModel)]="student.goingAbroad" placeholder="student.goingAbroad" />
           </td>
         </tr>
@@ -161,7 +159,6 @@
         <tr>
           <td>first name</td>
           <td>
-            <!-- <input type="text" value="{{student.emergFirstName}}"/> -->
             <input [(ngModel)]="student.emergFirstName" placeholder="student.emergFirstName" />
           </td>
         </tr>
@@ -169,7 +166,6 @@
         <tr>
           <td>last name</td>
           <td>
-            <!-- <input type="text" value="{{student.emergLastName}}"/> -->
             <input [(ngModel)]="student.emergLastName" placeholder="student.emergLastName" />
           </td>
         </tr>
@@ -177,7 +173,6 @@
         <tr>
           <td>e-mail</td>
           <td>
-            <!-- <input type="text" value="{{student.emergEmail}}"/> -->
             <input [(ngModel)]="student.emergEmail" placeholder="student.emergEmail" />
           </td>
         </tr>
@@ -185,15 +180,13 @@
         <tr>
           <td>mobile</td>
           <td>
-            <!-- <input type="text" value="{{student.emergMobile}}"/> -->
             <input [(ngModel)]="student.emergMobile" placeholder="student.emergMobile" />
           </td>
         </tr>
       </table>
     </div>
-    <!-- <button class="button bold-S white" (click)="save()">save</button> -->
 
   </div>
-  <!-- /Bearbeitungsbereich der Profildaten -->
+  <!-- /Bearbeitungsbereich der Profildaten ____________________________________________________ -->
 
 </div>

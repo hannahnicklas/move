@@ -30,7 +30,7 @@ export class MapboxComponent implements OnInit {
   public showMore = 'Show';
 
   // Die gekürzte Universitätsbeschreibung im Popup
-  uniDescription: String;
+  unidescription: String;
 
   // Standard Einstellungen der Karte
   map: mapboxgl.Map;
@@ -161,7 +161,7 @@ export class MapboxComponent implements OnInit {
         // Die geklickte Univeristät wird identifiziert und abgespeichert
         this.uni = this.unis[e.features[0].properties.description];
 
-        this.uniDescription = this.uni.descriptionText.substring(0, 300).concat('...');
+        this.unidescription = this.uni.descriptionText.substring(0, 300).concat('...');
         // Der Boolean wird auf true gesetzt, um das Popup auf der Seite anzeigen zu lassen
         this.showPopup = true;
       });
@@ -201,7 +201,7 @@ export class MapboxComponent implements OnInit {
     classStringOfParentElement = classStringOfParentElement.substring(11, classStringOfParentElement.length);
 
     this.uni = this.unis[(classStringOfParentElement - 1)];
-    this.uniDescription = this.uni.descriptionText.substring(0, 300).concat('...');
+    this.unidescription = this.uni.descriptionText.substring(0, 300).concat('...');
     this.showPopup = true;
   }
 

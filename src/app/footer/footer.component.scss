@@ -1,11 +1,3 @@
-/*footer {
-    position: fixed;
-    bottom: 0;
-    background: white;
-    width: 100%;
-    padding: 0;
-}*/
-
 footer {
     z-index: 10000;
     position: fixed;
@@ -21,12 +13,12 @@ footer {
             display: block;
             float: left;
             margin-right: 2em;
-            
         }
 
         .active a{
             color: #DC6413;
         }
+        
         a {
             color: white;
             text-decoration: none;
