@@ -84,9 +84,9 @@ export class MapboxComponent implements OnInit {
   hideCircle() {
     document.getElementById('focus_ring').setAttribute('style', 'opacity: 0; z-index: -1');
   }
-  
 
-  
+
+
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
     this.uni = this.unis[0];
