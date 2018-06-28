@@ -1,7 +1,7 @@
 <div *ngIf="!finishApplication" class="application margin bold-M black">
   <div class="flex-container">
 
-    <!-- Application listing favorits -->
+    <!-- Application listing favourites _______________________________________________________ -->
     <div class="application-listing">
       <h1 class="bold-M blue">List of your favorite universities</h1>
       <div class="application-listing">
@@ -20,8 +20,9 @@
           <img src="../../assets/images/profile/application/heartAdd.svg" class="application-add-heart"> add another university to Favorites</a>
       </div>
     </div>
+    <!-- /Application listing favourites _______________________________________________________ -->
 
-    <!-- Application ranking favorits  -->
+    <!-- Application ranking favorits _______________________________________________________ -->
     <div class="application-ranking">
       <h1 class="bold-M blue">Ranking of your favorite universities</h1>
       <div>
@@ -42,9 +43,10 @@
         </div>
       </div>
     </div>
+    <!-- /Application ranking favorits _______________________________________________________ -->
 
 
-    <!-- Progress of application  -->
+    <!-- Progress of application _______________________________________________________ -->
     <div class="application-progress">
       <h1 class="bold-M blue">Your progress</h1>
       <ul class="regular-S">
@@ -73,14 +75,13 @@
         <button class="application-button-finish button bold-S white" *ngIf="showFinishButton()" (click)="finishApp()">Finish Application</button>
       </div>
     </div>
+    <!-- /Progress of application _______________________________________________________ -->
+
   </div>
-
-  <!-- <div class="application-finish">
-      <button class="button bold-S white" *ngIf="loggy()" routerLink="/profile/finished">Finish Application</button>
-    </div> -->
-
-
 </div>
+
+
+<!-- after application screen _______________________________________________________ -->
 <div *ngIf="finishApplication" class="margin application-report">
   <div class="italic-L blue paragraph">Thank you for applying</div>
   <div class="application-ranking-heading">You have applied for the following universities in the following order:</div>
@@ -97,3 +98,4 @@
     </div>
   </a>
 </div>
+<!-- /after application screen _______________________________________________________ -->

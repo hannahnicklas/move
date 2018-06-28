@@ -9,23 +9,24 @@ body {
     position:absolute; 
     top:0; 
     bottom:0; 
-    width:100%; }
+    width:100%;
+}
 
-  #fly {
-      display: block;
-      position: relative;
-      margin: 0px auto;
-      width: 100px;
-      height: 40px;
-      padding: 10px;
-      border: none;
-      border-radius: 3px;
-      font-size: 12px;
-      text-align: center;
-      color: black;
-      background: white;
-      z-index: 1000;
-  }
+#fly {
+    display: block;
+    position: relative;
+    margin: 0px auto;
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: black;
+    background: white;
+    z-index: 1000;
+}
 
 .filter {
     width: 20%;       
