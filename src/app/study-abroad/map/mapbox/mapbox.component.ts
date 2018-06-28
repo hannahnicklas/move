@@ -65,25 +65,28 @@ export class MapboxComponent implements OnInit {
     }
   }
 
-  // Zentriert die Karte bei der Universität, über die in der Liste gehovert wurde
+  // Zentriert die Karte auf die Universität, über die in der Liste gehovert wird
   onHoverList(e) {
     this.map.flyTo({
       center: [
         e.target.parentElement.getAttribute('lang'),
-        e.target.parentElement.getAttribute('id')], // id=latitude
+        e.target.parentElement.getAttribute('id')],
       zoom: 4
     });
+    // Anzeigen eines orangen Rings in der Mitte der Karte, um den Nutzer zu zeigen, wo sich die Universität auf der Karte befindet
     this.showCircle();
   }
 
-  // hilft dem Nutzer, die Universität von der Liste an der Seite auf die Map zuzuordnen
+  // Zeigen eines orangen Rings in der Mitte der Karte, um den Nutzer zu zeigen, wo sich die Universität auf der Karte befindet
   showCircle() {
     document.getElementById('focus_ring').setAttribute('style', 'opacity: 1; z-index: 1;');
   }
   hideCircle() {
     document.getElementById('focus_ring').setAttribute('style', 'opacity: 0; z-index: -1');
   }
+  
 
+  
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
     this.uni = this.unis[0];
@@ -189,20 +192,24 @@ export class MapboxComponent implements OnInit {
     });
   }
 
-  closeWindow() {
-    this.showPopup = false;
-  }
 
 
-  // zeigt die Universitätsvorschau an, wenn eine der Universitäten in der Liste ausgewählt wird
+  // Zeigen der Universitätsvorschau , wenn eine der Universitäten in der Liste ausgewählt wird
   showPopupFromList(uniID) {
+    // parentElement, da die Identifikationsnummer der Universität in der Klasse des parentElement gespeichert ist
     const parentElement = uniID.target.parentElement;
     let classStringOfParentElement = parentElement.getAttribute('class');
+    // von der Klasse wird nur die Identifikationsnummer benötigt, Styleanweisungen und andere Bezeichnungen werden abgeschnitten
     classStringOfParentElement = classStringOfParentElement.substring(11, classStringOfParentElement.length);
-
+    // Arrays starten bei 0
     this.uni = this.unis[(classStringOfParentElement - 1)];
+    // nur die ersten 300 Zeichen der Universitätbeschreibung werden angezeigt für die Vorschau
     this.unidescription = this.uni.descriptionText.substring(0, 300).concat('...');
+    // Anzeigen der Universitätsvorschau
     this.showPopup = true;
   }
 
+  closeWindow() {
+    this.showPopup = false;
+  }
 }
