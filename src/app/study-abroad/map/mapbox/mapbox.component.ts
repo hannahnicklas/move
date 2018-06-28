@@ -65,25 +65,27 @@ export class MapboxComponent implements OnInit {
     }
   }
 
-  // Zentriert die Karte bei der Universität, über die in der Liste gehovert wurde
+  // Zentriert die Karte auf die Universität, über die in der Liste gehovert wird
   onHoverList(e) {
     this.map.flyTo({
       center: [
         e.target.parentElement.getAttribute('lang'),
-        e.target.parentElement.getAttribute('id')], // id=latitude
+        e.target.parentElement.getAttribute('id')],
       zoom: 4
     });
     this.showCircle();
   }
 
-  // hilft dem Nutzer, die Universität von der Liste an der Seite auf die Map zuzuordnen
+  // Zeigen eines orangen Rings in der Mitte der Karte, um den Nutzer zu zeigen, wo sich die Universität auf der Karte befindet
   showCircle() {
     document.getElementById('focus_ring').setAttribute('style', 'opacity: 1; z-index: 1;');
   }
   hideCircle() {
     document.getElementById('focus_ring').setAttribute('style', 'opacity: 0; z-index: -1');
   }
+  
 
+  
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
     this.uni = this.unis[0];
