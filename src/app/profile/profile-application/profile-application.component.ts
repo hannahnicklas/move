@@ -19,22 +19,15 @@ import { Applied } from '../../../assets/Data/Applied';
 })
 export class ProfileApplicationComponent implements OnInit {
 
-  firstStage = true;
-  secondStage = false;
-  thirdStage = false;
-  fourthStage = false;
-  fifthStage = false;
-  sixthStage = false;
-
   applied: Applied;
   student: Student; // student Objekt
   favorites: Favorite[]; // sind die favoriten vom Studenten
-  applicationIsReady: boolean; // set the finish Button ready
-  finishApplication = false; // goes true if you press the finish Button
+  applicationIsReady: boolean; // um den finish button anzuzeigen
+  finishApplication = false; // wird true wenn finish Button gedrückt wird
 
-  receivedData: Array<any> = [];
+  receivedData: Array<any> = []; // dropped Data Array
 
-  // this method gets the dragged data as an event and pushes it to the dropped array (receivedData)
+  // um die gedraggten Daten, die als event kommen in ein neues array zu speichern
   transferDataSuccess($event: any) {
 
     if ($event.dragData === undefined) {
@@ -64,6 +57,7 @@ export class ProfileApplicationComponent implements OnInit {
     this.getFavorites();
 
   }
+  // holt sich den applied Objekt mit der bestimmten ID aus Der Datenbank
   getAppliedById(): void {
     this.studentservice.getAppliedById(1)
       .subscribe(applied => this.applied = applied);
@@ -75,17 +69,16 @@ export class ProfileApplicationComponent implements OnInit {
       .subscribe(favorites => this.favorites = favorites);
   }
 
-  // method to set isFav to false
+  // um die favorisierten Universitäten wieder aus der Favoritenliste zu löschen
   setAsNotFav(favorite: Favorite): void {
     favorite.isFav = false;
     this.studentservice.updateIsFav(favorite).subscribe();
-    // this.ngOnInit();
   }
-
+  // löscht die universitäten in der Rankingliste
   onDeleteUni(index: number) {
     this.receivedData.splice(index, 1);
   }
-  // console log über die favortie elemente
+  // schaut ob mindestens ein Objekt in der Rankinliste ist wenn ja zeigt er denn Button zum abschließen
   showFinishButton(): boolean {
     if (this.receivedData === undefined || this.favorites === undefined) {
       return false;
@@ -103,13 +96,13 @@ export class ProfileApplicationComponent implements OnInit {
       return false;
     }
   }
+  /* schließt den Rankingprozess ab und updatet das hasApplied in der
+  Datenbank auf ja sodass profile-progress angezeigt werden kann */
   finishApp(): void {
-    this.firstStage = false;
     this.finishApplication = true;
-     // set applied status to true
-     this.applied.hasApplied = true;
-     console.log(this.applied.hasApplied);
-     this.studentservice.updateHasApplied(this.applied).subscribe();
+    this.applied.hasApplied = true;
+    console.log(this.applied.hasApplied);
+    this.studentservice.updateHasApplied(this.applied).subscribe();
   }
 }
 

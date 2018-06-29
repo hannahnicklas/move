@@ -25,16 +25,18 @@ export class ProfileNavComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   student: Student; // student Objekt
-  applied: Applied;
+  applied: Applied; // applied Objekt
 
   ngOnInit() {
-    this.student = this.authService.getAuthenticatedObject();
-    this.getAppliedById();
+    this.student = this.authService.getAuthenticatedObject(); // student Objekt zuweisen
+    this.getAppliedById(); // das applied Objekt holen
   }
+  // hol sich applied Objekt aus const applied Datenbank mit der id 1 (gibt nur einen)
   getAppliedById(): void {
     this.studentservice.getAppliedById(1)
       .subscribe(applied => this.applied = applied);
   }
+  // schaut ob der Student sein Ranking der Universitäten abgeschlossen hat
   hasApplied(): boolean {
     if (this.applied === undefined) {
       return;

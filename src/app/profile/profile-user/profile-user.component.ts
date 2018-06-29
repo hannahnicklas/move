@@ -10,28 +10,24 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class ProfileUserComponent implements OnInit, AfterViewChecked {
 
-  // edit button handler if edit is pressed then this goes true
-  edit = false;
-
+  edit = false; // edit button
   student: Student;
 
   constructor(private studentservice: StudentService, private authService: AuthService) { }
 
   ngOnInit() {
-    // gets the student-objekt that is actually logged in and puts it in this.student
     this.student = this.authService.getAuthenticatedObject();
   }
 
   ngAfterViewChecked() {
     document.getElementById('profilepic').setAttribute('style', 'height: 200px; width: auto;');
   }
-  // updates the fake Database with the new entered data of the user
+  // überschreibt/updated die eingetragenen Daten des Studenten in die Datenbank
   save(): void {
-    // set back to non edit after save button is pressed
-    this.edit = !this.edit;
-    // calls the Method in studentservice to update the data
+    this.edit = !this.edit; // schaltet den Edit button um
     this.studentservice.updateStudent(this.student);
   }
+  // loggt den Studenten aus
   logOut() {
     this.authService.clear();
   }

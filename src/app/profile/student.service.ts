@@ -16,19 +16,19 @@ const httpOptions = {
 @Injectable()
 export class StudentService {
 
-  private studentsUrl = 'api/students';
-  private favoritesUrl = 'api/favorites';
-  private appliedUrl = 'api/applied';
+  private studentsUrl = 'api/students'; // const student aus Db
+  private favoritesUrl = 'api/favorites'; // const favorites aus Db
+  private appliedUrl = 'api/applied'; // const applied aus Db
 
   constructor(private http: HttpClient,
     private uniService: UniversityService
   ) { }
 
-
+  // gibt alle Studenten zurück
   getStudents(): Observable<Student[]> {
     return this.http.get<Student[]>(this.studentsUrl);
   }
-
+  // gibt Student aus der Datenbank mit der eingegebenen ID zurück
   getStudent(id: number): Observable<Student> {
     const url = `${this.studentsUrl}/${id}`;
     return this.http.get<Student>(url);
@@ -45,45 +45,39 @@ export class StudentService {
         return student;
       }));
   }
+  // überschreibt die Daten des Studenten in der Datenbank
   updateStudent(student: Student): Observable<any> {
     return this.http.put(this.studentsUrl, student, httpOptions);
   }
-  // to update the boolean isFav in favorites
+  // überschreibt/updated die favoriten in der const favorites Datenbank
   updateIsFav(favorites: Favorite): Observable<any> {
     return this.http.put(this.favoritesUrl, favorites, httpOptions);
   }
-  /* updateStudentUniversity(student: Student, university: Observable<University>): Observable<any> {
-    const url = `${this.studentsUrl}/${student.id}/universities`;
-    return this.http.post(url, university, httpOptions);
-  } */
-  updateStudentUniversity(student: Student, university: Observable<University>): Observable<any> {
-    console.log(this.http.post<University>(this.studentsUrl, university, httpOptions));
-    console.log(university);
-    return this.http.post<University>(this.studentsUrl, university, httpOptions);
-  }
+  // gibt alle Favoriten im const favorites Datenbank
   getFavorites(): Observable<Favorite[]> {
     return this.http.get<Favorite[]>(this.favoritesUrl);
   }
-  addUni(favorite: Favorite): Observable<Favorite> {
-    return this.http.post<Favorite>(this.favoritesUrl, favorite, httpOptions);
-  }
+  // gibt den favoriten mit bestimmter ID in der const favorites Datenbank zurück
   getFavById(id: number): Observable<Favorite> {
     const url = `${this.favoritesUrl}/${id}`;
     return this.http.get<Favorite>(url).pipe(
       catchError(this.handleError<Favorite>(`getFavById id=${id}`)));
   }
+  // überschreibt/updated den const applied in der Datenbank
   updateHasApplied(applied: Applied): Observable<any> {
     return this.http.put(this.appliedUrl, applied, httpOptions);
   }
+  // gibt den const applied array von der Datenbank zurück
   getApplied(): Observable<Applied[]> {
     return this.http.get<Applied[]>(this.appliedUrl);
   }
+  // gibt den applied mit der bestimmten ID aus der const applied Datenbank zurück
   getAppliedById(id: number): Observable<Applied> {
     const url = `${this.appliedUrl}/${id}`;
     return this.http.get<Applied>(url).pipe(
       catchError(this.handleError<Applied>(`getFavById id=${id}`)));
   }
-  // Observable<University>
+  // Errorhandling
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

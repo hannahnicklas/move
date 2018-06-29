@@ -16,12 +16,16 @@ import { forEach } from '@angular/router/src/utils/collection';
   styleUrls: ['./profile-progress.component.scss']
 })
 export class ProfileProgressComponent implements OnInit {
+
+  // sind die einzelnen Schritte im Applikations-Progress
+  // sind auch die *ngIf im HTML
   firstStage = true;
   secondStage = false;
   thirdStage = false;
   fourthStage = false;
   fifthStage = false;
   sixthStage = false;
+
   applicationFinished = false;
   student: Student; // student Objekt
   favorites: Favorite[]; // sind die favoriten vom Studenten
@@ -38,10 +42,12 @@ export class ProfileProgressComponent implements OnInit {
     this.getFavorites();
 
   }
+  // holt sich die const favoriten aus der Datenbank
   getFavorites(): void {
     this.studentservice.getFavorites()
       .subscribe(favorites => this.favorites = favorites);
   }
+  // schaltet die einzelnen Schritte je nach Nummereingabe frei/aus
   initNextStage(stage: number) {
     switch (stage) {
       case 2: {
@@ -73,6 +79,7 @@ export class ProfileProgressComponent implements OnInit {
         break;
     }
   }
+  // schaltet alle Schritte aus
   switchAllSteps() {
     this.firstStage = false;
     this.secondStage = false;
@@ -81,6 +88,7 @@ export class ProfileProgressComponent implements OnInit {
     this.fifthStage = false;
     this.sixthStage = false;
   }
+  // schließt den ganzen Applikations-progress ab
   finish() {
     this.switchAllSteps();
     this.applicationFinished = true;
