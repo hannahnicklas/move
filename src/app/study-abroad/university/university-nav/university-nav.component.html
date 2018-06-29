@@ -1,10 +1,13 @@
 <nav *ngIf="university">
-  <a routerLink="/studyAbroad/{{university.id}}/general">General</a>
-  <a routerLink="/studyAbroad/{{university.id}}/consider">Consider</a>
-  <a routerLink="/studyAbroad/{{university.id}}/experiences">Experiences</a>
-  <a (click)="log(university.id)" routerLink="/studyAbroad/{{university.id}}/courses">Courses</a>
-  <!-- <a routerLink="/profile/application" >add</a> -->
-  <!-- <a *ngIf="!isFav()"(click)="setAsFav()" [routerLink]="['/profile/application', {data: university.id}]"></a>add </a> -->
-  <a *ngIf="!isFav()"(click)="setAsFav()">add to favorite</a>
+  <!-- Die Links zu den vier University Unterkategorien -->
+  <a routerLink="/studyAbroad/{{university.id}}/general" routerLinkActive="active-link">General</a>
+  <a routerLink="/studyAbroad/{{university.id}}/consider" routerLinkActive="active-link">Consider</a>
+  <a routerLink="/studyAbroad/{{university.id}}/experiences" routerLinkActive="active-link">Experiences</a>
+  <a routerLink="/studyAbroad/{{university.id}}/courses" routerLinkActive="active-link">Courses</a>
+
+  <!-- Der Add und Remove Button für die Favoritenliste; es ist immer nur einer von beiden eingeblendet --> 
+  <a class="button-addToFavorit" routerLink="/profile/application" *ngIf="!isFav()"(click)="setAsFav()"><img src="../../assets/images/profile/application/heart.svg" class="icon-heart">add to favorites</a>
+  <a class="button-removeFromFavorit" *ngIf="isFav()"(click)="removeAsFav()"><img src="../../assets/images/profile/application/heartRemove.svg" class="icon-heart">remove from favorites</a>
 </nav>
+<!-- Ein Platzhalter, damit die Seiteninhalte nicht unter die Navigationsleiste rutschen-->
 <div id="navPlaceholder">ddd</div>

@@ -32,7 +32,6 @@ import { UniversityCoursesComponent } from './study-abroad/university/university
 import { UniversityExperienceDetailComponent } from './study-abroad/university/university-experience-detail/university-experience-detail.component';
 import { UniversityCourseDetailComponent } from './study-abroad/university/university-course-detail/university-course-detail.component';
 import { UniversityDataService } from '../assets/Data/university-data.service';
-import { MapService } from './map.service';
 import { StudentService } from './profile/student.service';
 import { ExperiencesBoxesComponent } from './study-abroad/university/university-experiences/experiences-boxes/experiences-boxes.component';
 import { AuthModule } from './auth/auth.module';
@@ -41,7 +40,13 @@ import { FilterComponent } from './filter/filter.component';
 import { SearchbarComponent } from './filter/searchbar/searchbar.component';
 import { DndModule } from 'ng2-dnd';
 import { MapboxComponent } from './study-abroad/map/mapbox/mapbox.component';
+<<<<<<< HEAD
 import { ApplicationFinishedComponent } from './profile/application-finished/application-finished.component';
+=======
+import { ProfileProgressComponent } from './profile/profile-progress/profile-progress.component';
+import { PopupComponent } from './home/popup/popup.component';
+
+>>>>>>> develop
 
 
 
@@ -74,7 +79,8 @@ import { ApplicationFinishedComponent } from './profile/application-finished/app
     FilterComponent,
     SearchbarComponent,
     MapboxComponent,
-    ApplicationFinishedComponent,
+    ProfileProgressComponent,
+    PopupComponent
   ],
   imports: [
     FormsModule,
@@ -87,14 +93,11 @@ import { ApplicationFinishedComponent } from './profile/application-finished/app
     ),
     AuthModule,
     McBreadcrumbsModule.forRoot(),
-    DndModule.forRoot(),
-    /*NgxMapboxGLModule.forRoot({
-      accessToken: 'pk.eyJ1IjoiZ3JhbmRtYWdhdXNzIiwiYSI6ImNqZ2dvdzJpazAwM3MzOHFubjJ2NDYyaDcifQ.8rLg5amk491arsu10b67uQ'
-    })*/
+    DndModule.forRoot()
+
   ],
   providers: [
     UniversityService,
-    MapService,
     StudentService
   ],
   bootstrap: [AppComponent]

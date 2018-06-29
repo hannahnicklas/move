@@ -1,4 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from '../student.service';
+import { Student } from '../../../assets/Data/Student';
+import { AuthService } from '../../auth/auth.service';
+import { University } from '../../../assets/Data/University';
+import { UniversityDataService } from '../../../assets/Data/university-data.service';
+import { ActivatedRoute } from '@angular/router';
+import { UniversityService } from '../../study-abroad/university/university.service';
+import { Observable } from 'rxjs/Observable';
+import { Favorite } from '../../../assets/Data/Favorite';
+import { forEach } from '@angular/router/src/utils/collection';
+import { Applied } from '../../../assets/Data/applied';
 
 @Component({
   selector: 'app-profile-nav',
@@ -7,9 +18,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private studentservice: StudentService,
+    private authService: AuthService,
+    private universityService: UniversityService,
+    private route: ActivatedRoute) { }
+
+  student: Student; // student Objekt
+  applied: Applied;
 
   ngOnInit() {
+    this.student = this.authService.getAuthenticatedObject();
+    this.getAppliedById();
   }
-
+  getAppliedById(): void {
+    this.studentservice.getAppliedById(1)
+      .subscribe(applied => this.applied = applied);
+  }
+  hasApplied(): boolean {
+    if (this.applied === undefined) {
+      return;
+    } else {
+      return this.applied.hasApplied;
+    }
+  }
 }

@@ -1,0 +1,103 @@
+@import '../../../assets/GlobalScss/var.scss';
+.margin {
+    margin-top: 10%;
+    flex-wrap: wrap;
+}
+
+.flex-container > div {
+    width: 250px; 
+    text-align: left;    
+    margin: 1%;     
+}
+
+.application-button{
+    margin-top: 4%;
+    padding: 1.3rem 1.1rem;   
+    position: relative;
+}
+
+.application-button.list {
+    background-color: $move-light;    
+}
+
+.application-button.rank{
+    background-color: $move-blue;
+}
+
+.application-button-delete {
+    background-color: transparent; 
+    right: 10px;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0px;
+    position:absolute;
+    font-size: 30px;
+    color: $text-color-bright;
+    cursor: pointer; 
+}
+
+.application ul{
+  list-style-type: none; 
+  padding-left: 0px; 
+}
+
+.application span {
+    padding-left: 15px;
+}
+
+.application-ranking {
+    flex-grow: 4; 
+}
+
+.application-ranking-area {
+    min-height: 238px;
+    height: fit-content;
+    background-color: $move-grey;  
+    padding-bottom: 10px;
+    max-height: 394px;
+     
+}
+.application-listing{
+    flex-grow: 4; 
+}
+
+.application-listing-heading{
+    margin-bottom: 20px; 
+}
+
+.application-ranking-heading{
+    margin-bottom: 20px; 
+}
+
+.application-progress{
+      margin-left: 8%!important; 
+      flex-grow: 1;
+}
+
+a {
+    padding-left: 30px;
+}
+
+.application-heart {
+    max-width: 18px;
+    max-height: 18px;
+    padding-right: 10px;
+}
+
+.application-add-heart {
+    max-width: 18px;
+    max-height: 18px;
+    padding-right: 10px;
+}
+
+.application-button-finish {
+    margin-left: 11%;
+}
+
+.application-report {
+    text-align: center;
+}
+
+.application-report li {
+    list-style-type: none;
+}

@@ -12,7 +12,6 @@ export class HomeComponent implements OnInit {
   constructor(private studentService: StudentService, public authService: AuthService) { }
 
   ngOnInit() {
-    // this.fixNav();
     document.getElementById('main-nav').style.backgroundColor = ('rgba(0,0,0,0)');
     console.log(this.authService);
 
@@ -21,11 +20,13 @@ export class HomeComponent implements OnInit {
     });
   }
 
-
+  /*
+    Der Student Service holt ein Studentenobjekt mit den eingebenen Nutzernamen und Passwort aus der Datenbank.
+    Existiert kein solches Objekt ist der login nicht erfolgreich und der Nutzer muss es erneut versuchen
+  */
   doLogin() {
     this.studentService.getStudentByCredentials(this.model.username, this.model.password)
     .subscribe(users => this.authService.setAuthenticatedObject(users));
- // .subscribe(function (user) {this.authService.setAuthenticatedObject(user)}
     document.body.setAttribute('style', 'overflow: auto');
   }
 

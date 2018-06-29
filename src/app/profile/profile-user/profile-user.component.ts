@@ -13,16 +13,13 @@ export class ProfileUserComponent implements OnInit, AfterViewChecked {
   // edit button handler if edit is pressed then this goes true
   edit = false;
 
- student: Student;
+  student: Student;
 
   constructor(private studentservice: StudentService, private authService: AuthService) { }
 
   ngOnInit() {
-
-    // old code: this.studentservice.getStudent(1).subscribe(student => this.student = student);
-
     // gets the student-objekt that is actually logged in and puts it in this.student
-     this.student = this.authService.getAuthenticatedObject();
+    this.student = this.authService.getAuthenticatedObject();
   }
 
   ngAfterViewChecked() {
@@ -34,5 +31,8 @@ export class ProfileUserComponent implements OnInit, AfterViewChecked {
     this.edit = !this.edit;
     // calls the Method in studentservice to update the data
     this.studentservice.updateStudent(this.student);
+  }
+  logOut() {
+    this.authService.clear();
   }
 }

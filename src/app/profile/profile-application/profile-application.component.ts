@@ -9,6 +9,7 @@ import { UniversityService } from '../../study-abroad/university/university.serv
 import { Observable } from 'rxjs/Observable';
 import { Favorite } from '../../../assets/Data/Favorite';
 import { forEach } from '@angular/router/src/utils/collection';
+import { Applied } from '../../../assets/Data/Applied';
 
 
 @Component({
@@ -18,18 +19,19 @@ import { forEach } from '@angular/router/src/utils/collection';
 })
 export class ProfileApplicationComponent implements OnInit {
 
-  student: Student;
+  firstStage = true;
+  secondStage = false;
+  thirdStage = false;
+  fourthStage = false;
+  fifthStage = false;
+  sixthStage = false;
+
+  applied: Applied;
+  student: Student; // student Objekt
   favorites: Favorite[]; // sind die favoriten vom Studenten
-  showFavorites: Favorite[];
-  // favorite: Favorite; // der einzelne Favorite den man sich holt
-  favorite: Favorite; // der einzelne Favorite den man sich holt
-  data: number;
-  applicationIsReady: boolean;
+  applicationIsReady: boolean; // set the finish Button ready
+  finishApplication = false; // goes true if you press the finish Button
 
-
-  // here should be uni DB
-  // uni: University;
-  transferData: Object = { id: 1, msg: 'Hello' };
   receivedData: Array<any> = [];
 
   // this method gets the dragged data as an event and pushes it to the dropped array (receivedData)
@@ -39,21 +41,16 @@ export class ProfileApplicationComponent implements OnInit {
       return;
     }
     if (this.receivedData.length >= 5) {
-      alert('Sind zu viele');
       return;
 
     }
     const university = $event.dragData;
     if (this.receivedData.indexOf(university) !== -1) {
-      alert('Die Universität ist bereits enthalten');
       return;
     }
     this.receivedData.push(university);
 
   }
-
-
-
   constructor(
     private studentservice: StudentService,
     private authService: AuthService,
@@ -62,24 +59,14 @@ export class ProfileApplicationComponent implements OnInit {
 
   ngOnInit() {
     this.applicationIsReady = false;
-    // this.studentservice.getStudent(1).subscribe(student => this.student = student);
     this.student = this.authService.getAuthenticatedObject();
+    this.getAppliedById();
     this.getFavorites();
 
-
-
-    this.data = this.route.snapshot.params.data;
-    // this.add(this.data);
-    console.log(this.universityService.getUniversity(this.data));
-    console.log(this.data);
-    // console.log(JSON.stringify(this.student));
-    // this.submit();
-    if (this.data) {
-      this.getFavById(this.data);
-    }
-    // this.add(this.favorite.name);
-
-
+  }
+  getAppliedById(): void {
+    this.studentservice.getAppliedById(1)
+      .subscribe(applied => this.applied = applied);
   }
 
   // um die favs der Studenten zu bekommen
@@ -88,15 +75,6 @@ export class ProfileApplicationComponent implements OnInit {
       .subscribe(favorites => this.favorites = favorites);
   }
 
-  async getFavById(urlId: number) {
-    this.favorite = <Favorite>await this.studentservice.getFavByIdAsync(urlId);
-    const name = this.favorite.name;
-    if (!name) { return; }
-    this.studentservice.addUniToFavOfStudents({ name } as Favorite)
-      .subscribe(favorite => {
-        this.favorites.push(favorite);
-      });
-  }
   // method to set isFav to false
   setAsNotFav(favorite: Favorite): void {
     favorite.isFav = false;
@@ -104,16 +82,11 @@ export class ProfileApplicationComponent implements OnInit {
     // this.ngOnInit();
   }
 
-  delete(favorite: Favorite): void {
-    this.favorites = this.favorites.filter(f => f !== favorite);
-    this.studentservice.deleteFav(favorite).subscribe();
-  }
-
   onDeleteUni(index: number) {
     this.receivedData.splice(index, 1);
   }
   // console log über die favortie elemente
-  loggy(): boolean {
+  showFinishButton(): boolean {
     if (this.receivedData === undefined || this.favorites === undefined) {
       return false;
     }
@@ -123,14 +96,21 @@ export class ProfileApplicationComponent implements OnInit {
         counter++;
       }
     }
-    if (counter >= 5) {
+    if (counter >= 1) {
       this.applicationIsReady = true;
       return true;
     } else {
       return false;
     }
   }
-
+  finishApp(): void {
+    this.firstStage = false;
+    this.finishApplication = true;
+     // set applied status to true
+     this.applied.hasApplied = true;
+     console.log(this.applied.hasApplied);
+     this.studentservice.updateHasApplied(this.applied).subscribe();
+  }
 }
 
 

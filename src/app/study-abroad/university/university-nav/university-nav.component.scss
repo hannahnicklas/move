@@ -28,6 +28,20 @@ a {
     padding-bottom: 1vh;
 }
 
-a:hover {
+a:hover, a.active-link {
     background-color: $move-lighter;
+}
+.button-addToFavorit:hover, .button-addToFavorit {
+    background-color: $move-orange;
+    cursor: pointer;
+}
+.button-removeFromFavorit, .button-removeFromFavorit:hover {
+    background-color: $move-orange;
+    cursor: pointer;
+}
+.icon-heart {
+    max-width: 18px;
+    max-height: 18px;
+    padding-right: 12px;
+    padding-top: 5px;
 }

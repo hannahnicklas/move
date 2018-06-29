@@ -6,15 +6,19 @@ body {
     padding:0; 
 }
 #map { 
-      position:absolute; 
-      top:0; 
-      bottom:0; 
-      width:100%; }
+    position:absolute; 
+    top:0; 
+    bottom:0; 
+    width:100%; 
+}
 
-#uniHover {
+// Aktion bei Hover über Universitätsicon  
+#map-hover-university {
     position: absolute;
     z-index: 999999;
-    // background-color: white;
+    background-color: white;
+    padding-left: 1em;
+    padding-right: 1em;
     display: none;
     font-size: $font-size-small;
 
@@ -24,53 +28,216 @@ body {
     }
 }
 
-    .coordBut {
-        padding: 10px;
-        border-radius: 3px;
-        font-size: 12px;
-        text-align: center;
-        color: black;
-        background: white;
+
+/*************************/
+/* University List */
+/*************************/ 
+
+aside {
+    position: fixed !important; 
+    left: 0;
+    z-index: 3 !important;
+     
+    height: 100%;
+    width: 20vw;
+
+    border-right: 1px solid $move-lighter;
+    background-color: white;
+
+    padding: 0em 1.5em 0em 3em;
+
+    .aside-list-universities {
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        height: calc(100% - 100px);
+        position: relative;
+
+        #map-searchbar{
+            margin-top: 50px;
+            width: 100%;
+        }
+        
+        #map-sorting{
+            margin: 20px 0px 1em;
+            padding: 0px;
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            ul {
+                margin: 0;
+                padding: 0 3rem 0 0;
+                list-style-type: none;
+                display: flex;
+                justify-content: space-between;
+                margin: 0px;
+            }
+        }
+        
+        ul.map-universities-list {
+            list-style-type: none;
+            margin: 16px 0px 0px 0px;
+            padding: 0px;
+            
+            width: 100%;
+            height: calc(100vh - 286px);
+            overflow-y: scroll;
+
+            li {
+                padding: 1.5em 0;
+                div {
+                    display: inline;
+                    p {
+                        display: inline-block;
+                        margin: 0px;
+                    }
+                }
+                div:hover {
+                    color: $move-orange;
+                    cursor: pointer;
+                }
+            }
+            li:hover {
+                cursor: default;
+            }
+        }
+
+    }
+    
+}
+
+// Styling der Scrollbar der Universitätsliste
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+        width: 4px;
+        background-color: $move-lighter;
+    }
+    ::-webkit-scrollbar-thumb {
+        width: 4px;
+        background-color: $move-orange;
     }
 
-    .filter {
-        width: 20%;       
-        height: 100%;
-        z-index: 5000 !important;
-        position: absolute !important;
-        background-color: white;
-    }
-#popupSection {
+
+/********************/
+/* Popup bei Klick auf Uni-Icon */
+/********************/
+
+#map-uni-description {
     position: fixed;
-    top: 104px;
-    height: 75%;
-    left: 25%;
-    width: 50%;
+    top: calc(50% - 360px);
+
+    height: 720px;
+    left: calc(50vw - 400px);
+    width: 800px;
     z-index: 999999;
     background-color: white;
+
     display: block;
+    box-sizing: border-box;
     
-    #wrapper{
+    
+    #uni-description-wrapper{
         height: 100%;
         width: 100%;
         position: relative;
+        display: block;
 
-        #closeButton {
+        header {
             position: absolute;
-            top: 0;
-            right: 0px;
-            font-size: larger;
+            top: 0px;
+            width: 100%;
+            height: 4rem;
+
+            h2 {
+                float: left;
+                margin-left: 1.5em;
+            }
+
+            button {
+                font-size: larger;
+                float: right;
+
+                height: 4rem;
+                width: 4rem;
+                border: none;
+                background-color: white;
+                cursor: pointer;
+            }
+
+            button:active, button:hover  {
+                background-color: $move-orange;
+                color: white;
+                
+            }
+
+            button:focus {
+                outline:0;
+            }
         }
-    }
-    
+        
+        main {
+            position: absolute;
+            top: 4rem;
+            width: 100%;
+            height: 80%;
+
+            .map-uni-description-text {
+                color: black;
+                padding: 0px 1.5rem;
+            }
+
+            div {
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        #map-uni-description-linkto {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            
+            text-align: center;
+            background-color: $move-lighter;
+            padding: 1rem 0rem;
+            color: white;
+
+        }
+
+        #map-uni-description-linkto:hover   {
+            background-color: $move-orange;
+        }
+    } 
 } 
 
-#backgroundOpacity {
-    background-color: rgba(255,255,255,0.7);
-    position: fixed;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: 100vh;
-    z-index: 2;
+    // Hintergrund ausgrauen wenn Popup der Universität geöffnet ist
+    #map-background-disabled {
+        background-color: rgba($move-blue, 0.2);
+        position: fixed;
+        top: 0;
+        left:0;
+        width: 100%;
+        height: 100vh;
+        z-index: 4;
+    }
+
+
+/**************************************/
+/* Fokusring zum Finden auf der Map */
+/**************************************/
+
+.focus_ring {
+    z-index: 5;
+    position: absolute;
+    left: calc(50% - 30px);
+    top: calc(50% - 30px);
+    stroke: $move-orange;
+    opacity: 0;
+    transition-duration: 0.2s;
 }
