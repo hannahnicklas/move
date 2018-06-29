@@ -11,11 +11,6 @@ import { MapboxComponent } from './mapbox/mapbox.component';
 export class MapComponent implements OnInit {
   unis: University[];
 
-  sortings = ['Alphabetical', 'Helpful', 'Faculity', 'Latest', 'Rating', 'Study course'];
-  languages = ['English', 'France', 'German', 'Italian', 'Chinese', 'Spanish'];
-
-  public show = false;
-  public showMore = 'Show';
 
   constructor(
     private universityService: UniversityService
@@ -28,17 +23,5 @@ export class MapComponent implements OnInit {
 
   getUnis(): void {
     this.universityService.getUnis().subscribe(unis => this.unis = unis);
-  }
-  toggle(element, text) {
-    element.textContent = text;
-    this.show = !this.show;
-    if (this.show) {
-      this.showMore = 'Hide';
-    } else {
-      this.showMore = 'Show';
-    }
-    if ( !this.show) {
-      element.textContent = 'More ...';
-    }
   }
 }
