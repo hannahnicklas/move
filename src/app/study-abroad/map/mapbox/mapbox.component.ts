@@ -74,15 +74,16 @@ export class MapboxComponent implements OnInit {
       zoom: 4
     });
     // Anzeigen eines orangen Rings in der Mitte der Karte, um den Nutzer zu zeigen, wo sich die Universität auf der Karte befindet
+    setTimeout(3000);
     this.showCircle();
   }
 
   // Zeigen eines orangen Rings in der Mitte der Karte, um den Nutzer zu zeigen, wo sich die Universität auf der Karte befindet
   showCircle() {
-    document.getElementById('focus_ring').setAttribute('style', 'opacity: 1; z-index: 1;');
+    document.getElementById('focus_ring').setAttribute('class', 'focus_ring activeState');
   }
   hideCircle() {
-    document.getElementById('focus_ring').setAttribute('style', 'opacity: 0; z-index: -1');
+    document.getElementById('focus_ring').setAttribute('class', 'focus_ring');
   }
 
 

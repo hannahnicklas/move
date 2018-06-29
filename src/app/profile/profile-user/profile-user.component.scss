@@ -1,7 +1,7 @@
 @import '../../../assets/GlobalScss/var.scss';
 
 .profile-user-data {
-    width: 100vw;
+    width: 100%;
     margin: 4rem 0px;
     margin-left: calc(-50vw + 50%);
     background-color: $move-grey;
@@ -19,8 +19,8 @@
 }
 
 #profilepic {
-    width: 25vw;
-    height: 100%;
+    width: auto;
+    height: 224px;
 }
 
 .profile-detailed-user-data{

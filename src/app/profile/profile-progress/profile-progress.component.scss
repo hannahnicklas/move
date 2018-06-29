@@ -2,7 +2,12 @@
 /**********************/
 /* progress */
 /**********************/
-
+.middle div {
+    overflow-x: hidden;
+}
+.scrollWindow *{
+    overflow-x: hidden;
+}
 .container {
     margin-left: 27%;
     margin-right: 27%;
@@ -115,4 +120,7 @@ a {
 .center {
     text-align: center;
     margin-top: 10%;
+}
+button:hover {
+    background-color: $move-orange;
 }

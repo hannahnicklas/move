@@ -23,7 +23,7 @@ export class ProfileUserComponent implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked() {
-    document.getElementById('profilepic').setAttribute('style', 'height: 200px; width: auto;');
+    document.getElementById('profilepic').setAttribute('style', 'height: 224px; width: auto;');
   }
   // updates the fake Database with the new entered data of the user
   save(): void {

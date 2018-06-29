@@ -233,11 +233,21 @@ aside {
 /**************************************/
 
 .focus_ring {
-    z-index: 5;
+    transition-duration: 0s;
+
+    z-index: -1;
+    opacity: 0;
+    
     position: absolute;
     left: calc(50% - 30px);
     top: calc(50% - 30px);
     stroke: $move-orange;
-    opacity: 0;
-    transition-duration: 0.2s;
+
+    &.activeState {
+        transition-delay: 2s;
+        transition-duration: 0.4s;
+
+        z-index: 1;
+        opacity: 1; 
+    }
 }
