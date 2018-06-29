@@ -1,8 +1,12 @@
 @import '../../../../assets/GlobalScss/var.scss';
 
+
+/******************/
+/* GENERAL NAV */
+/******************/
+
 nav{
     position: fixed;
-    
     display: flex;
     width: 100%;
     z-index: 1000;
@@ -12,16 +16,16 @@ nav{
 #navPlaceholder {
     width: 100%;
     position: sticky;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     color: white;
-    font-size: large;
+    font-size: $font-size-medium;
 }
 
 a {
     text-decoration: none;
     color: white;
-    font-size: large;
+    font-size: $font-size-medium;
     flex: 1;
     text-align: center;
     padding-top: 1vh;
@@ -31,17 +35,25 @@ a {
 a:hover, a.active-link {
     background-color: $move-lighter;
 }
+
+
+/******************/
+/* ADD BUTTON */
+/******************/
+
 .button-addToFavorit:hover, .button-addToFavorit {
     background-color: $move-orange;
     cursor: pointer;
 }
+
 .button-removeFromFavorit, .button-removeFromFavorit:hover {
     background-color: $move-orange;
     cursor: pointer;
 }
+
 .icon-heart {
-    max-width: 18px;
-    max-height: 18px;
+    max-width: 15px;
+    max-height: 15px;
     padding-right: 12px;
     padding-top: 5px;
 }

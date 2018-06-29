@@ -12,8 +12,7 @@ $move-grey: #f5f5f5;
 
 // variables for typo color and fontsizes 
 $font-size-small: 14px; 
-$font-size-medium: 16px; 
-$font-size-regular: 16px; 
+$font-size-medium: 17px; 
 $font-size-large: 24px;
 $font-size-x-large: 60px; 
 
@@ -35,9 +34,47 @@ $main-margin: 4vw;
 /**********************************/
 
 .margin {
-    margin: $main-margin;
-    margin-bottom: 0px;
-    padding-bottom: 45px;
+    box-sizing: border-box;
+    padding: $main-margin;
+    padding-bottom: 40px;
+    margin: 0px;
+    height: 87vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+//Scrollbar
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    width: 10px;
+    background-color: $move-lighter;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: $move-orange;
+}
+
+.scrollbox {
+    overflow: auto;
+    padding-right: 2%;
+}
+
+.scrollbox::-webkit-scrollbar {
+    width: 4px!important;
+}
+
+.scrollbox::-webkit-scrollbar-track {
+    width: 4px!important;
+    background-color: $move-lighter;
+}
+
+.scrollbox::-webkit-scrollbar-thumb {
+    width: 4px!important;
+    background-color: $move-orange;
 }
 
 .flex-container {
@@ -60,6 +97,10 @@ $main-margin: 4vw;
 /**********************************/
 /* SCHRIFTEN */
 /**********************************/
+
+html, body {
+    font-size: $font-size-small;
+}
 
 a {
     color: $move-blue;
@@ -178,7 +219,7 @@ a {
     width: fit-content;
     min-width: 100px;
     margin: auto;
-    margin-top: 4%;
+    margin-top: 20px;
     padding: 0.5rem 1.1rem;
     cursor: pointer;
     border: none;
@@ -186,21 +227,3 @@ a {
     color: white;
     text-align: center;
 }
-
-
-
-/*
-::-webkit-scrollbar {
-    width: 8px;
-    height: calc(1200px - 72px - 44px -32px);
-    position: fixed;
-}
-::-webkit-scrollbar-track {
-    width: 8px;
-    background-color: $move-blue;
-}
-::-webkit-scrollbar-thumb {
-    width: 0px;
-    background-color: $move-orange;
-}
-*/

@@ -1,5 +1,10 @@
 @import '../../../assets/GlobalScss/var.scss';
 
+
+/******************/
+/* GENERAL NAV */
+/******************/
+
 nav{
     position: fixed;
     display: flex;
@@ -14,13 +19,13 @@ nav{
     padding-top: 1vh;
     padding-bottom: 1vh;
     color: white;
-    font-size: large;
+    font-size: $font-size-medium;
 }
 
 a {
     text-decoration: none;
     color: white;
-    font-size: large;
+    font-size: $font-size-medium;
     flex: 1;
     text-align: center;
     padding-top: 1vh;

@@ -50,6 +50,11 @@ export class ProfileProgressComponent implements OnInit {
   // schaltet die einzelnen Schritte je nach Nummereingabe frei/aus
   initNextStage(stage: number) {
     switch (stage) {
+      case 1: {
+        this.switchAllSteps();
+        this.firstStage = true;
+        break;
+      }
       case 2: {
         this.switchAllSteps();
         this.secondStage = true;

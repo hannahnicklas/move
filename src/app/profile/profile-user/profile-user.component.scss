@@ -2,6 +2,8 @@
 
 .profile-user-data {
     width: 100vw;
+    max-width: 100%;
+    max-height: 200px;
     margin: 4rem 0px;
     margin-left: calc(-50vw + 50%);
     background-color: $move-grey;
@@ -12,6 +14,7 @@
     display: flex;
     align-items: flex-end;
     flex-flow: row wrap;
+    max-height: 200px;
 }
 
 .profile-user-data>div>div {
@@ -57,4 +60,8 @@ button {
 
 .logout {
     float: right;
+}
+
+input {
+    padding-left: 5px;
 }
