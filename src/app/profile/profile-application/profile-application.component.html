@@ -2,7 +2,7 @@
 <div *ngIf="!student.applied" class="application margin bold-M black">
   <div class="flex-container">
 
-    <!-- Application listing favorits -->
+    <!-- Application listing favourites _______________________________________________________ -->
     <div class="application-listing">
       <h1 class="bold-M blue">List of your favorite universities</h1>
       <div class="application-listing">
@@ -21,8 +21,9 @@
           <img src="../../assets/images/profile/application/heartAdd.svg" class="application-add-heart"> add another university to Favorites</a>
       </div>
     </div>
+    <!-- /Application listing favourites _______________________________________________________ -->
 
-    <!-- Application ranking favorits  -->
+    <!-- Application ranking favorits _______________________________________________________ -->
     <div class="application-ranking">
       <h1 class="bold-M blue">Ranking of your favorite universities</h1>
       <div>
@@ -43,9 +44,10 @@
         </div>
       </div>
     </div>
+    <!-- /Application ranking favorits _______________________________________________________ -->
 
 
-    <!-- Progress of application  -->
+    <!-- Progress of application _______________________________________________________ -->
     <div class="application-progress">
       <h1 class="bold-M blue">Your progress</h1>
       <ul class="regular-S">
@@ -66,7 +68,7 @@
         <button routerLink="/popup" class="application-button-finish button bold-S white" *ngIf="showFinishButton()" (click)="finishApp()">Finish Application</button>
       </div>
     </div>
-  </div>
+    <!-- /Progress of application _______________________________________________________ -->
 
 </div>
 <!-- till here is initial state- -->
