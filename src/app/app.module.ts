@@ -40,22 +40,8 @@ import { CourseComponent } from './study-abroad/university/university-courses/co
 import { FilterComponent } from './filter/filter.component';
 import { SearchbarComponent } from './filter/searchbar/searchbar.component';
 import { DndModule } from 'ng2-dnd';
-
-// import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { MapboxComponent } from './study-abroad/map/mapbox/mapbox.component';
 import { ApplicationFinishedComponent } from './profile/application-finished/application-finished.component';
-
-/*
-import { FirebaseApp } from 'angularfire2';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
-
-
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-*/
-
 
 
 
