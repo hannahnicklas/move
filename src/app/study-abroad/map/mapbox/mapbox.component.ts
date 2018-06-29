@@ -21,6 +21,9 @@ export class MapboxComponent implements OnInit {
   showPopup: boolean; // Boolean der die Popup Anzeige Regelt
   showHover: boolean; // Boolean der die Hover Anzeige Regelt
 
+  // Filter
+  sortings = ['Alphabetical', 'Movers', 'Rating'];
+  languages = ['English', 'France', 'German', 'Italian', 'Chinese', 'Spanish'];
 
   // show more less Variablen
   public show = false;
@@ -134,7 +137,7 @@ export class MapboxComponent implements OnInit {
         type: 'geojson',
         data: this.data
       },
-      //Symbole, die für die Unis in der Map angezeigt werden
+      //Styling des Symbols, das in der Map an den Standorten der Unis angezeigt wird
       layout: {
         'icon-image': 'town-hall-15',
         'icon-allow-overlap': true,
