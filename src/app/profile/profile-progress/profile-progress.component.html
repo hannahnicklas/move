@@ -1,0 +1,551 @@
+<!-- first page applying at THI -->
+<div *ngIf="firstStage" class="wrapper">
+  <div class="container">
+    <ul class="progressbar">
+      <li>appyling at THI</li>
+      <li>
+        <a (click)="initNextStage(2)">appyling at partner university</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(3)">Erasmus +</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(4)">funding and scholarship</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(5)">learning agreement</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(6)">after your return</a>
+      </li>
+    </ul>
+  </div>
+  <div class="middle">
+    <div>
+      <div>
+        <div class="bold-L blue paragraph">Applying at THI</div>
+        <p>Thank you for applying at THI</p>
+        <div class="application-ranking-heading">You have applied for the following universities in the following order:</div>
+        <ul class="regular-S" *ngFor="let uni of favorites; let i = index">
+          <li class="bold-S" *ngIf="uni.isFav">
+            {{ uni.name }}
+          </li>
+        </ul>
+        <br>
+        <div class="italic-L blue paragraph">Your application is being processed right now.</div>
+        <p>Once we are done you will be able to proceed to the next steps.
+          <br> We will inform you about the status of your application.
+        </p>
+        <br>
+        <p class="bold-M">Don't forget to complete the checklist on the right</p>
+      </div>
+    </div>
+
+    <div class="application-progress">
+      <h1 class="bold-M blue">Your progress for this step</h1>
+      <ul class="application regular-S">
+        <li>
+          <input type="checkbox" name="checkbox" id="coaf" value="value">
+          <label for="coaf">
+            <span>Complete online application form</span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="romo" value="value">
+          <label for="romo">
+            <span>Registration on Mobility Online</span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="ugsouec" value="value">
+          <label for="ugsouec">
+            <span>Uploade grade sheet or university entrance certificate</span>
+          </label>
+
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="uec" value="value">
+          <label for="uec">
+            <span>Uploade enrolment certificate</span>
+          </label>
+
+        </li>
+      </ul>
+      <h1 class="bold-M blue">Necessary links</h1>
+      <ul class="nlinks regular-S">
+        <li>
+          <a class="link" href="https://www.daad.de/ausland/studieren/stipendium/de/70-stipendien-finden-und-bewerben/">Online application form</a>
+
+        </li>
+        <li>
+          <a class="link" href="https://moodle.thi.de/moodle/course/view.php?id=2948&section=3">fact sheets</a>
+        </li>
+      </ul>
+      <div class="application-finish">
+        <button class="application-button-finish button bold-S white" (click)="initNextStage(2)">Next step</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- second page applying at partner university -->
+<div *ngIf="secondStage" class="wrapper">
+  <div class="container">
+    <ul class="progressbar">
+      <li class="active">appyling at THI</li>
+      <li>
+        <a (click)="initNextStage(2)">appyling at partner university</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(3)">Erasmus +</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(4)">funding and scholarship</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(5)">learning agreement</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(6)">after your return</a>
+      </li>
+    </ul>
+  </div>
+  <div class="middle">
+    <div>
+
+
+      <div>
+        <div class="bold-L blue paragraph">Applying at the partner university</div>
+        <p>list of acknowledged subjects:
+          <a class="link" href="https://moodle.thi.de/moodle/course/view.php?id=2948&section=2">link</a>
+        </p>
+        <div class="italic-L blue paragraph">your subjects that are approved</div>
+        <ul class="regular-S">
+          <li>Software engineering</li>
+          <li>Design Human Machine Interactions</li>
+          <li>TMMI</li>
+          <li>Psychology</li>
+          <li>Webdesign</li>
+        </ul>
+
+        <div class="italic-L blue paragraph">your subjects that are NOT approved</div>
+
+        <ul class="regular-S">
+          <li>Software engineering</li>
+          <li>Design Human Machine Interactions</li>
+        </ul>
+
+        <p>Get in touch with your lecturer to clarify your subjects that are not acknowledged!</p>
+        <p>The website
+          <a class="link" href="https://www.covomo.de/">covomo</a> provides independent information on health insurance coverage during your stay abroad.</p>
+      </div>
+    </div>
+
+    <div class="application-progress">
+      <h1 class="bold-M blue">Your progress for this step</h1>
+      <ul class="application regular-S">
+        <li>
+          <input type="checkbox" name="checkbox" id="aapu" value="value">
+          <label for="aapu">
+            <span>Application at partner University</span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="cisaa" value="value">
+          <label for="cisaa">
+            <span>Check if subjects are acknowledged</span>
+          </label>
+
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="lays" value="value">
+          <label for="lays">
+            <span>Lecturer acknowledging your subjects</span>
+          </label>
+
+        </li>
+      </ul>
+      <h1 class="bold-M blue">Necessary links</h1>
+      <ul class="nlinks regular-S">
+        <li>
+          <a class="link" href="https://www.daad.de/ausland/studieren/stipendium/de/70-stipendien-finden-und-bewerben/">Application website for partner Uni</a>
+
+        </li>
+        <li>
+          <a class="link" href="https://moodle.thi.de/moodle/course/view.php?id=2948&section=3">fact sheets</a>
+        </li>
+      </ul>
+      <div class="application-finish">
+        <button class="application-button-finish button bold-S white" (click)="initNextStage(3)">Next step</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Erasmus + -->
+<div *ngIf="thirdStage" class="wrapper">
+  <div class="container">
+    <ul class="progressbar">
+      <li class="active">appyling at THI</li>
+      <li class="active">
+        <a class="aOrange" (click)="initNextStage(2)">appyling at partner university</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(3)">Erasmus +</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(4)">funding and scholarship</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(5)">learning agreement</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(6)">after your return</a>
+      </li>
+    </ul>
+  </div>
+  <div class="middle">
+    <div>
+
+
+      <div>
+        <div class="bold-L blue paragraph">Erasmus +</div>
+        <p>A separate application is not required for the Erasmus+ grant.
+          <br> IO will contact you by email asking you to fill in and submit particular documents.</p>
+        <div class="italic-L blue paragraph">Necessary Documents</div>
+        <div class="scrollWindow">
+          <p>You have to carry out the following activities and to hand in the following documents before you leave Germany:</p>
+          <ul class="list regular-S">
+            <li>LA incl. your signature as well as the lecturers’ – if needed – and the faculty coordinator’s signature (should
+              be handed in at the IO ServicePoint as soon as possible as it needs to be signed by the host university before
+              your semester abroad starts. Before submitting your LA to the Service Point please upload onto your Mobility
+              Online account.</li>
+            <li>Grant Agreement (fill in, sign, upload onto your Mobility Online account, and hand in the original at the IO
+              ServicePoint)
+            </li>
+            <li>Participation in Intercultural Training Part l and ll</li>
+            <li>Accomplish first OLS Language Test in the host university’s teaching language (if required, you will receive
+              an invitation from the IO)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="application-progress">
+      <h1 class="bold-M blue">Your progress for this step</h1>
+      <ul class="application regular-S">
+        <li>
+          <input type="checkbox" name="checkbox" id="cwifd" value="value">
+          <label for="cwifd">
+            <span>Contact with IO for documents</span>
+          </label>
+
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="pad" value="value">
+          <label for="pad">
+            <span>prepare all documents</span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="gye" value="value">
+          <label for="gye">
+            <span>Getting your Erasmus</span>
+          </label>
+
+        </li>
+      </ul>
+      <h1 class="bold-M blue">Necessary links</h1>
+      <ul class="nlinks regular-S">
+        <li>
+          <a class="link" href="https://www.thi.de/en/international/going-abroad-study-semester/step-4-erasmus/">Download all relevant documents</a>
+
+        </li>
+        <li>
+          <a class="link" href="https://eu.daad.de/infos-fuer-einzelpersonen/foerderung-fuer-studierende-und-graduierte/praktische-informationen/de/47990-praktische-informationen-zum-erasmus-auslandsaufenthalt/">Further Information about semester abroad with Erasmus +</a>
+        </li>
+      </ul>
+      <div class="application-finish">
+        <button class="application-button-finish button bold-S white" (click)="initNextStage(4)">Next step</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Funding and Scholarship -->
+<div *ngIf="fourthStage" class="wrapper">
+  <div class="container">
+    <ul class="progressbar">
+      <li class="active">appyling at THI</li>
+      <li class="active">
+        <a class="aOrange" (click)="initNextStage(2)">appyling at partner university</a>
+      </li>
+      <li class="active">
+        <a class="aOrange" (click)="initNextStage(3)">Erasmus +</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(4)">funding and scholarship</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(5)">learning agreement</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(6)">after your return</a>
+      </li>
+    </ul>
+  </div>
+  <div class="middle">
+    <div>
+
+
+      <div>
+        <div class="bold-L blue paragraph">Funding &amp; scholarships</div>
+        <p>The following information is only available in
+          <a class="link" href="https://moodle.thi.de/moodle/course/view.php?id=2948&section=2">German.</a>
+          <br> IO will contact you by email asking you to fill in and submit particular documents.</p>
+        <br>
+        <div class="italic-L blue paragraph">Nevertheless,</div>
+        <p> international students are eligible to apply for most of the mentioned funding options & scholarships.
+          <br>Please come to the IO ServicePoint in case of any questions.</p>
+
+      </div>
+    </div>
+
+    <div class="application-progress">
+      <h1 class="bold-M blue">Your progress for this step</h1>
+      <ul class="application regular-S">
+        <li>
+          <input type="checkbox" name="checkbox" id="fsof" value="value">
+          <label for="fsof">
+            <span>Find scholarship or funding</span>
+          </label>
+
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="pad2" value="value">
+          <label for="pad2">
+            <span>prepare all documents</span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="gysof" value="value">
+          <label for="gysof">
+            <span>getting your scholarship or funding</span>
+          </label>
+        </li>
+      </ul>
+      <h1 class="bold-M blue">Necessary links</h1>
+      <ul class="nlinks regular-S">
+        <li>
+          <a class="link" href="https://www.daad.de/ausland/studieren/stipendium/de/70-stipendien-finden-und-bewerben/">www.auslands-stipendien.de</a>
+
+        </li>
+        <li>
+          <a class="link" href="https://www.thi.de/international/wege-ins-ausland-studium/schritt-5-foerderungen/stipendiendatenbank/">My Stipendium</a>
+        </li>
+        <li>
+          <a class="link" href="https://www.stipendienlotse.de/">Stipendienlotse des BMBF</a>
+        </li>
+      </ul>
+      <div class="application-finish">
+        <button class="application-button-finish button bold-S white" (click)="initNextStage(5)">Next step</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Learning agreement -->
+<div *ngIf="fifthStage" class="wrapper">
+  <div class="container">
+    <ul class="progressbar">
+      <li class="active">appyling at THI</li>
+      <li class="active">
+        <a class="aOrange" (click)="initNextStage(2)">appyling at partner university</a>
+      </li>
+      <li class="active">
+        <a class="aOrange" (click)="initNextStage(3)">Erasmus +</a>
+      </li>
+      <li class="active">
+        <a class="aOrange" (click)="initNextStage(4)">funding and scholarship</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(5)">learning agreement</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(6)">after your return</a>
+      </li>
+    </ul>
+  </div>
+  <div class="middle">
+    <div>
+
+
+      <div>
+        <div class="bold-L blue paragraph">learning agreement (LA)</div>
+        <div class="scrollWindow">
+          <p>Recognition of the subjects you take at a foreign university is one of the most important issues when it comes
+            to preparing a study period abroad. THI uses the European Credit Transfer System (ECTS) for all courses - a standardised
+            system which applies throughout Europe. Course grades gained in countries outside Europe are also converted into
+            ECTS points. This makes it easy for THI students to gain recognition for the grades they have achieved abroad.
+            Essentially, there is a very wide range of options when it comes to selecting subjects, depending on the language
+            skills required for the country you will be studying in.
+            <br> The most important instrument for subject recognition is the Learning Agreement (LA - see download section for
+            templates). It is a contract drawn up between you, THI and the partner university. When fully completed and signed
+            prior to your departure, the LA guarantees recognition of the grades achieved abroad when you return to THI.
+            The procedure is as follows:</p>
+          <ul class="list regular-S">
+            <li>If you choose a subject which has not been recognised previously, the relevant THI lecturer has to confirm the
+              equivalence of the subject by signing the LA. For this, you have to provide them with a subject description
+              and the valid study and examination regulations of your degree course.</li>
+            <li>Every LA must be signed by the student, the departmental coordinator and finally by the institutional coordinator
+              in the IO.
+            </li>
+            <li>The LA must be signed by the departmental and institutional coordinators at the host university.</li>
+          </ul>
+        </div>
+        <br>
+        <p>! Note: The LA is only valid with ALL the necessary signatures. Otherwise, the grades you achieved abroad will not
+          be recognised.
+          <br> ! Note: There is a special LA form for partner universities in the Erasmus+ programme.</p>
+      </div>
+    </div>
+
+    <div class="application-progress">
+      <h1 class="bold-M blue">Your progress for this step</h1>
+      <ul class="application regular-S">
+        <li>
+          <input type="checkbox" name="checkbox" id="crl" value="value">
+          <label for="crl">
+            <span>Contacting relevant lecturer</span>
+          </label>
+
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="pald" value="value">
+          <label for="pald">
+            <span>Prepare all LA documents</span>
+          </label>
+        </li>
+      </ul>
+      <h1 class="bold-M blue">Necessary links</h1>
+      <ul class="nlinks regular-S">
+        <li>
+          <a class="link" href="https://www.thi.de/en/international/going-abroad-study-semester/step-6-learning-agreement/">Download all relevant documents</a>
+
+        </li>
+        <li>
+          <a class="link" href="https://moodle.thi.de/moodle/course/view.php?id=2948&section=2">Subjects that have been recognized previously</a>
+        </li>
+      </ul>
+      <div class="application-finish">
+        <button class="application-button-finish button bold-S white" (click)="initNextStage(6)">Next step</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- after you return -->
+<div *ngIf="sixthStage" class="wrapper">
+  <div class="container">
+    <ul class="progressbar">
+      <li class="active">appyling at THI</li>
+      <li class="active">
+        <a class="aOrange" (click)="initNextStage(2)">appyling at partner university</a>
+      </li>
+      <li class="active">
+        <a class="aOrange" (click)="initNextStage(3)">Erasmus +</a>
+      </li>
+      <li class="active">
+        <a class="aOrange" (click)="initNextStage(4)">funding and scholarship</a>
+      </li>
+      <li class="active">
+        <a class="aOrange" (click)="initNextStage(5)">learning agreement</a>
+      </li>
+      <li>
+        <a (click)="initNextStage(6)">after your return</a>
+      </li>
+    </ul>
+  </div>
+  <div class="middle">
+    <div>
+
+
+      <div>
+        <div class="bold-L blue paragraph">After you return</div>
+        <h1>Recognition of grades</h1>
+        <p>Once your study semester is complete, your partner university sends your grade sheet (TOR = Transcript of Records)
+          to the THI International Office. You are informed as soon as it has been received. The IO makes a certified copy
+          which you have to submit to the SCS (Service Center Academic Affairs) along with a certified copy of the signed
+          LA so that the grades and subjects can be credited to your degree programme. If you still have the original LA,
+          please bring this along, too. Further information can be found in <a class="link" href="https://moodle.thi.de/moodle/course/view.php?id=2948&section=6">Moodle</a></p>
+        <ul class="list regular-S">
+          <li class="italic-L blue paragraph">IKT, PART III</li>
+          <li class="italic-L blue paragraph">Erasmus +</li>
+          <li class="italic-L blue paragraph">Evaluation sheet</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="application-progress">
+      <h1 class="bold-M blue">Your progress for this step</h1>
+      <ul class="application regular-S">
+        <li>
+          <input type="checkbox" name="checkbox" id="crl" value="value">
+          <label for="crl">
+            <span>Recognition of grades</span>
+          </label>
+
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="ip3" value="value">
+          <label for="ip3">
+            <span>IKT, PART III</span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="eplus" value="value">
+          <label for="eplus">
+            <span>Erasmus +</span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" id="es" value="value">
+          <label for="es">
+            <span>Evaluation sheet</span>
+          </label>
+        </li>
+      </ul>
+      <h1 class="bold-M blue">Necessary links</h1>
+      <ul class="nlinks regular-S">
+        <li>
+          <a class="link" href="https://www.thi.de/en/international/going-abroad-study-semester/step-7-after-your-return/">Download all relevant documents</a>
+        </li>
+      </ul>
+      <div class="application-finish">
+        <button (click)="finish()" class="application-button-finish button bold-S white">finish application</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- after you return -->
+<div *ngIf="applicationFinished" class="middle">
+  <div class="center">
+    <div class="bold-L blue paragraph">well done!</div>
+    <div class="bold-L blue paragraph">you are ready to move to University of Nevada</div>
+    <p>We wish you a pleasent stay abroad!</p>
+    <div class="bold-M blue">Dont forget the following before you go:</div>
+    <ul class="application list regular-S">
+      <li class="italic-L blue">yourself</li>
+      <li class="italic-L blue">ID-Card</li>
+      <li class="italic-L blue">Visa</li>
+      <li class="italic-L blue">some Money</li>
+      <li class="italic-L blue">etc.</li>
+    </ul>
+    <div class="application-finish">
+        <button routerLink="/home" class="application-button-finish button bold-S white">OK!</button>
+      </div>
+
+  </div>

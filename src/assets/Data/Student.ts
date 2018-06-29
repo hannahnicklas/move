@@ -19,4 +19,5 @@ export class Student {
     emergLastName: string;
     emergEmail: string;
     emergMobile: string;
+    applied: boolean;
   }
