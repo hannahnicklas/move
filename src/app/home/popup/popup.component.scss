@@ -1,5 +1,6 @@
 @import '../../../assets/GlobalScss/var.scss';
 .margin {
+    margin-top: 10%;
     flex-wrap: wrap;
 }
 
@@ -54,8 +55,8 @@
     background-color: $move-grey;  
     padding-bottom: 10px;
     max-height: 394px;
+     
 }
-
 .application-listing{
     flex-grow: 4; 
 }

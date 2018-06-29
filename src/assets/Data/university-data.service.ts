@@ -7,7 +7,7 @@ export class UniversityDataService implements InMemoryDbService {
   createDb() {
     const unis = [
       {
-        id: 1, name: 'University of Technology', country: 'Australia', city: 'Sydney', 
+        id: 1, name: 'University of Technology', country: 'Australia', city: 'Sydney',
         descriptionText: 'The University of Technology Sydney originates from the Sydney Mechanics School of Arts (the oldest continuously running Mechanics Institute in Australia), which was established in 1833.[5] In the 1870s, the School formed the Workingmans College, which was later taken over by the NSW government to form, in 1882, the Sydney Technical College.[1]In 1940 the NSW Parliament passes Act to establish an Institute of Technology, which in 1964 lead to the establishment of New South Wales Institute of Technology (NSWIT). In 1968, amalgamation of the NSW Institute of Business Studies and the NSW Institute of Technology took place. In 1976 NSWIT establishes the first law school in NSW outside the university sector. In 1985 the Haymarket Campus is officially opened. On 8 October 1987 university status is granted to NSWIT, which was followed by the passing of the University of Technology, Sydney, Act 1987. It was reconstituted as the University of Technology Sydney (UTS) in 1988, along with the incorporation of the School of Design of the former Sydney College of the Arts.',
         picturePath: '../../images/app-component/university-general',
         experiences: [
@@ -368,7 +368,7 @@ export class UniversityDataService implements InMemoryDbService {
       mobile: '0157512345', studyProgress: '3. Semester', bday: '17.09.1996',
       goingAbroad: '5. Semester', email: 'anna1234@thi.de', password: '1234', username: 'anna1234',
       favoritesID: [1, 2], universityIDs: [1], universities: [],
-      emergFirstName: 'My', emergLastName: 'daddy', emergEmail: 'daddy@dad.de', emergMobile: '01234567' },
+      emergFirstName: 'dad', emergLastName: 'father', emergEmail: 'father@dad.de', emergMobile: '01234567'},
       { id: 2, forename: 'Susi', name: 'Sorglos', subject: 'User Experience Design',
       mobile: '0157512545', studyProgress: '4. Semester', bday: '11.07.1995',
       goingAbroad: '6. Semester', email: 'susi1234@thi.de', password: '1234', username: 'susi1234'}];
@@ -383,13 +383,11 @@ export class UniversityDataService implements InMemoryDbService {
         // {id: 7, name: 'University of Test', isFav: false},
       ];
 
-      const favoritesOfStudent = [
-        {id: 1, name: 'University of Technology'},
-        {id: 2, name: 'Technische Hochschule Ingolstadt'},
+      const applied = [
+        { id: 1, hasApplied: false }
       ];
 
-
-    return { favorites, unis, students, favoritesOfStudent  };
+    return { favorites, unis, students, applied};
   }
   getDBUnis() {
     const uni = this.createDb();

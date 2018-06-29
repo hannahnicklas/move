@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { PopupComponent } from './home/popup/popup.component';
 import { InternshipComponent } from './internship/internship.component';
 
 
@@ -22,6 +23,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileUserComponent } from './profile/profile-user/profile-user.component';
 import { ProfileApplicationComponent } from './profile/profile-application/profile-application.component';
 import { ProfileContactComponent } from './profile/profile-contact/profile-contact.component';
+import { ProfileProgressComponent } from './profile/profile-progress/profile-progress.component';
+
 
 
 /**
@@ -33,6 +36,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent,
   data: {
     breadcrumbs: 'Home'
+  } },
+  { path: 'popup', component: PopupComponent,
+  data: {
+    breadcrumbs: 'Popup'
   } },
   { path: 'internship', component: InternshipComponent,
   data: {
@@ -88,6 +95,10 @@ const routes: Routes = [
       { path: 'application', component: ProfileApplicationComponent,
       data: {
         breadcrumbs: 'Application'
+       } },
+       { path: 'progress', component: ProfileProgressComponent,
+      data: {
+        breadcrumbs: 'Progress'
        } },
       { path: 'contact', component: ProfileContactComponent,
       data: {

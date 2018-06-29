@@ -40,6 +40,8 @@ import { FilterComponent } from './filter/filter.component';
 import { SearchbarComponent } from './filter/searchbar/searchbar.component';
 import { DndModule } from 'ng2-dnd';
 import { MapboxComponent } from './study-abroad/map/mapbox/mapbox.component';
+import { ProfileProgressComponent } from './profile/profile-progress/profile-progress.component';
+import { PopupComponent } from './home/popup/popup.component';
 
 
 
@@ -72,7 +74,9 @@ import { MapboxComponent } from './study-abroad/map/mapbox/mapbox.component';
     CourseComponent,
     FilterComponent,
     SearchbarComponent,
-    MapboxComponent
+    MapboxComponent,
+    ProfileProgressComponent,
+    PopupComponent
   ],
   imports: [
     FormsModule,
