@@ -51,7 +51,7 @@ export class MapboxComponent implements OnInit {
     this.buildData();
   }
 
-  // mehr Buttons anzeigen
+  // show more Button
   toggle(element, text) {
     element.textContent = text;
     this.show = !this.show;
@@ -86,7 +86,7 @@ export class MapboxComponent implements OnInit {
   }
   
 
-
+  
   async buildData() {
     this.unis = <University[]>await this.universityService.getUnisAsync();
     this.uni = this.unis[0];
@@ -112,14 +112,13 @@ export class MapboxComponent implements OnInit {
                                 coordinates: number[];
                               };
                             }>(iterations);
-    //toAdd Array mit Daten befüllen 
+
     for (let i = 0; i < iterations; i++) {
       toAdd[i] = {
         type: 'Feature',
         properties: {
           description: (String(i)),
         },
-        //Koordinaten der Uni
         geometry: {
           type: 'Point',
           coordinates: [this.unis[i].lang, this.unis[i].lat]
@@ -129,7 +128,6 @@ export class MapboxComponent implements OnInit {
 
     this.data = { type: 'FeatureCollection', features: toAdd };
 
-    //Mapbox Layer mit Unis aus Data/University in die Karte einfügen
     this.map.addLayer({
       id: 'unis',
       type: 'symbol',
@@ -147,7 +145,7 @@ export class MapboxComponent implements OnInit {
     });
   }
 
-  //Standard Verhalten der Map
+
   buildMap() {
     this.map = new mapboxgl.Map({
       container: 'map',
