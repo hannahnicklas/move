@@ -53,19 +53,27 @@
       <ul class="regular-S">
         <li>
           <i class="fas fa-check"></i>
-          <span>Finish profile</span>
+          <span>finish profile</span>
         </li>
         <li *ngIf="!showFinishButton()">
           <i>&nbsp;&nbsp;&nbsp;</i>
-          <span>Rank your universities</span>
+          <span>rank your universities</span>
         </li>
         <li *ngIf="showFinishButton()">
           <i class="fas fa-check"></i>
-          <span>Rank your universities</span>
+          <span>rank your universities</span>
+        </li>
+        <li>
+          <i>&nbsp;&nbsp;&nbsp;</i>
+          <span>send application to IO</span>
+        </li>
+        <li>
+          <i>&nbsp;&nbsp;&nbsp;</i>
+          <span>complete application</span>
         </li>
       </ul>
       <div class="application-finish">
-        <button routerLink="/popup" class="application-button-finish button bold-S white" *ngIf="showFinishButton()" (click)="finishApp()">Finish Application</button>
+        <button routerLink="/popup" class="application-button-finish button bold-S white" *ngIf="showFinishButton()" (click)="finishApp()">send application</button>
       </div>
     </div>
     <!-- /Progress of application _______________________________________________________ -->

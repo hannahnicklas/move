@@ -1,8 +1,11 @@
-<!-- first page applying at THI -->
-<div *ngIf="firstStage" class="wrapper">
-  <div class="container">
-    <ul class="progressbar">
-      <li>appyling at THI</li>
+<!-- FIRST STEP
+     applying at THI _____________________________________________________________________-->
+
+<div *ngIf="firstStage" class="margin">
+
+  <div class="application-progressbar-container">
+    <ul class="application-progressbar">
+      <li class="active">appyling at THI</li>
       <li>
         <a (click)="initNextStage(2)">appyling at partner university</a>
       </li>
@@ -20,40 +23,53 @@
       </li>
     </ul>
   </div>
-  <div class="middle">
+
+  <div class="application-content">
+
+    <div class="bold-L blue paragraph">Application sent to THI</div>
+
     <div>
       <div>
-        <div class="bold-L blue paragraph">Applying at THI</div>
-        <p>Thank you for applying at THI</p>
-        <div class="application-ranking-heading">You have applied for the following universities in the following order:</div>
+        <p>Thank you for applying to a semester abroad</p>
+        <div class="application-ranking-heading">You have applied for these universities in the following order:</div>
         <ul class="regular-S" *ngFor="let uni of favorites; let i = index">
           <li class="bold-S" *ngIf="uni.isFav">
             {{ uni.name }}
           </li>
         </ul>
         <br>
-        <div class="italic-L blue paragraph">Your application is being processed right now.</div>
-        <p>Once we are done you will be able to proceed to the next steps.
-          <br> We will inform you about the status of your application.
+        <p>
+          Your application is being processed right now by our team of the International Office. Once we are done you will be able
+          to continue with the next steps. We will inform you about the status of your application.
         </p>
-        <br>
-        <p class="bold-M">Don't forget to complete the checklist on the right</p>
+        <p class="bold-M orange">Don't forget to complete the checklist on the right</p>
       </div>
     </div>
 
+
     <div class="application-progress">
-      <h1 class="bold-M blue">Your progress for this step</h1>
+      <h1 class="bold-M blue">Complete these task for the next step</h1>
       <ul class="application regular-S">
+
         <li>
           <input type="checkbox" name="checkbox" id="coaf" value="value">
           <label for="coaf">
-            <span>Complete online application form</span>
+            <span>
+              Complete online application form
+              <br>
+              <a class="bold-S blue" target="_blank" href="https://www.daad.de/ausland/studieren/stipendium/de/70-stipendien-finden-und-bewerben/">link to form >></a>
+            </span>
           </label>
         </li>
+
         <li>
           <input type="checkbox" name="checkbox" id="romo" value="value">
           <label for="romo">
-            <span>Registration on Mobility Online</span>
+            <span>
+              Registration on Mobility Online
+              <br>
+              <a class="bold-S blue" target="_blank" href="https://www.service4mobility.com/europe/LoginServlet">link to registration >></a>
+            </span>
           </label>
         </li>
         <li>
@@ -61,17 +77,18 @@
           <label for="ugsouec">
             <span>Uploade grade sheet or university entrance certificate</span>
           </label>
-
         </li>
+
         <li>
           <input type="checkbox" name="checkbox" id="uec" value="value">
           <label for="uec">
             <span>Uploade enrolment certificate</span>
           </label>
-
         </li>
+
       </ul>
-      <h1 class="bold-M blue">Necessary links</h1>
+
+      <!-- <h1 class="bold-M blue">Necessary links</h1>
       <ul class="nlinks regular-S">
         <li>
           <a class="link" href="https://www.daad.de/ausland/studieren/stipendium/de/70-stipendien-finden-und-bewerben/">Online application form</a>
@@ -80,15 +97,22 @@
         <li>
           <a class="link" href="https://moodle.thi.de/moodle/course/view.php?id=2948&section=3">fact sheets</a>
         </li>
-      </ul>
-      <div class="application-finish">
-        <button class="application-button-finish button bold-S white" (click)="initNextStage(2)">Next step</button>
-      </div>
+      </ul> -->
+
     </div>
+
+    <div class="application-finish">
+      <button class="button" (click)="initNextStage(2)">Next step</button>
+    </div>
+
   </div>
 </div>
 
-<!-- second page applying at partner university -->
+
+
+<!-- SECOND STEP
+     applying at partner university _____________________________________________________________________-->
+
 <div *ngIf="secondStage" class="wrapper">
   <div class="container">
     <ul class="progressbar">
@@ -182,7 +206,11 @@
   </div>
 </div>
 
-<!-- Erasmus + -->
+
+
+<!-- THIRD STEP
+     Erasmus + _____________________________________________________________________-->
+
 <div *ngIf="thirdStage" class="wrapper">
   <div class="container">
     <ul class="progressbar">
@@ -272,7 +300,11 @@
   </div>
 </div>
 
-<!-- Funding and Scholarship -->
+
+
+<!-- FOURTH STEP
+     Funding and Scholarships _____________________________________________________________________-->
+
 <div *ngIf="fourthStage" class="wrapper">
   <div class="container">
     <ul class="progressbar">
@@ -355,7 +387,10 @@
 </div>
 
 
-<!-- Learning agreement -->
+
+<!-- FIFTH STEP
+     Learning agreement _____________________________________________________________________-->
+
 <div *ngIf="fifthStage" class="wrapper">
   <div class="container">
     <ul class="progressbar">
@@ -445,7 +480,11 @@
   </div>
 </div>
 
-<!-- after you return -->
+
+
+<!-- SIXTH STEP
+     after your return _____________________________________________________________________-->
+
 <div *ngIf="sixthStage" class="wrapper">
   <div class="container">
     <ul class="progressbar">
@@ -478,7 +517,9 @@
           to the THI International Office. You are informed as soon as it has been received. The IO makes a certified copy
           which you have to submit to the SCS (Service Center Academic Affairs) along with a certified copy of the signed
           LA so that the grades and subjects can be credited to your degree programme. If you still have the original LA,
-          please bring this along, too. Further information can be found in <a class="link" href="https://moodle.thi.de/moodle/course/view.php?id=2948&section=6">Moodle</a></p>
+          please bring this along, too. Further information can be found in
+          <a class="link" href="https://moodle.thi.de/moodle/course/view.php?id=2948&section=6">Moodle</a>
+        </p>
         <ul class="list regular-S">
           <li class="italic-L blue paragraph">IKT, PART III</li>
           <li class="italic-L blue paragraph">Erasmus +</li>
@@ -545,7 +586,7 @@
       <li class="italic-L blue">etc.</li>
     </ul>
     <div class="application-finish">
-        <button routerLink="/home" class="application-button-finish button bold-S white">OK!</button>
-      </div>
+      <button routerLink="/home" class="application-button-finish button bold-S white">OK!</button>
+    </div>
 
   </div>
