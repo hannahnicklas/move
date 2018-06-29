@@ -1,5 +1,22 @@
 @import '../../assets/GlobalScss/var.scss';
 
+
+// scrollbar
+::-webkit-scrollbar {
+    width: 0px!important;
+}
+
+::-webkit-scrollbar-track {
+    width: 0px!important;
+    background-color: $move-lighter;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 0px!important;
+    background-color: $move-orange;
+}
+
+
 /***************************/
 /* LOGIN */
 /***************************/
@@ -22,24 +39,39 @@
 }
 
 #login-wrapper {
+    width: 35%;
+    height: fit-content;
+    padding: 7%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50vh;
-    color: white;
+    margin-top: 10vh;
+    color: $text-color-dark;
+    background-color: rgba(white, 0.9);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+#login-wrapper>div {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login-wrapper>div:last-child {
+    text-align: center;
+}
+
+.flex-container {
+    justify-content: space-between;
+}
+
+.login-title {
+    text-align: center;
+    margin-bottom: 8%;
 }
 
 input:hover {
     border-color: rgba($move-orange, 0.5);
-}
-
-#logInButton {
-    border: none;
-    background-color: $move-lighter;
-    color: white;
-}
-
-#logInButton:hover {
-    background-color: $move-orange;
 }
 
 .login-input-row {
@@ -47,9 +79,9 @@ input:hover {
 }
 
 .login-input {
-    width: 500px;
-    position: absolute;
-    left: 20em;
+    width: 90%;
+    margin-bottom: 5%;
+    padding: 2% 5%;
 }
 
 

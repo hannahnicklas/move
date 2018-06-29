@@ -3,18 +3,18 @@
 <div class="login" *ngIf="!authService.hasAuthenticatedObject()">
     <form name="form">
         <div id="login-wrapper">
-            <h2>Move</h2>
-            <div id="user" class="login-input-row">
-                <label for="username">Username</label>
-                <input type="text" class="login-input" name="username" [(ngModel)]="model.username" #username="ngModel" required />
-    
+
+            <div class="light-XL blue login-title">Move</div>
+
+            <div>
+                <input placeholder="username" type="text" class="login-input" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+
+                <input placeholder="password" type="password" class="login-input" name="password" [(ngModel)]="model.password" #password="ngModel" required />
             </div>
-            <div id="pw" class="login-input-row">
-                <label for="password">Password</label>
-                <input type="password" class="login-input" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-                
+
+            <div>
+                <button id="logInButton" class="button" type="button" (click)="doLogin()">login</button>
             </div>
-            <button id="logInButton" class="button bold-S" type="button" (click)="doLogin()">login</button>
         </div>
     </form>
 </div>

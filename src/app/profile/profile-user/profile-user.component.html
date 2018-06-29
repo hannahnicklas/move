@@ -13,7 +13,7 @@
           <div class="bold-L">{{student.forename}} {{student.name}}</div>
           <div>{{student.subject}}</div>
           <div>
-            <button *ngIf="!edit" class="button grey-bg" (click)="edit = !edit">Edit</button>
+            <button *ngIf="!edit" class="button" (click)="edit = !edit">Edit</button>
             <button *ngIf="edit" class="button bold-S white" (click)="save()">save</button>
           </div>
         </div>

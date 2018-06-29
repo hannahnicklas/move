@@ -145,10 +145,6 @@ a {
     background-color: $move-orange !important;
 }
 
-.grey-bg {
-    background-color: $text-color-grey !important;
-}
-
 // text styles
 
 // Welcome
@@ -226,4 +222,9 @@ a {
     background-color: $move-blue;
     color: white;
     text-align: center;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: $move-orange;
 }
